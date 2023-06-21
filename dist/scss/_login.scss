@@ -1,7 +1,3 @@
-h1{
-    color: red;
-}
-
 .main-section{
     display: flex;
 }
@@ -10,8 +6,29 @@ h1{
 .section-first-half{
     flex: 1;
     border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // max-height: 100%vh;
+}
+.header-first-half{
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* Label for logo-label */
+label[for="logo-label"] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
 }
 
+// Second Half section
 .section-second-half{
     flex: 1;
     border: 1px solid black;
