@@ -7,22 +7,45 @@
 // First half section
 .section-first-half{
     flex: 1;
-    // border: 1px solid black;
+    height: 100vh;
+    overflow: hidden;
+}
+.container-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    .container-header img,
+    .container-header select {
+        flex: 1;
+    }
+
+    .container-header select {
+        margin-left: 10px;
+    }
+
+    select{
+        padding: 8px;
+        border-radius: 100px;
+        background-color: rgb(255, 255, 255);
+        border: 1px solid $primary-text-gray;
+    }
+}
+.container-body{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 80%;
 }
-
 .container-first-half{
-    // border: 1px solid rgb(180, 180, 180);
-    // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     width: 500px;
     height: 500px;
     border-radius: 5px;
 }
-
 .header-first-half{
     display: flex;
     flex-direction: column;
@@ -90,14 +113,30 @@
         width: 100%;
         height: 40px;
         margin-top: 10px;
+        margin-bottom: 10px;
         background-color: $primary-buttonBg-green;
         color: white;
         border: none;
     }
-    a{
-        display: flex;
-        flex-direction: flex-end;
+    .forgotP{
+        display: block;
+        text-align: right;
+        color: $primary-link-blue;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    p {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
         color: $primary-text-black;
+        font-weight: map-get($font-weight, bold);
+    }
+    .signUpLink{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        color: $primary-link-blue;
+        font-weight: map-get($font-weight, bold);
+        text-decoration: none;
     }
 }
 

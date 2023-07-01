@@ -12,11 +12,38 @@
 
 .section-first-half {
   flex: 1;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.container-header .container-header img,
+.container-header .container-header select {
+  flex: 1;
+}
+.container-header .container-header select {
+  margin-left: 10px;
+}
+.container-header select {
+  padding: 8px;
+  border-radius: 100px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(185, 185, 185);
+}
+
+.container-body {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 80%;
 }
 
 .container-first-half {
@@ -93,14 +120,30 @@
   width: 100%;
   height: 40px;
   margin-top: 10px;
+  margin-bottom: 10px;
   background-color: #549c6c;
   color: white;
   border: none;
 }
-.form a {
-  display: flex;
-  flex-direction: flex-end;
+.form .forgotP {
+  display: block;
+  text-align: right;
+  color: rgb(99, 117, 223);
+  font-weight: bold;
+  text-decoration: none;
+}
+.form p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
   color: #040705;
+  font-weight: 700;
+}
+.form .signUpLink {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: rgb(99, 117, 223);
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .section-second-half {
