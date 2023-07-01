@@ -9,7 +9,16 @@ $primary-buttonBg-green: #549c6c;
 $secondary-buttonBg-green: #e1efe6;
 $tertiary-buttonBg-green: #60a978;
 
+// Font weight (syntax: font-weight: map-get($font-weight, Bold);)
+$font-weight:(
+    "regular":300,
+    "medium": 500,
+    "bold": 700
+);
 
-// Font style
-$title-text: 'Poppins', sans-serif;
-$sub-text: 'Raleway', sans-serif;
+// Font Style
+/*
+    Montserrat -  paragraph
+    Raleway - sub heading
+    Poppins - main heading
+*/

@@ -1,3 +1,5 @@
+@import './_resource.scss';
+
 .main-section{
     display: flex;
 }
@@ -12,23 +14,40 @@
     align-items: center;
     height: 100vh;
 }
+
+.container-first-half{
+    border: 1px solid black;
+    width: 400px;
+    height: 400px;
+    border-radius: 5px;
+}
+
 .header-first-half{
-    width: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-label[for="logo-label"] {
     text-align: center;
-    width: 500px;
-    font-family: 'Raleway', sans-serif;
-    color: $primary-text-black;
+
+    label[for="logo-label"] {
+        font-family: 'Montserrat', sans-serif;
+        color: $primary-text-black;
+        font-weight: map-get($font-weight, bold);
+    }
 }
 
-h1{
-    font-family: 'Poppins', sans-serif;
+.form{
+    margin: 20px;
+    padding: 20px;
+
+    label[for="username"], [for="password"] {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: map-get($font-weight, bold);
+        color: $primary-buttonBg-green;
+    }
 }
+
+
 // Second Half section
 .section-second-half{
     flex: 1;
