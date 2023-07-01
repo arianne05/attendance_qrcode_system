@@ -31,11 +31,20 @@
 .container-header .container-header select {
   margin-left: 10px;
 }
-.container-header select {
-  padding: 8px;
-  border-radius: 100px;
+.container-header .mergeIconSelect {
+  display: flex;
+  align-items: center;
   background-color: rgb(255, 255, 255);
   border: 1px solid rgb(185, 185, 185);
+  border-radius: 200px;
+  padding: 8px;
+}
+.container-header select {
+  border: none;
+  padding-left: 5px;
+}
+.container-header i {
+  padding-left: 5px;
 }
 
 .container-body {
@@ -99,20 +108,42 @@
   padding: 20px;
   font-family: "Montserrat", sans-serif;
 }
-.form input {
+.form .mergeIconUser {
+  display: flex;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(185, 185, 185);
   border-radius: 10px;
+  padding: 0;
+  margin-bottom: 20px;
+}
+.form .mergeIconPass {
+  display: flex;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(185, 185, 185);
+  border-radius: 10px;
+  padding: 0;
+  margin-bottom: 20px;
+}
+.form i {
+  padding-left: 10px;
+}
+.form input {
   width: 100%;
   height: 35px;
-  margin-bottom: 20px;
-  padding: 18px;
-  border: 1px solid rgb(185, 185, 185);
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-right: 18px;
+  padding-left: 10px;
+  border: none;
 }
 .form input::-moz-placeholder {
-  font-size: 16px;
+  font-size: 14px;
   color: #2c2c2c;
 }
 .form input::placeholder {
-  font-size: 16px;
+  font-size: 14px;
   color: #2c2c2c;
 }
 .form button {
@@ -126,6 +157,7 @@
   border: none;
 }
 .form .forgotP {
+  font-size: 14px;
   display: block;
   text-align: right;
   color: rgb(99, 117, 223);
