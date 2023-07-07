@@ -58,11 +58,32 @@
         </div>
 
         <div class="section-second-half">
-            <div class="container-body-2nd">
-                <h1>Hello World</h1>
-                <!-- <img src="../dist/img/congratulations-you-did-test-very-well.jpg" alt=""> -->
+            <div class="slideshow-container">
+                <div class="slide">
+                    <img src="./img/slideshow1.jpg" alt="Image 1">
+                    <div class="overlay"></div>
+                </div>
+                <div class="slide">
+                    <img src="./img/slideshow2.jpg" alt="Image 2">
+                    <div class="overlay"></div>
+                </div>
+                <div class="slide">
+                    <img src="./img/slideshow3.jpg" alt="Image 3">
+                    <div class="overlay"></div>
+                </div>
+                
+                <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                <a class="next" onclick="changeSlide(1)">&#10095;</a>
+
+                <div class="text-second">
+                    <h1>"Your presence matters. Show up, engage, and make the most of your educational journey."</h1>
+                </div>
             </div>
         </div>
     </div>
 </body>
+
+<!-- js links -->
+<script src="./js/slideshow_index.js"></script>
+
 </html>
