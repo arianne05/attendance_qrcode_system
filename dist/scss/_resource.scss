@@ -1,0 +1,30 @@
+// Background color
+$background-color: #f8fbf9;
+$background-color-green: rgb(233, 255, 233);
+
+// Text Color
+$primary-text-black: #040705;
+$secondary-text-black: #2c2c2c;
+$primary-text-gray: rgb(185, 185, 185);
+
+// Button Color
+$primary-buttonBg-green: #549c6c;
+$secondary-buttonBg-green: #e1efe6;
+$tertiary-buttonBg-green: #60a978;
+
+// Link Color
+$primary-link-blue: rgb(99, 117, 223);
+
+// Font weight (syntax: font-weight: map-get($font-weight, Bold);)
+$font-weight:(
+    "regular":300,
+    "medium": 500,
+    "bold": 700
+);
+
+// Font Style
+/*
+    Montserrat -  paragraph
+    Raleway - sub heading
+    Poppins - main heading
+*/

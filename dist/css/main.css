@@ -1,22 +1,366 @@
-h1 {
-  color: red;
-}
-
+/*
+    Montserrat -  paragraph
+    Raleway - sub heading
+    Poppins - main heading
+*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;1,200&display=swap");
 .main-section {
   display: flex;
 }
 
 .section-first-half {
   flex: 1;
-  border: 1px solid black;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.container-header .container-header img,
+.container-header .container-header select {
+  flex: 1;
+}
+.container-header .container-header select {
+  margin-left: 10px;
+}
+.container-header .mergeIconSelect {
+  display: flex;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(185, 185, 185);
+  border-radius: 200px;
+  padding: 8px;
+}
+.container-header select {
+  border: none;
+  padding-left: 5px;
+}
+.container-header i {
+  padding-left: 5px;
+}
+.container-header:hover i {
+  color: #549c6c;
+}
+
+.container-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+}
+
+.container-first-half {
+  width: 500px;
+  height: 500px;
+  border-radius: 5px;
+}
+
+.header-first-half {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.header-first-half h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 80px;
+  margin-bottom: -15px;
+  color: linear-gradient(90deg, rgb(31, 114, 171) 0%, rgb(127, 255, 212) 50%, rgb(10, 179, 72) 100%);
+}
+.header-first-half p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: #040705;
+  font-weight: 700;
+  width: 300px;
+  margin-top: 0;
+}
+.header-first-half button {
+  cursor: pointer;
+  background-color: white;
+  width: 80%;
+  height: 30px;
+  margin-top: 15px;
+  border-radius: 10px;
+  border: 1px solid rgb(185, 185, 185);
+  padding-top: 10px;
+  padding-bottom: 25px;
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+}
+.header-first-half button:hover {
+  background-color: rgb(226, 226, 226);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border: none;
+}
+.header-first-half .division {
+  color: rgb(185, 185, 185);
+  padding-top: 10px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.form {
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 0;
+  padding: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+.form .mergeIconUser {
+  display: flex;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(185, 185, 185);
+  border-radius: 10px;
+  padding: 0;
+  margin-bottom: 20px;
+}
+.form .mergeIconUser i {
+  color: rgb(155, 155, 155);
+  padding-left: 10px;
+}
+.form .mergeIconUser:hover i {
+  color: #549c6c;
+}
+.form .mergeIconPass {
+  display: flex;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(185, 185, 185);
+  border-radius: 10px;
+  padding: 0;
+  margin-bottom: 20px;
+}
+.form .mergeIconPass i {
+  color: rgb(155, 155, 155);
+  padding-left: 10px;
+}
+.form .mergeIconPass:hover i {
+  color: #549c6c;
+}
+.form input {
+  width: 100%;
+  height: 35px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-right: 18px;
+  padding-left: 10px;
+  border: none;
+}
+.form input::-moz-placeholder {
+  font-size: 14px;
+  color: #2c2c2c;
+}
+.form input::placeholder {
+  font-size: 14px;
+  color: #2c2c2c;
+}
+.form button {
+  cursor: pointer;
+  border-radius: 20px;
+  width: 100%;
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #549c6c;
+  color: white;
+  border: none;
+}
+.form button:hover {
+  background-color: #e1efe6;
+  color: #549c6c;
+  font-weight: 200px;
+  border: 1px solid #549c6c;
+}
+.form .forgotP {
+  font-size: 14px;
+  display: block;
+  text-align: right;
+  color: rgb(99, 117, 223);
+  font-weight: bold;
+  text-decoration: none;
+}
+.form p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: #040705;
+  font-weight: 700;
+}
+.form .signUpLink {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: rgb(99, 117, 223);
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .section-second-half {
+  position: relative;
+  overflow: hidden;
   flex: 1;
-  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
+.section-second-half::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(3, 36, 30, 0.4);
+}
+
+.container-body-2nd {
+  color: white;
+  z-index: 2;
+}
+
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slide {
+  height: 100%;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.slide .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the overlay color and opacity as desired */
+}
+
+.slides-button {
+  position: absolute;
+  top: 92%;
+  left: 80%;
+  display: flex;
+  align-items: right;
+  z-index: 2;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  padding: 15px;
+  color: white;
+  transition: 0.6s ease;
+  border-radius: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  border: 1px solid wheat;
+}
+
+.next {
+  border-radius: 100%;
+  margin-left: 10px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(4, 75, 54, 0.8);
+}
+
+.text-second {
+  position: absolute;
+  top: 80%;
+  left: 38%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  text-align: justify;
+}
+
+.developer-main {
+  display: flex;
+}
+
+.developer-logo {
+  position: absolute;
+  top: 60%;
+  left: 6%;
+  z-index: 3;
+  background-color: white;
+  border-radius: 50%;
+  width: 50px; /* Specify the width and height of the div */
+  height: 50px; /* Specify the width and height of the div */
+  padding: 5px; /* Add padding to create the border */
+  box-sizing: content-box; /* Ensure the padding is included in the width and height */
+  border: 5px solid white; /* Add a white border */
+}
+
+.developer-logo img {
+  display: block;
+  width: 100%; /* Set the width to 100% */
+  height: 100%; /* Set the height to 100% */
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 50%;
+}
+
+.developer-caption {
+  z-index: 3;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  position: absolute;
+  top: 62%;
+  left: 18%;
+  margin-left: 4px; /* Add some margin between the logo and caption */
+}
+.developer-caption caption {
+  margin: 0;
+  padding: 1px;
+}
+.developer-caption label {
+  font-size: 12px;
+}
+
+/*
+    Montserrat -  paragraph
+    Raleway - sub heading
+    Poppins - main heading
+*/
 * {
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+body {
+  height: 100% vh;
+  background-color: #f8fbf9;
 }/*# sourceMappingURL=main.css.map */
