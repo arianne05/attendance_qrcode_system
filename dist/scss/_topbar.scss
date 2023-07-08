@@ -1,0 +1,16 @@
+@import './_resource.scss';
+
+.dashboard-top-bar{
+    display: flex;
+    border: 1px solid black;
+    height: 5vh;
+
+    .top-bar-right{
+        border: 1px solid black;
+        width: 80vw;
+    }
+    .top-bar-left{
+        border: 1px solid black;
+        width: 20vw;
+    }
+}

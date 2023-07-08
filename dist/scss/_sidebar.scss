@@ -1,0 +1,21 @@
+@import './_resource.scss';
+
+.sidebar-container {
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    width: 20vw;
+    border: 1px solid red;
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        // text-align: center;
+      }
+      
+      li {
+        margin-bottom: 10px;
+      }
+}
+  
