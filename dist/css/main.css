@@ -409,11 +409,98 @@
   font-weight: lighter;
 }
 .dashboard-top-bar .top-bar-right {
-  border: 1px solid black;
   width: 83vw;
   font-size: 26px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+.dashboard-top-bar .top-bar-right .left-section-topbar {
+  display: flex;
+  align-items: center;
+}
+.dashboard-top-bar .top-bar-right .right-section-topbar {
+  display: flex;
+  align-items: center;
+}
+.dashboard-top-bar .top-bar-right .position {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+.dashboard-top-bar .top-bar-right .position .dropdown {
+  display: flex;
+  align-items: center;
+  position: relative;
+  display: inline-block;
+  font-family: "Inter", sans-serif;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.dashboard-top-bar .top-bar-right .position .dropdown-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  padding-top: 25px;
+}
+.dashboard-top-bar .top-bar-right .position .dropdown-btn .userName {
+  font-size: 15px;
+  color: black;
+}
+.dashboard-top-bar .top-bar-right .position .dropdown-btn .labelPosition {
+  font-size: 12px;
+  color: rgb(64, 172, 64);
+}
+.dashboard-top-bar .top-bar-right .position .dropdown-btn #iconDrop {
+  margin-left: 30px;
+  padding-bottom: 25px;
+}
+.dashboard-top-bar .top-bar-right .position .dropdown-content {
+  font-family: "Inter", sans-serif;
+  display: none;
+  position: absolute;
+  right: 10%;
+  top: 90%;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dashboard-top-bar .top-bar-right .position .dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dashboard-top-bar .top-bar-right .position .dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+.dashboard-top-bar .top-bar-right .position .dropdown:hover .dropdown-content {
+  display: block;
+}
+.dashboard-top-bar .top-bar-right .position p {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  text-align: left;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 0;
+  color: black;
+}
+.dashboard-top-bar .top-bar-right .position .admin {
+  margin: 0;
+  padding: 0;
+  color: rgb(93, 209, 93);
+}
+.dashboard-top-bar .top-bar-right .position .circle-user {
+  color: rgb(93, 209, 93);
+  font-size: 20px;
+}
+.dashboard-top-bar .top-bar-right .position .circle-user span {
+  background-color: rgb(188, 253, 188);
+  padding: 5px;
+  border-radius: 500px;
 }
 .dashboard-top-bar .top-bar-left {
   width: 17vw;
