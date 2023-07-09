@@ -3,19 +3,35 @@
 .sidebar-container {
     display: flex;
     flex-direction: column;
-    // align-items: center;
-    width: 20vw;
-    border: 1px solid red;
-
-    ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        // text-align: center;
-      }
+    align-items: center;
+    width: 17vw;
+    // border: 1px solid red;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
       
       li {
+        font-family: 'Inter', sans-serif;
         margin-bottom: 10px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+
+        svg{
+          margin-right: 10px;
+        }
+      }
+
+      .section-first-ul{
+        list-style-type: none;
+        padding-top: 20px;
+        margin: 0;
+      }
+      .section-second-ul{
+        list-style-type: none;
+        padding-top: 10px;
+        margin: 0;
       }
 }
+
+
   

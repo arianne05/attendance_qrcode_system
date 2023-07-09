@@ -6,6 +6,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;1,200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
 .main-section {
   display: flex;
 }
@@ -362,16 +363,30 @@
 .sidebar-container {
   display: flex;
   flex-direction: column;
-  width: 20vw;
-  border: 1px solid red;
-}
-.sidebar-container ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+  align-items: center;
+  width: 17vw;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
 }
 .sidebar-container li {
+  font-family: "Inter", sans-serif;
   margin-bottom: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+.sidebar-container li svg {
+  margin-right: 10px;
+}
+.sidebar-container .section-first-ul {
+  list-style-type: none;
+  padding-top: 20px;
+  margin: 0;
+}
+.sidebar-container .section-second-ul {
+  list-style-type: none;
+  padding-top: 10px;
+  margin: 0;
 }
 
 /*
@@ -381,16 +396,32 @@
 */
 .dashboard-top-bar {
   display: flex;
-  border: 1px solid black;
-  height: 5vh;
+  height: 8vh;
+  font-family: "Poppins", sans-serif;
 }
 .dashboard-top-bar .top-bar-right {
   border: 1px solid black;
-  width: 80vw;
+  width: 83vw;
+  font-size: 26px;
+  display: flex;
+  align-items: center;
 }
 .dashboard-top-bar .top-bar-left {
-  border: 1px solid black;
-  width: 20vw;
+  width: 17vw;
+  font-size: 20px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+.dashboard-top-bar .top-bar-left img {
+  width: 60px; /* Adjust the width as needed */
+  height: auto;
+  margin-right: 10px;
+  margin-left: 30px;
+}
+.dashboard-top-bar .top-bar-left p {
+  margin: 0;
 }
 
 /*
@@ -401,13 +432,13 @@
 .dashboard-main-content {
   display: flex;
   justify-content: center;
-  height: 95vh;
+  height: 92vh;
   overflow: hidden;
 }
 
 .dashboard-content {
   border: 1px solid rgb(55, 0, 255);
-  width: 60vw;
+  width: 63vw;
   height: 100vh;
 }
 

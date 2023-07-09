@@ -2,15 +2,34 @@
 
 .dashboard-top-bar{
     display: flex;
-    border: 1px solid black;
-    height: 5vh;
-
+    // border: 1px solid black;
+    height: 8vh;
+    font-family: 'Poppins', sans-serif;
+    
     .top-bar-right{
         border: 1px solid black;
-        width: 80vw;
+        width: 83vw;
+        font-size: 26px;
+        display: flex;
+        align-items: center;
     }
     .top-bar-left{
-        border: 1px solid black;
-        width: 20vw;
+        // border: 1px solid black;
+        width: 17vw;
+        font-size: 20px;
+        padding-top: 20px;
+        padding-bottom: 10px;
+        display: flex;
+        align-items: center;
+        img{
+            width: 60px; /* Adjust the width as needed */
+            height: auto;
+            margin-right: 10px;
+            margin-left: 30px;
+        }
+        p{
+            margin: 0;
+        }
     }
+    
 }
