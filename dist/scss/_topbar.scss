@@ -3,7 +3,7 @@
 .dashboard-top-bar{
     display: flex;
     // border: 1px solid black;
-    height: 8vh;
+    height: 10vh;
     font-family: 'Poppins', sans-serif;
     font-weight: lighter;
 
@@ -17,7 +17,21 @@
 
         .left-section-topbar{
             display: flex;
-            align-items: center;
+            align-items: flex-start;
+
+            svg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                margin-left: 17vw;
+                margin-top: 7.5vh;
+            }
+
+            p{
+                margin: 0;
+                padding: 0;
+                white-space: nowrap;
+            }
         }
 
         .right-section-topbar{

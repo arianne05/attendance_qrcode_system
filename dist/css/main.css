@@ -367,6 +367,8 @@
   width: 17vw;
   font-family: "Poppins", sans-serif;
   font-size: 18px;
+  position: fixed;
+  left: 0;
 }
 .sidebar-container li {
   font-family: "Inter", sans-serif;
@@ -404,7 +406,7 @@
 */
 .dashboard-top-bar {
   display: flex;
-  height: 8vh;
+  height: 10vh;
   font-family: "Poppins", sans-serif;
   font-weight: lighter;
 }
@@ -417,7 +419,19 @@
 }
 .dashboard-top-bar .top-bar-right .left-section-topbar {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+}
+.dashboard-top-bar .top-bar-right .left-section-topbar svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 17vw;
+  margin-top: 7.5vh;
+}
+.dashboard-top-bar .top-bar-right .left-section-topbar p {
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
 }
 .dashboard-top-bar .top-bar-right .right-section-topbar {
   display: flex;
@@ -563,14 +577,32 @@
 .dashboard-main-content {
   display: flex;
   justify-content: center;
-  height: 92vh;
+  height: 90vh;
   overflow: hidden;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
 }
 
 .dashboard-content {
-  border: 1px solid rgb(55, 0, 255);
   width: 63vw;
   height: 100vh;
+  margin-left: 17vw;
+}
+.dashboard-content p {
+  font-size: 20px;
+}
+.dashboard-content .overview-section {
+  border: 1px solid black;
+  display: flex;
+  width: 100%;
+}
+.dashboard-content .overview-section .total-record-section {
+  border: 1px solid black;
+  flex: 1;
+}
+.dashboard-content .overview-section .total-per-category {
+  border: 1px solid black;
+  flex: 1;
 }
 
 .dashboard-content-right {
