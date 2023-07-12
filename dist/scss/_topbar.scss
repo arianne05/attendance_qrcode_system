@@ -23,6 +23,48 @@
         .right-section-topbar{
             display: flex;
             align-items: center;
+
+            i{
+                color: $primary-text-gray;
+                font-size: 20px;
+                margin-right: 10px;
+                margin-left: 20px;
+                margin-top: 0;
+                margin-bottom: 0;
+                padding: 0;
+
+                &:hover{
+                    color: $primary-buttonBg-green;
+                }
+            }
+
+            .search-section {
+                display: flex;
+                align-items: center;
+                width: 250px; /* adjust the width as needed */
+                border: 1px solid #B9B9B9;
+                border-radius: 80px;
+                padding: 5px;
+
+                &:hover{
+                    border: 1px solid $primary-buttonBg-green;
+                }
+              }
+              
+              .search-section input[type="text"] {
+                flex: 1;
+                border: none;
+                outline: none;
+                padding: 5px;
+              }
+              
+              .search-section svg {
+                margin-left: 5px;
+                fill: #ff0000;
+                cursor: pointer;
+              }
+              
+            
         }
 
         .position{
@@ -65,6 +107,7 @@
               
               .dropdown-content {
                 font-family: 'Inter', sans-serif;
+                font-size: 12px;
                 display: none;
                 position: absolute;
                 right: 10%;
@@ -76,7 +119,7 @@
               
               .dropdown-content a {
                 color: #333;
-                padding: 12px 16px;
+                padding: 12px 30px;
                 text-decoration: none;
                 display: block;
               }
