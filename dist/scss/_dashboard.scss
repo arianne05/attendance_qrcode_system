@@ -25,13 +25,10 @@
         border-radius: 20px;
         display: flex;
         width: 100%;
-        // height: 40%;
         background-color: white;
         padding: 10px;
 
         .total-record-section{
-            // border: 1px solid black;
-            // flex: 1;
             width: 30%;
             text-align: center;
             font-family: 'Poppins', sans-serif;
@@ -57,7 +54,6 @@
                     width: 20px;
                     color: $primary-text-gray2;
                     font-family: 'Inter', sans-serif;
-                    // margin-bottom: 10px;
                 }
             }
 
@@ -69,12 +65,17 @@
                 border-radius: 20px;
                 border: none;
                 margin-top: 10px;
+                &:hover{
+                    background-color: $green1-hover;
+                    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+                    cursor: pointer;
+                    color: $tertiary-text-black;
+                }
             }
         }
     
         .total-per-category{
             display: flex;
-            // border: 1px solid black;
             width:70%;
             font-family: 'Inter', sans-serif;
             color: $tertiary-text-black;
@@ -83,12 +84,10 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                // border: 1px solid black;
                 
             }
             .text-right{
                 flex: 1;
-                // border: 1px solid black;
                 max-height: 100%;
                 max-width: 100%;
                 display: flex;
@@ -122,6 +121,11 @@
                             font-size: 14px;
                         }
                     }
+                    &:hover{
+                        background-color: $green1-hover;
+                        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+                        cursor: pointer;
+                    }
                     
                 }
                 .female-student{
@@ -151,6 +155,11 @@
                             font-size: 14px;
                         }
                     }
+                    &:hover{
+                        background-color: $green1-hover;
+                        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+                        cursor: pointer;
+                    }
                 }
                 .prof{
                     display: flex;
@@ -178,6 +187,12 @@
                         p{
                             font-size: 14px;
                         }
+                    }
+
+                    &:hover{
+                        background-color: $green1-hover;
+                        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+                        cursor: pointer;
                     }
                 }
             }

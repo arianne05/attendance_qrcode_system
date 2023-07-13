@@ -634,6 +634,12 @@
   border: none;
   margin-top: 10px;
 }
+.dashboard-content .overview-section .total-record-section button:hover {
+  background-color: #EDFFEF;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  color: #3D3D3D;
+}
 .dashboard-content .overview-section .total-per-category {
   display: flex;
   width: 70%;
@@ -682,6 +688,11 @@
 .dashboard-content .overview-section .total-per-category .text-right .male-student .male-caption p {
   font-size: 14px;
 }
+.dashboard-content .overview-section .total-per-category .text-right .male-student:hover {
+  background-color: #EDFFEF;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
 .dashboard-content .overview-section .total-per-category .text-right .female-student {
   display: flex;
   align-items: center;
@@ -710,6 +721,11 @@
 .dashboard-content .overview-section .total-per-category .text-right .female-student .female-caption p {
   font-size: 14px;
 }
+.dashboard-content .overview-section .total-per-category .text-right .female-student:hover {
+  background-color: #EDFFEF;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
 .dashboard-content .overview-section .total-per-category .text-right .prof {
   display: flex;
   align-items: center;
@@ -737,6 +753,11 @@
 }
 .dashboard-content .overview-section .total-per-category .text-right .prof .prof-caption p {
   font-size: 14px;
+}
+.dashboard-content .overview-section .total-per-category .text-right .prof:hover {
+  background-color: #EDFFEF;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 .dashboard-content-right {
