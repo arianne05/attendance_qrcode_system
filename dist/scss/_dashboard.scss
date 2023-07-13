@@ -16,21 +16,171 @@
 
     p{
         font-size: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 
     .overview-section{
-        border: 1px solid black;
+        border: 1px solid $primary-text-gray;
+        border-radius: 20px;
         display: flex;
         width: 100%;
+        // height: 40%;
+        background-color: white;
+        padding: 10px;
 
         .total-record-section{
-            border: 1px solid black;
-            flex: 1;
+            // border: 1px solid black;
+            // flex: 1;
+            width: 30%;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            padding: 20px;
+
+            h1{
+                font-size: 70px;
+                margin-bottom: 0;
+                padding-bottom: 0;
+                color: $tertiary-text-black;
+            }
+
+            .school-name{
+                p{
+                    font-size: 15px;
+                    font-weight: 100px;
+                    margin-top: 0;
+                    padding-top: 0;
+
+                }
+                .school-label{
+                    font-size: 12px;
+                    width: 20px;
+                    color: $primary-text-gray2;
+                    font-family: 'Inter', sans-serif;
+                    // margin-bottom: 10px;
+                }
+            }
+
+            button{
+                background-color: $fourth-buttonBg-green;
+                color: $primary-text-white;
+                width: 165px;
+                height: 45px;
+                border-radius: 20px;
+                border: none;
+                margin-top: 10px;
+            }
         }
     
         .total-per-category{
-            border: 1px solid black;
-            flex: 1;
+            display: flex;
+            // border: 1px solid black;
+            width:70%;
+            font-family: 'Inter', sans-serif;
+            color: $tertiary-text-black;
+            .image-left{
+                flex: 1.5;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                // border: 1px solid black;
+                
+            }
+            .text-right{
+                flex: 1;
+                // border: 1px solid black;
+                max-height: 100%;
+                max-width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                
+                .male-student{
+                    display: flex;
+                    align-items: center;
+                    border: 1px solid $primary-text-gray;
+                    height: 33%;
+                    width: 75%;
+                    margin: 5px;
+                    border-radius: 10px;
+                    .male-img{
+                        flex: 1;
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+                    }
+                    .male-caption{
+                        flex: 1;
+                        h1{
+                            color: $tertiary-text-black;
+                        }
+                        span{
+                            color: $primary-text-gray2;
+                            font-size: 12px;
+                        }
+                        p{
+                            font-size: 14px;
+                        }
+                    }
+                    
+                }
+                .female-student{
+                    display: flex;
+                    align-items: center;
+                    border: 1px solid $primary-text-gray;
+                    height: 33%;
+                    width: 75%;
+                    margin: 5px;
+                    border-radius: 10px;
+                    .female-img{
+                        flex: 1;
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+                    }
+                    .female-caption{
+                        flex: 1;
+                        h1{
+                            color: $tertiary-text-black;
+                        }
+                        span{
+                            color: $primary-text-gray2;
+                            font-size: 12px;
+                        }
+                        p{
+                            font-size: 14px;
+                        }
+                    }
+                }
+                .prof{
+                    display: flex;
+                    align-items: center;
+                    border: 1px solid $primary-text-gray;
+                    height: 34%;
+                    width: 75%;
+                    margin: 5px;
+                    border-radius: 10px;
+                    .prof-img{
+                        flex: 1;
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+                    }
+                    .prof-caption{
+                        flex: 1;
+                        h1{
+                            color: $tertiary-text-black;
+                        }
+                        span{
+                            color: $primary-text-gray2;
+                            font-size: 12px;
+                        }
+                        p{
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
         }
     }
     
