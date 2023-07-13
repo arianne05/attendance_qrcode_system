@@ -597,7 +597,7 @@
   border: 1px solid rgb(185, 185, 185);
   border-radius: 20px;
   display: flex;
-  width: 100%;
+  width: 97%;
   background-color: white;
   padding: 10px;
 }
@@ -762,8 +762,44 @@
 
 .dashboard-content-right {
   height: 100vh;
-  width: 20vw;
-  border: 1px solid rgb(0, 255, 255);
+  width: 19vw;
+  border: 1px solid black;
+  padding: 10px;
+}
+.dashboard-content-right p {
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.dashboard-content-right #calendar {
+  max-width: 100%;
+  width: 100%;
+  height: 26%;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid rgb(185, 185, 185);
+  border-radius: 12px;
+}
+.dashboard-content-right .header {
+  margin-bottom: 10px;
+}
+.dashboard-content-right .weekdays,
+.dashboard-content-right .days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+}
+.dashboard-content-right .weekdays {
+  font-size: 10px;
+}
+.dashboard-content-right .days span {
+  padding: 5px;
+  font-size: 12px;
+}
+.dashboard-content-right .days span.current-day {
+  cursor: pointer;
+  background-color: #549c6c;
+  border-radius: 100%;
 }
 
 * {
