@@ -584,7 +584,7 @@
 }
 
 .dashboard-content {
-  width: 63vw;
+  width: 61vw;
   height: 100vh;
   margin-left: 17vw;
 }
@@ -597,7 +597,7 @@
   border: 1px solid rgb(185, 185, 185);
   border-radius: 20px;
   display: flex;
-  width: 97%;
+  width: 98%;
   background-color: white;
   padding: 10px;
 }
@@ -762,8 +762,7 @@
 
 .dashboard-content-right {
   height: 100vh;
-  width: 20vw;
-  border: 1px solid black;
+  width: 22vw;
   padding: 10px;
 }
 .dashboard-content-right p {
@@ -776,6 +775,7 @@
   border: 1px solid #CDCDCD;
   border-radius: 12px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  height: 33vh;
 }
 .dashboard-content-right .button-calendar {
   display: flex;
@@ -847,6 +847,80 @@
 .dashboard-content-right #clock .day {
   font-size: 14px;
   color: rgb(124, 124, 124);
+}
+.dashboard-content-right .faculty-member-main {
+  background-color: white;
+  border: 1px solid #CDCDCD;
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin-top: 20px;
+  padding: 10px;
+  height: 47vh;
+}
+.dashboard-content-right .header-filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.dashboard-content-right .header-filter i {
+  margin-right: 10px;
+}
+.dashboard-content-right .header-filter p {
+  margin-left: 5px;
+}
+.dashboard-content-right .members-circle {
+  display: flex;
+}
+.dashboard-content-right .members-circle p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  margin: 3px;
+  background-color: aquamarine;
+  border-radius: 20px;
+}
+.dashboard-content-right .members-circle .add-user {
+  border: 2px dashed aquamarine;
+  background-color: #e1efe6;
+}
+.dashboard-content-right .recents-activity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.dashboard-content-right .recents-activity .circle-user-recent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  background-color: aquamarine;
+  border-radius: 20px;
+  margin-right: 5px;
+}
+.dashboard-content-right .recents-activity .time-user-activity {
+  font-size: 12px;
+  color: rgb(124, 124, 124);
+  margin: 0;
+  padding: 0;
+}
+.dashboard-content-right .recents-activity .desc-user-activity {
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+}
+.dashboard-content-right .view-more {
+  font-size: 12px;
+  color: rgb(124, 124, 124);
+  display: flex;
+  justify-content: flex-end;
+}
+.dashboard-content-right .view-more:hover {
+  color: #549c6c;
+  cursor: pointer;
 }
 
 * {
