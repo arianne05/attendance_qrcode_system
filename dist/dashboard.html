@@ -179,13 +179,22 @@
 
           <section class="dashboard-content-right">
                 <p>Today</p>
-                <div class="calendar-container">
-                    <div id="calendar"></div>
+                <div class="time-calendar">
+                    <div id="clock">
+                        <span class="time"></span>
+                        <span class="day"></span>
+                    </div>
+                    <div class="calendar-container">
+                        <div id="calendar"></div>
+                    </div>
+                    <div class="button-calendar">
+                        <button id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
+                        <button id="nextBtn"><i class="fa-solid fa-chevron-right"></i></i></button>
+                    </div>
                 </div>
-                <button id="prevBtn">Previous</button>
-                <button id="nextBtn">Next</button>
                 
                 <script src="./js/calendar.js"></script>
+                <script src="./js/time.js"></script>
           </section>
     </div>
 </body>

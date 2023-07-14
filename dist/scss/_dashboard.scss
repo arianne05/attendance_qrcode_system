@@ -203,14 +203,44 @@
 
 .dashboard-content-right {
     height: 100vh;
-    width: 19vw;
+    width: 20vw;
     border: 1px solid black;
     padding: 10px;
     // margin-right: 10px;
     p{
-        font-size: 20px;
+        font-size: 16px;
         margin-top: 10px;
         margin-bottom: 10px;
+    }
+
+    .time-calendar{
+        background-color: white;
+        border: 1px solid #CDCDCD;
+        border-radius: 12px;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    .button-calendar{
+        display: flex;
+        // justify-content: center;
+        justify-content: space-between;
+
+        button{
+            padding-top: 4px;
+            padding-bottom: 4px;
+            padding-right: 8px;
+            padding-left: 8px;
+            margin-bottom: 20px;
+            margin-left: 20px;
+            margin-right: 20px;
+            border-radius: 20px;
+            border: 1px solid $primary-text-gray;
+            background-color: transparent;
+
+            &:hover{
+                background-color: $primary-buttonBg-green;
+            }
+        }
     }
 
     // calendar
@@ -218,39 +248,65 @@
         max-width: 100%;
         width: 100%;
         height: 26%;
-        padding: 10px;
+        padding-top: 0;
+        padding-left: 10px;
+        padding-bottom: 10px;
+        padding-right: 10px;
+        margin-top: 0;
         background-color: white;
-        border: 1px solid $primary-text-gray;
         border-radius: 12px;
+
+        .header {
+            margin-bottom: 10px;
+            color: $tertiary-text-black;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            margin-top: 0;
+          }
+          
+          .weekdays,
+          .days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            text-align: center;
+          }
+          
+          .weekdays{
+            font-size: 10px;
+          }
+          
+          .days span {
+            padding: 5px;
+            font-size: 12px;
+          }
+          
+          .days span.current-day {
+            cursor: pointer;
+            background-color: $primary-buttonBg-green;
+            border-radius: 100%;
+          }
       }
       
-      .header {
-        // text-align: center;
-        margin-bottom: 10px;
-      }
-      
-      .weekdays,
-      .days {
-        display: grid;
-        grid-template-columns: repeat(7, 1fr);
-        text-align: center;
-      }
-      
-      .weekdays{
-        font-size: 10px;
-      }
-      
-      .days span {
-        padding: 5px;
-        font-size: 12px;
-        // border: 1px solid #ccc;
-      }
-      
-      .days span.current-day {
-        cursor: pointer;
-        background-color: $primary-buttonBg-green;
-        border-radius: 100%;
-      }
+    // time
+    #clock {
+        font-family: Arial, sans-serif;
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-bottom: 0;
+        margin-bottom: 0;
+
+        .time {
+            font-size: 27px;
+            color: $tertiary-text-black;
+            }
+            
+        .day {
+            font-size: 14px;
+            color: $primary-text-gray2;
+            }
+    }
+    
+    
       
       
       

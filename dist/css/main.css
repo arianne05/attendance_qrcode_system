@@ -762,44 +762,91 @@
 
 .dashboard-content-right {
   height: 100vh;
-  width: 19vw;
+  width: 20vw;
   border: 1px solid black;
   padding: 10px;
 }
 .dashboard-content-right p {
-  font-size: 20px;
+  font-size: 16px;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+.dashboard-content-right .time-calendar {
+  background-color: white;
+  border: 1px solid #CDCDCD;
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.dashboard-content-right .button-calendar {
+  display: flex;
+  justify-content: space-between;
+}
+.dashboard-content-right .button-calendar button {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 8px;
+  padding-left: 8px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 20px;
+  border: 1px solid rgb(185, 185, 185);
+  background-color: transparent;
+}
+.dashboard-content-right .button-calendar button:hover {
+  background-color: #549c6c;
 }
 .dashboard-content-right #calendar {
   max-width: 100%;
   width: 100%;
   height: 26%;
-  padding: 10px;
+  padding-top: 0;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  margin-top: 0;
   background-color: white;
-  border: 1px solid rgb(185, 185, 185);
   border-radius: 12px;
 }
-.dashboard-content-right .header {
+.dashboard-content-right #calendar .header {
   margin-bottom: 10px;
+  color: #3D3D3D;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 0;
 }
-.dashboard-content-right .weekdays,
-.dashboard-content-right .days {
+.dashboard-content-right #calendar .weekdays,
+.dashboard-content-right #calendar .days {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   text-align: center;
 }
-.dashboard-content-right .weekdays {
+.dashboard-content-right #calendar .weekdays {
   font-size: 10px;
 }
-.dashboard-content-right .days span {
+.dashboard-content-right #calendar .days span {
   padding: 5px;
   font-size: 12px;
 }
-.dashboard-content-right .days span.current-day {
+.dashboard-content-right #calendar .days span.current-day {
   cursor: pointer;
   background-color: #549c6c;
   border-radius: 100%;
+}
+.dashboard-content-right #clock {
+  font-family: Arial, sans-serif;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.dashboard-content-right #clock .time {
+  font-size: 27px;
+  color: #3D3D3D;
+}
+.dashboard-content-right #clock .day {
+  font-size: 14px;
+  color: rgb(124, 124, 124);
 }
 
 * {
