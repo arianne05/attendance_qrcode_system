@@ -1,0 +1,28 @@
+@import "./_resource.scss";
+
+.reports-total-container {
+  //   border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  //   align-items: flex-start;
+  height: 15vh;
+  width: 80vw;
+  margin-top: 2vh;
+  margin-left: 17vw;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+
+  .total-user {
+    border: 1px solid red;
+    width: 30%;
+    // height: 100%;
+  }
+  .total-student {
+    border: 1px solid red;
+    width: 30%;
+  }
+  .total-teacher {
+    border: 1px solid red;
+    width: 30%;
+  }
+}

@@ -394,6 +394,10 @@
   list-style-type: none;
   margin-top: 20px;
 }
+.sidebar-container .section-first-ul a {
+  text-decoration: none;
+  color: inherit;
+}
 .sidebar-container .section-second-ul {
   list-style-type: none;
   margin: 0;
@@ -987,6 +991,34 @@
 .dashboard-content-right .view-more:hover {
   color: #549c6c;
   cursor: pointer;
+}
+
+/*
+    Montserrat -  paragraph
+    Raleway - sub heading
+    Poppins - main heading
+*/
+.reports-total-container {
+  display: flex;
+  justify-content: space-between;
+  height: 15vh;
+  width: 80vw;
+  margin-top: 2vh;
+  margin-left: 17vw;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+}
+.reports-total-container .total-user {
+  border: 1px solid red;
+  width: 30%;
+}
+.reports-total-container .total-student {
+  border: 1px solid red;
+  width: 30%;
+}
+.reports-total-container .total-teacher {
+  border: 1px solid red;
+  width: 30%;
 }
 
 * {
