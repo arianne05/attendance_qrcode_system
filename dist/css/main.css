@@ -759,6 +759,29 @@
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
+.dashboard-content .table-header {
+  display: flex;
+  align-items: center;
+}
+.dashboard-content .table-header .sort-latest {
+  background-color: #25582A;
+  color: white;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 50px;
+  margin-left: 10px;
+}
+.dashboard-content .table-header .sort-latest select {
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 12px;
+}
+.dashboard-content .table-header .sort-latest i {
+  font-size: 12px;
+}
 .dashboard-content .table-main-dashboard {
   background-color: white;
   border: 1px solid #CDCDCD;

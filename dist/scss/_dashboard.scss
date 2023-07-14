@@ -198,6 +198,32 @@
         }
     }
     
+    // Tables
+    .table-header{
+        display: flex;
+        align-items: center;
+        
+        .sort-latest{
+            background-color: $fourth-buttonBg-green;
+            color: white;
+            padding-top: 3px;
+            padding-bottom: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-radius: 50px;
+            margin-left: 10px;
+            select{
+                border: none;
+                background-color: transparent;
+                color: white;
+                font-size: 12px;
+            }
+            i{
+                font-size: 12px;
+            }
+        }
+        
+    }
     .table-main-dashboard{
         background-color: white;
         border: 1px solid #CDCDCD;
@@ -225,7 +251,7 @@
             }
         }
 
-        // Tables
+        
         .table-dashboard{
             width: 98%;
             padding: 20px;
