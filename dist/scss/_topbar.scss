@@ -1,0 +1,201 @@
+@import './_resource.scss';
+
+.dashboard-top-bar{
+    display: flex;
+    // border: 1px solid black;
+    height: 10vh;
+    font-family: 'Poppins', sans-serif;
+    font-weight: lighter;
+
+    .top-bar-right{  
+        // border: 1px solid black;
+        width: 83vw;
+        font-size: 26px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .left-section-topbar{
+            display: flex;
+            align-items: flex-start;
+
+            svg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                margin-left: 17vw;
+                margin-top: 7.5vh;
+            }
+
+            p{
+                margin: 0;
+                padding: 0;
+                white-space: nowrap;
+            }
+        }
+
+        .right-section-topbar{
+            display: flex;
+            align-items: center;
+
+            i{
+                color: $primary-text-gray;
+                font-size: 20px;
+                margin-right: 10px;
+                margin-left: 20px;
+                margin-top: 0;
+                margin-bottom: 0;
+                padding: 0;
+
+                &:hover{
+                    color: $primary-buttonBg-green;
+                }
+            }
+
+            .search-section {
+                display: flex;
+                align-items: center;
+                width: 250px; /* adjust the width as needed */
+                border: 1px solid #B9B9B9;
+                border-radius: 80px;
+                padding: 5px;
+
+                &:hover{
+                    border: 1px solid $primary-buttonBg-green;
+                }
+              }
+              
+              .search-section input[type="text"] {
+                flex: 1;
+                border: none;
+                outline: none;
+                padding: 5px;
+              }
+              
+              .search-section svg {
+                margin-left: 5px;
+                fill: #ff0000;
+                cursor: pointer;
+              }
+              
+            
+        }
+
+        .position{
+            // border: 1px solid black;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+
+            // test dropdown
+            .dropdown {
+                display: flex;
+                align-items: center;
+                position: relative;
+                display: inline-block;
+                font-family: 'Inter', sans-serif;
+                margin-left: 10px;
+                margin-right: 10px;
+              }
+              
+              .dropdown-btn {
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                text-align: left;
+                padding-top: 25px;
+                .userName{
+                    font-size: 15px;
+                    color: black;
+                }
+                .labelPosition{
+                    font-size: 12px;
+                    color: rgb(64, 172, 64);
+                }
+                #iconDrop{
+                    margin-left: 30px;
+                    padding-bottom: 25px;
+                  }
+              }
+              
+              .dropdown-content {
+                font-family: 'Inter', sans-serif;
+                font-size: 12px;
+                display: none;
+                position: absolute;
+                right: 10%;
+                top: 90%;
+                background-color: #f9f9f9;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 1;
+              }
+              
+              .dropdown-content a {
+                color: #333;
+                padding: 12px 30px;
+                text-decoration: none;
+                display: block;
+              }
+              
+              .dropdown-content a:hover {
+                background-color: #f1f1f1;
+              }
+              
+              .dropdown:hover .dropdown-content {
+                display: block;
+              }
+            // end test   
+   
+            p{
+                font-family: 'Inter', sans-serif;
+                font-size: 15px;
+                text-align: left;
+                margin-right: 10px;
+                margin-left: 10px;
+                padding: 0;
+                color: black;
+            }
+            .admin{
+                margin: 0;
+                padding: 0;
+                color: rgb(93, 209, 93);
+            }
+            .circle-user{
+                color: rgb(93, 209, 93);
+                font-size: 20px;
+                span{
+                    background-color: rgb(188, 253, 188);
+                    padding: 5px;
+                    border-radius: 500px;
+                }
+            }
+        }
+    }
+
+    .top-bar-left{
+        // border: 1px solid black;
+        width: 17vw;
+        font-size: 20px;
+        padding-top: 20px;
+        padding-bottom: 10px;
+        display: flex;
+        align-items: center;
+        img{
+            width: 60px; /* Adjust the width as needed */
+            height: auto;
+            margin-right: 10px;
+            margin-left: 30px;
+        }
+        p{
+            margin: 0;
+            // color: red;
+            
+        }
+    }
+
+    
+      
+
+    
+}

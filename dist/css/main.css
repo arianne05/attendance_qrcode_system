@@ -6,6 +6,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;1,200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
 .main-section {
   display: flex;
 }
@@ -354,6 +355,640 @@
     Raleway - sub heading
     Poppins - main heading
 */
+/*
+    Montserrat -  paragraph
+    Raleway - sub heading
+    Poppins - main heading
+*/
+.sidebar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 17vw;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  position: fixed;
+  left: 0;
+}
+.sidebar-container li {
+  font-family: "Inter", sans-serif;
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin: 8px;
+  border-radius: 20px;
+  color: rgb(124, 124, 124);
+}
+.sidebar-container li:hover {
+  background-color: #dcf7ec;
+  color: #040705;
+  font-weight: 500;
+}
+.sidebar-container svg {
+  margin-right: 10px;
+}
+.sidebar-container .section-first-ul {
+  list-style-type: none;
+  margin-top: 20px;
+}
+.sidebar-container .section-second-ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+/*
+    Montserrat -  paragraph
+    Raleway - sub heading
+    Poppins - main heading
+*/
+.dashboard-top-bar {
+  display: flex;
+  height: 10vh;
+  font-family: "Poppins", sans-serif;
+  font-weight: lighter;
+}
+.dashboard-top-bar .top-bar-right {
+  width: 83vw;
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.dashboard-top-bar .top-bar-right .left-section-topbar {
+  display: flex;
+  align-items: flex-start;
+}
+.dashboard-top-bar .top-bar-right .left-section-topbar svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 17vw;
+  margin-top: 7.5vh;
+}
+.dashboard-top-bar .top-bar-right .left-section-topbar p {
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+.dashboard-top-bar .top-bar-right .right-section-topbar {
+  display: flex;
+  align-items: center;
+}
+.dashboard-top-bar .top-bar-right .right-section-topbar i {
+  color: rgb(185, 185, 185);
+  font-size: 20px;
+  margin-right: 10px;
+  margin-left: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+.dashboard-top-bar .top-bar-right .right-section-topbar i:hover {
+  color: #549c6c;
+}
+.dashboard-top-bar .top-bar-right .right-section-topbar .search-section {
+  display: flex;
+  align-items: center;
+  width: 250px; /* adjust the width as needed */
+  border: 1px solid #B9B9B9;
+  border-radius: 80px;
+  padding: 5px;
+}
+.dashboard-top-bar .top-bar-right .right-section-topbar .search-section:hover {
+  border: 1px solid #549c6c;
+}
+.dashboard-top-bar .top-bar-right .right-section-topbar .search-section input[type=text] {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 5px;
+}
+.dashboard-top-bar .top-bar-right .right-section-topbar .search-section svg {
+  margin-left: 5px;
+  fill: #ff0000;
+  cursor: pointer;
+}
+.dashboard-top-bar .top-bar-right .position {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+.dashboard-top-bar .top-bar-right .position .dropdown {
+  display: flex;
+  align-items: center;
+  position: relative;
+  display: inline-block;
+  font-family: "Inter", sans-serif;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.dashboard-top-bar .top-bar-right .position .dropdown-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  padding-top: 25px;
+}
+.dashboard-top-bar .top-bar-right .position .dropdown-btn .userName {
+  font-size: 15px;
+  color: black;
+}
+.dashboard-top-bar .top-bar-right .position .dropdown-btn .labelPosition {
+  font-size: 12px;
+  color: rgb(64, 172, 64);
+}
+.dashboard-top-bar .top-bar-right .position .dropdown-btn #iconDrop {
+  margin-left: 30px;
+  padding-bottom: 25px;
+}
+.dashboard-top-bar .top-bar-right .position .dropdown-content {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  display: none;
+  position: absolute;
+  right: 10%;
+  top: 90%;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dashboard-top-bar .top-bar-right .position .dropdown-content a {
+  color: #333;
+  padding: 12px 30px;
+  text-decoration: none;
+  display: block;
+}
+.dashboard-top-bar .top-bar-right .position .dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+.dashboard-top-bar .top-bar-right .position .dropdown:hover .dropdown-content {
+  display: block;
+}
+.dashboard-top-bar .top-bar-right .position p {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  text-align: left;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 0;
+  color: black;
+}
+.dashboard-top-bar .top-bar-right .position .admin {
+  margin: 0;
+  padding: 0;
+  color: rgb(93, 209, 93);
+}
+.dashboard-top-bar .top-bar-right .position .circle-user {
+  color: rgb(93, 209, 93);
+  font-size: 20px;
+}
+.dashboard-top-bar .top-bar-right .position .circle-user span {
+  background-color: rgb(188, 253, 188);
+  padding: 5px;
+  border-radius: 500px;
+}
+.dashboard-top-bar .top-bar-left {
+  width: 17vw;
+  font-size: 20px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+.dashboard-top-bar .top-bar-left img {
+  width: 60px; /* Adjust the width as needed */
+  height: auto;
+  margin-right: 10px;
+  margin-left: 30px;
+}
+.dashboard-top-bar .top-bar-left p {
+  margin: 0;
+}
+
+/*
+    Montserrat -  paragraph
+    Raleway - sub heading
+    Poppins - main heading
+*/
+.dashboard-main-content {
+  display: flex;
+  justify-content: center;
+  height: 90vh;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+}
+
+.dashboard-content {
+  width: 61vw;
+  height: 100vh;
+  margin-left: 17vw;
+}
+.dashboard-content p {
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.dashboard-content .overview-section {
+  border: 1px solid rgb(185, 185, 185);
+  border-radius: 20px;
+  display: flex;
+  width: 98%;
+  background-color: white;
+  padding: 10px;
+}
+.dashboard-content .overview-section .total-record-section {
+  width: 30%;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  padding: 20px;
+}
+.dashboard-content .overview-section .total-record-section h1 {
+  font-size: 70px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  color: #3D3D3D;
+}
+.dashboard-content .overview-section .total-record-section .school-name p {
+  font-size: 15px;
+  font-weight: 100px;
+  margin-top: 0;
+  padding-top: 0;
+}
+.dashboard-content .overview-section .total-record-section .school-name .school-label {
+  font-size: 12px;
+  width: 20px;
+  color: rgb(124, 124, 124);
+  font-family: "Inter", sans-serif;
+}
+.dashboard-content .overview-section .total-record-section button {
+  background-color: #25582A;
+  color: #FFFBCE;
+  width: 165px;
+  height: 45px;
+  border-radius: 20px;
+  border: none;
+  margin-top: 10px;
+}
+.dashboard-content .overview-section .total-record-section button:hover {
+  background-color: #EDFFEF;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  color: #3D3D3D;
+}
+.dashboard-content .overview-section .total-per-category {
+  display: flex;
+  width: 70%;
+  font-family: "Inter", sans-serif;
+  color: #3D3D3D;
+}
+.dashboard-content .overview-section .total-per-category .image-left {
+  flex: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dashboard-content .overview-section .total-per-category .text-right {
+  flex: 1;
+  max-height: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.dashboard-content .overview-section .total-per-category .text-right .male-student {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgb(185, 185, 185);
+  height: 33%;
+  width: 75%;
+  margin: 5px;
+  border-radius: 10px;
+}
+.dashboard-content .overview-section .total-per-category .text-right .male-student .male-img {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.dashboard-content .overview-section .total-per-category .text-right .male-student .male-caption {
+  flex: 1;
+}
+.dashboard-content .overview-section .total-per-category .text-right .male-student .male-caption h1 {
+  color: #3D3D3D;
+}
+.dashboard-content .overview-section .total-per-category .text-right .male-student .male-caption span {
+  color: rgb(124, 124, 124);
+  font-size: 12px;
+}
+.dashboard-content .overview-section .total-per-category .text-right .male-student .male-caption p {
+  font-size: 14px;
+}
+.dashboard-content .overview-section .total-per-category .text-right .male-student:hover {
+  background-color: #EDFFEF;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.dashboard-content .overview-section .total-per-category .text-right .female-student {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgb(185, 185, 185);
+  height: 33%;
+  width: 75%;
+  margin: 5px;
+  border-radius: 10px;
+}
+.dashboard-content .overview-section .total-per-category .text-right .female-student .female-img {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.dashboard-content .overview-section .total-per-category .text-right .female-student .female-caption {
+  flex: 1;
+}
+.dashboard-content .overview-section .total-per-category .text-right .female-student .female-caption h1 {
+  color: #3D3D3D;
+}
+.dashboard-content .overview-section .total-per-category .text-right .female-student .female-caption span {
+  color: rgb(124, 124, 124);
+  font-size: 12px;
+}
+.dashboard-content .overview-section .total-per-category .text-right .female-student .female-caption p {
+  font-size: 14px;
+}
+.dashboard-content .overview-section .total-per-category .text-right .female-student:hover {
+  background-color: #EDFFEF;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.dashboard-content .overview-section .total-per-category .text-right .prof {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgb(185, 185, 185);
+  height: 34%;
+  width: 75%;
+  margin: 5px;
+  border-radius: 10px;
+}
+.dashboard-content .overview-section .total-per-category .text-right .prof .prof-img {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.dashboard-content .overview-section .total-per-category .text-right .prof .prof-caption {
+  flex: 1;
+}
+.dashboard-content .overview-section .total-per-category .text-right .prof .prof-caption h1 {
+  color: #3D3D3D;
+}
+.dashboard-content .overview-section .total-per-category .text-right .prof .prof-caption span {
+  color: rgb(124, 124, 124);
+  font-size: 12px;
+}
+.dashboard-content .overview-section .total-per-category .text-right .prof .prof-caption p {
+  font-size: 14px;
+}
+.dashboard-content .overview-section .total-per-category .text-right .prof:hover {
+  background-color: #EDFFEF;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.dashboard-content .table-header {
+  display: flex;
+  align-items: center;
+}
+.dashboard-content .table-header .sort-latest {
+  background-color: #25582A;
+  color: white;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 50px;
+  margin-left: 10px;
+}
+.dashboard-content .table-header .sort-latest select {
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 12px;
+}
+.dashboard-content .table-header .sort-latest i {
+  font-size: 12px;
+}
+.dashboard-content .table-main-dashboard {
+  background-color: white;
+  border: 1px solid #CDCDCD;
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  height: 40vh;
+  width: 98%;
+}
+.dashboard-content .table-main-dashboard .circle-design {
+  display: flex;
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 0;
+  margin: 0;
+}
+.dashboard-content .table-main-dashboard .circle-design .circle-green {
+  background-color: green;
+  border: 1px solid green;
+  border-radius: 100%;
+  width: 10px;
+  height: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 0;
+}
+.dashboard-content .table-main-dashboard .table-dashboard {
+  width: 98%;
+  padding: 20px;
+}
+.dashboard-content .table-main-dashboard .table-dashboard th {
+  text-align: center;
+  padding-bottom: 10px;
+}
+.dashboard-content .table-main-dashboard .table-dashboard td {
+  text-align: center;
+}
+.dashboard-content .table-main-dashboard .table-dashboard .status-dashboard {
+  background-color: #60a978;
+  border-radius: 10px;
+}
+.dashboard-content .table-main-dashboard .table-dashboard a {
+  color: rgb(124, 124, 124);
+}
+
+.dashboard-content-right {
+  height: 100vh;
+  width: 22vw;
+  padding: 10px;
+}
+.dashboard-content-right p {
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.dashboard-content-right .time-calendar {
+  background-color: white;
+  border: 1px solid #CDCDCD;
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  height: 33vh;
+}
+.dashboard-content-right .button-calendar {
+  display: flex;
+  justify-content: space-between;
+}
+.dashboard-content-right .button-calendar button {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 8px;
+  padding-left: 8px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 20px;
+  border: 1px solid rgb(185, 185, 185);
+  background-color: transparent;
+}
+.dashboard-content-right .button-calendar button:hover {
+  background-color: #549c6c;
+}
+.dashboard-content-right #calendar {
+  max-width: 100%;
+  width: 100%;
+  height: 26%;
+  padding-top: 0;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  margin-top: 0;
+  background-color: white;
+  border-radius: 12px;
+}
+.dashboard-content-right #calendar .header {
+  margin-bottom: 10px;
+  color: #3D3D3D;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 0;
+}
+.dashboard-content-right #calendar .weekdays,
+.dashboard-content-right #calendar .days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+}
+.dashboard-content-right #calendar .weekdays {
+  font-size: 10px;
+}
+.dashboard-content-right #calendar .days span {
+  padding: 5px;
+  font-size: 12px;
+}
+.dashboard-content-right #calendar .days span.current-day {
+  cursor: pointer;
+  background-color: #549c6c;
+  border-radius: 100%;
+}
+.dashboard-content-right #clock {
+  font-family: Arial, sans-serif;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.dashboard-content-right #clock .time {
+  font-size: 27px;
+  color: #3D3D3D;
+}
+.dashboard-content-right #clock .day {
+  font-size: 14px;
+  color: rgb(124, 124, 124);
+}
+.dashboard-content-right .faculty-member-main {
+  background-color: white;
+  border: 1px solid #CDCDCD;
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin-top: 20px;
+  padding: 10px;
+  height: 47vh;
+}
+.dashboard-content-right .header-filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.dashboard-content-right .header-filter i {
+  margin-right: 10px;
+}
+.dashboard-content-right .header-filter p {
+  margin-left: 5px;
+}
+.dashboard-content-right .members-circle {
+  display: flex;
+}
+.dashboard-content-right .members-circle p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  margin: 3px;
+  background-color: aquamarine;
+  border-radius: 20px;
+}
+.dashboard-content-right .members-circle .add-user {
+  border: 2px dashed aquamarine;
+  background-color: #e1efe6;
+}
+.dashboard-content-right .recents-activity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.dashboard-content-right .recents-activity .circle-user-recent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  background-color: aquamarine;
+  border-radius: 20px;
+  margin-right: 5px;
+}
+.dashboard-content-right .recents-activity .time-user-activity {
+  font-size: 12px;
+  color: rgb(124, 124, 124);
+  margin: 0;
+  padding: 0;
+}
+.dashboard-content-right .recents-activity .desc-user-activity {
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+}
+.dashboard-content-right .view-more {
+  font-size: 12px;
+  color: rgb(124, 124, 124);
+  display: flex;
+  justify-content: flex-end;
+}
+.dashboard-content-right .view-more:hover {
+  color: #549c6c;
+  cursor: pointer;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;

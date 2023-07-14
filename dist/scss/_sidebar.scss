@@ -1,0 +1,52 @@
+@import './_resource.scss';
+.sidebar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 17vw;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+
+    // POSITIONING SIDEBAR AS FIXED
+    position: fixed;
+    left: 0;
+      
+      li {
+        font-family: 'Inter', sans-serif;
+        display: flex;
+        align-items: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 24px;
+        padding-right: 24px;
+        margin: 8px;
+        border-radius: 20px;
+        color: $primary-text-gray2;
+
+        &:hover{
+          background-color: $highlight-button;
+          color: $primary-text-black;
+          font-weight: 500;
+          // margin: 10px;
+        }
+      }
+
+      svg{
+        margin-right: 10px;
+      }
+
+      .section-first-ul{
+        list-style-type: none;
+        margin-top: 20px;
+        // padding-top: 20px;
+        // margin: 0;
+      }
+      .section-second-ul{
+        list-style-type: none;
+        // padding-top: 10px;
+        margin: 0;
+      }
+}
+
+
+  
