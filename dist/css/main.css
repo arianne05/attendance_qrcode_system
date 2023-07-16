@@ -998,6 +998,16 @@
     Raleway - sub heading
     Poppins - main heading
 */
+.header-activity {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+}
+
+.sub-activity {
+  font-family: "Inter", sans-serif;
+  color: rgb(124, 124, 124);
+}
+
 .reports-total-container {
   display: flex;
   justify-content: space-between;
@@ -1068,14 +1078,6 @@
   margin-right: 2vw;
   padding: 15px;
 }
-.reports-pie-chart .registered-number .header-activity {
-  font-family: "Poppins", sans-serif;
-  font-size: 20px;
-}
-.reports-pie-chart .registered-number .sub-activity {
-  font-family: "Inter", sans-serif;
-  color: rgb(124, 124, 124);
-}
 .reports-pie-chart .user-activity-today {
   font-family: "Inter", sans-serif;
 }
@@ -1108,6 +1110,72 @@
 }
 .reports-pie-chart .category-activity .total-activity {
   margin-right: 10px;
+}
+
+.main-container-recents {
+  margin-left: 17vw;
+  margin-top: 2vh;
+  display: flex;
+  justify-content: space-between;
+}
+.main-container-recents .recent-login {
+  border: 1px solid #cdcdcd;
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 20px;
+  width: 48%;
+  height: 410px;
+}
+.main-container-recents .recent-login .table-recent {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.main-container-recents .recent-login .table-recent .initials-bg {
+  background-color: #9ae2c7;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-container-recents .recent-login .table-recent table {
+  width: 100%;
+  font-family: "Inter", sans-serif;
+}
+.main-container-recents .recent-login .table-recent table tr {
+  height: 60px;
+}
+.main-container-recents .recent-registered {
+  border: 1px solid #cdcdcd;
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 20px;
+  width: 48%;
+  height: 410px;
+  margin-right: 2vw;
+}
+.main-container-recents .recent-registered .table-recent {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.main-container-recents .recent-registered .table-recent .initials-bg {
+  background-color: #9ae2c7;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-container-recents .recent-registered .table-recent table {
+  width: 100%;
+  font-family: "Inter", sans-serif;
+}
+.main-container-recents .recent-registered .table-recent table tr {
+  height: 60px;
 }
 
 * {

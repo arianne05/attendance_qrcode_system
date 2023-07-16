@@ -76,6 +76,55 @@
       </div>
     </section>
 
+    <!-- Third Section -->
+    <section class="main-container-recents">
+      
+        <div class="recent-login">
+          <!-- Header -->
+          <p class="header-activity">Recent Login</p>
+          <p class="sub-activity">Latest user login today</p>
+
+          <!-- Table -->
+          <div class="table-recent">
+                <table>
+                    <tr class="test">
+                        <td><p class="initials-bg">AQ</p></td>
+                        <td>Arianne H. Quimpo</td>
+                        <td>October 02, 2023 <br>02:23pm</td>
+                        <td>logged in</td>
+                    </tr>
+                    <tr class="test">
+                        <td><p class="initials-bg">AQ</p></td>
+                        <td>Arianne H. Quimpo</td>
+                        <td>October 02, 2023 <br>02:23pm</td>
+                        <td>logged in</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="recent-registered">
+          <p class="header-activity">Recent Registered User</p>
+          <p class="sub-activity">Latest user registered today</p>
+          <!-- Table -->
+          <div class="table-recent">
+                <table>
+                    <tr>
+                        <td>Arianne H. Quimpo</td>
+                        <td>0949 845 8348</td>
+                        <td>aya@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td>Arianne H. Quimpo</td>
+                        <td>0949 845 8348</td>
+                        <td>aya@gmail.com</td>
+                    </tr>
+                </table>
+          </div>
+        </div>
+      
+    </section>
+
   </body>
   <!-- JS -->
   <script src="../js/report-chart.js"></script>
