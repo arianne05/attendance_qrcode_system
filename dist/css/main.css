@@ -788,10 +788,10 @@
 }
 .dashboard-content .table-main-dashboard {
   background-color: white;
-  border: 1px solid #CDCDCD;
+  border: 1px solid #cdcdcd;
   border-radius: 12px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  height: 40vh;
+  height: 45vh;
   width: 98%;
 }
 .dashboard-content .table-main-dashboard .circle-design {
@@ -842,7 +842,7 @@
 }
 .dashboard-content-right .time-calendar {
   background-color: white;
-  border: 1px solid #CDCDCD;
+  border: 1px solid #cdcdcd;
   border-radius: 12px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   height: 33vh;
@@ -920,7 +920,7 @@
 }
 .dashboard-content-right .faculty-member-main {
   background-color: white;
-  border: 1px solid #CDCDCD;
+  border: 1px solid #cdcdcd;
   border-radius: 12px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   margin-top: 20px;
@@ -1009,16 +1009,105 @@
   font-family: "Inter", sans-serif;
 }
 .reports-total-container .total-user {
-  border: 1px solid red;
+  display: flex;
+  align-items: center;
   width: 30%;
+  border-radius: 15px;
+  background: #9ae2c7;
 }
 .reports-total-container .total-student {
-  border: 1px solid red;
+  display: flex;
+  align-items: center;
   width: 30%;
+  border-radius: 15px;
+  background: #fc7777;
 }
 .reports-total-container .total-teacher {
-  border: 1px solid red;
+  display: flex;
+  align-items: center;
   width: 30%;
+  border-radius: 15px;
+  background: #6dabc6;
+}
+.reports-total-container .circle-user {
+  background-color: white;
+  border-radius: 100%;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.reports-total-container .circle-user p {
+  width: 60px;
+  height: 60px;
+  color: red;
+}
+.reports-total-container .circle-user .total-text {
+  font-size: 20px;
+}
+
+.reports-pie-chart {
+  margin-left: 17vw;
+  margin-top: 2vh;
+  display: flex;
+}
+.reports-pie-chart #columnchart_material {
+  width: 63%;
+  height: 250px;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.reports-pie-chart .registered-number {
+  border: 1px solid #cdcdcd;
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 30%;
+  margin-left: 3vw;
+  margin-right: 2vw;
+  padding: 15px;
+}
+.reports-pie-chart .registered-number .header-activity {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+}
+.reports-pie-chart .registered-number .sub-activity {
+  font-family: "Inter", sans-serif;
+  color: rgb(124, 124, 124);
+}
+.reports-pie-chart .user-activity-today {
+  font-family: "Inter", sans-serif;
+}
+.reports-pie-chart .category-activity {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+.reports-pie-chart .category-activity .division-activity {
+  display: flex;
+  align-items: center;
+}
+.reports-pie-chart .category-activity .circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.reports-pie-chart .category-activity .green {
+  background-color: #9ae2c7;
+}
+.reports-pie-chart .category-activity .red {
+  background-color: #fc7777;
+}
+.reports-pie-chart .category-activity .blue {
+  background-color: #6dabc6;
+}
+.reports-pie-chart .category-activity .total-activity {
+  margin-right: 10px;
 }
 
 * {
