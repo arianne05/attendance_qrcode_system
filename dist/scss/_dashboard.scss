@@ -1,466 +1,459 @@
-@import './_resource.scss';
+@import "./_resource.scss";
 .dashboard-main-content {
+  display: flex;
+  justify-content: center;
+  height: 90vh;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+}
+
+.dashboard-content {
+  width: 61vw;
+  height: 100vh;
+  margin-left: 17vw; //to prevent ruining the position of fixed sidebar
+
+  p {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .overview-section {
+    border: 1px solid $primary-text-gray;
+    border-radius: 20px;
     display: flex;
-    justify-content: center;
-    height: 90vh;
-    overflow: hidden;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-}
-
-.dashboard-content{
-    width: 61vw;
-    height: 100vh;
-    margin-left: 17vw; //to prevent ruining the position of fixed sidebar
-
-    p{
-        font-size: 20px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-
-    .overview-section{
-        border: 1px solid $primary-text-gray;
-        border-radius: 20px;
-        display: flex;
-        width: 98%;
-        background-color: white;
-        padding: 10px;
-
-        .total-record-section{
-            width: 30%;
-            text-align: center;
-            font-family: 'Poppins', sans-serif;
-            padding: 20px;
-
-            h1{
-                font-size: 70px;
-                margin-bottom: 0;
-                padding-bottom: 0;
-                color: $tertiary-text-black;
-            }
-
-            .school-name{
-                p{
-                    font-size: 15px;
-                    font-weight: 100px;
-                    margin-top: 0;
-                    padding-top: 0;
-
-                }
-                .school-label{
-                    font-size: 12px;
-                    width: 20px;
-                    color: $primary-text-gray2;
-                    font-family: 'Inter', sans-serif;
-                }
-            }
-
-            button{
-                background-color: $fourth-buttonBg-green;
-                color: $primary-text-white;
-                width: 165px;
-                height: 45px;
-                border-radius: 20px;
-                border: none;
-                margin-top: 10px;
-                &:hover{
-                    background-color: $green1-hover;
-                    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-                    cursor: pointer;
-                    color: $tertiary-text-black;
-                }
-            }
-        }
-    
-        .total-per-category{
-            display: flex;
-            width:70%;
-            font-family: 'Inter', sans-serif;
-            color: $tertiary-text-black;
-            .image-left{
-                flex: 1.5;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                
-            }
-            .text-right{
-                flex: 1;
-                max-height: 100%;
-                max-width: 100%;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                
-                .male-student{
-                    display: flex;
-                    align-items: center;
-                    border: 1px solid $primary-text-gray;
-                    height: 33%;
-                    width: 75%;
-                    margin: 5px;
-                    border-radius: 10px;
-                    .male-img{
-                        flex: 1;
-                        display: flex;
-                        align-items: center;
-                        flex-direction: column;
-                    }
-                    .male-caption{
-                        flex: 1;
-                        h1{
-                            color: $tertiary-text-black;
-                        }
-                        span{
-                            color: $primary-text-gray2;
-                            font-size: 12px;
-                        }
-                        p{
-                            font-size: 14px;
-                        }
-                    }
-                    &:hover{
-                        background-color: $green1-hover;
-                        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-                        cursor: pointer;
-                    }
-                    
-                }
-                .female-student{
-                    display: flex;
-                    align-items: center;
-                    border: 1px solid $primary-text-gray;
-                    height: 33%;
-                    width: 75%;
-                    margin: 5px;
-                    border-radius: 10px;
-                    .female-img{
-                        flex: 1;
-                        display: flex;
-                        align-items: center;
-                        flex-direction: column;
-                    }
-                    .female-caption{
-                        flex: 1;
-                        h1{
-                            color: $tertiary-text-black;
-                        }
-                        span{
-                            color: $primary-text-gray2;
-                            font-size: 12px;
-                        }
-                        p{
-                            font-size: 14px;
-                        }
-                    }
-                    &:hover{
-                        background-color: $green1-hover;
-                        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-                        cursor: pointer;
-                    }
-                }
-                .prof{
-                    display: flex;
-                    align-items: center;
-                    border: 1px solid $primary-text-gray;
-                    height: 34%;
-                    width: 75%;
-                    margin: 5px;
-                    border-radius: 10px;
-                    .prof-img{
-                        flex: 1;
-                        display: flex;
-                        align-items: center;
-                        flex-direction: column;
-                    }
-                    .prof-caption{
-                        flex: 1;
-                        h1{
-                            color: $tertiary-text-black;
-                        }
-                        span{
-                            color: $primary-text-gray2;
-                            font-size: 12px;
-                        }
-                        p{
-                            font-size: 14px;
-                        }
-                    }
-
-                    &:hover{
-                        background-color: $green1-hover;
-                        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-                        cursor: pointer;
-                    }
-                }
-            }
-        }
-    }
-    
-    // Tables
-    .table-header{
-        display: flex;
-        align-items: center;
-        
-        .sort-latest{
-            background-color: $fourth-buttonBg-green;
-            color: white;
-            padding-top: 3px;
-            padding-bottom: 5px;
-            padding-left: 10px;
-            padding-right: 10px;
-            border-radius: 50px;
-            margin-left: 10px;
-            select{
-                border: none;
-                background-color: transparent;
-                color: white;
-                font-size: 12px;
-            }
-            i{
-                font-size: 12px;
-            }
-        }
-        
-    }
-    .table-main-dashboard{
-        background-color: white;
-        border: 1px solid #CDCDCD;
-        border-radius: 12px;
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        height: 40vh;
-        width: 98%;
-
-        .circle-design{
-            display: flex;
-            padding-left: 20px;
-            padding-top: 5px;
-            padding-bottom: 0;
-            margin: 0;
-
-            .circle-green{
-                background-color: green;
-                border: 1px solid green;
-                border-radius: 100%;
-                width: 10px;
-                height: 10px;
-                margin-left: 5px;
-                margin-right: 5px;
-                margin-bottom: 0;
-            }
-        }
-
-        
-        .table-dashboard{
-            width: 98%;
-            padding: 20px;
-            th{
-                text-align: center;
-                padding-bottom: 10px;
-            }
-            td{
-                text-align: center;
-            }
-            .status-dashboard{
-                background-color: $tertiary-buttonBg-green;
-                border-radius: 10px;
-            }
-            a{
-                color: $primary-text-gray2;
-            }
-        }
-    }
-
-}
-
-.dashboard-content-right {
-    height: 100vh;
-    width: 22vw;
-    // border: 1px solid black;
+    width: 98%;
+    background-color: white;
     padding: 10px;
-    // margin-right: 10px;
-    p{
-        font-size: 16px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
 
-    .time-calendar{
-        background-color: white;
-        border: 1px solid #CDCDCD;
-        border-radius: 12px;
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        height: 33vh;
-    }
+    .total-record-section {
+      width: 30%;
+      text-align: center;
+      font-family: "Poppins", sans-serif;
+      padding: 20px;
 
-    .button-calendar{
-        display: flex;
-        // justify-content: center;
-        justify-content: space-between;
-
-        button{
-            padding-top: 4px;
-            padding-bottom: 4px;
-            padding-right: 8px;
-            padding-left: 8px;
-            margin-bottom: 20px;
-            margin-left: 20px;
-            margin-right: 20px;
-            border-radius: 20px;
-            border: 1px solid $primary-text-gray;
-            background-color: transparent;
-
-            &:hover{
-                background-color: $primary-buttonBg-green;
-            }
-        }
-    }
-
-    // calendar
-    #calendar {
-        max-width: 100%;
-        width: 100%;
-        height: 26%;
-        padding-top: 0;
-        padding-left: 10px;
-        padding-bottom: 10px;
-        padding-right: 10px;
-        margin-top: 0;
-        background-color: white;
-        border-radius: 12px;
-
-        .header {
-            margin-bottom: 10px;
-            color: $tertiary-text-black;
-            padding-top: 5px;
-            padding-bottom: 5px;
-            margin-top: 0;
-          }
-          
-          .weekdays,
-          .days {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            text-align: center;
-          }
-          
-          .weekdays{
-            font-size: 10px;
-          }
-          
-          .days span {
-            padding: 5px;
-            font-size: 12px;
-          }
-          
-          .days span.current-day {
-            cursor: pointer;
-            background-color: $primary-buttonBg-green;
-            border-radius: 100%;
-          }
-      }
-      
-    // time
-    #clock {
-        font-family: Arial, sans-serif;
-        padding-top: 10px;
-        padding-left: 10px;
-        padding-bottom: 0;
+      h1 {
+        font-size: 70px;
         margin-bottom: 0;
+        padding-bottom: 0;
+        color: $tertiary-text-black;
+      }
 
-        .time {
-            font-size: 27px;
-            color: $tertiary-text-black;
-            }
-            
-        .day {
-            font-size: 14px;
-            color: $primary-text-gray2;
-            }
-    }
-    
-    // Faculty members
-    .faculty-member-main{
-        background-color: white;
-        border: 1px solid #CDCDCD;
-        border-radius: 12px;
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        margin-top: 20px;
-        padding: 10px;
-        height: 47vh;
-    }
-    .header-filter{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        i{
-            margin-right: 10px;
+      .school-name {
+        p {
+          font-size: 15px;
+          font-weight: 100px;
+          margin-top: 0;
+          padding-top: 0;
         }
-        p{
-            margin-left: 5px;
+        .school-label {
+          font-size: 12px;
+          width: 20px;
+          color: $primary-text-gray2;
+          font-family: "Inter", sans-serif;
         }
-    }
-    .members-circle{
-        display: flex;
-        // justify-content: space-around;
+      }
 
-        p{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 35px;
-            height: 35px;
-            margin: 3px;
-            background-color: aquamarine;
-            border-radius: 20px;
+      button {
+        background-color: $fourth-buttonBg-green;
+        color: $primary-text-white;
+        width: 165px;
+        height: 45px;
+        border-radius: 20px;
+        border: none;
+        margin-top: 10px;
+        &:hover {
+          background-color: $green1-hover;
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+          cursor: pointer;
+          color: $tertiary-text-black;
         }
-        .add-user{
-            border: 2px dashed aquamarine;
-            background-color: $secondary-buttonBg-green;
-        }
+      }
     }
 
-    .recents-activity{
+    .total-per-category {
+      display: flex;
+      width: 70%;
+      font-family: "Inter", sans-serif;
+      color: $tertiary-text-black;
+      .image-left {
+        flex: 1.5;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-bottom: 10px;
-
-        .circle-user-recent{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 35px;
-            height: 35px;
-            background-color: aquamarine;
-            border-radius: 20px;
-            margin-right: 5px;
-        }
-        .time-user-activity{
-            font-size: 12px;
-            color: $primary-text-gray2;
-            margin: 0;
-            padding: 0;
-        }
-        .desc-user-activity{
-            font-size: 15px;
-            margin: 0;
-            padding: 0;
-        }
-    }
-    
-    .view-more{
-        font-size: 12px;
-        color: $primary-text-gray2;
-        // margin-bottom: 50px;
+      }
+      .text-right {
+        flex: 1;
+        max-height: 100%;
+        max-width: 100%;
         display: flex;
-        justify-content: flex-end;
+        flex-direction: column;
+        align-items: center;
 
-        &:hover{
-            color: $primary-buttonBg-green;
+        .male-student {
+          display: flex;
+          align-items: center;
+          border: 1px solid $primary-text-gray;
+          height: 33%;
+          width: 75%;
+          margin: 5px;
+          border-radius: 10px;
+          .male-img {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+          }
+          .male-caption {
+            flex: 1;
+            h1 {
+              color: $tertiary-text-black;
+            }
+            span {
+              color: $primary-text-gray2;
+              font-size: 12px;
+            }
+            p {
+              font-size: 14px;
+            }
+          }
+          &:hover {
+            background-color: $green1-hover;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
             cursor: pointer;
+          }
         }
+        .female-student {
+          display: flex;
+          align-items: center;
+          border: 1px solid $primary-text-gray;
+          height: 33%;
+          width: 75%;
+          margin: 5px;
+          border-radius: 10px;
+          .female-img {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+          }
+          .female-caption {
+            flex: 1;
+            h1 {
+              color: $tertiary-text-black;
+            }
+            span {
+              color: $primary-text-gray2;
+              font-size: 12px;
+            }
+            p {
+              font-size: 14px;
+            }
+          }
+          &:hover {
+            background-color: $green1-hover;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+          }
+        }
+        .prof {
+          display: flex;
+          align-items: center;
+          border: 1px solid $primary-text-gray;
+          height: 34%;
+          width: 75%;
+          margin: 5px;
+          border-radius: 10px;
+          .prof-img {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+          }
+          .prof-caption {
+            flex: 1;
+            h1 {
+              color: $tertiary-text-black;
+            }
+            span {
+              color: $primary-text-gray2;
+              font-size: 12px;
+            }
+            p {
+              font-size: 14px;
+            }
+          }
+
+          &:hover {
+            background-color: $green1-hover;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+          }
+        }
+      }
     }
-      
+  }
+
+  // Tables
+  .table-header {
+    display: flex;
+    align-items: center;
+
+    .sort-latest {
+      background-color: $fourth-buttonBg-green;
+      color: white;
+      padding-top: 3px;
+      padding-bottom: 5px;
+      padding-left: 10px;
+      padding-right: 10px;
+      border-radius: 50px;
+      margin-left: 10px;
+      select {
+        border: none;
+        background-color: transparent;
+        color: white;
+        font-size: 12px;
+      }
+      i {
+        font-size: 12px;
+      }
+    }
+  }
+  .table-main-dashboard {
+    background-color: white;
+    border: 1px solid #cdcdcd;
+    border-radius: 12px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    height: 45vh;
+    width: 98%;
+
+    .circle-design {
+      display: flex;
+      padding-left: 20px;
+      padding-top: 5px;
+      padding-bottom: 0;
+      margin: 0;
+
+      .circle-green {
+        background-color: green;
+        border: 1px solid green;
+        border-radius: 100%;
+        width: 10px;
+        height: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-bottom: 0;
+      }
+    }
+
+    .table-dashboard {
+      width: 98%;
+      padding: 20px;
+      th {
+        text-align: center;
+        padding-bottom: 10px;
+      }
+      td {
+        text-align: center;
+      }
+      .status-dashboard {
+        background-color: $tertiary-buttonBg-green;
+        border-radius: 10px;
+      }
+      a {
+        color: $primary-text-gray2;
+      }
+    }
+  }
+}
+
+.dashboard-content-right {
+  height: 100vh;
+  width: 22vw;
+  // border: 1px solid black;
+  padding: 10px;
+  // margin-right: 10px;
+  p {
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .time-calendar {
+    background-color: white;
+    border: 1px solid #cdcdcd;
+    border-radius: 12px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    height: 33vh;
+  }
+
+  .button-calendar {
+    display: flex;
+    // justify-content: center;
+    justify-content: space-between;
+
+    button {
+      padding-top: 4px;
+      padding-bottom: 4px;
+      padding-right: 8px;
+      padding-left: 8px;
+      margin-bottom: 20px;
+      margin-left: 20px;
+      margin-right: 20px;
+      border-radius: 20px;
+      border: 1px solid $primary-text-gray;
+      background-color: transparent;
+
+      &:hover {
+        background-color: $primary-buttonBg-green;
+      }
+    }
+  }
+
+  // calendar
+  #calendar {
+    max-width: 100%;
+    width: 100%;
+    height: 26%;
+    padding-top: 0;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    margin-top: 0;
+    background-color: white;
+    border-radius: 12px;
+
+    .header {
+      margin-bottom: 10px;
+      color: $tertiary-text-black;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      margin-top: 0;
+    }
+
+    .weekdays,
+    .days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      text-align: center;
+    }
+
+    .weekdays {
+      font-size: 10px;
+    }
+
+    .days span {
+      padding: 5px;
+      font-size: 12px;
+    }
+
+    .days span.current-day {
+      cursor: pointer;
+      background-color: $primary-buttonBg-green;
+      border-radius: 100%;
+    }
+  }
+
+  // time
+  #clock {
+    font-family: Arial, sans-serif;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+
+    .time {
+      font-size: 27px;
+      color: $tertiary-text-black;
+    }
+
+    .day {
+      font-size: 14px;
+      color: $primary-text-gray2;
+    }
+  }
+
+  // Faculty members
+  .faculty-member-main {
+    background-color: white;
+    border: 1px solid #cdcdcd;
+    border-radius: 12px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-top: 20px;
+    padding: 10px;
+    height: 47vh;
+  }
+  .header-filter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    i {
+      margin-right: 10px;
+    }
+    p {
+      margin-left: 5px;
+    }
+  }
+  .members-circle {
+    display: flex;
+    // justify-content: space-around;
+
+    p {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 35px;
+      height: 35px;
+      margin: 3px;
+      background-color: aquamarine;
+      border-radius: 20px;
+    }
+    .add-user {
+      border: 2px dashed aquamarine;
+      background-color: $secondary-buttonBg-green;
+    }
+  }
+
+  .recents-activity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+
+    .circle-user-recent {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 35px;
+      height: 35px;
+      background-color: aquamarine;
+      border-radius: 20px;
+      margin-right: 5px;
+    }
+    .time-user-activity {
+      font-size: 12px;
+      color: $primary-text-gray2;
+      margin: 0;
+      padding: 0;
+    }
+    .desc-user-activity {
+      font-size: 15px;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .view-more {
+    font-size: 12px;
+    color: $primary-text-gray2;
+    // margin-bottom: 50px;
+    display: flex;
+    justify-content: flex-end;
+
+    &:hover {
+      color: $primary-buttonBg-green;
+      cursor: pointer;
+    }
+  }
 }

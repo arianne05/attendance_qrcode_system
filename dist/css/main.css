@@ -394,6 +394,10 @@
   list-style-type: none;
   margin-top: 20px;
 }
+.sidebar-container .section-first-ul a {
+  text-decoration: none;
+  color: inherit;
+}
 .sidebar-container .section-second-ul {
   list-style-type: none;
   margin: 0;
@@ -784,10 +788,10 @@
 }
 .dashboard-content .table-main-dashboard {
   background-color: white;
-  border: 1px solid #CDCDCD;
+  border: 1px solid #cdcdcd;
   border-radius: 12px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  height: 40vh;
+  height: 45vh;
   width: 98%;
 }
 .dashboard-content .table-main-dashboard .circle-design {
@@ -838,7 +842,7 @@
 }
 .dashboard-content-right .time-calendar {
   background-color: white;
-  border: 1px solid #CDCDCD;
+  border: 1px solid #cdcdcd;
   border-radius: 12px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   height: 33vh;
@@ -916,7 +920,7 @@
 }
 .dashboard-content-right .faculty-member-main {
   background-color: white;
-  border: 1px solid #CDCDCD;
+  border: 1px solid #cdcdcd;
   border-radius: 12px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   margin-top: 20px;
@@ -987,6 +991,191 @@
 .dashboard-content-right .view-more:hover {
   color: #549c6c;
   cursor: pointer;
+}
+
+/*
+    Montserrat -  paragraph
+    Raleway - sub heading
+    Poppins - main heading
+*/
+.header-activity {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+}
+
+.sub-activity {
+  font-family: "Inter", sans-serif;
+  color: rgb(124, 124, 124);
+}
+
+.reports-total-container {
+  display: flex;
+  justify-content: space-between;
+  height: 15vh;
+  width: 80vw;
+  margin-top: 2vh;
+  margin-left: 17vw;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+}
+.reports-total-container .total-user {
+  display: flex;
+  align-items: center;
+  width: 30%;
+  border-radius: 15px;
+  background: #9ae2c7;
+}
+.reports-total-container .total-student {
+  display: flex;
+  align-items: center;
+  width: 30%;
+  border-radius: 15px;
+  background: #fc7777;
+}
+.reports-total-container .total-teacher {
+  display: flex;
+  align-items: center;
+  width: 30%;
+  border-radius: 15px;
+  background: #6dabc6;
+}
+.reports-total-container .circle-user {
+  background-color: white;
+  border-radius: 100%;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.reports-total-container .circle-user p {
+  width: 60px;
+  height: 60px;
+  color: red;
+}
+.reports-total-container .circle-user .total-text {
+  font-size: 20px;
+}
+
+.reports-pie-chart {
+  margin-left: 17vw;
+  margin-top: 2vh;
+  display: flex;
+}
+.reports-pie-chart #columnchart_material {
+  width: 63%;
+  height: 250px;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.reports-pie-chart .registered-number {
+  border: 1px solid #cdcdcd;
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 30%;
+  margin-left: 3vw;
+  margin-right: 2vw;
+  padding: 15px;
+}
+.reports-pie-chart .user-activity-today {
+  font-family: "Inter", sans-serif;
+}
+.reports-pie-chart .category-activity {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+.reports-pie-chart .category-activity .division-activity {
+  display: flex;
+  align-items: center;
+}
+.reports-pie-chart .category-activity .circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.reports-pie-chart .category-activity .green {
+  background-color: #9ae2c7;
+}
+.reports-pie-chart .category-activity .red {
+  background-color: #fc7777;
+}
+.reports-pie-chart .category-activity .blue {
+  background-color: #6dabc6;
+}
+.reports-pie-chart .category-activity .total-activity {
+  margin-right: 10px;
+}
+
+.main-container-recents {
+  margin-left: 17vw;
+  margin-top: 2vh;
+  display: flex;
+  justify-content: space-between;
+}
+.main-container-recents .recent-login {
+  border: 1px solid #cdcdcd;
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 20px;
+  width: 48%;
+  height: 410px;
+}
+.main-container-recents .recent-login .table-recent {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.main-container-recents .recent-login .table-recent .initials-bg {
+  background-color: #9ae2c7;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-container-recents .recent-login .table-recent table {
+  width: 100%;
+  font-family: "Inter", sans-serif;
+}
+.main-container-recents .recent-login .table-recent table tr {
+  height: 60px;
+}
+.main-container-recents .recent-registered {
+  border: 1px solid #cdcdcd;
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 20px;
+  width: 48%;
+  height: 410px;
+  margin-right: 2vw;
+}
+.main-container-recents .recent-registered .table-recent {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.main-container-recents .recent-registered .table-recent .initials-bg {
+  background-color: #9ae2c7;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-container-recents .recent-registered .table-recent table {
+  width: 100%;
+  font-family: "Inter", sans-serif;
+}
+.main-container-recents .recent-registered .table-recent table tr {
+  height: 60px;
 }
 
 * {
