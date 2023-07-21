@@ -19,6 +19,24 @@
         <div class="recent-main-header">
             <h3>Recent Activities</h5>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima, architecto.</p>
+
+            <!-- Table and Button -->
+            <div class="sort-menu">
+                <div class="date-container">
+                    <div class="datefrom">
+                        <label for="Date From">Date From</label>
+                        <input type="date">
+                    </div>
+                    <div class="dateto">
+                        <label for="Date To">Date To</label>
+                        <input type="date">
+                    </div>
+                    <button>Sort</button>
+                </div>
+            </div>
+            <div class="table-container">
+                    <p>sda</p>
+                </div>
         </div>
         <div class="recent-faculty-member">
             <div class="user-activity">
@@ -30,6 +48,7 @@
             </div>
         </div>
     </div>
+
     
 </body>
 </html>

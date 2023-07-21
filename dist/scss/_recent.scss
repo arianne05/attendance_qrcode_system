@@ -6,13 +6,16 @@
     height: 90vh;
     margin-left: 17vw;
     // border: 1px solid black;
-    overflow: hidden;
+    // overflow: hidden;
     font-family: "Inter", sans-serif;
+    color: $tertiary-text-black;
 }
 
 .recent-main-header{
     margin-top: 2vh;
     width: 75%;
+    padding-right: 20px;
+    margin-right: 30px;
     // border: 1px solid black;
 }
 
@@ -33,8 +36,29 @@
         height: 60%;
         margin-top: 10%;
         background-color: white;
+        border: 1px solid #cdcdcd;
+        border-radius: 12px;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+}
+
+.sort-menu{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 1px;
+
+    .date-container{
+        display: flex;
+        margin-top: 20px;
+        align-items: center;
+    }
+}
+
+.table-container{
+    margin-top: 20px;
+    height: 100%;
+    background-color: white;
     border: 1px solid #cdcdcd;
     border-radius: 12px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    }
 }
