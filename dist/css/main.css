@@ -1407,8 +1407,8 @@
   background-color: #fc7777;
 }
 
-/* Styles for the modal */
-.modal {
+/* Styles for the modalAddTeacher */
+.modalAddTeacher {
   display: none;
   position: fixed;
   z-index: 9999;
@@ -1418,9 +1418,10 @@
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
+  font-family: "Inter", sans-serif;
 }
 
-.modal-content {
+.modal-content-AddTeacher {
   background-color: #fefefe;
   margin: 15% auto;
   padding: 20px;
@@ -1428,18 +1429,22 @@
   width: 80%;
 }
 
-.close {
+.closeAddTeacher {
   color: #aaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.closeAddTeacher:hover,
+.closeAddTeacher:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.asterisk {
+  color: red;
 }
 
 .section-one-addTeacher {
@@ -1450,6 +1455,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  color: rgb(124, 124, 124);
 }
 .section-one-addTeacher .bind-label input[type=text] {
   width: 90%;
@@ -1462,6 +1468,7 @@
   width: 100%;
   margin-top: 20px;
   margin-bottom: 20px;
+  color: rgb(124, 124, 124);
 }
 .section-two-addTeacher input[type=text] {
   width: 63%;
@@ -1472,6 +1479,7 @@
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
+  color: rgb(124, 124, 124);
 }
 .section-three-addTeacher .bind-label {
   display: flex;
@@ -1487,12 +1495,55 @@
   width: 97%;
   height: 30px;
   margin-top: 20px;
+  cursor: pointer;
 }
 .section-fourth-addTeacher .addBtn {
   height: 40px;
   margin-top: 100px;
   background-color: #549c6c;
+  color: #FFFBCE;
   border: none;
+  cursor: pointer;
+}
+.section-fourth-addTeacher .addBtn:hover {
+  background-color: #e1efe6;
+  color: #040705;
+}
+
+/* Styles for the modalViewTeacher */
+.modalViewTeacher {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  font-family: "Inter", sans-serif;
+}
+
+.modal-content-ViewTeacher {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.closeViewTeacher {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.closeViewTeacher:hover,
+.closeViewTeacher:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 * {

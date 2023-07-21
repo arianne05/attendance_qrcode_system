@@ -20,7 +20,7 @@
             <label for="header">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, minima.</label>
         </div>
         
-        <button class="addTeacher" onclick="openModal()">Add New</button>
+        <button class="addTeacher" onclick="openModalAddTeacher()">Add New</button>
 
         <div class="table-container teacher-table">
             <table>
@@ -35,9 +35,9 @@
                     <td>Prof. Maribelle Atienza</td>
                     <td>active</td>
                     <td>
-                        <button class="view">View</button>
+                        <button class="view" onclick="openModalViewTeacher()">View</button>
                         <button class="edit">Edit</button>
-                        <button class="archive">Archive</button>
+                        <button class="archive">Deactivate</button>
                     </td>
                 </tr>
             </table>
@@ -47,13 +47,5 @@
     <?php include_once './modal/addTeacher.php'?>
 
 </body>
-<script>
-    function openModal() {
-    document.getElementById("addTeacherModal").style.display = "block";
-    }
-
-    function closeModal() {
-    document.getElementById("addTeacherModal").style.display = "none";
-    }
-</script>
+<script src="../js/modal.js"></script>
 </html>
