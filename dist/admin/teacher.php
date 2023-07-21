@@ -20,7 +20,7 @@
             <label for="header">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, minima.</label>
         </div>
         
-        <button class="addTeacher">Add New</button>
+        <button class="addTeacher" onclick="openModal()">Add New</button>
 
         <div class="table-container teacher-table">
             <table>
@@ -43,5 +43,17 @@
             </table>
         </div>
     </div>
+
+    <?php include_once './modal/addTeacher.php'?>
+
 </body>
+<script>
+    function openModal() {
+    document.getElementById("addTeacherModal").style.display = "block";
+    }
+
+    function closeModal() {
+    document.getElementById("addTeacherModal").style.display = "none";
+    }
+</script>
 </html>

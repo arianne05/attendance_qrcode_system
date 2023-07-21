@@ -51,3 +51,96 @@
 .archive{
     background-color: #fc7777;
 }
+
+/* Styles for the modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+.section-one-addTeacher{
+    display: flex;
+    justify-content: space-between;
+
+    .bind-label{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        input[type=text]{
+            width: 90%;
+            height: 30px;
+        }
+      }
+}
+
+.section-two-addTeacher{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    input[type=text]{
+        width: 63%;
+        height: 30px;
+    }
+}
+
+.section-three-addTeacher{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+
+    .bind-label{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        input[type=text]{
+            width: 90%;
+            height: 30px;
+        }
+    }
+}
+
+.section-fourth-addTeacher{
+    button{
+        width: 97%;
+        height: 30px;
+        margin-top: 20px;
+    }
+    .addBtn{
+        height: 40px;
+        margin-top: 100px;
+        background-color: $primary-buttonBg-green;
+        border: none;
+    }
+}
+

@@ -1407,6 +1407,94 @@
   background-color: #fc7777;
 }
 
+/* Styles for the modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.section-one-addTeacher {
+  display: flex;
+  justify-content: space-between;
+}
+.section-one-addTeacher .bind-label {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.section-one-addTeacher .bind-label input[type=text] {
+  width: 90%;
+  height: 30px;
+}
+
+.section-two-addTeacher {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.section-two-addTeacher input[type=text] {
+  width: 63%;
+  height: 30px;
+}
+
+.section-three-addTeacher {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.section-three-addTeacher .bind-label {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.section-three-addTeacher .bind-label input[type=text] {
+  width: 90%;
+  height: 30px;
+}
+
+.section-fourth-addTeacher button {
+  width: 97%;
+  height: 30px;
+  margin-top: 20px;
+}
+.section-fourth-addTeacher .addBtn {
+  height: 40px;
+  margin-top: 100px;
+  background-color: #549c6c;
+  border: none;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
