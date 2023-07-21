@@ -11,7 +11,7 @@
   position: fixed;
   left: 0;
 
-  li {
+  .link {
     font-family: "Inter", sans-serif;
     display: flex;
     align-items: center;
@@ -27,8 +27,13 @@
       background-color: $highlight-button;
       color: $primary-text-black;
       font-weight: 500;
-      // margin: 10px;
     }
+  }
+  .active {
+    background-color: $highlight-button; /* Use the same highlight color as on hover */
+    color: $primary-text-black; /* Use the same text color as on hover */
+    font-weight: 500;
+    border-radius: 20px;
   }
 
   svg {
@@ -49,5 +54,9 @@
     list-style-type: none;
     // padding-top: 10px;
     margin: 0;
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
   }
 }

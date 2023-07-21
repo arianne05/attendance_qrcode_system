@@ -370,7 +370,7 @@
   position: fixed;
   left: 0;
 }
-.sidebar-container li {
+.sidebar-container .link {
   font-family: "Inter", sans-serif;
   display: flex;
   align-items: center;
@@ -382,10 +382,16 @@
   border-radius: 20px;
   color: rgb(124, 124, 124);
 }
-.sidebar-container li:hover {
+.sidebar-container .link:hover {
   background-color: #dcf7ec;
   color: #040705;
   font-weight: 500;
+}
+.sidebar-container .active {
+  background-color: #dcf7ec; /* Use the same highlight color as on hover */
+  color: #040705; /* Use the same text color as on hover */
+  font-weight: 500;
+  border-radius: 20px;
 }
 .sidebar-container svg {
   margin-right: 10px;
@@ -401,6 +407,10 @@
 .sidebar-container .section-second-ul {
   list-style-type: none;
   margin: 0;
+}
+.sidebar-container .section-second-ul a {
+  text-decoration: none;
+  color: inherit;
 }
 
 /*
@@ -1176,6 +1186,47 @@
 }
 .main-container-recents .recent-registered .table-recent table tr {
   height: 60px;
+}
+
+/*
+    Montserrat -  paragraph
+    Raleway - sub heading
+    Poppins - main heading
+*/
+.recent-main-container {
+  display: flex;
+  width: 81vw;
+  height: 90vh;
+  margin-left: 17vw;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+}
+
+.recent-main-header {
+  margin-top: 2vh;
+  width: 75%;
+}
+
+.recent-faculty-member {
+  margin-top: 2vh;
+  width: 25%;
+}
+.recent-faculty-member .user-activity {
+  padding: 20px;
+  height: 30%;
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.recent-faculty-member .list-member {
+  padding: 20px;
+  height: 60%;
+  margin-top: 10%;
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 * {
