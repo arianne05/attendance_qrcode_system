@@ -370,7 +370,7 @@
   position: fixed;
   left: 0;
 }
-.sidebar-container li {
+.sidebar-container .link {
   font-family: "Inter", sans-serif;
   display: flex;
   align-items: center;
@@ -382,10 +382,16 @@
   border-radius: 20px;
   color: rgb(124, 124, 124);
 }
-.sidebar-container li:hover {
+.sidebar-container .link:hover {
   background-color: #dcf7ec;
   color: #040705;
   font-weight: 500;
+}
+.sidebar-container .active {
+  background-color: #dcf7ec; /* Use the same highlight color as on hover */
+  color: #040705; /* Use the same text color as on hover */
+  font-weight: 500;
+  border-radius: 20px;
 }
 .sidebar-container svg {
   margin-right: 10px;
@@ -402,12 +408,29 @@
   list-style-type: none;
   margin: 0;
 }
+.sidebar-container .section-second-ul a {
+  text-decoration: none;
+  color: inherit;
+}
 
 /*
     Montserrat -  paragraph
     Raleway - sub heading
     Poppins - main heading
 */
+.dashboard-top-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100; /* Adjust the z-index as needed */
+  background-color: transparent; /* Set a background color for the top bar when it's sticky */
+  /* Add any other styles you need for the sticky state */
+}
+
+.dashboard-top-bar.scrolling {
+  background-color: #f9f9f9; /* Change the background color as desired */
+  /* Add any other styles you need for the scrolling state */
+}
+
 .dashboard-top-bar {
   display: flex;
   height: 10vh;
@@ -1176,6 +1199,155 @@
 }
 .main-container-recents .recent-registered .table-recent table tr {
   height: 60px;
+}
+
+/*
+    Montserrat -  paragraph
+    Raleway - sub heading
+    Poppins - main heading
+*/
+.recent-main-container {
+  display: flex;
+  width: 81vw;
+  height: 90vh;
+  margin-left: 17vw;
+  font-family: "Inter", sans-serif;
+  color: #3D3D3D;
+}
+
+.recent-main-header {
+  margin-top: 2vh;
+  width: 75%;
+  padding-right: 20px;
+  margin-right: 30px;
+}
+
+.recent-faculty-member {
+  margin-top: 2vh;
+  margin-right: 10px;
+  width: 20%;
+  position: fixed;
+  top: 10vh;
+  height: 80vh;
+  right: 0;
+}
+.recent-faculty-member .user-activity {
+  padding: 20px;
+  height: 30%;
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.recent-faculty-member .list-member {
+  padding: 20px;
+  height: 60%;
+  margin-top: 10%;
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.recent-faculty-member .member-container {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  margin-top: 10px;
+}
+.recent-faculty-member .circle-user-recent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  background-color: aquamarine;
+  border-radius: 20px;
+  margin-right: 10px;
+}
+.recent-faculty-member .label {
+  display: flex;
+  align-items: center;
+}
+.recent-faculty-member .add-container,
+.recent-faculty-member .edit-container,
+.recent-faculty-member .archive-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+.recent-faculty-member .add,
+.recent-faculty-member .edit,
+.recent-faculty-member .archive {
+  width: 10px;
+  height: 10px;
+  border-radius: 30px;
+  margin-right: 10px;
+}
+.recent-faculty-member .add {
+  background-color: #9ae2c7;
+}
+.recent-faculty-member .edit {
+  background-color: #6dabc6;
+}
+.recent-faculty-member .archive {
+  background-color: #fc7777;
+}
+
+.sort-menu {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 1px;
+}
+.sort-menu .date-container {
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+}
+.sort-menu .date-container label {
+  font-size: 14px;
+}
+.sort-menu .date-container .datefrom {
+  margin-right: 10px;
+}
+.sort-menu .date-container .dateto {
+  margin-right: 10px;
+}
+.sort-menu .date-container input[type=date] {
+  border: 1px solid gray;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 16px;
+  padding-left: 16px;
+  border-radius: 5px;
+}
+.sort-menu .date-container button {
+  height: 38px;
+  width: 72px;
+  border-radius: 8px;
+  border: none;
+  background-color: rgb(174, 214, 174);
+  color: #3D3D3D;
+}
+
+.table-container {
+  margin-top: 20px;
+  height: 100%;
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 20px;
+}
+.table-container table {
+  width: 100%;
+}
+.table-container table th {
+  padding-bottom: 20px;
+}
+.table-container table td {
+  text-align: center;
 }
 
 * {

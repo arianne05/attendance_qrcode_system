@@ -1,5 +1,20 @@
 @import './_resource.scss';
 
+// ON SCROLL AND STICKY TOPBAR
+.dashboard-top-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100; /* Adjust the z-index as needed */
+    background-color: transparent; /* Set a background color for the top bar when it's sticky */
+    /* Add any other styles you need for the sticky state */
+}
+
+.dashboard-top-bar.scrolling {
+background-color: #f9f9f9; /* Change the background color as desired */
+/* Add any other styles you need for the scrolling state */
+}
+// ENDBAR
+
 .dashboard-top-bar{
     display: flex;
     // border: 1px solid black;
