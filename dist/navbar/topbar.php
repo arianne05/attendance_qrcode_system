@@ -39,5 +39,24 @@
             </div>
         </div>
     </div>
+
+    <!-- JS for onscroll color change -->
+    <script>
+        // Get the top bar element
+        const topBar = document.querySelector('.dashboard-top-bar');
+
+        // Function to toggle the scrolling class based on the scroll position
+        function toggleScrollingClass() {
+        if (window.scrollY > 0) {
+            topBar.classList.add('scrolling');
+        } else {
+            topBar.classList.remove('scrolling');
+        }
+        }
+
+        // Add an event listener to the scroll event
+        window.addEventListener('scroll', toggleScrollingClass);
+
+    </script>
 <?php
 ?>
