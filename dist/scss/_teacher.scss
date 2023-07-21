@@ -1,0 +1,53 @@
+@import "./_resource.scss";
+
+.teacher-main-container{
+    margin-left: 17vw;
+    height: 70vh;
+    font-family: "Inter", sans-serif;
+    // border: 1px solid black;
+}
+
+.header{
+    margin-top: 20px;
+}
+
+.addTeacher{
+    margin-top: 20px;
+    width: 130px;
+    height: 40px;
+    border: none;
+    background-color: $primary-buttonBg-green;
+    border-radius: 5px;
+    color: $primary-text-white;
+    font-size: 14px;
+    cursor: pointer;
+
+    &:hover{
+        background-color: $secondary-buttonBg-green;
+        color: $tertiary-text-black;
+    }
+}
+
+.teacher-table{
+    width: 95%;
+}
+
+.view,
+.edit,
+.archive{
+    width: 60px;
+    height: 30px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.view{
+    background-color: #9ae2c7;
+}
+.edit{
+    background-color: #6dabc6;
+}
+.archive{
+    background-color: #fc7777;
+}
