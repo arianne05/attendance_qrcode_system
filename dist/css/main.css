@@ -1248,6 +1248,51 @@
   border-radius: 12px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
+.recent-faculty-member .member-container {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  margin-top: 10px;
+}
+.recent-faculty-member .circle-user-recent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  background-color: aquamarine;
+  border-radius: 20px;
+  margin-right: 10px;
+}
+.recent-faculty-member .label {
+  display: flex;
+  align-items: center;
+}
+.recent-faculty-member .add-container,
+.recent-faculty-member .edit-container,
+.recent-faculty-member .archive-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+.recent-faculty-member .add,
+.recent-faculty-member .edit,
+.recent-faculty-member .archive {
+  width: 10px;
+  height: 10px;
+  border-radius: 30px;
+  margin-right: 10px;
+}
+.recent-faculty-member .add {
+  background-color: #9ae2c7;
+}
+.recent-faculty-member .edit {
+  background-color: #6dabc6;
+}
+.recent-faculty-member .archive {
+  background-color: #fc7777;
+}
 
 .sort-menu {
   display: flex;
@@ -1258,6 +1303,32 @@
   display: flex;
   margin-top: 20px;
   align-items: center;
+  font-family: "Inter", sans-serif;
+}
+.sort-menu .date-container label {
+  font-size: 14px;
+}
+.sort-menu .date-container .datefrom {
+  margin-right: 10px;
+}
+.sort-menu .date-container .dateto {
+  margin-right: 10px;
+}
+.sort-menu .date-container input[type=date] {
+  border: 1px solid gray;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 16px;
+  padding-left: 16px;
+  border-radius: 5px;
+}
+.sort-menu .date-container button {
+  height: 38px;
+  width: 72px;
+  border-radius: 8px;
+  border: none;
+  background-color: rgb(174, 214, 174);
+  color: #3D3D3D;
 }
 
 .table-container {
@@ -1267,6 +1338,16 @@
   border: 1px solid #cdcdcd;
   border-radius: 12px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 20px;
+}
+.table-container table {
+  width: 100%;
+}
+.table-container table th {
+  padding-bottom: 20px;
+}
+.table-container table td {
+  text-align: center;
 }
 
 * {
