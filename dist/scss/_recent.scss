@@ -21,7 +21,13 @@
 
 .recent-faculty-member{
     margin-top: 2vh;
-    width: 25%;
+    margin-right: 10px;
+    width: 20%;
+    position: fixed;
+    top: 10vh;
+    height: 80vh;
+    right: 0;
+
     .user-activity{
         padding: 20px;
         height: 30%;
