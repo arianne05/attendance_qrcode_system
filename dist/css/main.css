@@ -1350,6 +1350,350 @@
   text-align: center;
 }
 
+/*
+    Montserrat -  paragraph
+    Raleway - sub heading
+    Poppins - main heading
+*/
+.teacher-main-container {
+  margin-left: 17vw;
+  height: 70vh;
+  font-family: "Inter", sans-serif;
+}
+
+.header {
+  margin-top: 20px;
+}
+
+.addTeacher {
+  margin-top: 20px;
+  width: 130px;
+  height: 40px;
+  border: none;
+  background-color: #549c6c;
+  border-radius: 5px;
+  color: #FFFBCE;
+  font-size: 14px;
+  cursor: pointer;
+}
+.addTeacher:hover {
+  background-color: #e1efe6;
+  color: #3D3D3D;
+}
+
+.teacher-table {
+  width: 95%;
+}
+
+.view,
+.edit,
+.archive {
+  width: 60px;
+  height: 30px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.view {
+  background-color: #9ae2c7;
+}
+
+.edit {
+  background-color: #6dabc6;
+}
+
+.archive {
+  background-color: #fc7777;
+}
+
+/* Styles for the modalAddTeacher */
+.modalAddTeacher {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  font-family: "Inter", sans-serif;
+}
+
+.modal-content-AddTeacher {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.closeAddTeacher {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.closeAddTeacher:hover,
+.closeAddTeacher:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.asterisk {
+  color: red;
+}
+
+.section-one-addTeacher {
+  display: flex;
+  justify-content: space-between;
+}
+.section-one-addTeacher .bind-label {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: rgb(124, 124, 124);
+}
+.section-one-addTeacher .bind-label input[type=text] {
+  width: 90%;
+  height: 30px;
+}
+
+.section-two-addTeacher {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: rgb(124, 124, 124);
+}
+.section-two-addTeacher input[type=text] {
+  width: 63%;
+  height: 30px;
+}
+
+.section-three-addTeacher {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  color: rgb(124, 124, 124);
+}
+.section-three-addTeacher .bind-label {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.section-three-addTeacher .bind-label input[type=text] {
+  width: 90%;
+  height: 30px;
+}
+
+.section-fourth-addTeacher button {
+  width: 97%;
+  height: 30px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.section-fourth-addTeacher .addBtn {
+  height: 40px;
+  margin-top: 100px;
+  background-color: #549c6c;
+  color: #FFFBCE;
+  border: none;
+  cursor: pointer;
+}
+.section-fourth-addTeacher .addBtn:hover {
+  background-color: #e1efe6;
+  color: #040705;
+}
+
+/* Styles for the modalViewTeacher */
+.modalViewTeacher {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  font-family: "Inter", sans-serif;
+  padding: 20px;
+}
+
+.modal-content-ViewTeacher {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  height: 90%;
+}
+
+.closeViewTeacher {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.closeViewTeacher:hover,
+.closeViewTeacher:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.section-viewTeacher {
+  display: flex;
+}
+
+.personal-info-section {
+  padding: 20px;
+  width: 40%;
+  height: 600px;
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+.personal-info-section .first-section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.personal-info-section img {
+  width: 200px;
+  padding: 10px;
+}
+.personal-info-section label {
+  font-size: 12px;
+  color: rgb(124, 124, 124);
+  margin-bottom: 10px;
+  margin-top: 0;
+  padding: 0;
+}
+.personal-info-section p {
+  color: #3D3D3D;
+  padding: 0;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+.personal-info-section .button-section {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 10px;
+}
+.personal-info-section .button-section button {
+  align-items: center;
+  width: 100%;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  background-color: #fc7777;
+}
+
+.class-table-section {
+  width: 100%;
+  padding: 20px;
+}
+.class-table-section label {
+  font-size: 12px;
+  color: rgb(124, 124, 124);
+  margin: 0;
+  padding: 0;
+}
+.class-table-section p {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.class-table-section table {
+  width: 100%;
+  text-align: center;
+}
+.class-table-section table th {
+  padding: 10px;
+}
+.class-table-section table td {
+  padding: 10px;
+}
+
+/* Styles for the editViewTeacher */
+.modalEditTeacher {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  font-family: "Inter", sans-serif;
+  padding: 20px;
+}
+
+.modal-content-EditTeacher {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  height: 90%;
+}
+
+.closeEditTeacher {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.closeEditTeacher:hover,
+.closeEditTeacher:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.image-edit-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.image-edit-container img {
+  width: 100px;
+  padding-bottom: 20px;
+}
+
+.field-main-container {
+  display: flex;
+  justify-content: space-between;
+}
+.field-main-container .text-label-edit {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  align-items: center;
+}
+.field-main-container .text-label-edit input[type=text] {
+  width: 90%;
+  height: 30px;
+}
+.field-main-container .text-label-edit label {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: rgb(124, 124, 124);
+}
+
 * {
   box-sizing: border-box;
   padding: 0;

@@ -1,0 +1,366 @@
+@import "./_resource.scss";
+
+.teacher-main-container{
+    margin-left: 17vw;
+    height: 70vh;
+    font-family: "Inter", sans-serif;
+    // border: 1px solid black;
+}
+
+.header{
+    margin-top: 20px;
+}
+
+.addTeacher{
+    margin-top: 20px;
+    width: 130px;
+    height: 40px;
+    border: none;
+    background-color: $primary-buttonBg-green;
+    border-radius: 5px;
+    color: $primary-text-white;
+    font-size: 14px;
+    cursor: pointer;
+
+    &:hover{
+        background-color: $secondary-buttonBg-green;
+        color: $tertiary-text-black;
+    }
+}
+
+.teacher-table{
+    width: 95%;
+}
+
+.view,
+.edit,
+.archive{
+    width: 60px;
+    height: 30px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.view{
+    background-color: #9ae2c7;
+}
+.edit{
+    background-color: #6dabc6;
+}
+.archive{
+    background-color: #fc7777;
+}
+
+/* Styles for the modalAddTeacher */
+.modalAddTeacher {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    font-family: "Inter", sans-serif;
+  }
+  
+  .modal-content-AddTeacher {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  .closeAddTeacher {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .closeAddTeacher:hover,
+  .closeAddTeacher:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+.asterisk{
+    color: red;
+}
+
+.section-one-addTeacher{
+    display: flex;
+    justify-content: space-between;
+
+    .bind-label{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        color: $primary-text-gray2;
+        input[type=text]{
+            width: 90%;
+            height: 30px;
+        }
+      }
+}
+
+.section-two-addTeacher{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: $primary-text-gray2;
+
+    input[type=text]{
+        width: 63%;
+        height: 30px;
+    }
+}
+
+.section-three-addTeacher{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    color: $primary-text-gray2;
+
+    .bind-label{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        input[type=text]{
+            width: 90%;
+            height: 30px;
+        }
+    }
+}
+
+.section-fourth-addTeacher{
+    button{
+        width: 97%;
+        height: 30px;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+    .addBtn{
+        height: 40px;
+        margin-top: 100px;
+        background-color: $primary-buttonBg-green;
+        color: $primary-text-white;
+        border: none;
+        cursor: pointer;
+        &:hover{
+            background-color: $secondary-buttonBg-green;
+            color: $primary-text-black;
+        }
+    }
+}
+
+
+/* Styles for the modalViewTeacher */
+.modalViewTeacher {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    font-family: "Inter", sans-serif;
+    padding: 20px;
+  }
+  
+  .modal-content-ViewTeacher {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    height: 90%;
+  }
+  
+  .closeViewTeacher {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .closeViewTeacher:hover,
+  .closeViewTeacher:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+.section-viewTeacher{
+    display: flex;
+    // align-items: center;
+}
+
+
+.personal-info-section{
+    padding: 20px;
+    width: 40%;
+    height: 600px;
+    background-color: white;
+    border: 1px solid #cdcdcd;
+    border-radius: 12px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    position: relative; // for the deactivate button
+
+
+    .first-section{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    img{
+        width: 200px;
+        // border: 1px solid red;
+        padding: 10px;
+    }
+
+    label{
+        font-size: 12px;
+        color: $primary-text-gray2;
+        margin-bottom: 10px;
+        margin-top: 0;
+        padding: 0;
+    }
+
+    p{
+        color: $tertiary-text-black;
+        padding: 0;
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+
+    
+    .button-section{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        padding: 10px;
+
+        button{
+            align-items: center;
+            width: 100%;
+            height: 30px;
+            border-radius: 10px;
+            border: none;
+            background-color: #fc7777;
+        }
+    }
+}
+
+.class-table-section{
+    width: 100%;
+    padding: 20px;
+    // border: 1px solid black;
+
+    label{
+        font-size: 12px;
+        color: $primary-text-gray2;
+        margin: 0;
+        padding: 0;
+    }
+    p{
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+     table{
+        width: 100%;
+        text-align: center;
+
+        th{
+            padding: 10px;
+        }
+        td{
+            padding: 10px;
+        }
+     }
+}
+
+
+/* Styles for the editViewTeacher */
+.modalEditTeacher {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    font-family: "Inter", sans-serif;
+    padding: 20px;
+  }
+  
+  .modal-content-EditTeacher {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    height: 90%;
+  }
+  
+  .closeEditTeacher {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .closeEditTeacher:hover,
+  .closeEditTeacher:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+.image-edit-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img{
+        width: 100px;
+        padding-bottom: 20px;
+    }
+}
+
+.field-main-container{
+    display: flex;
+    justify-content: space-between;
+    
+    .text-label-edit{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        align-items: center;
+
+        input[type=text]{
+            width: 90%;
+            height: 30px;
+        }
+
+        label{
+            font-size: 14px;
+            margin-bottom: 20px;
+            color: $primary-text-gray2;
+        }
+    }
+
+    
+}
