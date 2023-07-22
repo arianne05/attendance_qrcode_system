@@ -36,7 +36,7 @@
                     <td>active</td>
                     <td>
                         <button class="view" onclick="openModalViewTeacher()">View</button>
-                        <button class="edit">Edit</button>
+                        <button class="edit" onclick="openModalEditTeacher()">Edit</button>
                         <button class="archive">Deactivate</button>
                     </td>
                 </tr>

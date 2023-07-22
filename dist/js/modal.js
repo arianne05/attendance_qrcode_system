@@ -15,3 +15,12 @@ function openModalViewTeacher() {
 function closeModalViewTeacher() {
     document.getElementById("viewTeacherModal").style.display = "none";
 }
+
+// Edit Teacher
+function openModalEditTeacher() {
+    document.getElementById("editTeacherModal").style.display = "block";
+}
+
+function closeModalEditTeacher() {
+    document.getElementById("editTeacherModal").style.display = "none";
+}
