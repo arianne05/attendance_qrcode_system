@@ -26,6 +26,7 @@ function closeModalEditTeacher() {
 }
 
 /* MODAL FOR STUDENT-ADMIN */
+
 // Add Student
 function openModalAddStudent() {
     document.getElementById("addStudentModal").style.display = "block";
@@ -33,4 +34,13 @@ function openModalAddStudent() {
 
 function closeModalAddStudent() {
     document.getElementById("addStudentModal").style.display = "none";
+}
+
+// View Student
+function openModalViewStudent() {
+    document.getElementById("viewStudentModal").style.display = "block";
+}
+
+function closeModalViewStudent() {
+    document.getElementById("viewStudentModal").style.display = "none";
 }

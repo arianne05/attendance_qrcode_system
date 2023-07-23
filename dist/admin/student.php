@@ -39,7 +39,7 @@
                     <td>
                         <button class="view" onclick="openModalViewStudent()">View</button>
                         <button class="edit" onclick="openModalEditStudent()">Edit</button>
-                        <button class="archive">Deactivate</button>
+                        <button class="archive">Archive</button>
                     </td>
                 </tr>
             </table>
