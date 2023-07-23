@@ -266,6 +266,9 @@
                         <input type="text">
                     </div>
                 </div>
+                <div class="button-edit">
+                    <button>Save Changes</button>
+                </div>
             </div>
          </form>
         

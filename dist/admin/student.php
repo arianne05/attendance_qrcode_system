@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Links -->
     <link rel="stylesheet" href="../css/main.css">
     <script src="https://kit.fontawesome.com/8b614ed6c5.js" crossorigin="anonymous"></script>
-    <title>Teacher | Admin</title>
+    <title>Student | Admin</title>
 </head>
 <body>
     <!-- Topbar -->
@@ -13,31 +14,32 @@
     <!-- Sidebar -->
     <?php include_once '../navbar/sidebar.php'?>
 
-    <!-- Main Container -->
-    <div class="teacher-main-container">
+    <div class="student-main-container">
         <div class="header">
-            <h3>List of Registered Teacher</h3>
+            <h3>List of Registered Student</h3>
             <label for="header">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, minima.</label>
         </div>
-        
-        <button class="addTeacher" onclick="openModalAddTeacher()">Add New</button>
+
+        <button class="addTeacher" onclick="openModalAddStudent()">Add New</button>
 
         <div class="table-container teacher-table">
             <table>
                 <tr>
-                    <th>Employee ID</th>
-                    <th>Teacher Name</th>
-                    <th>Status</th>
+                    <th>Student No.</th>
+                    <th>Student Name</th>
+                    <th>Grade/Section</th>
+                    <th>School Year</th>
                     <th>Option</th>
                 </tr>
                 <tr>
                     <td>201912344</td>
-                    <td>Prof. Maribelle Atienza</td>
-                    <td>active</td>
+                    <td>Arianne Quimpo</td>
+                    <td>G10 Malbar</td>
+                    <td>2020-2023</td>
                     <td>
-                        <button class="view" onclick="openModalViewTeacher()">View</button>
-                        <button class="edit" onclick="openModalEditTeacher()">Edit</button>
-                        <button class="archive">Deactivate</button>
+                        <button class="view" onclick="openModalViewStudent()">View</button>
+                        <button class="edit" onclick="openModalEditStudent()">Edit</button>
+                        <button class="archive">Archive</button>
                     </td>
                 </tr>
             </table>
@@ -45,10 +47,9 @@
     </div>
 
     <!-- Modal Container -->
-    <?php include_once './modal/addTeacher.php'?>
+    <?php include_once './modal/addStudent.php'?>
 </body>
 
 <!-- Script Link -->
 <script src="../js/modal.js"></script>
-
 </html>

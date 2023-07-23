@@ -360,7 +360,26 @@
             margin-bottom: 20px;
             color: $primary-text-gray2;
         }
-    }
+    }    
+}
 
-    
+.button-edit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    button{
+        width: 90%;
+        height: 40px;
+        border-radius: 8px;
+        border: none;
+        background-color: $primary-buttonBg-green;
+        color: $primary-text-white;
+        margin-top: 20px;
+        cursor: pointer;
+        &:hover{
+            background-color: $secondary-buttonBg-green;
+            color: $tertiary-text-black;
+        }
+    }
 }

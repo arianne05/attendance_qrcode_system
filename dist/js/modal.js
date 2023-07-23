@@ -24,3 +24,32 @@ function openModalEditTeacher() {
 function closeModalEditTeacher() {
     document.getElementById("editTeacherModal").style.display = "none";
 }
+
+/* MODAL FOR STUDENT-ADMIN */
+
+// Add Student
+function openModalAddStudent() {
+    document.getElementById("addStudentModal").style.display = "block";
+}
+
+function closeModalAddStudent() {
+    document.getElementById("addStudentModal").style.display = "none";
+}
+
+// View Student
+function openModalViewStudent() {
+    document.getElementById("viewStudentModal").style.display = "block";
+}
+
+function closeModalViewStudent() {
+    document.getElementById("viewStudentModal").style.display = "none";
+}
+
+// Edit Student
+function openModalEditStudent() {
+    document.getElementById("editStudentModal").style.display = "block";
+}
+
+function closeModalEditStudent() {
+    document.getElementById("editStudentModal").style.display = "none";
+}
