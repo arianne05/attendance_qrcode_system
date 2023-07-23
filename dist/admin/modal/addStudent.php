@@ -46,7 +46,7 @@
                 </div>
             </div>
 
-            <!-- Section 2 -->
+            <!-- Section 3 -->
             <div class="field-main-container">
                 <div class="text-label-edit">
                     <input type="text">
@@ -155,6 +155,7 @@
     </div>
 </div>
 
+<!-- The Modal View Student-->
 <div id="viewStudentModal" class="modalViewStudent">
     <div class="modal-content-ViewStudent">
         <span class="closeViewStudent" onclick="closeModalViewStudent()">&times;</span>
@@ -230,6 +231,167 @@
                     </table>
                 </div>
             </div>
+    </div>
+</div>
+
+<!-- The Modal Edit Student-->
+<div id="editStudentModal" class="modalEditStudent">
+    <div class="modal-content-EditStudent">
+        <span class="closeEditStudent" onclick="closeModalEditStudent()">&times;</span>
+        <center>
+            <h2>Edit Student's Profile</h2>
+            <p>Please input required field with <span class="asterisk">*</span></p>
+            <br><br>
+        </center>
+        
+
+        <!-- Form to Submit -->
+        <form action="" method="">
+            <div class="edit-main-container">
+                <!-- Image -->
+                <div class="image-edit-container">
+                    <img src="../img/user-icon-default/user-male-default.png" alt="">
+                </div>
+
+                <!-- Section 1 -->
+                <div class="field-main-container">
+                    <div class="text-label-edit">
+                        <input type="text">
+                        <label for="editFirstName">First Name</label>
+                    </div>
+                    <div class="text-label-edit">
+                        <input type="text">
+                        <label for="editFirstName">Middle Name</label>
+                    </div>
+                    <div class="text-label-edit">
+                        <input type="text">
+                        <label for="editFirstName">Last Name</label>
+                    </div>
+                </div>
+
+                <!-- Section 2 -->
+            <div class="field-main-container">
+                <div class="text-label-edit">
+                    <input type="text">
+                    <label for="editFirstName">Student Number</label>
+                </div>
+                <div class="text-label-edit">
+                    <input type="text">
+                    <label for="editFirstName">Grade</label>
+                </div>
+                <div class="text-label-edit">
+                    <input type="text">
+                    <label for="editFirstName">Section</label>
+                </div>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="field-main-container">
+                <div class="text-label-edit">
+                    <input type="text">
+                    <label for="editFirstName">School Year</label>
+                </div>
+                <div class="text-label-edit">
+                    <input type="text">
+                    <label for="editFirstName">Adviser</label>
+                </div>
+                <div class="text-label-edit">
+                </div>
+            </div>
+
+                
+            <p>Subject Enrolled</p>
+                <hr><!-- Section 3 -->
+                <br>
+
+                <div class="field-main-container">
+                    <div class="text-label-edit">
+                        <label for="editFirstName">Subject</label>
+                    </div>
+                    <div class="text-label-edit">
+                        <label for="editFirstName">Teacher</label>
+                    </div>
+                    <div class="text-label-edit">
+                        <label for="editFirstName">Schedule</label>
+                    </div>
+                </div>
+                <div class="field-main-container">
+                    <div class="text-label-edit">
+                        <input type="text">
+                    </div>
+                    <div class="text-label-edit">
+                        <input type="text">
+                    </div>
+                    <div class="text-label-edit">
+                        <input type="text">
+                    </div>
+                </div>
+                <br>
+                <div class="field-main-container">
+                    <div class="text-label-edit">
+                        <input type="text">
+                    </div>
+                    <div class="text-label-edit">
+                        <input type="text">
+                    </div>
+                    <div class="text-label-edit">
+                        <input type="text">
+                    </div>
+                </div>
+                <br>
+                <div class="field-main-container">
+                    <div class="text-label-edit">
+                        <input type="text">
+                    </div>
+                    <div class="text-label-edit">
+                        <input type="text">
+                    </div>
+                    <div class="text-label-edit">
+                        <input type="text">
+                    </div>
+                </div>
+                <br>
+                <div class="field-main-container">
+                    <div class="text-label-edit">
+                        <input type="text">
+                    </div>
+                    <div class="text-label-edit">
+                        <input type="text">
+                    </div>
+                    <div class="text-label-edit">
+                        <input type="text">
+                    </div>
+                </div>
+                <br>
+                <div class="field-main-container">
+                    <div class="text-label-edit">
+                        <input type="text">
+                    </div>
+                    <div class="text-label-edit">
+                        <input type="text">
+                    </div>
+                    <div class="text-label-edit">
+                        <input type="text">
+                    </div>
+                </div>
+                <br>
+                <div class="field-main-container">
+                    <div class="text-label-edit">
+                        <input type="text">
+                    </div>
+                    <div class="text-label-edit">
+                        <input type="text">
+                    </div>
+                    <div class="text-label-edit">
+                        <input type="text">
+                    </div>
+                </div>
+                <br>
+                <div class="button-edit">
+                    <button>Save Changes</button>
+                </div>
+            </div>
+         </form>
     </div>
 </div>
 

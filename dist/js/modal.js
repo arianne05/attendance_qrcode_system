@@ -44,3 +44,12 @@ function openModalViewStudent() {
 function closeModalViewStudent() {
     document.getElementById("viewStudentModal").style.display = "none";
 }
+
+// Edit Student
+function openModalEditStudent() {
+    document.getElementById("editStudentModal").style.display = "block";
+}
+
+function closeModalEditStudent() {
+    document.getElementById("editStudentModal").style.display = "none";
+}
