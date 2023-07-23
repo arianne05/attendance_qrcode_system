@@ -24,3 +24,13 @@ function openModalEditTeacher() {
 function closeModalEditTeacher() {
     document.getElementById("editTeacherModal").style.display = "none";
 }
+
+/* MODAL FOR STUDENT-ADMIN */
+// Add Student
+function openModalAddStudent() {
+    document.getElementById("addStudentModal").style.display = "block";
+}
+
+function closeModalAddStudent() {
+    document.getElementById("addStudentModal").style.display = "none";
+}

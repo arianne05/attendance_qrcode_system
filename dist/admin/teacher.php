@@ -44,8 +44,11 @@
         </div>
     </div>
 
+    <!-- Modal Container -->
     <?php include_once './modal/addTeacher.php'?>
-
 </body>
+
+<!-- Script Link -->
 <script src="../js/modal.js"></script>
+
 </html>
