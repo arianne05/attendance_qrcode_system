@@ -13,14 +13,14 @@
         <div class="section-first-half">
             <div class="container-header">
                 <img src="./img/logo-hermosa 4.png" alt="Image" width="100">
-                <div class="mergeIconSelect">
-                    <!-- <i class="fa-solid fa-arrows-spin"></i> -->
+                <!-- <div class="mergeIconSelect">
                     <i class="fa-solid fa-gear"></i>
-                    <select name="" id="">
-                        <option value="">Student</option>
-                        <option value="">Teacher</option>
+                    <select name="position" id="">
+                        <option value="student">Student</option>
+                        <option value="teacher">Teacher</option>
+                        <option value="admin">Admin</option>
                   </select>
-                </div>
+                </div> -->
             </div>
             
             <div class="container-body">
@@ -32,22 +32,22 @@
                         <p class="division">__________ or __________</p>
                     </div>
                        
-                    <form action="" class="form">
+                    <form action="login.php" method="POST" class="form">
                         <div class="input-type-section">
                             <div class="mergeIconUser">
                                 <i class="fas fa-user"></i> 
-                                <input type="text" placeholder="Your Username">
+                                <input type="text" placeholder="Your Username" name="username" required>
                             </div>
                         </div>
                         <div class="input-type-section">
                             <div class="mergeIconPass">
                                 <i class="fa-solid fa-lock"></i>
-                                <input type="password" placeholder="Password">
+                                <input type="password" placeholder="Password" name="password" required>
                             </div>
                             
                         </div>
                         <a class="forgotP" href="#">Forgot Password?</a>
-                        <button>Sign In</button>
+                        <button type="submit">Sign In</button>
                         <center>
                             <p>Dont Have an Account yet? <a class="signUpLink" href="#"><b>Contact Us</b></a></p>
                         </center>
