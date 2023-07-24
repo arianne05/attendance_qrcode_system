@@ -94,8 +94,8 @@
   margin-top: 15px;
   border-radius: 10px;
   border: 1px solid rgb(185, 185, 185);
-  padding-top: 10px;
-  padding-bottom: 25px;
+  width: 83%;
+  height: 35px;
   font-family: "Raleway", sans-serif;
   font-weight: bold;
 }
@@ -148,12 +148,12 @@
   color: rgb(155, 155, 155);
   padding-left: 10px;
 }
+.form .mergeIconPass:hover #lock {
+  color: #549c6c;
+}
 .form .mergeIconPass #togglePassword {
   color: rgb(155, 155, 155);
   padding-right: 10px;
-}
-.form .mergeIconPass:hover #lock {
-  color: #549c6c;
 }
 .form .mergeIconPass:hover #togglePassword {
   color: #549c6c;
