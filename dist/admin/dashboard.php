@@ -3,7 +3,7 @@
     include '../connection/db_conn.php';
     if (!isset($_SESSION['accountID'])) {
         // Redirect the user to the login page
-        header("Location: ../index.php?error session");
+        header("Location: ../index.php?errorSession");
         exit();
     }
 ?>
