@@ -45,6 +45,19 @@ if(isset($_GET['warningLogin4'])){
     <?php
 }
 
+//Session error alert
+if(isset($_GET['errorSession'])){
+    ?>
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Oopss..',
+                text: 'Login to the system please!'
+            })
+        </script>
+    <?php
+}
+
 // Welcome Dashboard Sweet Alert
 if(isset($_GET['loginSuccess'])){
     ?>
