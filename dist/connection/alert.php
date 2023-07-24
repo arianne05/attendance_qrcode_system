@@ -3,48 +3,44 @@
 if(isset($_GET['warningLogin1'])){
     ?>
         <script>
-            swal({
-                title: "Empty Field",
-                text: "Please input username and password!",
-                icon: "error",
-                button: "Close",
-            });
+            Swal.fire({
+                icon: 'error',
+                title: 'Empty Field',
+                text: 'Please input username and password!'
+            })
         </script>
     <?php
 }
 if(isset($_GET['warningLogin2'])){
     ?>
         <script>
-            swal({
-                title: "Empty Username",
-                text: "Please input username!",
-                icon: "error",
-                button: "Close",
-            });
+            Swal.fire({
+                icon: 'error',
+                title: 'Empty Username',
+                text: 'Please input username!'
+            })
         </script>
     <?php
 }
 if(isset($_GET['warningLogin3'])){
     ?>
         <script>
-            swal({
-                title: "Empty Password",
-                text: "Please input password!",
-                icon: "error",
-                button: "Close",
-            });
+            Swal.fire({
+                icon: 'error',
+                title: 'Empty Password',
+                text: 'Please input password!'
+            })
         </script>
     <?php
 }
 if(isset($_GET['warningLogin4'])){
     ?>
         <script>
-            swal({
-                title: "Incorrect Username and Password",
-                text: "Please input correct username and password!",
-                icon: "error",
-                button: "Close",
-            });
+            Swal.fire({
+                icon: 'error',
+                title: 'Incorrect Username and Password',
+                text: 'Please input correct username and password!'
+            })
         </script>
     <?php
 }
@@ -53,12 +49,19 @@ if(isset($_GET['warningLogin4'])){
 if(isset($_GET['loginSuccess'])){
     ?>
         <script>
-            swal({
-                title: "Welcome Admin!",
-                // text: "You clicked the button!",
-                icon: "success",
-                button: "Close",
-            });
+            Swal.fire({
+                toast: true,
+                position: 'top-right',
+                icon: 'success',
+                iconColor: 'green',
+                title: 'Welcome, Admin!',
+                customClass: {
+                    popup: 'toast'
+                },
+                showConfirmButton: false,
+                timer: 2000,
+                timerProgressBar: true,
+            })
         </script>
     <?php
 }

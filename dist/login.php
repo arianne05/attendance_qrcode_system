@@ -1,4 +1,5 @@
 <?php
+session_start();
 include './connection/db_conn.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -19,6 +20,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($user && $input_password) {
             // Successful login
             $position = $user['position'];
+            $accountID = $user['accountID'];
+            $_SESSION['accountID']= $accountID;
 
             // Redirect users to their corresponding dashboards based on their position
             switch ($position) {

@@ -1,5 +1,6 @@
 <?php
     $title = $_GET['header'];
+    include_once '../connection/alert.php'
 ?>
 <!-- Topbar -->
 <div class="dashboard-top-bar">
@@ -32,7 +33,7 @@
                         <button class="dropdown-btn"><span class="userName">Arianne<br></span><span class="labelPosition">Admin</span><i id="iconDrop" class="fa-solid fa-chevron-down"></i></button>
                         <div class="dropdown-content">
                           <a href="#">Visit Profile</a>
-                          <a href="../index.php">Logout</a>
+                          <a href="#" onclick="logoutAlert()">Logout</a>
                         </div>
                     </div>
                 </div>
@@ -40,6 +41,7 @@
         </div>
     </div>
 
+    
     <!-- JS for onscroll color change -->
     <script>
         // Get the top bar element

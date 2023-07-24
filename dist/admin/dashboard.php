@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    include '../connection/db_conn.php';
+    if (!isset($_SESSION['accountID'])) {
+        // Redirect the user to the login page
+        header("Location: ../index.php?error session");
+        exit();
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -192,4 +201,5 @@
     <!-- JS links -->
     <script src="../js/calendar.js"></script>
     <script src="../js/time.js"></script>
+    <script src="../js/alert.js"></script>
 </html>
