@@ -6,9 +6,14 @@
     <!-- Links -->
     <link rel="stylesheet" href="../css/main.css">
     <script src="https://kit.fontawesome.com/8b614ed6c5.js" crossorigin="anonymous"></script>
+    <!-- Sweet Alert -->
+    <script src="../js/sweetalert.min.js"></script>
     <title>Dashboard</title>
 </head>
 <body>
+    <!-- Sweet Alert -->
+    <?php include_once '../connection/alert.php'?>
+
     <!-- Topbar -->
     <?php include_once '../navbar/topbar.php'?>
 

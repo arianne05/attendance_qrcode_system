@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Redirect users to their corresponding dashboards based on their position
             switch ($position) {
                 case 'admin':
-                    header("Location: admin/dashboard.php?header=Dashboard");
+                    header("Location: admin/dashboard.php?header=Dashboard&loginSuccess");
                     break;
                 case 'student':
                     header("Location: student_dashboard.php");
@@ -39,7 +39,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         } else {
             // Invalid login credentials You can display an error message on the login page
-            echo "Invalid username or password. Please try again. ";
+            if(empty($input_username) && empty($input_password)){
+                header("Location: index.php?warningLogin1");
+                exit();
+            } elseif (empty($input_username) && !empty($input_password)){
+                header("Location: index.php?warningLogin2");
+                exit();
+            } elseif (!empty($input_username) && empty($input_password)){
+                header("Location: index.php?warningLogin3");
+                exit();
+            } else{
+                header("Location: index.php?warningLogin4");
+                exit();
+            }
         }
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();

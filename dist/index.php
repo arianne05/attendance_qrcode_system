@@ -6,9 +6,14 @@
     <!-- Links -->
     <link rel="stylesheet" href="./css/main.css">
     <script src="https://kit.fontawesome.com/8b614ed6c5.js" crossorigin="anonymous"></script>
+    <!-- Sweet Alert -->
+    <script src="./js/sweetalert.min.js"></script>
     <title>Document</title>
 </head>
 <body>
+    <!-- Sweet Alert -->
+    <?php include_once './connection/alert.php'?>
+    
     <div class="main-section">
         <div class="section-first-half">
             <div class="container-header">
@@ -36,15 +41,15 @@
                         <div class="input-type-section">
                             <div class="mergeIconUser">
                                 <i class="fas fa-user"></i> 
-                                <input type="text" placeholder="Your Username" name="username" required>
+                                <input type="text" placeholder="Your Username" name="username">
                             </div>
                         </div>
                         <div class="input-type-section">
                             <div class="mergeIconPass">
-                                <i class="fa-solid fa-lock"></i>
-                                <input type="password" placeholder="Password" name="password" required>
+                                <i class="fa-solid fa-lock" id="lock"></i>
+                                <input type="password" id="passwordInput" placeholder="Password" name="password">
+                                <i class="fa-solid fa-eye-slash" id="togglePassword"></i>
                             </div>
-                            
                         </div>
                         <a class="forgotP" href="#">Forgot Password?</a>
                         <button type="submit">Sign In</button>
@@ -101,4 +106,24 @@
 <!-- js links -->
 <script src="./js/slideshow_index.js"></script>
 
+<!-- Password visibility -->
+<script>
+    // JavaScript to toggle password visibility
+    const passwordInput = document.getElementById('passwordInput');
+    const togglePassword = document.getElementById('togglePassword');
+
+    togglePassword.addEventListener('click', function () {
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+
+        // Change eye icon based on password visibility
+        if (type === 'password') {
+            togglePassword.classList.remove('fa-eye');
+            togglePassword.classList.add('fa-eye-slash');
+        } else {
+            togglePassword.classList.remove('fa-eye-slash');
+            togglePassword.classList.add('fa-eye');
+        }
+    });
+</script>
 </html>
