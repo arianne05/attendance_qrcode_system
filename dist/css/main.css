@@ -144,11 +144,18 @@
   padding: 0;
   margin-bottom: 20px;
 }
-.form .mergeIconPass i {
+.form .mergeIconPass #lock {
   color: rgb(155, 155, 155);
   padding-left: 10px;
 }
-.form .mergeIconPass:hover i {
+.form .mergeIconPass #togglePassword {
+  color: rgb(155, 155, 155);
+  padding-right: 10px;
+}
+.form .mergeIconPass:hover #lock {
+  color: #549c6c;
+}
+.form .mergeIconPass:hover #togglePassword {
   color: #549c6c;
 }
 .form input {
@@ -159,6 +166,7 @@
   padding-right: 18px;
   padding-left: 10px;
   border: none;
+  border-radius: 10px;
 }
 .form input::-moz-placeholder {
   font-size: 14px;

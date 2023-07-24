@@ -143,13 +143,19 @@
         border-radius: 10px;
         padding: 0;
         margin-bottom: 20px;
-
-        i{
+        #lock{
             color: rgb(155, 155, 155);
             padding-left: 10px;
         }
+        #togglePassword{
+            color: rgb(155, 155, 155);
+            padding-right: 10px;
+        }
 
-        &:hover i{
+        &:hover #lock{
+            color: $primary-buttonBg-green;
+        }
+        &:hover #togglePassword{
             color: $primary-buttonBg-green;
         }
     }
@@ -162,6 +168,7 @@
         padding-right: 18px;
         padding-left: 10px;
         border: none;
+        border-radius: 10px;
     }
 
     input::placeholder {
