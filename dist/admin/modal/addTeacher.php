@@ -13,7 +13,7 @@
         
 
         <!-- Form to Submit -->
-        <form action="" method="">
+        <form action="../admin/queries/teacher-query.php" method="POST">
             <div class="section-one-addTeacher">
                 <div class="bind-label">
                     <label for="teacherFName">First Name<span class="asterisk">*</span></label>
@@ -35,8 +35,8 @@
                     <input type="text" id="teacherUName" name="teacherUName" required>
                 </div>
                 <div class="bind-label">
-                    <label for="teacherID">Employee ID<span class="asterisk">*</span></label>
-                    <input type="text" id="teacherID" name="teacherID" required>
+                    <label for="teacherPass">Password<span class="asterisk">*</span></label>
+                    <input type="text" id="teacherPass" name="teacherPass" required>
                 </div>
                 <div class="bind-label">
                     <label for="teacherFaculty">Faculty<span class="asterisk">*</span></label>
@@ -51,15 +51,15 @@
             <div class="section-three-addTeacher">
                 <div class="bind-label">
                     <label for="teacherSchedule1">Schedule:</label>
-                    <input type="text" id="teacherSchedule1" name="teacherSchedule1" required>
+                    <input type="text" id="teacherSchedule1" name="teacherSchedule1">
                 </div>
                 <div class="bind-label">
                     <label for="teacherSection1">Section Name:</label>
-                    <input type="text" id="teacherSection1" name="teacherSection1" required>
+                    <input type="text" id="teacherSection1" name="teacherSection1">
                 </div>
                 <div class="bind-label">
                     <label for="teacherSubject1">Subject Name:</label>
-                    <input type="text" id="teacherSubject1" name="teacherSubject1" required>
+                    <input type="text" id="teacherSubject1" name="teacherSubject1">
                 </div>
                 <div class="withButton">
                     <label for="teacherSubject1">d</label>
@@ -70,7 +70,7 @@
 
         <div class="section-fourth-addTeacher">
             <button id="addSectionBtn">Add Section <i class="fa-solid fa-plus"></i></button>
-            <button class="addBtn">ADD NEW TEACHER</button>
+            <button type="submit" class="addBtn" name="addTeacher">ADD NEW TEACHER</button>
         </div>
         </form>
     </div>

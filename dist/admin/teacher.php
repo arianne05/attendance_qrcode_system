@@ -2,6 +2,10 @@
     session_start();
     include '../connection/db_conn.php';
     include '../connection/session.php';
+
+    $stmt = $pdo->prepare("SELECT * FROM account_information WHERE position ='teacher'");
+    $stmt->execute();
+    $teacher = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,16 +36,18 @@
                     <th>Status</th>
                     <th>Option</th>
                 </tr>
+                <?php foreach($teacher as $teacher){ ?>
                 <tr>
-                    <td>201912344</td>
-                    <td>Prof. Maribelle Atienza</td>
-                    <td>active</td>
+                    <td><?php echo $teacher['accountID']?></td>
+                    <td><?php echo $teacher['firstname'].' '.$teacher['middlename'].' '.$teacher['lastname']?></td>
+                    <td><?php echo $teacher['status']?></td>
                     <td>
                         <button class="view" onclick="openModalViewTeacher()">View</button>
                         <button class="edit" onclick="openModalEditTeacher()">Edit</button>
                         <button class="archive">Deactivate</button>
                     </td>
                 </tr>
+                <?php } ?>
             </table>
         </div>
     </div>

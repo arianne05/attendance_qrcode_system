@@ -79,5 +79,18 @@ if(isset($_GET['loginSuccess'])){
     <?php
 }
 
-
+// Teacher-Add-Success
+if(isset($_GET['addTeacherSuccess'])){
+    ?>
+        <script>
+            Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Added Successfully',
+            showConfirmButton: false,
+            timer: 1500
+            })
+        </script>
+    <?php
+}
 ?>
