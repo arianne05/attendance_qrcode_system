@@ -1,11 +1,7 @@
 <?php
     session_start();
     include '../connection/db_conn.php';
-    if (!isset($_SESSION['accountID'])) {
-        // Redirect the user to the login page
-        header("Location: ../index.php?errorSession");
-        exit();
-    }
+    include '../connection/session.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
