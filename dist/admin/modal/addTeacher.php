@@ -16,45 +16,62 @@
         <form action="" method="">
             <div class="section-one-addTeacher">
                 <div class="bind-label">
-                    <label for="teacherName">Name:</label>
-                    <input type="text" id="teacherName" name="teacherName" required>
+                    <label for="teacherFName">First Name<span class="asterisk">*</span></label>
+                    <input type="text" id="teacherFName" name="teacherFName" required>
                 </div>
                 <div class="bind-label">
-                    <label for="teacherID">Employee ID:</label>
+                    <label for="teacherMName">Middle Name</label>
+                    <input type="text" id="teacherMName" name="teacherMName">
+                </div>
+                <div class="bind-label">
+                    <label for="teacherLName">Last Name<span class="asterisk">*</span></label>
+                    <input type="text" id="teacherLName" name="teacherLName" required>
+                </div>
+            </div>
+            <br>
+            <div class="section-one-addTeacher">
+                <div class="bind-label">
+                    <label for="teacherUName">Username<span class="asterisk">*</span></label>
+                    <input type="text" id="teacherUName" name="teacherUName" required>
+                </div>
+                <div class="bind-label">
+                    <label for="teacherID">Employee ID<span class="asterisk">*</span></label>
                     <input type="text" id="teacherID" name="teacherID" required>
                 </div>
                 <div class="bind-label">
-                    <label for="teacherFaculty">Faculty:</label>
+                    <label for="teacherFaculty">Faculty<span class="asterisk">*</span></label>
                     <input type="text" id="teacherFaculty" name="teacherFaculty" required>
                 </div>
             </div>
-
-            <div class="section-two-addTeacher">
-                <label for="teacherUsername">Username:</label>
-                <input type="text" id="teacherUsername" name="teacherUsername" required>
-            </div>
-
+            <br>
             <p><b>Section to handle</b> Please click the radio button if its your advisee</p>
 
+            <div id="sectionContainer">
+            <!-- Initial section -->
             <div class="section-three-addTeacher">
                 <div class="bind-label">
-                    <label for="teacherUsername">Schedule:</label>
-                    <input type="text" id="teacherSchedule" name="teacherSchedule" required>
+                    <label for="teacherSchedule1">Schedule:</label>
+                    <input type="text" id="teacherSchedule1" name="teacherSchedule1" required>
                 </div>
                 <div class="bind-label">
-                    <label for="teacherUsername">Section Name:</label>
-                    <input type="text" id="teacherSection" name="teacherSection" required>
+                    <label for="teacherSection1">Section Name:</label>
+                    <input type="text" id="teacherSection1" name="teacherSection1" required>
                 </div>
                 <div class="bind-label">
-                    <label for="">sdsda</label>
-                    <input type="text" id="teacherUsername" name="teacherUsername" required>
+                    <label for="teacherSubject1">Subject Name:</label>
+                    <input type="text" id="teacherSubject1" name="teacherSubject1" required>
+                </div>
+                <div class="withButton">
+                    <label for="teacherSubject1">d</label>
+                    <button disabled class="removeBtn"><i class="fa-regular fa-square-minus"></i></button>
                 </div>
             </div>
+        </div>
 
-            <div class="section-fourth-addTeacher">
-                <button>Add Section</button>
-                <button class="addBtn">ADD NEW TEACHER</button>
-            </div>
+        <div class="section-fourth-addTeacher">
+            <button id="addSectionBtn">Add Section <i class="fa-solid fa-plus"></i></button>
+            <button class="addBtn">ADD NEW TEACHER</button>
+        </div>
         </form>
     </div>
 </div>

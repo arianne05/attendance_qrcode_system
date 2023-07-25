@@ -53,4 +53,5 @@
 <!-- Script Link -->
 <script src="../js/modal.js"></script>
 <script src="../js/alert.js"></script>
+<script src="../js/addInputType.js"></script>
 </html>

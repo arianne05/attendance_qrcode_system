@@ -64,14 +64,16 @@
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
     font-family: "Inter", sans-serif;
+    padding: 20px;
   }
   
   .modal-content-AddTeacher {
     background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
+    margin: auto;
+    padding: 30px;
     border: 1px solid #888;
     width: 80%;
+    height: auto;
   }
   
   .closeAddTeacher {
@@ -103,7 +105,13 @@
         color: $primary-text-gray2;
         input[type=text]{
             width: 90%;
-            height: 30px;
+            height: 35px;
+            background-color: white;
+            border: 1px solid #cdcdcd;
+            border-radius: 7px;
+        }
+        label{
+            font-size: 14px;
         }
       }
 }
@@ -124,27 +132,57 @@
 
 .section-three-addTeacher{
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
+    // align-items: center;
     margin-top: 10px;
     color: $primary-text-gray2;
+    width: 97%;
+    // border: 1px solid black;
 
     .bind-label{
         display: flex;
         flex-direction: column;
         width: 100%;
+        label{
+            font-size: 14px;
+        }
         input[type=text]{
-            width: 90%;
+            width: 85%;
             height: 30px;
+            background-color: white;
+            border: 1px solid #cdcdcd;
+            border-radius: 7px;
+        }
+        i{  
+            font-size: 20px;
+            border: none;
+            background-color: white;
+        }
+    }
+    .withButton{
+        margin-right: 40px;
+        label{
+            color: transparent;
         }
     }
 }
 
 .section-fourth-addTeacher{
-    button{
+    display: flex;
+    flex-direction: column;
+    #addSectionBtn{
+        border: none;
+        margin-top: 15px;
         width: 97%;
-        height: 30px;
-        margin-top: 20px;
+        height: 35px;
+        background-color: $secondary-buttonBg-green;
         cursor: pointer;
+        border-radius: 5px;
+        color: $tertiary-text-black;
+        &:hover{
+            background-color: $primary-buttonBg-green;
+            color: $primary-text-white;
+        }
     }
     .addBtn{
         height: 40px;
@@ -383,3 +421,4 @@
         }
     }
 }
+
