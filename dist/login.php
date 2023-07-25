@@ -1,49 +1,60 @@
 <?php
-require_once './connection/db_conn.php';
+session_start();
+include './connection/db_conn.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
-    // Get the form data
-    $position = $_POST["position"];
-    $username = $_POST["username"];
-    $password = $_POST["password"];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // Perform basic validation (you can add more validation as per your requirements)
-    if (empty($position) || empty($username) || empty($password)) {
-        echo "Please fill in all the fields.";
-        exit;
-    }
+    // Retrieve input from the login form
+    $input_username = $_POST["username"];
+    $input_password = $_POST["password"];
 
-    // Prepare the SQL query based on the selected position
-    $query = "";
-    switch ($position) {
-        case "student":
-        case "teacher":
-            $query = "SELECT * FROM account_information WHERE position = :position AND username = :username AND password = :password";
-            break;
-        case "admin":
-            $query = "SELECT * FROM account_information WHERE position = :position AND username = :username AND password = :password";
-            break;
-        default:
-            echo "Invalid position selected.";
-            exit;
-    }
-
-    // Execute the prepared statement
     try {
+        // Prepare and execute the login query
+        $query = "SELECT * FROM account_information WHERE username = :username";
         $stmt = $pdo->prepare($query);
-        $stmt->bindParam(":position", $position, PDO::PARAM_STR);
-        $stmt->bindParam(":username", $username, PDO::PARAM_STR);
-        $stmt->bindParam(":password", $password, PDO::PARAM_STR);
+        $stmt->bindParam(":username", $input_username);
         $stmt->execute();
 
-        // Check if a matching user is found
-        if ($stmt->rowCount() > 0) {
-            // User found, do something (e.g., redirect to dashboard)
-            header("Location: admin/dashboard.php"); // Replace "dashboard.php" with your actual dashboard page
-            exit;
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($user && $input_password) {
+            // Successful login
+            $position = $user['position'];
+            $accountID = $user['accountID'];
+            $_SESSION['accountID']= $accountID;
+
+            // Redirect users to their corresponding dashboards based on their position
+            switch ($position) {
+                case 'admin':
+                    header("Location: admin/dashboard.php?header=Dashboard&loginSuccess");
+                    break;
+                case 'student':
+                    header("Location: student_dashboard.php");
+                    break;
+                case 'teacher':
+                    header("Location: teacher_dashboard.php");
+                    break;
+                default:
+                    // If the position is not recognized, redirect to a generic dashboard
+                    header("Location: index.php");
+                    break;
+            }
+            exit();
         } else {
-            // User not found or invalid credentials
-            echo "Invalid credentials. Please try again.";
+            // Invalid login credentials You can display an error message on the login page
+            if(empty($input_username) && empty($input_password)){
+                header("Location: index.php?warningLogin1");
+                exit();
+            } elseif (empty($input_username) && !empty($input_password)){
+                header("Location: index.php?warningLogin2");
+                exit();
+            } elseif (!empty($input_username) && empty($input_password)){
+                header("Location: index.php?warningLogin3");
+                exit();
+            } else{
+                header("Location: index.php?warningLogin4");
+                exit();
+            }
         }
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();

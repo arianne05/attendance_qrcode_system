@@ -1,10 +1,16 @@
+<?php
+    session_start();
+    include '../connection/db_conn.php';
+    if (!isset($_SESSION['accountID'])) {
+        // Redirect the user to the login page
+        header("Location: ../index.php?errorSession");
+        exit();
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/main.css">
-    <script src="https://kit.fontawesome.com/8b614ed6c5.js" crossorigin="anonymous"></script>
+    <?php include '../connection/link.php'?>
     <title>Teacher | Admin</title>
 </head>
 <body>
@@ -50,5 +56,5 @@
 
 <!-- Script Link -->
 <script src="../js/modal.js"></script>
-
+<script src="../js/alert.js"></script>
 </html>
