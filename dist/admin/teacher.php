@@ -34,10 +34,10 @@
             <table id="example" class="display">
                 <thead>
                     <tr>
-                        <th>Employee ID</th>
-                        <th>Teacher Name</th>
-                        <th>Status</th>
-                        <th>Option</th>
+                        <th class="centerHead">Employee ID</th>
+                        <th class="centerHead">Teacher Name</th>
+                        <th class="centerHead">Status</th>
+                        <th class="centerHead">Option</th>
                     </tr>
                 </thead>
 
@@ -45,7 +45,7 @@
                     <?php foreach($teacher as $teacher){ ?>
                     <tr>
                         <td><?php echo $teacher['accountID']?></td>
-                        <td><?php echo $teacher['firstname'].' '.$teacher['middlename'].' '.$teacher['lastname']?></td>
+                        <td class="name"><?php echo $teacher['firstname'].' '.$teacher['middlename'].' '.$teacher['lastname']?></td>
                         <td><?php echo $teacher['status']?></td>
                         <td>
                             <button class="view" onclick="openModalViewTeacher(<?php echo $teacher['accountID']; ?>)">View</button>

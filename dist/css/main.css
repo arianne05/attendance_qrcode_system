@@ -1394,6 +1394,12 @@
   padding: 30px;
   height: auto;
 }
+.teacher-table .name {
+  text-align: left;
+}
+.teacher-table .centerHead {
+  text-align: center;
+}
 
 .view,
 .edit,
