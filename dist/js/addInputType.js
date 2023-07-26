@@ -31,7 +31,7 @@ function addSection() {
         </div>
         <div class="bind-label">
             <label for="teacherSubject1${sectionCounter}">Subject Name:</label>
-            <input type="text" id="teacherSubject1${sectionCounter}" name="teacherSubject1${sectionCounter}" required>
+            <input type="text" id="teacherSubject1${sectionCounter}" name="teacherSubject${sectionCounter}" required>
         </div>
         <div class="withButton">
             <label for="teacherSubject1">d</label>
