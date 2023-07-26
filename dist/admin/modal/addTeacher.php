@@ -94,27 +94,27 @@
                     <div class="first-section">
                         <img src="../img/user-icon-default/user-male-default.png" alt="">
                         <caption>
-                            <p>201912344</p>
+                            <p id="employeeNumber">201912344</p>
                             <label for="EmployeeNumb">Employee No.</label>
                         </caption>
                     </div>
                     <caption>
-                        <p>#Aya2t05</p>
+                        <p id="registeredUsername">Username</p>
                         <label for="EmployeeName">Registered Username</label>
                     </caption>
                     <hr>
                     <caption>
-                        <p>Arianne Quimpo</p>
+                        <p id="fullName">Arianne Quimpo</p>
                         <label for="EmployeeName">Full Name</label>
                     </caption>
                     <hr>
                     <caption>
-                        <p>English Department</p>
+                        <p id="department">English Department</p>
                         <label for="EmployeeDept">Department</label>
                     </caption>
                     <hr>
                     <caption>
-                        <p>G9-Jose Rizal</p>
+                        <p id="sectionAdvisee">G9-Jose Rizal</p>
                         <label for="EmployeeDept">Section Advisee</label>
                     </caption>
                     <hr>

@@ -6,6 +6,8 @@
     $stmt = $pdo->prepare("SELECT * FROM account_information WHERE position ='teacher'");
     $stmt->execute();
     $teacher = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    $viewTeacher = $pdo->query("SELECT * FROM account_information WHERE position = 'teacher'")->fetchAll();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,9 +44,11 @@
                     <td><?php echo $teacher['firstname'].' '.$teacher['middlename'].' '.$teacher['lastname']?></td>
                     <td><?php echo $teacher['status']?></td>
                     <td>
-                        <button class="view" onclick="openModalViewTeacher()">View</button>
+                        <button class="view" onclick="openModalViewTeacher(<?php echo $teacher['accountID']; ?>)">View</button>
                         <button class="edit" onclick="openModalEditTeacher()">Edit</button>
                         <button class="archive">Deactivate</button>
+                        <!-- Add a hidden input field to store the accountID -->
+                        <input type="hidden" class="accountID" value="<?php echo $teacher['accountID']; ?>">
                     </td>
                 </tr>
                 <?php } ?>
