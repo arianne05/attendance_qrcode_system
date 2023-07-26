@@ -31,27 +31,33 @@
         <button class="addTeacher" onclick="openModalAddTeacher()">Add New</button>
 
         <div class="table-container teacher-table">
-            <table>
-                <tr>
-                    <th>Employee ID</th>
-                    <th>Teacher Name</th>
-                    <th>Status</th>
-                    <th>Option</th>
-                </tr>
-                <?php foreach($teacher as $teacher){ ?>
-                <tr>
-                    <td><?php echo $teacher['accountID']?></td>
-                    <td><?php echo $teacher['firstname'].' '.$teacher['middlename'].' '.$teacher['lastname']?></td>
-                    <td><?php echo $teacher['status']?></td>
-                    <td>
-                        <button class="view" onclick="openModalViewTeacher(<?php echo $teacher['accountID']; ?>)">View</button>
-                        <button class="edit" onclick="openModalEditTeacher()">Edit</button>
-                        <button class="archive">Deactivate</button>
-                        <!-- Add a hidden input field to store the accountID -->
-                        <input type="hidden" class="accountID" value="<?php echo $teacher['accountID']; ?>">
-                    </td>
-                </tr>
-                <?php } ?>
+            <table id="example" class="display">
+                <thead>
+                    <tr>
+                        <th>Employee ID</th>
+                        <th>Teacher Name</th>
+                        <th>Status</th>
+                        <th>Option</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <?php foreach($teacher as $teacher){ ?>
+                    <tr>
+                        <td><?php echo $teacher['accountID']?></td>
+                        <td><?php echo $teacher['firstname'].' '.$teacher['middlename'].' '.$teacher['lastname']?></td>
+                        <td><?php echo $teacher['status']?></td>
+                        <td>
+                            <button class="view" onclick="openModalViewTeacher(<?php echo $teacher['accountID']; ?>)">View</button>
+                            <button class="edit" onclick="openModalEditTeacher()">Edit</button>
+                            <button class="archive">Deactivate</button>
+                            <!-- Add a hidden input field to store the accountID -->
+                            <input type="hidden" class="accountID" value="<?php echo $teacher['accountID']; ?>">
+                        </td>
+                    </tr>
+                    <?php } ?>
+                </tbody>
+                
             </table>
         </div>
     </div>
@@ -64,4 +70,7 @@
 <script src="../js/modal.js"></script>
 <script src="../js/alert.js"></script>
 <script src="../js/addInputType.js"></script>
+<script>    
+    new DataTable('#example');
+</script>
 </html>

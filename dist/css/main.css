@@ -1391,6 +1391,8 @@
 
 .teacher-table {
   width: 95%;
+  padding: 30px;
+  height: auto;
 }
 
 .view,

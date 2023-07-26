@@ -34,7 +34,7 @@ function populateModalWithTeacherData(data) { //fetch data from the database and
     document.getElementById("employeeNumber").textContent = data.accountID;
     document.getElementById("registeredUsername").textContent = data.username;
     document.getElementById("fullName").textContent = data.firstname + ' ' + data.middlename + ' ' + data.lastname;
-    document.getElementById("department").textContent = data.faculty;
+    document.getElementById("department").textContent = data.faculty; 
     document.getElementById("sectionAdvisee").textContent = data.section_advisee;
 }
 
