@@ -63,7 +63,7 @@
     </div>
 
     <!-- Modal Container -->
-    <?php include_once './modal/addTeacher.php'?>
+    <?php include_once './modal/teacher-modal.php'?>
 </body>
 
 <!-- Script Link -->

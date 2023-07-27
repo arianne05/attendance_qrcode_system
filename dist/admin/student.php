@@ -48,7 +48,7 @@
     </div>
 
     <!-- Modal Container -->
-    <?php include_once './modal/addStudent.php'?>
+    <?php include_once './modal/student-modal.php'?>
 </body>
 
 <!-- Script Link -->
