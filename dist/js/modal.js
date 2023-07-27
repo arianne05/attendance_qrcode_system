@@ -30,13 +30,19 @@ function openModalViewTeacher(accountID) { // Fetch the teacher's information us
     xhr.send();
 }
 
-function populateModalWithTeacherData(data) { //fetch data from the database and display using ID name
+function populateModalWithTeacherData(data) {
     document.getElementById("employeeNumber").textContent = data.accountID;
     document.getElementById("registeredUsername").textContent = data.username;
-    document.getElementById("fullName").textContent = data.firstname + ' ' + data.middlename + ' ' + data.lastname;
-    document.getElementById("department").textContent = data.faculty; 
-    document.getElementById("sectionAdvisee").textContent = data.section_advisee;
+    document.getElementById("fullName").textContent = `${data.firstname} ${data.middlename} ${data.lastname}`;
+    document.getElementById("department").textContent = data.faculty;
+
+    for (let i = 1; i <= 10; i++) {
+        document.getElementById(`sched${i}`).textContent = data[`sched${i}`];
+        document.getElementById(`section${i}`).textContent = data[`section${i}`];
+        document.getElementById(`subject${i}`).textContent = data[`subject${i}`];
+    }
 }
+
 
 function closeModalViewTeacher() {
     document.getElementById("viewTeacherModal").style.display = "none";

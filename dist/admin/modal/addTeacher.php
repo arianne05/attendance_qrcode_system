@@ -131,25 +131,17 @@
                     <hr>
                     <table>
                         <tr>
-                            <th>Grade</th>
+                            <th>Subject</th>
                             <th>Section</th>
                             <th>Schedule</th>
                         </tr>
+                        <?php for($i=1; $i<=10; $i++){ ?>
                         <tr>
-                            <td>10</td>
-                            <td>Del Pilar</td>
-                            <td>12:00PM-1:00PM</td>
+                            <td id="subject<?php echo $i ?>"></td>
+                            <td id="section<?php echo $i ?>"></td>
+                            <td id="sched<?php echo $i ?>"></td>
                         </tr>
-                        <tr>
-                            <td>9</td>
-                            <td>Narra</td>
-                            <td>9:00AM-10:00AM</td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>Masipag</td>
-                            <td>4:00PM-6:00PM</td>
-                        </tr>
+                        <?php } ?>
                     </table>
                 </div>
             </div>
@@ -169,7 +161,7 @@
         
 
         <!-- Form to Submit -->
-         <form action="" method="">
+        <form action="../admin/queries/teacher-query.php" id="editForm" method="POST">
             <div class="edit-main-container">
                 <!-- Image -->
                 <div class="image-edit-container">
@@ -179,15 +171,15 @@
                 <!-- Section 1 -->
                 <div class="field-main-container">
                     <div class="text-label-edit">
-                        <input type="text">
+                        <input type="text" id="firstName" name="firstname">
                         <label for="editFirstName">First Name</label>
                     </div>
                     <div class="text-label-edit">
-                        <input type="text">
+                        <input type="text" id="middleName">
                         <label for="editFirstName">Middle Name</label>
                     </div>
                     <div class="text-label-edit">
-                        <input type="text">
+                        <input type="text" id="lastName">
                         <label for="editFirstName">Last Name</label>
                     </div>
                 </div>
@@ -215,7 +207,7 @@
 
                 <div class="field-main-container">
                     <div class="text-label-edit">
-                        <label for="editFirstName">Grade</label>
+                        <label for="editFirstName">Subject Name</label>
                     </div>
                     <div class="text-label-edit">
                         <label for="editFirstName">Section Name</label>
@@ -224,67 +216,23 @@
                         <label for="editFirstName">Schedule</label>
                     </div>
                 </div>
-                <div class="field-main-container">
-                    <div class="text-label-edit">
-                        <input type="text">
+                <?php 
+                for($i=1; $i<=10; $i++){?>
+                    <div class="field-main-container">
+                        <div class="text-label-edit">
+                            <input type="text" id="teacherSubject<?php echo $i ?>" name="teacherSubject<?php echo $i ?>">
+                        </div>
+                        <div class="text-label-edit">
+                            <input type="text" id="teacherSection<?php echo $i ?>" name="teacherSection<?php echo $i ?>">
+                        </div>
+                        <div class="text-label-edit">
+                            <input type="text" id="teacherSchedule<?php echo $i ?>" name="teacherSchedule<?php echo $i ?>">
+                        </div>
                     </div>
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                </div>
-                <br>
-                <div class="field-main-container">
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                </div>
-                <br>
-                <div class="field-main-container">
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                </div>
-                <br>
-                <div class="field-main-container">
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                </div>
-                <br>
-                <div class="field-main-container">
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                </div>
+                    <br>
+                <?php } ?>
                 <div class="button-edit">
-                    <button>Save Changes</button>
+                    <button type="submit" name="editTeacher">Save Changes</button>
                 </div>
             </div>
          </form>
