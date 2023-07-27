@@ -49,7 +49,8 @@
                         <td><?php echo $teacher['status']?></td>
                         <td>
                             <button class="view" onclick="openModalViewTeacher(<?php echo $teacher['accountID']; ?>)">View</button>
-                            <button class="edit" onclick="openModalEditTeacher(<?php echo $teacher['accountID']; ?>)">Edit</button>
+                            <button class="edit"><a href="./edit/teacher-edit.php?header=Teacher">Edit</a></button>
+
                             <button class="archive">Deactivate</button>
                             <!-- Add a hidden input field to store the accountID -->
                             <input type="hidden" class="accountID" value="<?php echo $teacher['accountID']; ?>">

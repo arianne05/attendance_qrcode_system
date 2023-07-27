@@ -5,6 +5,7 @@
 
 <!-- CSS -->
 <link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../../css/main.css"> <!--For Edit Folder-->
 
 <!-- Font awesome -->
 <script src="https://kit.fontawesome.com/8b614ed6c5.js" crossorigin="anonymous"></script>
@@ -14,6 +15,7 @@
 
 <!-- Sweet Alert -->
 <script src="../js/sweetalert.min.js"></script>
+<script src="../../js/sweetalert.min.js"></script> <!--For Edit Folder-->
 
 <!-- Data Tables -->
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css">
