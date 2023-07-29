@@ -121,4 +121,18 @@ if(isset($_GET['deactTeacherSuccess'])){
         </script>
     <?php
 }
+// Teacher Activate Success
+if(isset($_GET['actTeacherSuccess'])){
+    ?>
+        <script>
+            Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Account Activated',
+            showConfirmButton: false,
+            timer: 1500
+            })
+        </script>
+    <?php
+}
 ?>

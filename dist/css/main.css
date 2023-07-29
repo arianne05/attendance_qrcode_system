@@ -1401,6 +1401,12 @@
 .teacher-table .name {
   text-align: left;
 }
+.teacher-table .activeGreen {
+  color: #549c6c;
+}
+.teacher-table .activeRed {
+  color: #fc7777;
+}
 .teacher-table .centerHead {
   text-align: center;
 }
@@ -1408,7 +1414,7 @@
 .view,
 .edit,
 .archive {
-  width: 60px;
+  width: 80px;
   height: 30px;
   border: none;
   border-radius: 20px;
@@ -1425,6 +1431,10 @@
 
 .archive {
   background-color: #fc7777;
+}
+
+.deactivateBtn {
+  display: none;
 }
 
 /* Styles for the modalAddTeacher */

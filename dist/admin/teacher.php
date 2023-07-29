@@ -42,20 +42,28 @@
                 </thead>
 
                 <tbody>
-                    <?php foreach($teacher as $teacher){ ?>
+                    <?php foreach($teacher as $teacher){ 
+                        if ($teacher['status'] == 'active'){
+                            $colorStatus = 'activeGreen';
+                            $changeBtn = 'Deactivate';
+                            $alert = 'deactivateAlert';
+                        }else{
+                            $colorStatus = 'activeRed';
+                            $changeBtn = 'Activate';
+                            $alert = 'activateAlert';
+                        }
+                    ?>
                     <tr>
                         <td><?php echo $teacher['accountID']?></td>
                         <td class="name"><?php echo $teacher['firstname'].' '.$teacher['middlename'].' '.$teacher['lastname']?></td>
-                        <td><?php echo $teacher['status']?></td>
+                        <td class="<?php echo $colorStatus?>"><?php echo $teacher['status']?></td>
                         <td>
                             <button class="view" onclick="openModalViewTeacher(<?php echo $teacher['accountID']; ?>)">View</button>
                             <button class="edit"><a href="./edit/teacher-edit.php?header=Teacher&id=<?php echo $teacher['accountID']?>">Edit</a></button>
+                            <button type="button" class="archive" onclick="<?php echo $alert?>('<?php echo $teacher['accountID']; ?>')"><?php echo $changeBtn?></button>
 
                             <!-- Add a hidden input field to store the accountID -->
                             <input type="hidden" class="accountID" value="<?php echo $teacher['accountID']; ?>">
-                            <!-- <button type="submit" class="archive" onclick="deactivateAlert()">Deactivate</button> -->
-                            <button type="button" class="archive" onclick="deactivateAlert('<?php echo $teacher['accountID']; ?>')">Deactivate</button>
-
                         </td>
                     </tr>
                     <?php } ?>
@@ -89,6 +97,22 @@
             if (result.isConfirmed) {
                 // Redirect to the PHP script with the accountID parameter
                 window.location.href = `./queries/teacher-query.php?deactivate&id=${accountID}`;
+            }
+        });
+    }
+</script>
+<script>
+    // Active Alert
+    function activateAlert(accountID) {
+        Swal.fire({
+            icon: "question",
+            title: "Activate",
+            text: "Are you sure you want to activate this account?",
+            showCancelButton: true,
+        }).then(function (result) {
+            if (result.isConfirmed) {
+                // Redirect to the PHP script with the accountID parameter
+                window.location.href = `./queries/teacher-query.php?activate&id=${accountID}`;
             }
         });
     }

@@ -95,4 +95,15 @@ if(isset($_GET['deactivate']) && isset($_GET['id'])){
     $stmt->execute([$status, $accountID]);
     header("Location: ../teacher.php?header=Teacher&deactTeacherSuccess");
 }
+//Activate
+//Deactivate
+if(isset($_GET['activate']) && isset($_GET['id'])){
+    $accountID = $_GET['id'];
+    $status = 'active';
+    $deactquery = "UPDATE account_information SET status=? WHERE accountID=?";
+
+    $stmt = $pdo->prepare($deactquery);
+    $stmt->execute([$status, $accountID]);
+    header("Location: ../teacher.php?header=Teacher&actTeacherSuccess");
+}
 ?>
