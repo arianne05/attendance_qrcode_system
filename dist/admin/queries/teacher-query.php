@@ -25,15 +25,31 @@ if(isset($_POST['addTeacher'])){
     $accountID = $selectquery->fetchColumn();
 
     for ($i = 1; $i <= 10; $i++) {
-        $schedFromHour[$i] = !empty($_POST['schedFromHour' . $i]) ? $_POST['schedFromHour' . $i] : "";
-        $schedFromMin[$i] = !empty($_POST['schedFromMin' . $i]) ? $_POST['schedFromMin' . $i] : "";
-        $schedFromPeriod[$i] = !empty($_POST['schedFromPeriod' . $i]) ? $_POST['schedFromPeriod' . $i] : "";
-        $schedFrom[$i] = $schedFromHour[$i].':'.$schedFromMin[$i].' '.$schedFromPeriod[$i];
+        // $schedFromHour[$i] = !empty($_POST['schedFromHour' . $i]) ? $_POST['schedFromHour' . $i] : "";
+        // $schedFromMin[$i] = !empty($_POST['schedFromMin' . $i]) ? $_POST['schedFromMin' . $i] : "";
+        // $schedFromPeriod[$i] = !empty($_POST['schedFromPeriod' . $i]) ? $_POST['schedFromPeriod' . $i] : "";
+        // $schedFrom[$i] = $schedFromHour[$i].':'.$schedFromMin[$i].' '.$schedFromPeriod[$i];
 
-        $schedToHour[$i] = !empty($_POST['schedToHour' . $i]) ? $_POST['schedToHour' . $i] : "";
-        $schedToMin[$i] = !empty($_POST['schedToMin' . $i]) ? $_POST['schedToMin' . $i] : "";
-        $schedToPeriod[$i] = !empty($_POST['schedToPeriod' . $i]) ? $_POST['schedToPeriod' . $i] : "";
-        $schedTo[$i] = $schedToHour[$i].':'.$schedToMin[$i].' '.$schedToPeriod[$i];
+        // $schedToHour[$i] = !empty($_POST['schedToHour' . $i]) ? $_POST['schedToHour' . $i] : "";
+        // $schedToMin[$i] = !empty($_POST['schedToMin' . $i]) ? $_POST['schedToMin' . $i] : "";
+        // $schedToPeriod[$i] = !empty($_POST['schedToPeriod' . $i]) ? $_POST['schedToPeriod' . $i] : "";
+        // $schedTo[$i] = $schedToHour[$i].':'.$schedToMin[$i].' '.$schedToPeriod[$i];
+
+        $schedFromHour[$i] = !empty($_POST['schedFromHour' . $i]) ? $_POST['schedFromHour' . $i] : null;
+        $schedFromMin[$i] = !empty($_POST['schedFromMin' . $i]) ? $_POST['schedFromMin' . $i] : null;
+        $schedFromPeriod[$i] = !empty($_POST['schedFromPeriod' . $i]) ? $_POST['schedFromPeriod' . $i] : null;
+
+        $schedToHour[$i] = !empty($_POST['schedToHour' . $i]) ? $_POST['schedToHour' . $i] : null;
+        $schedToMin[$i] = !empty($_POST['schedToMin' . $i]) ? $_POST['schedToMin' . $i] : null;
+        $schedToPeriod[$i] = !empty($_POST['schedToPeriod' . $i]) ? $_POST['schedToPeriod' . $i] : null;
+
+        $schedFrom[$i] = $schedFromHour[$i] !== null ? $schedFromHour[$i] . ':' : '';
+        $schedFrom[$i] .= $schedFromMin[$i] !== null ? $schedFromMin[$i] . ' ' : '';
+        $schedFrom[$i] .= $schedFromPeriod[$i] !== null ? $schedFromPeriod[$i] : '';
+
+        $schedTo[$i] = $schedToHour[$i] !== null ? $schedToHour[$i] . ':' : '';
+        $schedTo[$i] .= $schedToMin[$i] !== null ? $schedToMin[$i] . ' ' : '';
+        $schedTo[$i] .= $schedToPeriod[$i] !== null ? $schedToPeriod[$i] : '';
 
         $teacherFromSchoolYear[$i] = !empty($_POST['teacherFromSchoolYear' . $i]) ? $_POST['teacherFromSchoolYear' . $i] : "";
         $teacherToSchoolYear[$i] = !empty($_POST['teacherToSchoolYear' . $i]) ? $_POST['teacherToSchoolYear' . $i] : "";
@@ -44,13 +60,10 @@ if(isset($_POST['addTeacher'])){
         $subject[$i] = !empty($_POST['teacherSubject' . $i]) ? $_POST['teacherSubject' . $i] : "";
         
         // FINAL VAR
-        $sched[$i] = $schedFrom[$i].'-'.$schedTo[$i];
-        $schoolYear[$i] = $teacherFromSchoolYear[$i].'-'.$teacherToSchoolYear[$i];
-        $section[$i] = $teacherGrade[$i].'-'.$teacherSection[$i];
-
-        // $sched[$i] = !empty($_POST['teacherSchedule' . $i]) ? $_POST['teacherSchedule' . $i] : "";
-        // $section[$i] = !empty($_POST['teacherSection' . $i]) ? $_POST['teacherSection' . $i] : "";
-        // $subject[$i] = !empty($_POST['teacherSubject' . $i]) ? $_POST['teacherSubject' . $i] : "";
+        // $sched[$i] = (!empty($schedFrom[$i]) && !empty($schedTo[$i])) ? $schedFrom[$i] . '-' . $schedTo[$i] : '';
+        $sched[$i] = (!empty($schedFrom[$i]) && !empty($schedTo[$i])) ? $schedFrom[$i] . '-' . $schedTo[$i] : '';
+        $schoolYear[$i] = (!empty($teacherFromSchoolYear[$i]) && !empty($teacherToSchoolYear[$i])) ? $teacherFromSchoolYear[$i] . '-' . $teacherToSchoolYear[$i] : '';
+        $section[$i] = (!empty($teacherGrade[$i]) && !empty($teacherSection[$i])) ? $teacherGrade[$i] . '-' . $teacherSection[$i] : '';
     }
 
     $addSectionQuery = "INSERT INTO teacher_handle (accountID, sched1, sched2, sched3, sched4, sched5, sched6, sched7, sched8, sched9, sched10,
