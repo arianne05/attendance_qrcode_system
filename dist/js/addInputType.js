@@ -49,15 +49,16 @@ function addSection() {
                         <!-- Select 2 -->
                         <div class="select-container">
                             <select name="schedFromMin${sectionCounter}">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
+                                <option value="00">00</option>
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="09">09</option>
                                 <option value="10">10</option>
                                 <option value="11">11</option>
                                 <option value="12">12</option>
@@ -144,15 +145,16 @@ function addSection() {
                         <!-- Select 2 -->
                         <div class="select-container">
                             <select name="schedToMin${sectionCounter}">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
+                                <option value="00">00</option>
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="09">09</option>
                                 <option value="10">10</option>
                                 <option value="11">11</option>
                                 <option value="12">12</option>
@@ -217,21 +219,25 @@ function addSection() {
             </div>
         </div>
 
+        <!-- GRADE -->
         <div class="bind-label">
             <br>
-            <label for="teacherSchedule${sectionCounter}">Schedule:</label>
-            <input type="text" id="teacherSchedule${sectionCounter}" name="teacherSchedule${sectionCounter}" required>
+            <label>Grade:</label>
+            <input type="text" id="teacherGrade1" name="teacherGrade${sectionCounter}">
         </div>
+        <!-- SECTION -->
         <div class="bind-label">
             <br>
-            <label for="teacherSection${sectionCounter}">Section Name:</label>
-            <input type="text" id="teacherSection${sectionCounter}" name="teacherSection${sectionCounter}" required>
+            <label>Section:</label>
+            <input type="text" id="teacherSection1" name="teacherSection${sectionCounter}">
         </div>
+        <!-- SUBJECT -->
         <div class="bind-label">
             <br>
-            <label for="teacherSubject1${sectionCounter}">Subject Name:</label>
-            <input type="text" id="teacherSubject1${sectionCounter}" name="teacherSubject${sectionCounter}" required>
+            <label>Subject Name:</label>
+            <input type="text" id="teacherSubject1" name="teacherSubject${sectionCounter}">
         </div>
+
         <!-- School Year -->
         <div class="bind-label">
             <label>School Year:</label> <!--Label-->

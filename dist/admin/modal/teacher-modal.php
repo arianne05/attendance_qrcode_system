@@ -69,8 +69,10 @@
                                 <!-- Select 2 -->
                                 <div class="select-container">
                                     <select name="schedFromMin1">
-                                        <?php for($i=1; $i<=59; $i++){ ?>
-                                            <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                                        <?php for($i=0; $i<=59; $i++){ 
+                                            $formattedValue = ($i < 10) ? '0' . $i : $i;
+                                        ?>
+                                            <option value="<?php echo $formattedValue; ?>"><?php echo $formattedValue; ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
@@ -99,8 +101,10 @@
                                 <!-- Select 2 -->
                                 <div class="select-container">
                                     <select name="schedToMin1">
-                                        <?php for($i=1; $i<=59; $i++){ ?>
-                                            <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                                        <?php for($i=0; $i<=59; $i++){ 
+                                            $formattedValue = ($i < 10) ? '0' . $i : $i;
+                                        ?>
+                                            <option value="<?php echo $formattedValue; ?>"><?php echo $formattedValue; ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
