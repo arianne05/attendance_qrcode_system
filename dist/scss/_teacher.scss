@@ -155,13 +155,45 @@
 
 .section-three-addTeacher{
     display: flex;
-    // justify-content: space-between;
-    // align-items: center;
     margin-top: 10px;
     color: $primary-text-gray2;
-    width: 97%;
-    // border: 1px solid black;
+    width: 100%;
+    .sched-container{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        .from-label{
+            margin-right: 10px;
+            label{
+                font-size: 12px;
+                margin: 0;
+                padding: 0;
+            }
+            input[type=number]{
+                width: 100%;
+                height: 30px;
+                background-color: white;
+                border: 1px solid #cdcdcd;
+                border-radius: 7px;
+            }
+        }
+    }
+    .main-select-container{
+        display: flex;
+        padding: 0;
+        margin: 0;
+        // margin: 10px;
 
+        .select-container{
+            select{
+                padding: 5px;
+                margin-right: 5px;
+                background-color: white;
+                border: 1px solid #cdcdcd;
+                border-radius: 7px;
+            }
+        }
+    }
     .bind-label{
         display: flex;
         flex-direction: column;

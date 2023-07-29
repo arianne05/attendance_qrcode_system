@@ -1517,7 +1517,39 @@
   display: flex;
   margin-top: 10px;
   color: rgb(124, 124, 124);
-  width: 97%;
+  width: 100%;
+}
+.section-three-addTeacher .sched-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.section-three-addTeacher .sched-container .from-label {
+  margin-right: 10px;
+}
+.section-three-addTeacher .sched-container .from-label label {
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+}
+.section-three-addTeacher .sched-container .from-label input[type=number] {
+  width: 100%;
+  height: 30px;
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  border-radius: 7px;
+}
+.section-three-addTeacher .main-select-container {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+.section-three-addTeacher .main-select-container .select-container select {
+  padding: 5px;
+  margin-right: 5px;
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  border-radius: 7px;
 }
 .section-three-addTeacher .bind-label {
   display: flex;
