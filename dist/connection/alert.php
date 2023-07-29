@@ -84,9 +84,37 @@ if(isset($_GET['addTeacherSuccess'])){
     ?>
         <script>
             Swal.fire({
-            position: 'top-end',
+            position: 'center',
             icon: 'success',
             title: 'Added Successfully',
+            showConfirmButton: false,
+            timer: 1500
+            })
+        </script>
+    <?php
+}
+// Teacher-Edit-Success
+if(isset($_GET['updateTeacherSuccess'])){
+    ?>
+        <script>
+            Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Update Successfully',
+            showConfirmButton: false,
+            timer: 1500
+            })
+        </script>
+    <?php
+}
+// Teacher Deactivate Success
+if(isset($_GET['deactTeacherSuccess'])){
+    ?>
+        <script>
+            Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Account Deactivated',
             showConfirmButton: false,
             timer: 1500
             })

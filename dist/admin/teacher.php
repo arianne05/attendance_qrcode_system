@@ -51,9 +51,11 @@
                             <button class="view" onclick="openModalViewTeacher(<?php echo $teacher['accountID']; ?>)">View</button>
                             <button class="edit"><a href="./edit/teacher-edit.php?header=Teacher&id=<?php echo $teacher['accountID']?>">Edit</a></button>
 
-                            <button class="archive">Deactivate</button>
                             <!-- Add a hidden input field to store the accountID -->
                             <input type="hidden" class="accountID" value="<?php echo $teacher['accountID']; ?>">
+                            <!-- <button type="submit" class="archive" onclick="deactivateAlert()">Deactivate</button> -->
+                            <button type="button" class="archive" onclick="deactivateAlert('<?php echo $teacher['accountID']; ?>')">Deactivate</button>
+
                         </td>
                     </tr>
                     <?php } ?>
@@ -74,4 +76,22 @@
 <script>    
     new DataTable('#example');
 </script>
+<!-- Sweet Alert Deactivate -->
+<script>
+    // Deact Alert
+    function deactivateAlert(accountID) {
+        Swal.fire({
+            icon: "question",
+            title: "Deactivate",
+            text: "Are you sure you want to deactivate this account?",
+            showCancelButton: true,
+        }).then(function (result) {
+            if (result.isConfirmed) {
+                // Redirect to the PHP script with the accountID parameter
+                window.location.href = `./queries/teacher-query.php?deactivate&id=${accountID}`;
+            }
+        });
+    }
+</script>
+
 </html>

@@ -84,4 +84,15 @@ if(isset($_POST['editTeacher'])){
     $accountID]);
     header("Location: ../teacher.php?header=Teacher&updateTeacherSuccess");
 }
+
+//Deactivate
+if(isset($_GET['deactivate']) && isset($_GET['id'])){
+    $accountID = $_GET['id'];
+    $status = 'inactive';
+    $deactquery = "UPDATE account_information SET status=? WHERE accountID=?";
+
+    $stmt = $pdo->prepare($deactquery);
+    $stmt->execute([$status, $accountID]);
+    header("Location: ../teacher.php?header=Teacher&deactTeacherSuccess");
+}
 ?>
