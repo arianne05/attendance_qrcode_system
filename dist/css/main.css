@@ -1368,6 +1368,10 @@
   height: 70vh;
   font-family: "Inter", sans-serif;
 }
+.teacher-main-container a {
+  text-decoration: none;
+  color: #3D3D3D;
+}
 
 .header {
   margin-top: 20px;
