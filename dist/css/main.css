@@ -1679,91 +1679,95 @@
 }
 
 /* Styles for the editViewTeacher */
-.modalEditTeacher {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
-  font-family: "Inter", sans-serif;
-  padding: 20px;
-}
-
 .modal-content-EditTeacher {
-  background-color: #fefefe;
-  margin: auto;
+  margin-left: 17vw;
   padding: 20px;
-  border: 1px solid #888;
   width: 80%;
   height: auto;
+  font-family: "Inter", sans-serif;
 }
 
-.closeEditTeacher {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.closeEditTeacher:hover,
-.closeEditTeacher:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.image-edit-container {
+.section-container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
-.image-edit-container img {
-  width: 100px;
-  padding-bottom: 20px;
-}
-
-.field-main-container {
+.section-container .image-edit-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  padding: 30px;
 }
-.field-main-container .text-label-edit {
+.section-container .image-edit-container label {
+  padding: 0;
+  margin: 0;
+}
+.section-container .image-edit-container img {
+  width: 100px;
+  margin: 0;
+  padding-bottom: 5px;
+}
+.section-container .image-edit-container label {
+  font-size: 12px;
+  color: rgb(124, 124, 124);
+}
+.section-container .field-main-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+}
+.section-container .field-main-container .field-one {
+  display: flex;
+  width: 100%;
+}
+.section-container .field-main-container .text-label-edit {
   display: flex;
   flex-direction: column;
   text-align: center;
   width: 100%;
   align-items: center;
 }
-.field-main-container .text-label-edit input[type=text] {
+.section-container .field-main-container .text-label-edit input[type=text] {
   width: 90%;
   height: 30px;
+  width: 90%;
+  height: 35px;
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  border-radius: 7px;
 }
-.field-main-container .text-label-edit label {
-  font-size: 14px;
-  margin-bottom: 20px;
+.section-container .field-main-container .text-label-edit label {
+  font-size: 12px;
   color: rgb(124, 124, 124);
 }
-
-.button-edit {
+.section-container .field-main-container .sectionTag label {
+  font-size: 12px;
+  padding: 20px;
+  color: rgb(124, 124, 124);
+}
+.section-container .field-main-container .button-edit {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
 }
-.button-edit button {
+.section-container .field-main-container .button-edit button {
   width: 90%;
   height: 40px;
   border-radius: 8px;
   border: none;
   background-color: #549c6c;
   color: #FFFBCE;
-  margin-top: 20px;
+  margin: 20px;
   cursor: pointer;
 }
-.button-edit button:hover {
+.section-container .field-main-container .button-edit button:hover {
   background-color: #e1efe6;
   color: #3D3D3D;
 }

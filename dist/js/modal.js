@@ -49,13 +49,13 @@ function closeModalViewTeacher() {
 }
 
 // Edit Teacher
-function openModalEditTeacher() {
-    document.getElementById("editTeacherModal").style.display = "block";
-}
+// function openModalEditTeacher() {
+//     document.getElementById("editTeacherModal").style.display = "block";
+// }
 
-function closeModalEditTeacher() {
-    document.getElementById("editTeacherModal").style.display = "none";
-}
+// function closeModalEditTeacher() {
+//     document.getElementById("editTeacherModal").style.display = "none";
+// }
 
 
 /*-----------------------------------------------------------------------------------------------------------------------*/
