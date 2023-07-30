@@ -224,51 +224,7 @@
             </div>
         </div>
         </div>
-        
     </div>
-
-        <div class="section-viewTeacher">
-            <!-- Table -->
-            <!-- <div class="class-table-section" id="scheduleTable">
-                <label for="">School Year</label>
-                <p>2020-2023 S.Y</p>
-                <hr>
-              
-                <button class="accordion">Section <?php echo $i ?></button>
-                <div class="panel">
-                    <table>
-                        <tr>
-                            <th>Schedule</th>
-                            <th>Handle ID</th>
-                        </tr>
-                        
-                            <tr>
-                                <td id="schedule"></td>
-                                <td id="handleID"></td>
-                            </tr>
-                        
-                    </table>
-                </div>
-
-                <script>
-                    var acc = document.getElementsByClassName("accordion");
-                    var i;
-
-                    for (i = 0; i < acc.length; i++) {
-                    acc[i].addEventListener("click", function() {
-                        this.classList.toggle("active");
-                        var panel = this.nextElementSibling;
-                        if (panel.style.display === "block") {
-                        panel.style.display = "none";
-                        } else {
-                        panel.style.display = "block";
-                        }
-                    });
-                    }
-                </script>
-            </div> -->
-
-        </div>
     </div>
 </div>
 

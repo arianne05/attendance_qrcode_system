@@ -7,6 +7,10 @@ $accountID = $_GET['id'];
 $editInfo = $pdo->query("SELECT * FROM account_information 
         INNER JOIN teacher_handle ON account_information.accountID = teacher_handle.accountID
         WHERE account_information.accountID = '$accountID' AND account_information.position = 'teacher'")->fetch();
+
+$sectionHandle = $pdo->query("SELECT * FROM account_information 
+        INNER JOIN teacher_handle ON account_information.accountID = teacher_handle.accountID
+        WHERE account_information.accountID = '$accountID' AND account_information.position = 'teacher' GROUP BY schoolYear")->fetchAll();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -87,37 +91,46 @@ $editInfo = $pdo->query("SELECT * FROM account_information
                 
                 <div class="section-container">
                     <div class="field-main-container">
-                        <div class="field-one">
-                            <div class="text-label-edit sectionTag">
-                                <label for="editFirstName">Subject Name</label>
-                            </div>
-                            <div class="text-label-edit sectionTag">
-                                <label for="editFirstName">Section Name</label>
-                            </div>
-                            <div class="text-label-edit sectionTag">
-                                <label for="editFirstName">Schedule</label>
-                            </div>
-                        </div>
                         
-                        <?php for($i=1; $i<=10; $i++){
-                            $countSub = 'subject'.$i; 
-                            $countSec = 'section'.$i; 
-                            $countSch = 'sched'.$i; 
+                        
+                        <!-- ACCORDION -->
+                        <?php 
+                            foreach($sectionHandle as $handle){ 
+                                $schoolYear = $handle['schoolYear'];
+                                $sections = $pdo->query("SELECT * FROM teacher_handle WHERE accountID = '$accountID' AND schoolYear = '$schoolYear'")->fetchAll();
                         ?>
-                        <div class="field-one">
-                            <div class="text-label-edit">
-                                <input type="text" value="<?php echo $editInfo[$countSub]?>" name="teacherSubject<?php echo $i ?>">
+                        <button type="button" class="accordion"><?php echo $handle['schoolYear'];?></button>
+                        <div class="panel">
+                            <div class="field-one sectionTag">
+                                <div class="text-label-edit">
+                                    <label for="">Subject Name</label>
+                                </div>
+                                <div class="text-label-edit">
+                                    <label for="">Section Name</label>
+                                </div>
+                                <div class="text-label-edit">
+                                    <label for="">Schedule</label>
+                                </div>
                             </div>
-                            <div class="text-label-edit">
-                                <input type="text" value="<?php echo $editInfo[$countSec]?>" name="teacherSection<?php echo $i ?>">
-                            </div>
-                            <div class="text-label-edit">
-                                <input type="text" value="<?php echo $editInfo[$countSch]?>" name="teacherSchedule<?php echo $i ?>">
-                            </div>
-                        </div>
-                        <br>
-                        <?php } ?>
 
+                            <?php foreach ($sections as $section) { ?>
+                                <br>
+                                <div class="field-one">
+                                    <div class="text-label-edit">
+                                        <input type="hidden" value="<?php echo $section['handleID']; ?>" name="handleID[]"> 
+                                        <input type="text" value="<?php echo $section['subject']; ?>" name="subject[]">
+                                    </div>
+                                    <div class="text-label-edit">
+                                        <input type="text" value="<?php echo $section['section']; ?>" name="section[]">
+                                    </div>
+                                    <div class="text-label-edit">
+                                        <input type="text" value="<?php echo $section['schedule']; ?>" name="schedule[]">
+                                    </div>
+                                </div>
+                                <br>
+                            <?php } ?>
+                        </div>
+                        <?php } ?>
                         <div class="button-edit">
                             <button type="submit" name="editTeacher">Save Changes</button>
                         </div>
@@ -128,6 +141,7 @@ $editInfo = $pdo->query("SELECT * FROM account_information
          </form>
         
     </div>
-
 </body>
+<!-- Js link -->
+<script src="../../js/accordion.js"></script>
 </html>
