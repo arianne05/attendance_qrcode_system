@@ -99,7 +99,11 @@ $sectionHandle = $pdo->query("SELECT * FROM account_information
                                 $schoolYear = $handle['schoolYear'];
                                 $sections = $pdo->query("SELECT * FROM teacher_handle WHERE accountID = '$accountID' AND schoolYear = '$schoolYear'")->fetchAll();
                         ?>
-                        <button type="button" class="accordion"><?php echo $handle['schoolYear'];?></button>
+                        <button type="button" class="accordion"><?php echo $handle['schoolYear'];?> <b>S.Y.</b>
+                            <span class="accordion-icon fas fa-plus"></span>
+                            <span class="accordion-icon fas fa-minus"></span>
+                        </button>
+                        
                         <div class="panel">
                             <div class="field-one sectionTag">
                                 <div class="text-label-edit">
