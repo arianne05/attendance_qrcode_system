@@ -173,71 +173,102 @@
 <!-- The Modal View Teacher-->
 <div id="viewTeacherModal" class="modalViewTeacher">
     <div class="modal-content-ViewTeacher">
-        <span class="closeViewTeacher" onclick="closeModalViewTeacher()">&times;</span>
-        <center>
-            <h2>Teacher's Profile</h2>
-            <br><br>
-        </center>
+        <!-- <span class="closeViewTeacher" onclick="closeModalViewTeacher()">&times;</span> -->
         
+        <div class="section-container">
+        <!-- Image -->
+        <div class="image-edit-container">
+            <img src="../img/user-icon-default/user-male-default.png" alt="">
+            <label for="id">#<span id="employeeNumber"></span></label>
+            <label for="status" class="activeGreen">active</label>
+            <i class="fa-regular fa-pen-to-square"></i>
+        </div>
 
-        <!-- Form to Submit -->
-        
-            <div class="section-viewTeacher">
-                <div class="personal-info-section">
-                    <div class="first-section">
-                        <img src="../img/user-icon-default/user-male-default.png" alt="">
-                        <caption>
-                            <p id="employeeNumber">201912344</p>
-                            <label for="EmployeeNumb">Employee No.</label>
-                        </caption>
-                    </div>
-                    <caption>
-                        <p id="registeredUsername">Username</p>
-                        <label for="EmployeeName">Registered Username</label>
-                    </caption>
-                    <hr>
-                    <caption>
-                        <p id="fullName">Arianne Quimpo</p>
-                        <label for="EmployeeName">Full Name</label>
-                    </caption>
-                    <hr>
-                    <caption>
-                        <p id="department">English Department</p>
-                        <label for="EmployeeDept">Department</label>
-                    </caption>
-                    <hr>
-                    <caption>
-                        <p id="sectionAdvisee">G9-Jose Rizal</p>
-                        <label for="EmployeeDept">Section Advisee</label>
-                    </caption>
-                    <hr>
-
-                    <div class="button-section">
-                        <button>Deactivate</button>
-                    </div>
+        <!-- Section 1 -->
+        <div class="field-main-container">
+            <!-- Field 1 -->
+            <div class="field-one">
+                <div class="text-label-edit">
+                    <p id="fname"></p>
+                    <label for="editFirstName">First Name<span class="asterisk">*</span></label>
                 </div>
-
-                <!-- Table -->
-                <div class="class-table-section">
-                    <p>2020-2023 S.Y</p>
-                    <label for="">School Year</label>
-                    <hr>
-                    <table>
-                        <tr>
-                            <th>Subject</th>
-                            <th>Section</th>
-                            <th>Schedule</th>
-                        </tr>
-                        <?php for($i=1; $i<=10; $i++){ ?>
-                        <tr>
-                            <td id="subject<?php echo $i ?>"></td>
-                            <td id="section<?php echo $i ?>"></td>
-                            <td id="sched<?php echo $i ?>"></td>
-                        </tr>
-                        <?php } ?>
-                    </table>
+                <div class="text-label-edit">
+                    <p id="mname"></p>
+                    <label for="editFirstName">Middle Name</label>
+                </div>
+                <div class="text-label-edit">
+                    <p id="lname"></p>
+                    <label for="editFirstName">Last Name<span class="asterisk">*</span></label>
                 </div>
             </div>
+            <br>
+            <!-- Field 2 -->
+            <div class="field-one">
+                <div class="text-label-edit">
+                    <p id="registeredUsername"></p>
+                    <label for="editFirstName">Registered Username<span class="asterisk">*</span></label>
+                </div>
+                <div class="text-label-edit">
+                    <p id="department"></p>
+                    <label for="editFirstName">Faculty/Department<span class="asterisk">*</span></label>
+                </div>
+                <div class="text-label-edit">
+                    <p id="password"></p>
+                    <label for="editFirstName">Password<span class="asterisk">*</span></label>
+                </div>
+            </div>
+            <div class="field-one buttonView">
+            <div class="text-label-edit">
+                <p id="password"></p>
+                <button onclick="closeModalViewTeacher()" class="close">Close</button>
+            </div>
+        </div>
+        </div>
+        
+    </div>
+
+        <div class="section-viewTeacher">
+            <!-- Table -->
+            <!-- <div class="class-table-section" id="scheduleTable">
+                <label for="">School Year</label>
+                <p>2020-2023 S.Y</p>
+                <hr>
+              
+                <button class="accordion">Section <?php echo $i ?></button>
+                <div class="panel">
+                    <table>
+                        <tr>
+                            <th>Schedule</th>
+                            <th>Handle ID</th>
+                        </tr>
+                        
+                            <tr>
+                                <td id="schedule"></td>
+                                <td id="handleID"></td>
+                            </tr>
+                        
+                    </table>
+                </div>
+
+                <script>
+                    var acc = document.getElementsByClassName("accordion");
+                    var i;
+
+                    for (i = 0; i < acc.length; i++) {
+                    acc[i].addEventListener("click", function() {
+                        this.classList.toggle("active");
+                        var panel = this.nextElementSibling;
+                        if (panel.style.display === "block") {
+                        panel.style.display = "none";
+                        } else {
+                        panel.style.display = "block";
+                        }
+                    });
+                    }
+                </script>
+            </div> -->
+
+        </div>
     </div>
 </div>
 

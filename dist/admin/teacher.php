@@ -55,11 +55,18 @@
                     ?>
                     <tr>
                         <td><?php echo $teacher['accountID']?></td>
-                        <td class="name"><?php echo $teacher['firstname'].' '.$teacher['middlename'].' '.$teacher['lastname']?></td>
+                        <td class="name"><a href="#" onclick="openModalViewTeacher(<?php echo $teacher['accountID']; ?>)"><?php echo $teacher['firstname'].' '.$teacher['middlename'].' '.$teacher['lastname']?></a></td>
                         <td class="<?php echo $colorStatus?>"><?php echo $teacher['status']?></td>
                         <td>
-                            <button class="view" onclick="openModalViewTeacher(<?php echo $teacher['accountID']; ?>)">View</button>
-                            <button class="edit"><a href="./edit/teacher-edit.php?header=Teacher&id=<?php echo $teacher['accountID']?>">Edit</a></button>
+                            <!-- Detail -->
+                            <a href="#">
+                                <button class="view">Detail</button>
+                            </a>
+                            <!-- Edit -->
+                            <a href="./edit/teacher-edit.php?header=Teacher&id=<?php echo $teacher['accountID']?>">
+                                <button class="edit">Edit</button>
+                            </a>
+                            <!-- Deactivate -->
                             <button type="button" class="archive" onclick="<?php echo $alert?>('<?php echo $teacher['accountID']; ?>')"><?php echo $changeBtn?></button>
 
                             <!-- Add a hidden input field to store the accountID -->

@@ -33,14 +33,15 @@ function openModalViewTeacher(accountID) { // Fetch the teacher's information us
 function populateModalWithTeacherData(data) {
     document.getElementById("employeeNumber").textContent = data.accountID;
     document.getElementById("registeredUsername").textContent = data.username;
-    document.getElementById("fullName").textContent = `${data.firstname} ${data.middlename} ${data.lastname}`;
+    document.getElementById("fname").textContent = textContent = data.firstname;
+    document.getElementById("lname").textContent = textContent = data.lastname;
+    document.getElementById("mname").textContent = textContent = data.middlename;
+    // document.getElementById("fullName").textContent = `${data.firstname} ${data.middlename} ${data.lastname}`;
     document.getElementById("department").textContent = data.faculty;
-
-    for (let i = 1; i <= 10; i++) {
-        document.getElementById(`sched${i}`).textContent = data[`sched${i}`];
-        document.getElementById(`section${i}`).textContent = data[`section${i}`];
-        document.getElementById(`subject${i}`).textContent = data[`subject${i}`];
-    }
+    document.getElementById("password").textContent = data.password;
+    // document.getElementById("handleID").textContent = data.handleID;
+    // document.getElementById("schedule").textContent = data.schedule;
+    
 }
 
 
