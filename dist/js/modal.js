@@ -49,14 +49,14 @@ function closeModalViewTeacher() {
     document.getElementById("viewTeacherModal").style.display = "none";
 }
 
-// Edit Teacher
-// function openModalEditTeacher() {
-//     document.getElementById("editTeacherModal").style.display = "block";
-// }
+// Detail Teacher Button
+function openModalDetailTeacher() {
+    document.getElementById("detailTeacherModal").style.display = "block";
+}
 
-// function closeModalEditTeacher() {
-//     document.getElementById("editTeacherModal").style.display = "none";
-// }
+function closeModalDetailTeacher() {
+    document.getElementById("detailTeacherModal").style.display = "none";
+}
 
 
 /*-----------------------------------------------------------------------------------------------------------------------*/
@@ -72,19 +72,11 @@ function closeModalAddStudent() {
 }
 
 // View Student
-function openModalViewStudent() {
-    document.getElementById("viewStudentModal").style.display = "block";
-}
+// function openModalViewStudent() {
+//     document.getElementById("viewStudentModal").style.display = "block";
+// }
 
-function closeModalViewStudent() {
-    document.getElementById("viewStudentModal").style.display = "none";
-}
+// function closeModalViewStudent() {
+//     document.getElementById("viewStudentModal").style.display = "none";
+// }
 
-// Edit Student
-function openModalEditStudent() {
-    document.getElementById("editStudentModal").style.display = "block";
-}
-
-function closeModalEditStudent() {
-    document.getElementById("editStudentModal").style.display = "none";
-}

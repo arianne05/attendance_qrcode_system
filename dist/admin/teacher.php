@@ -59,7 +59,7 @@
                         <td class="<?php echo $colorStatus?>"><?php echo $teacher['status']?></td>
                         <td>
                             <!-- Detail -->
-                            <a href="#">
+                            <a href="./profile/teacher-view.php?header=<?php echo $teacher['firstname']?>'s Profile&id=<?php echo $teacher['accountID']?>">
                                 <button class="view">Detail</button>
                             </a>
                             <!-- Edit -->
