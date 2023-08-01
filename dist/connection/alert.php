@@ -135,4 +135,33 @@ if(isset($_GET['actTeacherSuccess'])){
         </script>
     <?php
 }
+
+// Teacher Added Sched Success - Profile
+if(isset($_GET['updateSchedSuccess'])){
+    ?>
+        <script>
+            Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Schedule Added!',
+            showConfirmButton: false,
+            timer: 1500
+            })
+        </script>
+    <?php
+}
+// Teacher Removed Sched Success - Profile
+if(isset($_GET['removedSchedSuccess'])){
+    ?>
+        <script>
+            Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Section Removed!',
+            showConfirmButton: false,
+            timer: 1500
+            })
+        </script>
+    <?php
+}
 ?>

@@ -84,7 +84,7 @@ $sectionHandle = $pdo->query("SELECT * FROM account_information
                         <?php 
                             foreach($sectionHandle as $index => $handle) { 
                                 $schoolYear = $handle['schoolYear'];
-                                $sections = $pdo->query("SELECT * FROM teacher_handle WHERE accountID = '$accountID' AND schoolYear = '$schoolYear'")->fetchAll();
+                                $sections = $pdo->query("SELECT * FROM teacher_handle WHERE accountID = '$accountID' AND schoolYear = '$schoolYear' AND status=''")->fetchAll();
                         ?>
                         <button type="button" class="accordion" data-target="accordion-<?php echo $index; ?>"><?php echo $handle['schoolYear'];?> <b>S.Y.</b>
                             <span class="accordion-icon fas fa-plus"></span>
@@ -93,24 +93,30 @@ $sectionHandle = $pdo->query("SELECT * FROM account_information
                         
                         <div class="panel" id="accordion-<?php echo $index; ?>">
                         <br>
-                        <table id="viewSection-<?php echo $index; ?>" class="display">
-                                <thead>
-                                    <tr>
-                                        <th>Subject Name</th>
-                                        <th>Grade/Section</th>
-                                        <th>Schedule</th>
-                                    </tr>
-                                </thead>
-                                <?php foreach ($sections as $section) { ?>
-                                <tbody>
-                                    <tr>
-                                        <td><?php echo $section['subject']; ?></td>
-                                        <td><?php echo $section['section']; ?></td>
-                                        <td><?php echo $section['schedule']; ?></td>
-                                    </tr>
-                                </tbody>
-                                <?php } ?>
-                        </table>
+                        <form action="../queries/teacher-query.php" method="get">
+                            <table id="viewSection-<?php echo $index; ?>" class="display">
+                                    <thead>
+                                        <tr>
+                                            <th>Subject Name</th>
+                                            <th>Grade/Section</th>
+                                            <th>Schedule</th>
+                                            <th>Option</th>
+                                        </tr>
+                                    </thead>
+                                    <?php foreach ($sections as $section) { ?>
+                                    <input type="hidden" name="handleID" value="<?php echo $section['handleID']; ?>">
+                                    <input type="hidden" name="accountID" value="<?php echo $section['accountID']; ?>">
+                                    <tbody>
+                                        <tr>
+                                            <td><?php echo $section['subject']; ?></td>
+                                            <td><?php echo $section['section']; ?></td>
+                                            <td><?php echo $section['schedule']; ?></td>
+                                            <td><button type="button" class="archive" onclick="removeSchedule('<?php echo $section['handleID']; ?>')">Remove</button></td>
+                                        </tr>
+                                    </tbody>
+                                    <?php } ?>
+                            </table>
+                        </form>
                         <br>
                         </div>
                         <?php } ?>
@@ -133,5 +139,20 @@ $sectionHandle = $pdo->query("SELECT * FROM account_information
     <?php } ?>
 </script>
 
-
+<script>
+    // Remove Alert
+    function removeSchedule(handleID) {
+        Swal.fire({
+            icon: "question",
+            title: "Remove",
+            text: "Are you sure you want to remove this section?",
+            showCancelButton: true,
+        }).then(function (result) {
+            if (result.isConfirmed) {
+                // Redirect to the PHP script with the accountID parameter
+                window.location.href = `../queries/teacher-query.php?remove&handleID=${handleID}`;
+            }
+        });
+    }
+</script>
 </html>
