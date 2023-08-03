@@ -63,19 +63,19 @@
 
 .view {
   background-color: #9ae2c7;
-  &:hover{
+  &:hover {
     background-color: #c3f8e4;
   }
 }
 .edit {
   background-color: #6dabc6;
-  &:hover{
+  &:hover {
     background-color: #8dd1ee;
   }
 }
 .archive {
   background-color: #fc7777;
-  &:hover{
+  &:hover {
     background-color: #fcadad;
   }
 }
@@ -135,7 +135,10 @@
     flex-direction: column;
     width: 100%;
     color: $primary-text-gray2;
-    input[type="text"] {
+    input[type="text"],
+    input[type="date"],
+    input[type="number"],
+    select {
       width: 90%;
       height: 35px;
       background-color: white;
@@ -144,6 +147,26 @@
     }
     label {
       font-size: 14px;
+    }
+  }
+  .sched-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    .from-label {
+      margin-right: 10px;
+      label {
+        font-size: 12px;
+        margin: 0;
+        padding: 0;
+      }
+      input[type="number"] {
+        width: 100%;
+        height: 30px;
+        background-color: white;
+        border: 1px solid #cdcdcd;
+        border-radius: 7px;
+      }
     }
   }
 }

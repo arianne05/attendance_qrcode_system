@@ -1498,7 +1498,10 @@
   width: 100%;
   color: rgb(124, 124, 124);
 }
-.section-one-addTeacher .bind-label input[type=text] {
+.section-one-addTeacher .bind-label input[type=text],
+.section-one-addTeacher .bind-label input[type=date],
+.section-one-addTeacher .bind-label input[type=number],
+.section-one-addTeacher .bind-label select {
   width: 90%;
   height: 35px;
   background-color: white;
@@ -1507,6 +1510,26 @@
 }
 .section-one-addTeacher .bind-label label {
   font-size: 14px;
+}
+.section-one-addTeacher .sched-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.section-one-addTeacher .sched-container .from-label {
+  margin-right: 10px;
+}
+.section-one-addTeacher .sched-container .from-label label {
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+}
+.section-one-addTeacher .sched-container .from-label input[type=number] {
+  width: 100%;
+  height: 30px;
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  border-radius: 7px;
 }
 
 .section-two-addTeacher {

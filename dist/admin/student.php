@@ -18,7 +18,7 @@
     <div class="student-main-container">
         <div class="header">
             <h3>List of Registered Student</h3>
-            <label for="header">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, minima.</label>
+            <label for="header">Listed here are registered student account  .</label>
         </div>
 
         <button class="addTeacher" onclick="openModalAddStudent()">Add New</button>

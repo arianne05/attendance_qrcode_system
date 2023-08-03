@@ -14,142 +14,92 @@
 
         <!-- Form to Submit -->
         <form action="" method="">
+            <br>
+            <p>Personal Information</p>
+            <hr><br>  
+
             <!-- Section 1 -->
-            <div class="field-main-container">
-                <div class="text-label-edit">
-                    <input type="text">
-                    <label for="editFirstName">First Name</label>
+            <div class="section-one-addTeacher">
+                <div class="bind-label">
+                    <label for="teacherFName">First Name<span class="asterisk">*</span></label>
+                    <input type="text" id="teacherFName" name="teacherFName" required>
                 </div>
-                <div class="text-label-edit">
-                    <input type="text">
-                    <label for="editFirstName">Middle Name</label>
+                <div class="bind-label">
+                    <label for="teacherMName">Middle Name</label>
+                    <input type="text" id="teacherMName" name="teacherMName">
                 </div>
-                <div class="text-label-edit">
-                    <input type="text">
-                    <label for="editFirstName">Last Name</label>
+                <div class="bind-label">
+                    <label for="teacherLName">Last Name<span class="asterisk">*</span></label>
+                    <input type="text" id="teacherLName" name="teacherLName" required>
                 </div>
             </div>
 
             <!-- Section 2 -->
-            <div class="field-main-container">
-                <div class="text-label-edit">
-                    <input type="text">
-                    <label for="editFirstName">Student Number</label>
+            <br>
+            <div class="section-one-addTeacher">
+                <div class="bind-label">
+                    <label for="teacherFName">Student Number<span class="asterisk">*</span></label>
+                    <input type="text" id="teacherFName" name="teacherFName" required>
                 </div>
-                <div class="text-label-edit">
-                    <input type="text">
-                    <label for="editFirstName">Grade</label>
+                <div class="bind-label">
+                    <label for="teacherMName">Birthdate</label>
+                    <input type="date" id="studentBdate" name="studentBdate">
                 </div>
-                <div class="text-label-edit">
-                    <input type="text">
-                    <label for="editFirstName">Section</label>
+                <div class="bind-label">
+                    <label for="studentGender">Gender<span class="asterisk">*</span></label>
+                    <select name="" id="" required>
+                        <option selected disabled>Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
                 </div>
             </div>
+
+            <br>
+            <p>School Information</p>
+            <hr><br>  
 
             <!-- Section 3 -->
-            <div class="field-main-container">
-                <div class="text-label-edit">
-                    <input type="text">
-                    <label for="editFirstName">School Year</label>
+            <br>
+            <div class="section-one-addTeacher">
+                <div class="bind-label">
+                    <label for="teacherMName">Grade<span class="asterisk">*</span></label>
+                    <input type="number" id="teacherMName" name="teacherMName" required>
                 </div>
-                <div class="text-label-edit">
-                    <input type="text">
-                    <label for="editFirstName">Adviser</label>
+                <div class="bind-label">
+                    <label for="teacherLName">Section<span class="asterisk">*</span></label>
+                    <input type="text" id="teacherLName" name="teacherLName" required>
                 </div>
-                <div class="text-label-edit">
+                <div class="bind-label">
+                    <label for="teacherFName">Student Number<span class="asterisk">*</span></label>
+                    <input type="text" id="teacherFName" name="teacherFName" required>
                 </div>
             </div>
 
-                <p>Subject Enrolled</p>
-                <hr><!-- Section 3 -->
-                <br>
-
-                <div class="field-main-container">
-                    <div class="text-label-edit">
-                        <label for="editFirstName">Subject</label>
-                    </div>
-                    <div class="text-label-edit">
-                        <label for="editFirstName">Teacher</label>
-                    </div>
-                    <div class="text-label-edit">
-                        <label for="editFirstName">Schedule</label>
-                    </div>
-                </div>
-                <div class="field-main-container">
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                    <div class="text-label-edit">
-                        <input type="text">
+            <!-- Section 4 -->
+            <br>
+            <div class="section-one-addTeacher">
+                <div class="bind-label">
+                    <label>School Year:</label> <!--Label-->
+                    <div class="sched-container"> <!--School Year-->
+                        <div class="from-label">
+                            <label>From:</label>
+                            <input type="number" id="teacherSchedule1" name="teacherFromSchoolYear1">
+                        </div>
+                        <div class="from-label">
+                            <label>To:</label>
+                            <input type="number" id="teacherSchedule1" name="teacherToSchoolYear1">
+                        </div>
                     </div>
                 </div>
-                <br>
-                <div class="field-main-container">
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
+                <div class="bind-label">
                 </div>
-                <br>
-                <div class="field-main-container">
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
+                <div class="bind-label">
                 </div>
-                <br>
-                <div class="field-main-container">
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                </div>
-                <br>
-                <div class="field-main-container">
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                </div>
-                <br>
-                <div class="field-main-container">
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                </div>
-                <br>
+            </div>
 
             <div class="section-fourth-addTeacher">
-                <button class="addBtn">ADD NEW STUDENT</button>
+                <button class="addBtn">GENERATE QR</button>
             </div>
         </form>
     </div>
