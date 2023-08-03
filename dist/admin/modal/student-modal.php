@@ -21,16 +21,16 @@
             <!-- Section 1 -->
             <div class="section-one-addTeacher">
                 <div class="bind-label">
-                    <label for="teacherFName">First Name<span class="asterisk">*</span></label>
-                    <input type="text" id="teacherFName" name="teacherFName" required>
+                    <label for="firstname">First Name<span class="asterisk">*</span></label>
+                    <input type="text" id="firstname" name="firstname" required>
                 </div>
                 <div class="bind-label">
-                    <label for="teacherMName">Middle Name</label>
-                    <input type="text" id="teacherMName" name="teacherMName">
+                    <label for="middlename">Middle Name</label>
+                    <input type="text" id="middlename" name="middlename">
                 </div>
                 <div class="bind-label">
-                    <label for="teacherLName">Last Name<span class="asterisk">*</span></label>
-                    <input type="text" id="teacherLName" name="teacherLName" required>
+                    <label for="lastname">Last Name<span class="asterisk">*</span></label>
+                    <input type="text" id="lastname" name="lastname" required>
                 </div>
             </div>
 
@@ -38,20 +38,18 @@
             <br>
             <div class="section-one-addTeacher">
                 <div class="bind-label">
-                    <label for="teacherFName">Student Number<span class="asterisk">*</span></label>
-                    <input type="text" id="teacherFName" name="teacherFName" required>
-                </div>
-                <div class="bind-label">
-                    <label for="teacherMName">Birthdate</label>
+                    <label for="studentBdate">Birthdate</label>
                     <input type="date" id="studentBdate" name="studentBdate">
                 </div>
                 <div class="bind-label">
                     <label for="studentGender">Gender<span class="asterisk">*</span></label>
-                    <select name="" id="" required>
+                    <select name="studentGender" id="studentGender" required>
                         <option selected disabled>Gender</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                     </select>
+                </div>
+                <div class="bind-label">
                 </div>
             </div>
 
@@ -63,16 +61,16 @@
             <br>
             <div class="section-one-addTeacher">
                 <div class="bind-label">
-                    <label for="teacherMName">Grade<span class="asterisk">*</span></label>
-                    <input type="number" id="teacherMName" name="teacherMName" required>
+                    <label for="studentGrade">Grade<span class="asterisk">*</span></label>
+                    <input type="number" id="studentGrade" name="studentGrade" required>
                 </div>
                 <div class="bind-label">
-                    <label for="teacherLName">Section<span class="asterisk">*</span></label>
-                    <input type="text" id="teacherLName" name="teacherLName" required>
+                    <label for="studentSection">Section<span class="asterisk">*</span></label>
+                    <input type="text" id="studentSection" name="studentSection" required>
                 </div>
                 <div class="bind-label">
-                    <label for="teacherFName">Student Number<span class="asterisk">*</span></label>
-                    <input type="text" id="teacherFName" name="teacherFName" required>
+                    <label for="studentNumber">Student Number<span class="asterisk">*</span></label>
+                    <input type="number" id="studentNumber" name="studentNumber" required>
                 </div>
             </div>
 
