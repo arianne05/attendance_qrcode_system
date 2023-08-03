@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     header("Location: student_dashboard.php");
                     break;
                 case 'teacher':
-                    header("Location: teacher/dashboard.php?header=Dashboard&id=$accountID&position=Teacher&fname=$firstname&loginSuccess");
+                    header("Location: teacher/dashboard.php?header=Dashboard&loginSuccess");
                     break;
                 default:
                     // If the position is not recognized, redirect to a generic dashboard

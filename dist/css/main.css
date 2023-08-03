@@ -2101,6 +2101,194 @@
   cursor: pointer;
 }
 
+.dashboard-teacher-main-container {
+  display: flex;
+  justify-content: space-between;
+  width: 82vw;
+  height: 90vh;
+  margin-left: 17vw;
+  font-family: "Inter", sans-serif;
+}
+
+.main-body-content {
+  display: flex;
+  padding: 20px;
+  margin-top: 40px;
+  height: 40vh;
+  width: 75%;
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.right-content {
+  width: 24%;
+}
+.right-content p {
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.right-content .time-calendar {
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  height: 33vh;
+}
+.right-content .button-calendar {
+  display: flex;
+  justify-content: space-between;
+}
+.right-content .button-calendar button {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 8px;
+  padding-left: 8px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 20px;
+  border: 1px solid rgb(185, 185, 185);
+  background-color: transparent;
+}
+.right-content .button-calendar button:hover {
+  background-color: #549c6c;
+}
+.right-content #calendar {
+  max-width: 100%;
+  width: 100%;
+  height: 26%;
+  padding-top: 0;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  margin-top: 0;
+  background-color: white;
+  border-radius: 12px;
+}
+.right-content #calendar .header {
+  margin-bottom: 10px;
+  color: #3D3D3D;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 0;
+}
+.right-content #calendar .weekdays,
+.right-content #calendar .days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+}
+.right-content #calendar .weekdays {
+  font-size: 10px;
+}
+.right-content #calendar .days span {
+  padding: 5px;
+  font-size: 12px;
+}
+.right-content #calendar .days span.current-day {
+  cursor: pointer;
+  background-color: #549c6c;
+  border-radius: 100%;
+}
+.right-content #clock {
+  font-family: Arial, sans-serif;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.right-content #clock .time {
+  font-size: 27px;
+  color: #3D3D3D;
+}
+.right-content #clock .day {
+  font-size: 14px;
+  color: rgb(124, 124, 124);
+}
+
+.total-section-teacher {
+  width: 30%;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  padding: 20px;
+}
+.total-section-teacher h1 {
+  font-size: 70px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  color: #3D3D3D;
+}
+.total-section-teacher .school-name p {
+  font-size: 15px;
+  font-weight: 100px;
+  margin-top: 0;
+  padding-top: 0;
+}
+.total-section-teacher .school-name .school-label {
+  font-size: 12px;
+  width: 20px;
+  color: rgb(124, 124, 124);
+  font-family: "Inter", sans-serif;
+}
+.total-section-teacher button {
+  background-color: #25582A;
+  color: #FFFBCE;
+  width: 165px;
+  height: 45px;
+  border-radius: 20px;
+  border: none;
+  margin-top: 10px;
+}
+.total-section-teacher button:hover {
+  background-color: #EDFFEF;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  color: #3D3D3D;
+}
+
+.total-category {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.total-category .per-category {
+  padding-bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.table-category {
+  height: 400px;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.table-category table {
+  width: 100%;
+}
+.table-category td:nth-child(2) {
+  text-align: center;
+}
+
+.category {
+  width: 150px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.category:hover {
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
