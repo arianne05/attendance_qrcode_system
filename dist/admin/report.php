@@ -2,6 +2,7 @@
     session_start();
     include '../connection/db_conn.php';
     include '../connection/session.php';
+    include '../connection/session_name.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

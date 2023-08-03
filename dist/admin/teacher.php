@@ -2,6 +2,7 @@
     session_start();
     include '../connection/db_conn.php';
     include '../connection/session.php';
+    include '../connection/session_name.php';
 
     // FOR VIEW
     $stmt = $pdo->prepare("SELECT * FROM account_information WHERE position ='teacher'");
