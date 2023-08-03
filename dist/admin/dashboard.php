@@ -2,6 +2,9 @@
     session_start();
     include '../connection/db_conn.php';
     include '../connection/session.php';
+
+    $accountID=$_SESSION['accountID'];
+    $infoUser = $pdo->query("SELECT * FROM account_information WHERE accountID = '$accountID' AND position = 'admin'")->fetch();
 ?>
 <!DOCTYPE html>
 <html lang="en">

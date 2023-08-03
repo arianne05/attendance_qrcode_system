@@ -42,7 +42,7 @@
                         <span class="defaul-user">AQ</span>
                     </div>
                     <div class="dropdown">
-                        <button class="dropdown-btn"><span class="userName">Arianne<br></span><span class="labelPosition">Admin</span><i id="iconDrop" class="fa-solid fa-chevron-down"></i></button>
+                        <button class="dropdown-btn"><span class="userName"><?php echo $infoUser['firstname']?><br></span><span class="labelPosition"><?php echo $infoUser['position']?></span><i id="iconDrop" class="fa-solid fa-chevron-down"></i></button>
                         <div class="dropdown-content">
                           <a href="#">Visit Profile</a>
                           <a href="#" onclick="logoutAlert()">Logout</a>
