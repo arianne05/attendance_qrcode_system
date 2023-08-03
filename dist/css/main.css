@@ -1424,13 +1424,22 @@
 .view {
   background-color: #9ae2c7;
 }
+.view:hover {
+  background-color: #c3f8e4;
+}
 
 .edit {
   background-color: #6dabc6;
 }
+.edit:hover {
+  background-color: #8dd1ee;
+}
 
 .archive {
   background-color: #fc7777;
+}
+.archive:hover {
+  background-color: #fcadad;
 }
 
 .deactivateBtn {
@@ -1875,7 +1884,8 @@
   position: relative;
 }
 
-.active, .accordion:hover {
+.active,
+.accordion:hover {
   background-color: #ccc;
 }
 

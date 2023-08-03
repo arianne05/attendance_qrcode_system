@@ -4,6 +4,7 @@ include '../../connection/db_conn.php';
 include '../../connection/session.php';
 
 $accountID = $_GET['id'];
+$status =  $pdo->query("SELECT * FROM account_information WHERE accountID = '$accountID' AND position = 'teacher'")->fetch();
 $editInfo = $pdo->query("SELECT * FROM account_information 
         INNER JOIN teacher_handle ON account_information.accountID = teacher_handle.accountID
         WHERE account_information.accountID = '$accountID' AND account_information.position = 'teacher'")->fetch();
@@ -35,7 +36,7 @@ $sectionHandle = $pdo->query("SELECT * FROM account_information
                     <div class="image-edit-container">
                         <img src="../../img/user-icon-default/user-male-default.png" alt="">
                         <label for="id">#<?php echo $editInfo['accountID']?></label>
-                        <input type="hidden" name="accountID" value="<?php echo $editInfo['accountID']?>">
+                        <label for="status" class="activeGreen">active</label>
                     </div>
 
                     <!-- Section 1 -->
@@ -104,8 +105,6 @@ $sectionHandle = $pdo->query("SELECT * FROM account_information
                                         </tr>
                                     </thead>
                                     <?php foreach ($sections as $section) { ?>
-                                    <input type="hidden" name="handleID" value="<?php echo $section['handleID']; ?>">
-                                    <input type="hidden" name="accountID" value="<?php echo $section['accountID']; ?>">
                                     <tbody>
                                         <tr>
                                             <td><?php echo $section['subject']; ?></td>

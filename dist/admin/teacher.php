@@ -25,7 +25,7 @@
     <div class="teacher-main-container">
         <div class="header">
             <h3>List of Registered Teacher</h3>
-            <label for="header">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, minima.</label>
+            <label for="header">Listed here are the registered accounts of the teacher.</label>
         </div>
         
         <button class="addTeacher" onclick="openModalAddTeacher()">Add New</button>
