@@ -1368,6 +1368,10 @@
   height: 70vh;
   font-family: "Inter", sans-serif;
 }
+.teacher-main-container a {
+  text-decoration: none;
+  color: #3D3D3D;
+}
 
 .header {
   margin-top: 20px;
@@ -1391,12 +1395,26 @@
 
 .teacher-table {
   width: 95%;
+  padding: 30px;
+  height: auto;
+}
+.teacher-table .name {
+  text-align: left;
+}
+.teacher-table .activeGreen {
+  color: #549c6c;
+}
+.teacher-table .activeRed {
+  color: #fc7777;
+}
+.teacher-table .centerHead {
+  text-align: center;
 }
 
 .view,
 .edit,
 .archive {
-  width: 60px;
+  width: 80px;
   height: 30px;
   border: none;
   border-radius: 20px;
@@ -1406,13 +1424,26 @@
 .view {
   background-color: #9ae2c7;
 }
+.view:hover {
+  background-color: #c3f8e4;
+}
 
 .edit {
   background-color: #6dabc6;
 }
+.edit:hover {
+  background-color: #8dd1ee;
+}
 
 .archive {
   background-color: #fc7777;
+}
+.archive:hover {
+  background-color: #fcadad;
+}
+
+.deactivateBtn {
+  display: none;
 }
 
 /* Styles for the modalAddTeacher */
@@ -1427,14 +1458,16 @@
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
   font-family: "Inter", sans-serif;
+  padding: 20px;
 }
 
 .modal-content-AddTeacher {
   background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
+  margin: auto;
+  padding: 30px;
   border: 1px solid #888;
   width: 80%;
+  height: auto;
 }
 
 .closeAddTeacher {
@@ -1467,7 +1500,13 @@
 }
 .section-one-addTeacher .bind-label input[type=text] {
   width: 90%;
-  height: 30px;
+  height: 35px;
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  border-radius: 7px;
+}
+.section-one-addTeacher .bind-label label {
+  font-size: 14px;
 }
 
 .section-two-addTeacher {
@@ -1485,25 +1524,86 @@
 
 .section-three-addTeacher {
   display: flex;
-  justify-content: space-between;
   margin-top: 10px;
   color: rgb(124, 124, 124);
+  width: 100%;
+}
+.section-three-addTeacher .sched-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.section-three-addTeacher .sched-container .from-label {
+  margin-right: 10px;
+}
+.section-three-addTeacher .sched-container .from-label label {
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+}
+.section-three-addTeacher .sched-container .from-label input[type=number] {
+  width: 100%;
+  height: 30px;
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  border-radius: 7px;
+}
+.section-three-addTeacher .main-select-container {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+.section-three-addTeacher .main-select-container .select-container select {
+  padding: 5px;
+  margin-right: 5px;
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  border-radius: 7px;
 }
 .section-three-addTeacher .bind-label {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
+.section-three-addTeacher .bind-label label {
+  font-size: 14px;
+}
 .section-three-addTeacher .bind-label input[type=text] {
-  width: 90%;
+  width: 85%;
   height: 30px;
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  border-radius: 7px;
+}
+.section-three-addTeacher .bind-label i {
+  font-size: 20px;
+  border: none;
+  background-color: white;
+}
+.section-three-addTeacher .withButton {
+  margin-right: 40px;
+}
+.section-three-addTeacher .withButton label {
+  color: transparent;
 }
 
-.section-fourth-addTeacher button {
+.section-fourth-addTeacher {
+  display: flex;
+  flex-direction: column;
+}
+.section-fourth-addTeacher #addSectionBtn {
+  border: none;
+  margin-top: 15px;
   width: 97%;
-  height: 30px;
-  margin-top: 20px;
+  height: 35px;
+  background-color: #e1efe6;
   cursor: pointer;
+  border-radius: 5px;
+  color: #3D3D3D;
+}
+.section-fourth-addTeacher #addSectionBtn:hover {
+  background-color: #549c6c;
+  color: #FFFBCE;
 }
 .section-fourth-addTeacher .addBtn {
   height: 40px;
@@ -1534,12 +1634,14 @@
 }
 
 .modal-content-ViewTeacher {
-  background-color: #fefefe;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   margin: auto;
   padding: 20px;
-  border: 1px solid #888;
   width: 80%;
-  height: 90%;
+  height: auto;
 }
 
 .closeViewTeacher {
@@ -1634,7 +1736,188 @@
 }
 
 /* Styles for the editViewTeacher */
-.modalEditTeacher {
+.modal-content-EditTeacher {
+  margin-left: 17vw;
+  padding: 20px;
+  width: 80%;
+  height: auto;
+  font-family: "Inter", sans-serif;
+}
+
+.section-container {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.section-container .image-edit-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  padding: 30px;
+  background-color: #c9f7df;
+  border-radius: 12px 0px 0px 12px;
+}
+.section-container .image-edit-container .activeGreen {
+  color: #549c6c;
+}
+.section-container .image-edit-container .activeRed {
+  color: #fc7777;
+}
+.section-container .image-edit-container label {
+  padding: 0;
+  margin: 0;
+}
+.section-container .image-edit-container img {
+  width: 100px;
+  margin: 0;
+  padding-bottom: 5px;
+}
+.section-container .image-edit-container label {
+  font-size: 12px;
+  color: rgb(124, 124, 124);
+}
+.section-container .image-edit-container i {
+  margin-top: 10px;
+  color: rgb(124, 124, 124);
+  cursor: pointer;
+}
+.section-container .image-edit-container i:hover {
+  color: #549c6c;
+}
+.section-container .field-main-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+}
+.section-container .field-main-container .field-one {
+  display: flex;
+  width: 100%;
+  margin: 0;
+}
+.section-container .field-main-container .buttonView {
+  margin: 0;
+  display: flex;
+  align-items: flex-end;
+  padding-right: 40px;
+  padding-top: 40px;
+}
+.section-container .field-main-container .buttonView .close {
+  background-color: #fc7777;
+}
+.section-container .field-main-container .buttonView button {
+  cursor: pointer;
+  padding: 0;
+  margin: 0 5px;
+  width: 200px;
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+}
+.section-container .field-main-container .text-label-edit {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  align-items: center;
+}
+.section-container .field-main-container .text-label-edit input[type=text] {
+  width: 90%;
+  height: 30px;
+  width: 90%;
+  height: 35px;
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  border-radius: 7px;
+}
+.section-container .field-main-container .text-label-edit label {
+  font-size: 12px;
+  color: rgb(124, 124, 124);
+}
+.section-container .field-main-container .sectionTag label {
+  font-size: 12px;
+  padding: 20px;
+  color: rgb(124, 124, 124);
+}
+.section-container .field-main-container .button-edit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.section-container .field-main-container .button-edit button {
+  width: 90%;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  background-color: #549c6c;
+  color: #FFFBCE;
+  margin: 20px;
+  cursor: pointer;
+}
+.section-container .field-main-container .button-edit button:hover {
+  background-color: #e1efe6;
+  color: #3D3D3D;
+}
+
+/* Styling for the accordion */
+.accordion {
+  background-color: white;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+  border: 1px solid rgb(196, 196, 196);
+  border-top: none; /* This will remove the top border */
+  border-right: none; /* This will remove the top border */
+  border-left: none; /* This will remove the top border */
+  border-radius: 10px 10px 0px 0px;
+  position: relative;
+}
+
+.active,
+.accordion:hover {
+  background-color: #ccc;
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+
+/* Style for the plus and minus icons */
+.accordion-icon {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  display: none; /* Hide the minus icon initially */
+}
+
+/* Show the minus icon when .active class is applied */
+.accordion.active .accordion-icon.fa-minus {
+  display: inline-block;
+}
+
+/* Show the plus icon when .active class is not applied */
+.accordion:not(.active) .accordion-icon.fa-plus {
+  display: inline-block;
+}
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* Styles for the modalAddTeacher */
+.modalDetailTeacher {
   display: none;
   position: fixed;
   z-index: 9999;
@@ -1648,79 +1931,27 @@
   padding: 20px;
 }
 
-.modal-content-EditTeacher {
+.modal-content-DetailTeacher {
   background-color: #fefefe;
   margin: auto;
-  padding: 20px;
+  padding: 30px;
   border: 1px solid #888;
   width: 80%;
-  height: 90%;
+  height: auto;
 }
 
-.closeEditTeacher {
+.closeDetailTeacher {
   color: #aaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
 }
 
-.closeEditTeacher:hover,
-.closeEditTeacher:focus {
+.closeDetailTeacher:hover,
+.closeDetailTeacher:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
-}
-
-.image-edit-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.image-edit-container img {
-  width: 100px;
-  padding-bottom: 20px;
-}
-
-.field-main-container {
-  display: flex;
-  justify-content: space-between;
-}
-.field-main-container .text-label-edit {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  width: 100%;
-  align-items: center;
-}
-.field-main-container .text-label-edit input[type=text] {
-  width: 90%;
-  height: 30px;
-}
-.field-main-container .text-label-edit label {
-  font-size: 14px;
-  margin-bottom: 20px;
-  color: rgb(124, 124, 124);
-}
-
-.button-edit {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-.button-edit button {
-  width: 90%;
-  height: 40px;
-  border-radius: 8px;
-  border: none;
-  background-color: #549c6c;
-  color: #FFFBCE;
-  margin-top: 20px;
-  cursor: pointer;
-}
-.button-edit button:hover {
-  background-color: #e1efe6;
-  color: #3D3D3D;
 }
 
 /*

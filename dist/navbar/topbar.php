@@ -1,11 +1,23 @@
 <?php
     $title = $_GET['header'];
-    include_once '../connection/alert.php'
+    
+    // Check if the file exists before including it
+    if (file_exists('../connection/alert.php')) {
+        include_once '../connection/alert.php';
+        $image = '../img/logo-hermosa 4.png';
+        $logout = '../logout.php';
+       
+    } else {
+        include_once '../../connection/alert.php';
+        $image = '../../img/logo-hermosa 4.png';
+        $logout = '../../logout.php';
+    }
 ?>
+
 <!-- Topbar -->
 <div class="dashboard-top-bar">
         <div class="top-bar-left">
-            <img src="../img/logo-hermosa 4.png" alt="">
+            <img src="<?php echo $image; ?>" alt="">
             <p>WAMS</p>
         </div>
         <div class="top-bar-right">
@@ -59,6 +71,23 @@
         // Add an event listener to the scroll event
         window.addEventListener('scroll', toggleScrollingClass);
 
+    </script>
+
+    <!-- Sweet Alert Logout -->
+    <script>
+        //Logout Alert
+        function logoutAlert() {
+            Swal.fire({
+            icon: "question",
+            title: "Logout",
+            text: "Are you sure you want to logout?",
+            showCancelButton: true,
+            }).then(function (result) {
+            if (result.isConfirmed) {
+                window.location.href = "<?php echo $logout?>";
+            }
+            });
+        }
     </script>
 <?php
 ?>

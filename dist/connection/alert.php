@@ -79,5 +79,89 @@ if(isset($_GET['loginSuccess'])){
     <?php
 }
 
+// Teacher-Add-Success
+if(isset($_GET['addTeacherSuccess'])){
+    ?>
+        <script>
+            Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Added Successfully',
+            showConfirmButton: false,
+            timer: 1500
+            })
+        </script>
+    <?php
+}
+// Teacher-Edit-Success
+if(isset($_GET['updateTeacherSuccess'])){
+    ?>
+        <script>
+            Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Update Successfully',
+            showConfirmButton: false,
+            timer: 1500
+            })
+        </script>
+    <?php
+}
+// Teacher Deactivate Success
+if(isset($_GET['deactTeacherSuccess'])){
+    ?>
+        <script>
+            Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Account Deactivated',
+            showConfirmButton: false,
+            timer: 1500
+            })
+        </script>
+    <?php
+}
+// Teacher Activate Success
+if(isset($_GET['actTeacherSuccess'])){
+    ?>
+        <script>
+            Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Account Activated',
+            showConfirmButton: false,
+            timer: 1500
+            })
+        </script>
+    <?php
+}
 
+// Teacher Added Sched Success - Profile
+if(isset($_GET['updateSchedSuccess'])){
+    ?>
+        <script>
+            Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Schedule Added!',
+            showConfirmButton: false,
+            timer: 1500
+            })
+        </script>
+    <?php
+}
+// Teacher Removed Sched Success - Profile
+if(isset($_GET['removedSchedSuccess'])){
+    ?>
+        <script>
+            Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Section Removed!',
+            showConfirmButton: false,
+            timer: 1500
+            })
+        </script>
+    <?php
+}
 ?>

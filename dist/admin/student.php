@@ -1,11 +1,7 @@
 <?php
     session_start();
     include '../connection/db_conn.php';
-    if (!isset($_SESSION['accountID'])) {
-        // Redirect the user to the login page
-        header("Location: ../index.php?errorSession");
-        exit();
-    }
+    include '../connection/session.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,7 +48,7 @@
     </div>
 
     <!-- Modal Container -->
-    <?php include_once './modal/addStudent.php'?>
+    <?php include_once './modal/student-modal.php'?>
 </body>
 
 <!-- Script Link -->
