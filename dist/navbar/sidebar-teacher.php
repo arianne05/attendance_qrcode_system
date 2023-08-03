@@ -3,18 +3,18 @@ $current_page = basename($_SERVER['PHP_SELF']);  //Get the basename of the link
 
 // Check if the current page is inside the 'admin' folder
 if (file_exists('../connection/alert.php')) {
-    $dashboard = '../admin/dashboard.php?header=Dashboard';
-    $reports = '../admin/report.php?header=Reports';
-    $recents = '../admin/recent.php?header=Recent';
-    $teachers = '../admin/teacher.php?header=Teacher';
-    $students = '../admin/student.php?header=Student';
+    $dashboard = '../teacher/dashboard.php?header=Dashboard';
+    $reports = '../teacher/report.php?header=Reports';
+    $recents = '../teacher/recent.php?header=Recent';
+    $teachers = '../teacher/teacher.php?header=Teacher';
+    $students = '../teacher/student.php?header=Student';
    
 } else {
-    $dashboard = '../../admin/dashboard.php?header=Dashboard';
-    $reports = '../../admin/report.php?header=Reports';
-    $recents = '../../admin/recent.php?header=Recent';
-    $teachers = '../../admin/teacher.php?header=Teacher';
-    $students = '../../admin/student.php?header=Student';
+    $dashboard = '../../teacher/dashboard.php?header=Dashboard';
+    $reports = '../../teacher/report.php?header=Reports';
+    $recents = '../../teacher/recent.php?header=Recent';
+    $teachers = '../../teacher/teacher.php?header=Teacher';
+    $students = '../../teacher/student.php?header=Student';
 }
 
 

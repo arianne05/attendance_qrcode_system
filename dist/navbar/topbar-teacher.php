@@ -1,8 +1,6 @@
 <?php
 
     $title = $_GET['header'];
-    $firstname = $_GET['fname'];
-    $position = $_GET['position'];
 
     // Check if the file exists before including it
     if (file_exists('../connection/alert.php')) {
@@ -45,7 +43,7 @@
                         <span class="defaul-user">AQ</span>
                     </div>
                     <div class="dropdown">
-                        <button class="dropdown-btn"><span class="userName"><?php echo $firstname?><br></span><span class="labelPosition"><?php echo $position?></span><i id="iconDrop" class="fa-solid fa-chevron-down"></i></button>
+                        <button class="dropdown-btn"><span class="userName"><?php echo $infoUser['firstname']?><br></span><span class="labelPosition"><?php echo $infoUser['position']?></span><i id="iconDrop" class="fa-solid fa-chevron-down"></i></button>
                         <div class="dropdown-content">
                           <a href="#">Visit Profile</a>
                           <a href="#" onclick="logoutAlert()">Logout</a>
