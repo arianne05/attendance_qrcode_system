@@ -41,6 +41,6 @@
     QRcode :: png($qrValue,$qrcode,'H',4,4);
     // QRcode :: png("Test1",$qrcode,'H',4,4);
     // echo "<img src='".$qrcode."'>";
-    header("Location: ../admin/student.php?header=Student");
+    header("Location: ../admin/student.php?header=Student&studentAddSuccess");
     echo "Hui";
 ?>

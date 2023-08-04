@@ -164,4 +164,21 @@ if(isset($_GET['removedSchedSuccess'])){
         </script>
     <?php
 }
+
+/*-------------------------------------------------------------------------------------------------------------- */
+
+// Student Added Success
+if(isset($_GET['studentAddSuccess'])){
+    ?>
+        <script>
+            Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Registered Successfully!',
+            showConfirmButton: false,
+            timer: 1500
+            })
+        </script>
+    <?php
+}
 ?>
