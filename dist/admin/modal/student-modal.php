@@ -83,11 +83,11 @@
                     <div class="sched-container"> <!--School Year-->
                         <div class="from-label">
                             <label>From:</label>
-                            <input type="number" id="teacherSchedule1" name="teacherFromSchoolYear">
+                            <input type="number" id="teacherSchedule1" name="teacherFromSchoolYear" required>
                         </div>
                         <div class="from-label">
                             <label>To:</label>
-                            <input type="number" id="teacherSchedule1" name="teacherToSchoolYear">
+                            <input type="number" id="teacherSchedule1" name="teacherToSchoolYear" required>
                         </div>
                     </div>
                 </div>
@@ -121,17 +121,17 @@
                     <div class="first-section">
                         <img src="../img/user-icon-default/user-male-default.png" alt="">
                         <caption>
-                            <p>201912344</p>
+                            <p id="student-number"></p>
                             <label for="EmployeeNumb">Student No.</label>
                         </caption>
                     </div>
                     <caption>
-                        <p>Arianne Quimpo</p>
+                        <p id="fname-student"></p>
                         <label for="EmployeeName">Full Name</label>
                     </caption>
                     <hr>
                     <caption>
-                        <p>G9-Jose Rizal</p>
+                        <p id="section-student"></p>
                         <label for="EmployeeDept">Section</label>
                     </caption>
                     <hr>

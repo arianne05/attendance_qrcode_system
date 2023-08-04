@@ -3,6 +3,11 @@
     include '../connection/db_conn.php';
     include '../connection/session.php';
     include '../connection/session_name.php';
+
+    // FOR TABLE
+    $stmt = $pdo->prepare("SELECT * FROM student");
+    $stmt->execute();
+    $student = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,25 +30,31 @@
         <button class="addTeacher" onclick="openModalAddStudent()">Add New</button>
 
         <div class="table-container teacher-table">
-            <table>
-                <tr>
-                    <th>Student No.</th>
-                    <th>Student Name</th>
-                    <th>Grade/Section</th>
-                    <th>School Year</th>
-                    <th>Option</th>
-                </tr>
-                <tr>
-                    <td>201912344</td>
-                    <td>Arianne Quimpo</td>
-                    <td>G10 Malbar</td>
-                    <td>2020-2023</td>
-                    <td>
-                        <button class="view" onclick="openModalViewStudent()">View</button>
-                        <button class="edit" onclick="openModalEditStudent()">Edit</button>
-                        <button class="archive">Archive</button>
-                    </td>
-                </tr>
+            <table id="student" class="display">
+                <thead>
+                    <tr>
+                        <th>Student No.</th>
+                        <th>Student Name</th>
+                        <th>Grade/Section</th>
+                        <th>School Year</th>
+                        <th>Option</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($student as $student){ ?>
+                    <tr>
+                        <td><?php echo $student['studentNumber']?></td>
+                        <td class="name"><a href="#" onclick="openModalViewStudent(<?php echo $student['studentID']; ?>)"><?php echo $student['firstname'].' '.$student['middlename'].' '.$student['lastname']?></a></td>
+                        <td><?php echo $student['studentSection']?></td>
+                        <td><?php echo $student['studentYear']?></td>
+                        <td>
+                            <button class="view">Detail</button>
+                            <button class="edit" onclick="openModalEditStudent()">Edit</button>
+                            <button class="archive">Archive</button>
+                        </td>
+                    </tr>
+                    <?php } ?>
+                </tbody>
             </table>
         </div>
     </div>
@@ -55,4 +66,7 @@
 <!-- Script Link -->
 <script src="../js/modal.js"></script>
 <script src="../js/alert.js"></script>
+<script>    
+    new DataTable('#student');
+</script>
 </html>

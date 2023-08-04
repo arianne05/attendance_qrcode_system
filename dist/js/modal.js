@@ -72,11 +72,37 @@ function closeModalAddStudent() {
 }
 
 // View Student
-// function openModalViewStudent() {
-//     document.getElementById("viewStudentModal").style.display = "block";
-// }
+function openModalViewStudent(studentID) {
+    const xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                const studentData = JSON.parse(xhr.responseText);
+                populateModalWithStudentData(studentData);
+                document.getElementById("viewStudentModal").style.display = "block";
+            } else {
+                alert('Error fetching student information.'); // Updated error message
+            }
+        }
+    };
 
-// function closeModalViewStudent() {
-//     document.getElementById("viewStudentModal").style.display = "none";
-// }
+    xhr.onerror = function () {
+        alert('Request error.');
+    };
+
+    xhr.open('GET', '../admin/queries/get_student_info.php?studentID=' + studentID, true); // Updated parameter name
+    xhr.send();
+}
+
+
+function populateModalWithStudentData(data) {
+    document.getElementById("fname-student").textContent = textContent = data.firstname;
+    document.getElementById("section-student").textContent = textContent = data.studentSection;
+    document.getElementById("student-number").textContent = textContent = data.studentNumber;
+    
+}
+
+function closeModalViewStudent() {
+    document.getElementById("viewStudentModal").style.display = "none";
+}
 

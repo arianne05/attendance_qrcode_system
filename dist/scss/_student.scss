@@ -5,6 +5,10 @@
     height: 70vh;
     font-family: "Inter", sans-serif;
     // border: 1px solid black;
+    a {
+      text-decoration: none;
+      color: $tertiary-text-black;
+    }
 }
 
 /* Styles for the modalAddStudent */

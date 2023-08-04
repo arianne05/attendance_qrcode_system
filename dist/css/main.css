@@ -1987,6 +1987,10 @@
   height: 70vh;
   font-family: "Inter", sans-serif;
 }
+.student-main-container a {
+  text-decoration: none;
+  color: #3D3D3D;
+}
 
 /* Styles for the modalAddStudent */
 .modalAddStudent {
