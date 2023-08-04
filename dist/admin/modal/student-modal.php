@@ -13,7 +13,8 @@
         
 
         <!-- Form to Submit -->
-        <form action="" method="">
+        <form action="../connection/generate-qr.php" method="post">
+            <input type="hidden" name="accountID" value="<?php echo $_SESSION['accountID'];?>">
             <br>
             <p>Personal Information</p>
             <hr><br>  
@@ -82,11 +83,11 @@
                     <div class="sched-container"> <!--School Year-->
                         <div class="from-label">
                             <label>From:</label>
-                            <input type="number" id="teacherSchedule1" name="teacherFromSchoolYear1">
+                            <input type="number" id="teacherSchedule1" name="teacherFromSchoolYear">
                         </div>
                         <div class="from-label">
                             <label>To:</label>
-                            <input type="number" id="teacherSchedule1" name="teacherToSchoolYear1">
+                            <input type="number" id="teacherSchedule1" name="teacherToSchoolYear">
                         </div>
                     </div>
                 </div>
@@ -97,7 +98,7 @@
             </div>
 
             <div class="section-fourth-addTeacher">
-                <button class="addBtn">GENERATE QR</button>
+                <button type="submit" name="generateQR" class="addBtn">GENERATE QR</button>
             </div>
         </form>
     </div>
