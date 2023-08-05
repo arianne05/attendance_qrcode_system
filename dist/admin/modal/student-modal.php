@@ -107,16 +107,8 @@
 <!-- The Modal View Student-->
 <div id="viewStudentModal" class="modalViewStudent">
     <div class="modal-content-ViewStudent">
-        <span class="closeViewStudent" onclick="closeModalViewStudent()">&times;</span>
-        <center>
-            <h2>Student's Profile</h2>
-            <br><br>
-        </center>
         
-
-        <!-- Form to Submit -->
-        
-            <div class="section-viewTeacher">
+            <div class="studentView">
                 <div class="personal-info-section">
                     <div class="first-section">
                         <img src="../img/user-icon-default/user-male-default.png" alt="">
@@ -136,50 +128,23 @@
                     </caption>
                     <hr>
                     <caption>
-                        <p>Prof. Alejandro Lady</p>
-                        <label for="EmployeeDept">Adviser</label>
+                        <p id="student-gender"></p>
+                        <label for="EmployeeDept">Gender</label>
                     </caption>
                     <hr>
                     <caption>
-                        <p>S.Y 2019-2020</p>
+                        <p id="student-year"></p>
                         <label for="EmployeeDept">School Year Enrolled</label>
                     </caption>
                     <hr>
 
                     <div class="button-section">
-                        <button>Deactivate</button>
+                        <button class="closeStudentView" onclick="closeModalViewStudent()">Close</button>
                     </div>
                 </div>
-
-                <!-- Table -->
-                <div class="class-table-section">
-                    <p>2020-2023 S.Y</p>
-                    <label for="">School Year</label>
-                    <hr>
-                    <table>
-                        <tr>
-                            <th>Subject</th>
-                            <th>Teacher</th>
-                            <th>Schedule</th>
-                        </tr>
-                        <tr>
-                            <td>English</td>
-                            <td>Prof. Gladys Perey</td>
-                            <td>10:00PM-3:00PM</td>
-                        </tr>
-                        <tr>
-                            <td>Araling Panlipunan</td>
-                            <td>Prof. Anabelle Almarez</td>
-                            <td>12:00PM-1:00PM</td>
-                        </tr>
-                        <tr>
-                            <td>Science</td>
-                            <td>Prof. Jake Ersando</td>
-                            <td>6:00AM-1:00PM</td>
-                        </tr>
-                    </table>
-                </div>
             </div>
+                
+            
     </div>
 </div>
 

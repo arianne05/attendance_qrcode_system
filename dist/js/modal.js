@@ -96,9 +96,11 @@ function openModalViewStudent(studentID) {
 
 
 function populateModalWithStudentData(data) {
-    document.getElementById("fname-student").textContent = textContent = data.firstname;
+    document.getElementById("fname-student").textContent = textContent = data.firstname+" "+data.middlename+" "+data.lastname;
     document.getElementById("section-student").textContent = textContent = data.studentSection;
     document.getElementById("student-number").textContent = textContent = data.studentNumber;
+    document.getElementById("student-gender").textContent = textContent = data.studentGender;
+    document.getElementById("student-year").textContent = textContent = data.studentYear;
     
 }
 
