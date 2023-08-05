@@ -47,7 +47,9 @@ $studentAttendance = $pdo->query("SELECT * FROM attendance_record
                     <div class="image-edit-container studentImage">
                         <img src="../../img/user-icon-default/user-male-default.png" alt="">
                         <label for="id">#<?php echo $editInfo['studentNumber']?></label>
-                        <button>Download QR</button>
+                        <a href="../../qr-images/<?php echo $editInfo['qrImage']?>" download>
+                        <button type="button"> Download QR</button>
+                        </a>
                         <input type="hidden" name="studentID" value="<?php echo $editInfo['studentID']?>"> 
                     </div>
 
