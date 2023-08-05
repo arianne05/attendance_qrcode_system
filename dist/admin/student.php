@@ -58,7 +58,10 @@
                         <td><?php echo $student['studentSection']?></td>
                         <td><?php echo $student['studentYear']?></td>
                         <td>
-                            <button class="view">Detail</button>
+                            <!-- Detail -->
+                            <a href="./profile/student-view.php?header=<?php echo $student['firstname']?>'s Profile&id=<?php echo $student['studentID']?>&studNum=<?php echo $student['studentNumber']?>">
+                                <button class="view">Detail</button>
+                            </a>
                             <!-- Edit -->
                             <a href="./edit/student-edit.php?header=Student&id=<?php echo $student['studentNumber']?>">
                                 <button class="edit">Edit</button>
