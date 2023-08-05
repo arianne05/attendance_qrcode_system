@@ -1778,6 +1778,10 @@
   border: 1px solid #cdcdcd;
   border-radius: 12px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  height: auto;
+}
+.section-container .studentImage {
+  height: 316px;
 }
 .section-container .image-edit-container {
   display: flex;
@@ -1788,6 +1792,18 @@
   padding: 30px;
   background-color: #c9f7df;
   border-radius: 12px 0px 0px 12px;
+}
+.section-container .image-edit-container button {
+  cursor: pointer;
+  background-color: #64c7a3;
+  border: none;
+  width: 120px;
+  height: 40px;
+  border-radius: 7px;
+  margin-top: 10px;
+}
+.section-container .image-edit-container button:hover {
+  background-color: #92f1cf;
 }
 .section-container .image-edit-container .activeGreen {
   color: #549c6c;
@@ -1815,6 +1831,9 @@
 }
 .section-container .image-edit-container i:hover {
   color: #549c6c;
+}
+.section-container .studentProfile {
+  padding: 30px;
 }
 .section-container .field-main-container {
   display: flex;
@@ -1853,7 +1872,10 @@
   width: 100%;
   align-items: center;
 }
-.section-container .field-main-container .text-label-edit input[type=text] {
+.section-container .field-main-container .text-label-edit input[type=text],
+.section-container .field-main-container .text-label-edit input[type=date],
+.section-container .field-main-container .text-label-edit input[type=number] {
+  padding: 20px;
   width: 90%;
   height: 30px;
   width: 90%;

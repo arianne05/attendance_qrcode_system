@@ -49,7 +49,10 @@
                         <td><?php echo $student['studentYear']?></td>
                         <td>
                             <button class="view">Detail</button>
-                            <button class="edit" onclick="openModalEditStudent()">Edit</button>
+                            <!-- Edit -->
+                            <a href="./edit/student-edit.php?header=Student&id=<?php echo $student['studentNumber']?>">
+                                <button class="edit">Edit</button>
+                            </a>
                             <button class="archive">Archive</button>
                         </td>
                     </tr>
