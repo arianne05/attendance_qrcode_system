@@ -21,6 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Successful login
             $position = $user['position'];
             $accountID = $user['accountID'];
+            $firstname = $user['firstname'];
             $_SESSION['accountID']= $accountID;
 
             // Redirect users to their corresponding dashboards based on their position
@@ -32,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     header("Location: student_dashboard.php");
                     break;
                 case 'teacher':
-                    header("Location: teacher_dashboard.php");
+                    header("Location: teacher/dashboard.php?header=Dashboard&loginSuccess");
                     break;
                 default:
                     // If the position is not recognized, redirect to a generic dashboard

@@ -1401,11 +1401,27 @@
 .teacher-table .name {
   text-align: left;
 }
-.teacher-table .activeGreen {
+.teacher-table .labelactive {
   color: #549c6c;
 }
-.teacher-table .activeRed {
+.teacher-table .labeldeactive {
   color: #fc7777;
+}
+.teacher-table .activeGreen {
+  background-color: #549c6c;
+  width: 80px;
+  height: 30px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.teacher-table .activeRed {
+  background-color: #fc7777;
+  width: 80px;
+  height: 30px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
 }
 .teacher-table .centerHead {
   text-align: center;
@@ -1498,7 +1514,10 @@
   width: 100%;
   color: rgb(124, 124, 124);
 }
-.section-one-addTeacher .bind-label input[type=text] {
+.section-one-addTeacher .bind-label input[type=text],
+.section-one-addTeacher .bind-label input[type=date],
+.section-one-addTeacher .bind-label input[type=number],
+.section-one-addTeacher .bind-label select {
   width: 90%;
   height: 35px;
   background-color: white;
@@ -1507,6 +1526,26 @@
 }
 .section-one-addTeacher .bind-label label {
   font-size: 14px;
+}
+.section-one-addTeacher .sched-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.section-one-addTeacher .sched-container .from-label {
+  margin-right: 10px;
+}
+.section-one-addTeacher .sched-container .from-label label {
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+}
+.section-one-addTeacher .sched-container .from-label input[type=number] {
+  width: 100%;
+  height: 30px;
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  border-radius: 7px;
 }
 
 .section-two-addTeacher {
@@ -1704,10 +1743,14 @@
 .personal-info-section .button-section button {
   align-items: center;
   width: 100%;
-  height: 30px;
+  height: 40px;
   border-radius: 10px;
   border: none;
   background-color: #fc7777;
+  cursor: pointer;
+}
+.personal-info-section .button-section button:hover {
+  background-color: #fc9e9e;
 }
 
 .class-table-section {
@@ -1751,6 +1794,10 @@
   border: 1px solid #cdcdcd;
   border-radius: 12px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  height: auto;
+}
+.section-container .studentImage {
+  height: 316px;
 }
 .section-container .image-edit-container {
   display: flex;
@@ -1761,6 +1808,18 @@
   padding: 30px;
   background-color: #c9f7df;
   border-radius: 12px 0px 0px 12px;
+}
+.section-container .image-edit-container button {
+  cursor: pointer;
+  background-color: #64c7a3;
+  border: none;
+  width: 120px;
+  height: 40px;
+  border-radius: 7px;
+  margin-top: 10px;
+}
+.section-container .image-edit-container button:hover {
+  background-color: #92f1cf;
 }
 .section-container .image-edit-container .activeGreen {
   color: #549c6c;
@@ -1788,6 +1847,9 @@
 }
 .section-container .image-edit-container i:hover {
   color: #549c6c;
+}
+.section-container .studentProfile {
+  padding: 30px;
 }
 .section-container .field-main-container {
   display: flex;
@@ -1826,7 +1888,10 @@
   width: 100%;
   align-items: center;
 }
-.section-container .field-main-container .text-label-edit input[type=text] {
+.section-container .field-main-container .text-label-edit input[type=text],
+.section-container .field-main-container .text-label-edit input[type=date],
+.section-container .field-main-container .text-label-edit input[type=number] {
+  padding: 20px;
   width: 90%;
   height: 30px;
   width: 90%;
@@ -1964,6 +2029,10 @@
   height: 70vh;
   font-family: "Inter", sans-serif;
 }
+.student-main-container a {
+  text-decoration: none;
+  color: #3D3D3D;
+}
 
 /* Styles for the modalAddStudent */
 .modalAddStudent {
@@ -2018,10 +2087,9 @@
 }
 
 .modal-content-ViewStudent {
-  background-color: #fefefe;
+  background-color: transparent;
   margin: auto;
   padding: 20px;
-  border: 1px solid #888;
   width: 80%;
   height: 90%;
 }
@@ -2076,6 +2144,204 @@
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.studentView {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.closeStudentView {
+  background-color: green;
+}
+
+.dashboard-teacher-main-container {
+  display: flex;
+  justify-content: space-between;
+  width: 82vw;
+  height: 90vh;
+  margin-left: 17vw;
+  font-family: "Inter", sans-serif;
+}
+
+.main-body-content {
+  display: flex;
+  padding: 20px;
+  margin-top: 40px;
+  height: 40vh;
+  width: 75%;
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.right-content {
+  width: 24%;
+}
+.right-content p {
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.right-content .time-calendar {
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  height: 33vh;
+}
+.right-content .button-calendar {
+  display: flex;
+  justify-content: space-between;
+}
+.right-content .button-calendar button {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 8px;
+  padding-left: 8px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 20px;
+  border: 1px solid rgb(185, 185, 185);
+  background-color: transparent;
+}
+.right-content .button-calendar button:hover {
+  background-color: #549c6c;
+}
+.right-content #calendar {
+  max-width: 100%;
+  width: 100%;
+  height: 26%;
+  padding-top: 0;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  margin-top: 0;
+  background-color: white;
+  border-radius: 12px;
+}
+.right-content #calendar .header {
+  margin-bottom: 10px;
+  color: #3D3D3D;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 0;
+}
+.right-content #calendar .weekdays,
+.right-content #calendar .days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+}
+.right-content #calendar .weekdays {
+  font-size: 10px;
+}
+.right-content #calendar .days span {
+  padding: 5px;
+  font-size: 12px;
+}
+.right-content #calendar .days span.current-day {
+  cursor: pointer;
+  background-color: #549c6c;
+  border-radius: 100%;
+}
+.right-content #clock {
+  font-family: Arial, sans-serif;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.right-content #clock .time {
+  font-size: 27px;
+  color: #3D3D3D;
+}
+.right-content #clock .day {
+  font-size: 14px;
+  color: rgb(124, 124, 124);
+}
+
+.total-section-teacher {
+  width: 30%;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  padding: 20px;
+}
+.total-section-teacher h1 {
+  font-size: 70px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  color: #3D3D3D;
+}
+.total-section-teacher .school-name p {
+  font-size: 15px;
+  font-weight: 100px;
+  margin-top: 0;
+  padding-top: 0;
+}
+.total-section-teacher .school-name .school-label {
+  font-size: 12px;
+  width: 20px;
+  color: rgb(124, 124, 124);
+  font-family: "Inter", sans-serif;
+}
+.total-section-teacher button {
+  background-color: #25582A;
+  color: #FFFBCE;
+  width: 165px;
+  height: 45px;
+  border-radius: 20px;
+  border: none;
+  margin-top: 10px;
+}
+.total-section-teacher button:hover {
+  background-color: #EDFFEF;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  color: #3D3D3D;
+}
+
+.total-category {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.total-category .per-category {
+  padding-bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.table-category {
+  height: 400px;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.table-category table {
+  width: 100%;
+}
+.table-category td:nth-child(2) {
+  text-align: center;
+}
+
+.category {
+  width: 150px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.category:hover {
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 * {

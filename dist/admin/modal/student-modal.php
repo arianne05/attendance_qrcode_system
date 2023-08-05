@@ -13,143 +13,92 @@
         
 
         <!-- Form to Submit -->
-        <form action="" method="">
+        <form action="../connection/generate-qr.php" method="post">
+            <input type="hidden" name="accountID" value="<?php echo $_SESSION['accountID'];?>">
+            <br>
+            <p>Personal Information</p>
+            <hr><br>  
+
             <!-- Section 1 -->
-            <div class="field-main-container">
-                <div class="text-label-edit">
-                    <input type="text">
-                    <label for="editFirstName">First Name</label>
+            <div class="section-one-addTeacher">
+                <div class="bind-label">
+                    <label for="firstname">First Name<span class="asterisk">*</span></label>
+                    <input type="text" id="firstname" name="firstname" required>
                 </div>
-                <div class="text-label-edit">
-                    <input type="text">
-                    <label for="editFirstName">Middle Name</label>
+                <div class="bind-label">
+                    <label for="middlename">Middle Name</label>
+                    <input type="text" id="middlename" name="middlename">
                 </div>
-                <div class="text-label-edit">
-                    <input type="text">
-                    <label for="editFirstName">Last Name</label>
+                <div class="bind-label">
+                    <label for="lastname">Last Name<span class="asterisk">*</span></label>
+                    <input type="text" id="lastname" name="lastname" required>
                 </div>
             </div>
 
             <!-- Section 2 -->
-            <div class="field-main-container">
-                <div class="text-label-edit">
-                    <input type="text">
-                    <label for="editFirstName">Student Number</label>
+            <br>
+            <div class="section-one-addTeacher">
+                <div class="bind-label">
+                    <label for="studentBdate">Birthdate</label>
+                    <input type="date" id="studentBdate" name="studentBdate">
                 </div>
-                <div class="text-label-edit">
-                    <input type="text">
-                    <label for="editFirstName">Grade</label>
+                <div class="bind-label">
+                    <label for="studentGender">Gender<span class="asterisk">*</span></label>
+                    <select name="studentGender" id="studentGender" required>
+                        <option selected disabled>Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
                 </div>
-                <div class="text-label-edit">
-                    <input type="text">
-                    <label for="editFirstName">Section</label>
+                <div class="bind-label">
                 </div>
             </div>
+
+            <br>
+            <p>School Information</p>
+            <hr><br>  
 
             <!-- Section 3 -->
-            <div class="field-main-container">
-                <div class="text-label-edit">
-                    <input type="text">
-                    <label for="editFirstName">School Year</label>
+            <br>
+            <div class="section-one-addTeacher">
+                <div class="bind-label">
+                    <label for="studentGrade">Grade<span class="asterisk">*</span></label>
+                    <input type="number" id="studentGrade" name="studentGrade" required>
                 </div>
-                <div class="text-label-edit">
-                    <input type="text">
-                    <label for="editFirstName">Adviser</label>
+                <div class="bind-label">
+                    <label for="studentSection">Section<span class="asterisk">*</span></label>
+                    <input type="text" id="studentSection" name="studentSection" required>
                 </div>
-                <div class="text-label-edit">
+                <div class="bind-label">
+                    <label for="studentNumber">Student Number<span class="asterisk">*</span></label>
+                    <input type="number" id="studentNumber" name="studentNumber" required>
                 </div>
             </div>
 
-                <p>Subject Enrolled</p>
-                <hr><!-- Section 3 -->
-                <br>
-
-                <div class="field-main-container">
-                    <div class="text-label-edit">
-                        <label for="editFirstName">Subject</label>
-                    </div>
-                    <div class="text-label-edit">
-                        <label for="editFirstName">Teacher</label>
-                    </div>
-                    <div class="text-label-edit">
-                        <label for="editFirstName">Schedule</label>
-                    </div>
-                </div>
-                <div class="field-main-container">
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                    <div class="text-label-edit">
-                        <input type="text">
+            <!-- Section 4 -->
+            <br>
+            <div class="section-one-addTeacher">
+                <div class="bind-label">
+                    <label>School Year:</label> <!--Label-->
+                    <div class="sched-container"> <!--School Year-->
+                        <div class="from-label">
+                            <label>From:</label>
+                            <input type="number" id="teacherSchedule1" name="teacherFromSchoolYear" required>
+                        </div>
+                        <div class="from-label">
+                            <label>To:</label>
+                            <input type="number" id="teacherSchedule1" name="teacherToSchoolYear" required>
+                        </div>
                     </div>
                 </div>
-                <br>
-                <div class="field-main-container">
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
+                <div class="bind-label">
                 </div>
-                <br>
-                <div class="field-main-container">
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
+                <div class="bind-label">
                 </div>
-                <br>
-                <div class="field-main-container">
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                </div>
-                <br>
-                <div class="field-main-container">
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                </div>
-                <br>
-                <div class="field-main-container">
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                    <div class="text-label-edit">
-                        <input type="text">
-                    </div>
-                </div>
-                <br>
+            </div>
 
             <div class="section-fourth-addTeacher">
-                <button class="addBtn">ADD NEW STUDENT</button>
+                <button type="submit" name="generateQR" class="addBtn">GENERATE QR</button>
             </div>
         </form>
     </div>
@@ -158,79 +107,44 @@
 <!-- The Modal View Student-->
 <div id="viewStudentModal" class="modalViewStudent">
     <div class="modal-content-ViewStudent">
-        <span class="closeViewStudent" onclick="closeModalViewStudent()">&times;</span>
-        <center>
-            <h2>Student's Profile</h2>
-            <br><br>
-        </center>
         
-
-        <!-- Form to Submit -->
-        
-            <div class="section-viewTeacher">
+            <div class="studentView">
                 <div class="personal-info-section">
                     <div class="first-section">
                         <img src="../img/user-icon-default/user-male-default.png" alt="">
                         <caption>
-                            <p>201912344</p>
+                            <p id="student-number"></p>
                             <label for="EmployeeNumb">Student No.</label>
                         </caption>
                     </div>
                     <caption>
-                        <p>Arianne Quimpo</p>
+                        <p id="fname-student"></p>
                         <label for="EmployeeName">Full Name</label>
                     </caption>
                     <hr>
                     <caption>
-                        <p>G9-Jose Rizal</p>
+                        <p id="section-student"></p>
                         <label for="EmployeeDept">Section</label>
                     </caption>
                     <hr>
                     <caption>
-                        <p>Prof. Alejandro Lady</p>
-                        <label for="EmployeeDept">Adviser</label>
+                        <p id="student-gender"></p>
+                        <label for="EmployeeDept">Gender</label>
                     </caption>
                     <hr>
                     <caption>
-                        <p>S.Y 2019-2020</p>
+                        <p id="student-year"></p>
                         <label for="EmployeeDept">School Year Enrolled</label>
                     </caption>
                     <hr>
 
                     <div class="button-section">
-                        <button>Deactivate</button>
+                        <button class="closeStudentView" onclick="closeModalViewStudent()">Close</button>
                     </div>
                 </div>
-
-                <!-- Table -->
-                <div class="class-table-section">
-                    <p>2020-2023 S.Y</p>
-                    <label for="">School Year</label>
-                    <hr>
-                    <table>
-                        <tr>
-                            <th>Subject</th>
-                            <th>Teacher</th>
-                            <th>Schedule</th>
-                        </tr>
-                        <tr>
-                            <td>English</td>
-                            <td>Prof. Gladys Perey</td>
-                            <td>10:00PM-3:00PM</td>
-                        </tr>
-                        <tr>
-                            <td>Araling Panlipunan</td>
-                            <td>Prof. Anabelle Almarez</td>
-                            <td>12:00PM-1:00PM</td>
-                        </tr>
-                        <tr>
-                            <td>Science</td>
-                            <td>Prof. Jake Ersando</td>
-                            <td>6:00AM-1:00PM</td>
-                        </tr>
-                    </table>
-                </div>
             </div>
+                
+            
     </div>
 </div>
 

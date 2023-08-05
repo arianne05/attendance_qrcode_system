@@ -164,4 +164,65 @@ if(isset($_GET['removedSchedSuccess'])){
         </script>
     <?php
 }
+
+/*-------------------------------------------------------------------------------------------------------------- */
+
+// Student Added Success
+if(isset($_GET['studentAddSuccess'])){
+    ?>
+        <script>
+            Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Registered Successfully!',
+            showConfirmButton: false,
+            timer: 1500
+            })
+        </script>
+    <?php
+}
+
+// Student Edit Success
+if(isset($_GET['updateStudentSuccess'])){
+    ?>
+        <script>
+            Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Edit Successfully!',
+            showConfirmButton: false,
+            timer: 1500
+            })
+        </script>
+    <?php
+}
+// Student Remove Success
+if(isset($_GET['removedTeacherSuccess'])){
+    ?>
+        <script>
+            Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Account Removed!',
+            showConfirmButton: false,
+            timer: 1500
+            })
+        </script>
+    <?php
+}
+// Student Restore Success
+if(isset($_GET['restoreTeacherSuccess'])){
+    ?>
+        <script>
+            Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Account Restored!',
+            showConfirmButton: false,
+            timer: 1500
+            })
+        </script>
+    <?php
+}
+
 ?>

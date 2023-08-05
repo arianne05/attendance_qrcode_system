@@ -2,6 +2,7 @@
 session_start();
 include '../../connection/db_conn.php';
 include '../../connection/session.php';
+include '../../connection/session_name.php';
 
 $accountID = $_GET['id'];
 $status =  $pdo->query("SELECT * FROM account_information WHERE accountID = '$accountID' AND position = 'teacher'")->fetch();
