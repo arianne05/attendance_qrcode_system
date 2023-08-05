@@ -38,7 +38,7 @@ $studentAttendance = $pdo->query("SELECT * FROM attendance_record
         
        
         <!-- Form to Submit -->
-        <form action="../queries/teacher-query.php" method="POST">
+        <form action="../queries/student-query.php" method="POST">
             <div class="edit-main-container">
                 <h3>Personal Information</h3>
                 <br>
@@ -48,7 +48,7 @@ $studentAttendance = $pdo->query("SELECT * FROM attendance_record
                         <img src="../../img/user-icon-default/user-male-default.png" alt="">
                         <label for="id">#<?php echo $editInfo['studentNumber']?></label>
                         <button>Download QR</button>
-                        <input type="hidden" name="accountID" value="<?php echo $editInfo['accountID']?>">
+                        <input type="hidden" name="studentID" value="<?php echo $editInfo['studentID']?>"> 
                     </div>
 
                     <!-- Section 1 -->
@@ -72,11 +72,11 @@ $studentAttendance = $pdo->query("SELECT * FROM attendance_record
                         <!-- Field 2 -->
                         <div class="field-one">
                             <div class="text-label-edit">
-                                <input type="date" name="faculty" value="<?php echo $editInfo['studentBdate']?>" required>
+                                <input type="date" name="studentBdate" value="<?php echo $editInfo['studentBdate']?>" required>
                                 <label for="editFirstName">Birthdate<span class="asterisk">*</span></label>
                             </div>
                             <div class="text-label-edit">
-                                <input type="text" name="password" value="<?php echo $editInfo['studentGender']?>" required>
+                                <input type="text" name="studentGender" value="<?php echo $editInfo['studentGender']?>" required>
                                 <label for="editFirstName">Gender<span class="asterisk">*</span></label>
                             </div>
                             <div class="text-label-edit">
@@ -89,15 +89,15 @@ $studentAttendance = $pdo->query("SELECT * FROM attendance_record
                         <!-- Field 3 -->
                         <div class="field-one">
                             <div class="text-label-edit">
-                                <input type="text" name="username" value="<?php echo $editInfo['studentNumber']?>" required>
+                                <input type="text" name="studentNumber" value="<?php echo $editInfo['studentNumber']?>" required>
                                 <label for="editFirstName">Student Number<span class="asterisk">*</span></label>
                             </div>
                             <div class="text-label-edit">
-                                <input type="text" name="faculty" value="<?php echo $editInfo['studentSection']?>" required>
+                                <input type="text" name="studentSection" value="<?php echo $editInfo['studentSection']?>" required>
                                 <label for="editFirstName">Section<span class="asterisk">*</span></label>
                             </div>
                             <div class="text-label-edit">
-                                <input type="text" name="password" value="<?php echo $editInfo['studentYear']?>" required>
+                                <input type="text" name="studentYear" value="<?php echo $editInfo['studentYear']?>" required>
                                 <label for="editFirstName">Year Enrolled<span class="asterisk">*</span></label>
                             </div>
                         </div>
@@ -138,14 +138,14 @@ $studentAttendance = $pdo->query("SELECT * FROM attendance_record
                                 <br>
                                 <div class="field-one">
                                     <div class="text-label-edit">
-                                        <!-- <input type="hidden" value="<?php echo $records['handleID']; ?>">  -->
-                                        <input type="text" value="<?php echo $records['qrDate']; ?>">
+                                        <input type="hidden" name="attendanceID[]" value="<?php echo $records['attendanceID']; ?>"> 
+                                        <input type="text" name="qrDate[]" value="<?php echo $records['qrDate']; ?>">
                                     </div>
                                     <div class="text-label-edit">
-                                        <input type="text" value="<?php echo $records['qrTime']; ?>">
+                                        <input type="text" name="qrTime[]" value="<?php echo $records['qrTime']; ?>">
                                     </div>
                                     <div class="text-label-edit">
-                                        <input type="text" value="<?php echo $records['qrSubject']; ?>">
+                                        <input type="text" name="qrSubject[]" value="<?php echo $records['qrSubject']; ?>">
                                     </div>
                                 </div>
                                 <br>
@@ -153,7 +153,7 @@ $studentAttendance = $pdo->query("SELECT * FROM attendance_record
                         </div>
                         <?php } ?>
                         <div class="button-edit">
-                            <button type="submit" name="editTeacher">Save Changes</button>
+                            <button type="submit" name="editStudent">Save Changes</button>
                         </div>
                     </div>
                 </div>

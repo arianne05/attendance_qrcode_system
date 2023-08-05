@@ -181,4 +181,19 @@ if(isset($_GET['studentAddSuccess'])){
         </script>
     <?php
 }
+
+// Student Edit Success
+if(isset($_GET['updateStudentSuccess'])){
+    ?>
+        <script>
+            Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Edit Successfully!',
+            showConfirmButton: false,
+            timer: 1500
+            })
+        </script>
+    <?php
+}
 ?>
