@@ -226,25 +226,25 @@ if(isset($_POST['editStudent'])){
 }
 
 
-//Deactivate
-if(isset($_GET['deactivate']) && isset($_GET['id'])){
-    $accountID = $_GET['id'];
-    $status = 'inactive';
-    $deactquery = "UPDATE account_information SET status=? WHERE accountID=?";
+//Removed
+if(isset($_GET['remove']) && isset($_GET['id'])){
+    $studentID = $_GET['id'];
+    $status = 'removed';
+    $deactquery = "UPDATE student SET status=? WHERE studentID=?";
 
     $stmt = $pdo->prepare($deactquery);
-    $stmt->execute([$status, $accountID]);
-    header("Location: ../teacher.php?header=Teacher&deactTeacherSuccess");
+    $stmt->execute([$status, $studentID]);
+    header("Location: ../student.php?header=Student&removedTeacherSuccess");
 }
 
-//Activate
-if(isset($_GET['activate']) && isset($_GET['id'])){
-    $accountID = $_GET['id'];
-    $status = 'active';
-    $deactquery = "UPDATE account_information SET status=? WHERE accountID=?";
+//Restore
+if(isset($_GET['restore']) && isset($_GET['id'])){
+    $studentID = $_GET['id'];
+    $status = '';
+    $deactquery = "UPDATE student SET status=? WHERE studentID=?";
 
     $stmt = $pdo->prepare($deactquery);
-    $stmt->execute([$status, $accountID]);
-    header("Location: ../teacher.php?header=Teacher&actTeacherSuccess");
+    $stmt->execute([$status, $studentID]);
+    header("Location: ../student.php?header=Student&restoreTeacherSuccess");
 }
 ?>

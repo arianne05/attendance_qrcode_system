@@ -45,11 +45,13 @@
                 <tbody>
                     <?php foreach($teacher as $teacher){ 
                         if ($teacher['status'] == 'active'){
-                            $colorStatus = 'activeGreen';
+                            $colorStatus = 'activeRed';
+                            $colorLabel = 'labelactive';
                             $changeBtn = 'Deactivate';
                             $alert = 'deactivateAlert';
                         }else{
-                            $colorStatus = 'activeRed';
+                            $colorStatus = 'activeGreen';
+                            $colorLabel = 'labeldeactive';
                             $changeBtn = 'Activate';
                             $alert = 'activateAlert';
                         }
@@ -57,7 +59,7 @@
                     <tr>
                         <td><?php echo $teacher['accountID']?></td>
                         <td class="name"><a href="#" onclick="openModalViewTeacher(<?php echo $teacher['accountID']; ?>)"><?php echo $teacher['firstname'].' '.$teacher['middlename'].' '.$teacher['lastname']?></a></td>
-                        <td class="<?php echo $colorStatus?>"><?php echo $teacher['status']?></td>
+                        <td class="<?php echo $colorLabel?>"><?php echo $teacher['status']?></td>
                         <td>
                             <!-- Detail -->
                             <a href="./profile/teacher-view.php?header=<?php echo $teacher['firstname']?>'s Profile&id=<?php echo $teacher['accountID']?>">
@@ -68,7 +70,7 @@
                                 <button class="edit">Edit</button>
                             </a>
                             <!-- Deactivate -->
-                            <button type="button" class="archive" onclick="<?php echo $alert?>('<?php echo $teacher['accountID']; ?>')"><?php echo $changeBtn?></button>
+                            <button type="button" class="<?php echo $colorStatus;?>" onclick="<?php echo $alert?>('<?php echo $teacher['accountID']; ?>')"><?php echo $changeBtn?></button>
 
                             <!-- Add a hidden input field to store the accountID -->
                             <input type="hidden" class="accountID" value="<?php echo $teacher['accountID']; ?>">

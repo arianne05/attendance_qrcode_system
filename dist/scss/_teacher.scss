@@ -40,11 +40,27 @@
   .name {
     text-align: left;
   }
-  .activeGreen {
+  .labelactive{
     color: $primary-buttonBg-green;
   }
-  .activeRed {
+  .labeldeactive{
     color: #fc7777;
+  }
+  .activeGreen {
+    background-color: $primary-buttonBg-green;
+    width: 80px;
+    height: 30px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  .activeRed {
+    background-color: #fc7777;
+    width: 80px;
+    height: 30px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
   }
   .centerHead {
     text-align: center;

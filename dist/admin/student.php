@@ -41,7 +41,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($student as $student){ ?>
+                    <?php foreach($student as $student){ 
+                        if ($student['status'] == ''){
+                            $colorStatus = 'activeRed';
+                            $changeBtn = 'Remove';
+                            $alert = 'removeAlert';
+                        }else{
+                            $colorStatus = 'activeGreen';
+                            $changeBtn = 'Restore';
+                            $alert = 'restoreAlert';
+                        }
+                    ?>
                     <tr>
                         <td><?php echo $student['studentNumber']?></td>
                         <td class="name"><a href="#" onclick="openModalViewStudent(<?php echo $student['studentID']; ?>)"><?php echo $student['firstname'].' '.$student['middlename'].' '.$student['lastname']?></a></td>
@@ -53,7 +63,8 @@
                             <a href="./edit/student-edit.php?header=Student&id=<?php echo $student['studentNumber']?>">
                                 <button class="edit">Edit</button>
                             </a>
-                            <button class="archive">Archive</button>
+                            <!-- Deactivate -->
+                            <button type="button" class="<?php echo $colorStatus;?>" onclick="<?php echo $alert?>('<?php echo $student['studentID']; ?>')"><?php echo $changeBtn?></button>
                         </td>
                     </tr>
                     <?php } ?>
@@ -72,4 +83,39 @@
 <script>    
     new DataTable('#student');
 </script>
+
+<!-- Sweet Alert Removed -->
+<script>
+    // Removes Alert
+    function removeAlert(studentID) {
+        Swal.fire({
+            icon: "question",
+            title: "Deactivate",
+            text: "Are you sure you want to remove this account?",
+            showCancelButton: true,
+        }).then(function (result) {
+            if (result.isConfirmed) {
+                // Redirect to the PHP script with the accountID parameter
+                window.location.href = `./queries/student-query.php?remove&id=${studentID}`;
+            }
+        });
+    }
+</script>
+<script>
+    // Active Alert
+    function restoreAlert(studentID) {
+        Swal.fire({
+            icon: "question",
+            title: "Activate",
+            text: "Are you sure you want to restore this account?",
+            showCancelButton: true,
+        }).then(function (result) {
+            if (result.isConfirmed) {
+                // Redirect to the PHP script with the accountID parameter
+                window.location.href = `./queries/student-query.php?restore&id=${studentID}`;
+            }
+        });
+    }
+</script>
+
 </html>
