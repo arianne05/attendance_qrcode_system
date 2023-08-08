@@ -250,7 +250,7 @@
     .table-sub-dashboard{
       padding: 20px;
     }
-    
+
     .table-dashboard {
       width: 98%;
       padding: 20px;
@@ -416,6 +416,15 @@
     .add-user {
       border: 2px dashed aquamarine;
       background-color: $secondary-buttonBg-green;
+      cursor: pointer;
+      a{
+        text-decoration: none;
+      }
+      
+
+      &:hover{
+        background-color: rgb(132, 226, 132);
+      }
     }
   }
 
@@ -454,10 +463,14 @@
     // margin-bottom: 50px;
     display: flex;
     justify-content: flex-end;
-
-    &:hover {
-      color: $primary-buttonBg-green;
-      cursor: pointer;
+    a{
+      text-decoration: none;
+      color: $primary-text-gray2;
+      &:hover {
+        color: $primary-buttonBg-green;
+        cursor: pointer;
+      }
     }
+    
   }
 }

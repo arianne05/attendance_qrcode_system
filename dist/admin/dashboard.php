@@ -14,6 +14,14 @@
     $stmt = $pdo->prepare("SELECT * FROM attendance_record");
     $stmt->execute();
     $attendance = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    // Fetch account_info table
+    $stmt = $pdo->prepare("SELECT * FROM account_information WHERE position='teacher'  ORDER BY accountID DESC LIMIT 5");
+    $stmt->execute();
+    $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    // Fetch recents table
+    $stmt = $pdo->prepare("SELECT * FROM recents ORDER BY accountID DESC LIMIT 4");
+    $stmt->execute();
+    $recent = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -163,62 +171,53 @@
                 <div class="faculty-member-main">
                     <p>Faculty Members</p>
                     <div class="members-circle">
-                        <p>AQ</p>
-                        <p>EL</p>
-                        <p>RC</p>
-                        <p>KL</p>
-                        <p>KL</p>
-                        <p class="add-user"><span>+</span></p>
+                    <?php foreach ($user as $users) {
+                            $userInitials = substr($users['firstname'], 0, 1) . substr($users['lastname'], 0, 1);
+                            $fullName = $users['firstname'] . ' ' . $users['lastname'];
+                    ?>
+                        <p title="<?php echo $fullName; ?>"><?php echo $userInitials; ?></p>
+                    <?php } ?>
+
+                        <p class="add-user"><a href="./teacher.php?header=Teacher"><span>+</span></a></p>
                     </div>
+
+
                     <div class="header-filter">
                         <p>Recent Activity</p>
-                        <i class="fa-solid fa-arrow-down-wide-short"></i>
                     </div>
+                    <?php foreach($recent as $recents){
+                        $date = new DateTime($recents['recentDate']);
+                        $formattedDate = $date->format('M d, Y');
+                        
+                        $accountID = $recents['accountID'];
+                        $studentID = $recents['studentID'];
+                        // Teacher Name
+                        $stmt = $pdo->prepare("SELECT * FROM account_information WHERE accountID = :accountID");
+                        $stmt->bindParam(':accountID', $accountID, PDO::PARAM_INT);
+                        $stmt->execute();
+                        $professor = $stmt->fetch(PDO::FETCH_ASSOC);
+                        // Student Name
+                        $stmt = $pdo->prepare("SELECT * FROM student WHERE studentID = :studentID");
+                        $stmt->bindParam(':studentID', $studentID, PDO::PARAM_INT);
+                        $stmt->execute();
+                        $student = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                        $description = $professor['firstname'].' '.$professor['lastname'].' '.$recents['recentLabel'].' '.$student['firstname'].' '.$student['lastname'];
+
+                    ?>
                     <div class="recents-activity">
                         <div class="circle-activity">
                             <p class="circle-user-recent">AQ</p>
                         </div>
                         <div class="text-activity">
                             <div class="description-activity">
-                                <p class="time-user-activity">10:05 AM Feb 27, 2023</p>
-                                <p class="desc-user-activity">Arianne Quimpo added Elrich Lanuza</p>
+                                <p class="time-user-activity"><?php echo $recents['recentTime'].' '.$formattedDate?></p>
+                                <p class="desc-user-activity"><?php echo $description;?></p>
                             </div>
                         </div>
                     </div>
-                    <div class="recents-activity">
-                        <div class="circle-activity">
-                            <p class="circle-user-recent">AQ</p>
-                        </div>
-                        <div class="text-activity">
-                            <div class="description-activity">
-                                <p class="time-user-activity">10:05 AM Feb 27, 2023</p>
-                                <p class="desc-user-activity">Arianne Quimpo added Elrich Lanuza</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="recents-activity">
-                        <div class="circle-activity">
-                            <p class="circle-user-recent">AQ</p>
-                        </div>
-                        <div class="text-activity">
-                            <div class="description-activity">
-                                <p class="time-user-activity">10:05 AM Feb 27, 2023</p>
-                                <p class="desc-user-activity">Arianne Quimpo added Elrich Lanuza</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="recents-activity">
-                        <div class="circle-activity">
-                            <p class="circle-user-recent">AQ</p>
-                        </div>
-                        <div class="text-activity">
-                            <div class="description-activity">
-                                <p class="time-user-activity">10:05 AM Feb 27, 2023</p>
-                                <p class="desc-user-activity">Arianne Quimpo added Elrich Lanuza</p>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="view-more">View More</p>
+                    <?php } ?>
+                    <p class="view-more"><a href="./recent.php?header=Recent">View More</a></p>
                 </div>
           </section>
     </div>

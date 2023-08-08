@@ -988,6 +988,13 @@
 .dashboard-content-right .members-circle .add-user {
   border: 2px dashed aquamarine;
   background-color: #e1efe6;
+  cursor: pointer;
+}
+.dashboard-content-right .members-circle .add-user a {
+  text-decoration: none;
+}
+.dashboard-content-right .members-circle .add-user:hover {
+  background-color: rgb(132, 226, 132);
 }
 .dashboard-content-right .recents-activity {
   display: flex;
@@ -1022,7 +1029,11 @@
   display: flex;
   justify-content: flex-end;
 }
-.dashboard-content-right .view-more:hover {
+.dashboard-content-right .view-more a {
+  text-decoration: none;
+  color: rgb(124, 124, 124);
+}
+.dashboard-content-right .view-more a:hover {
   color: #549c6c;
   cursor: pointer;
 }
