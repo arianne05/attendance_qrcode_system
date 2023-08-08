@@ -3,6 +3,17 @@
     include '../connection/db_conn.php';
     include '../connection/session.php';
     include '../connection/session_name.php';
+
+    // Totals
+    $total_students = $pdo->query("SELECT COALESCE(COUNT(*), 0) FROM student")->fetchColumn();
+    $total_students_male = $pdo->query("SELECT COALESCE(COUNT(*), 0) FROM student WHERE studentGender='Male'")->fetchColumn();
+    $total_students_female = $pdo->query("SELECT COALESCE(COUNT(*), 0) FROM student WHERE studentGender='Female'")->fetchColumn();
+    $total_prof = $pdo->query("SELECT COALESCE(COUNT(*), 0) FROM account_information WHERE position='teacher'")->fetchColumn();
+    
+    // Fetch attendance table
+    $stmt = $pdo->prepare("SELECT * FROM attendance_record");
+    $stmt->execute();
+    $attendance = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,13 +36,13 @@
             <p>Overview</p>
             <div class="overview-section">
                 <div class="total-record-section">
-                    <h1>250</h1>
+                    <h1><?php echo $total_students?></h1>
                     <div class="school-name">
                         <p>Governor Ferrer Memorial National Highschool</p>
                         <p><span class="school-label">Total Number of Students</span></p>
                     </div>
                     
-                    <button>View Report</button>
+                    <a href="./report.php?header=Report"><button>View Report</button></a>
                 </div>
                 
                 <div class="total-per-category">
@@ -44,7 +55,7 @@
                                 <img src="../img/male-icon.png" alt="">
                             </div>
                             <div class="male-caption">
-                                <h1>34 <span>total</span></h1>
+                                <h1><?php echo $total_students_male?> <span>total</span></h1>
                                 <p>Male Student</p>
                             </div>
                         </div>
@@ -53,7 +64,7 @@
                                 <img src="../img/female-icon.png" alt="">
                             </div>
                             <div class="female-caption">
-                                <h1>34 <span>total</span></h1>
+                                <h1><?php echo $total_students_female?> <span>total</span></h1>
                                 <p>Female Student</p>
                             </div>
                         </div>
@@ -62,7 +73,7 @@
                                 <img src="../img/prof-icon.png" alt="">
                             </div>
                             <div class="prof-caption">
-                                <h1>34 <span>total</span></h1>
+                                <h1><?php echo $total_prof?> <span>total</span></h1>
                             <p>Professors</p>
                             </div>
                             
@@ -73,13 +84,7 @@
 
             <!-- Table section -->
             <div class="table-header">
-                <p>Latest Added</p>
-                <div class="sort-latest">
-                    <i class="fa-solid fa-calendar-days"></i>
-                    <select name="" id="">
-                        <option value="">Today</option>
-                    </select>
-                </div>
+                <p>Latest</p>
             </div>
             
             <!-- Table -->
@@ -89,24 +94,53 @@
                     <p class="circle-green"></p>
                     <p class="circle-green"></p>
                 </div>
-                <table class="table-dashboard">
-                    <tr>
-                        <th>Student Name</th>
-                        <th>Time-in</th>
-                        <th>Professor</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                    </tr>
-                    <tr>
-                        <td>Arianne H. Quimpo</td>
-                        <td>11:00 AM</td>
-                        <td>Prof. Elrich Lanuza</td>
-                        <td class="status-dashboard">on-time</td>
-                        <td><a href="#">Details</a></td>
-                    </tr>
+                <br>
+                <div class="table-sub-dashboard">
+                     <!-- table -->
+                    <table id="student" class="display">
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Time-in</th>
+                            <th>Professor</th>
+                            <th>Status</th>
+                            <th>Option</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($attendance as $attendanceRecord){ 
+                            $accountID = $attendanceRecord['accountID'];
+                            $studentNumber = $attendanceRecord['studentNumber'];
+                            
+                            // Teacher Name
+                            $stmt = $pdo->prepare("SELECT * FROM account_information WHERE accountID = :accountID");
+                            $stmt->bindParam(':accountID', $accountID, PDO::PARAM_INT);
+                            $stmt->execute();
+                            $professor = $stmt->fetch(PDO::FETCH_ASSOC);
+                            // Student Name
+                            $stmt = $pdo->prepare("SELECT * FROM student WHERE studentNumber = :studentNumber");
+                            $stmt->bindParam(':studentNumber', $studentNumber, PDO::PARAM_INT);
+                            $stmt->execute();
+                            $student = $stmt->fetch(PDO::FETCH_ASSOC);
+                        ?>
+                        <tr>
+                            <td><?php echo $student['firstname'].' '.$student['lastname']?></td>
+                            <td class="name"><?php echo $attendanceRecord['qrTime']?></td>
+                            <td><?php echo $professor['firstname']?></td>
+                            <td></td>
+                            <td>
+                                <!-- Detail -->
+                                <a href="#">
+                                    <button class="view">Detail</button>
+                                </a>
+                            </td>
+                        </tr>
+                        <?php } ?>
+                    </tbody>
                 </table>
             </div>
-          </section>
+        </div>
+    </section>
 
           <section class="dashboard-content-right">
                 <p>Today</p>
@@ -193,4 +227,7 @@
     <script src="../js/calendar.js"></script>
     <script src="../js/time.js"></script>
     <script src="../js/alert.js"></script>
+    <script>    
+    new DataTable('#student');
+    </script>
 </html>
