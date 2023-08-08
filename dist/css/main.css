@@ -695,6 +695,9 @@
   flex-direction: column;
   align-items: center;
 }
+.dashboard-content .overview-section .total-per-category .text-right a {
+  text-decoration: none;
+}
 .dashboard-content .overview-section .total-per-category .text-right .male-student {
   display: flex;
   align-items: center;

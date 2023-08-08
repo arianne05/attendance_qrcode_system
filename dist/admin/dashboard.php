@@ -58,7 +58,7 @@
                         <img src="../img/dashboard-image.png" width="277" alt="">
                     </div>
                     <div class="text-right">
-                        <div class="male-student">
+                    <a href="./student.php?header=Student" class="male-student">
                             <div class="male-img">
                                 <img src="../img/male-icon.png" alt="">
                             </div>
@@ -66,26 +66,27 @@
                                 <h1><?php echo $total_students_male?> <span>total</span></h1>
                                 <p>Male Student</p>
                             </div>
+                    </a>
+                        
+                    <a href="./student.php?header=Student" class="female-student">
+                        <div class="female-img">
+                            <img src="../img/female-icon.png" alt="">
                         </div>
-                        <div class="female-student">
-                            <div class="female-img">
-                                <img src="../img/female-icon.png" alt="">
-                            </div>
-                            <div class="female-caption">
-                                <h1><?php echo $total_students_female?> <span>total</span></h1>
-                                <p>Female Student</p>
-                            </div>
+                        <div class="female-caption">
+                            <h1><?php echo $total_students_female?> <span>total</span></h1>
+                            <p>Female Student</p>
                         </div>
-                        <div class="prof">
-                            <div class="prof-img">
-                                <img src="../img/prof-icon.png" alt="">
-                            </div>
-                            <div class="prof-caption">
-                                <h1><?php echo $total_prof?> <span>total</span></h1>
-                            <p>Professors</p>
-                            </div>
-                            
+                    </a>
+
+                    <a href="./teacher.php?header=Teacher" class="prof">
+                        <div class="prof-img">
+                            <img src="../img/prof-icon.png" alt="">
                         </div>
+                        <div class="prof-caption">
+                            <h1><?php echo $total_prof?> <span>total</span></h1>
+                        <p>Professors</p>
+                        </div>
+                    </a>
                     </div>
                 </div>
             </div>
@@ -119,6 +120,9 @@
                         <?php foreach($attendance as $attendanceRecord){ 
                             $accountID = $attendanceRecord['accountID'];
                             $studentNumber = $attendanceRecord['studentNumber'];
+                            // Time Format
+                            $time = new DateTime($attendanceRecord['qrTime']);
+                            $formattedTime = $time->format('g:i A');
                             
                             // Teacher Name
                             $stmt = $pdo->prepare("SELECT * FROM account_information WHERE accountID = :accountID");
@@ -133,12 +137,12 @@
                         ?>
                         <tr>
                             <td><?php echo $student['firstname'].' '.$student['lastname']?></td>
-                            <td class="name"><?php echo $attendanceRecord['qrTime']?></td>
+                            <td class="name"><?php echo $formattedTime?></td>
                             <td><?php echo $professor['firstname']?></td>
                             <td></td>
                             <td>
                                 <!-- Detail -->
-                                <a href="#">
+                                <a href="./profile/student-view.php?header=<?php echo $student['firstname']?>'s Profile&id=<?php echo $student['studentID']?>&studNum=<?php echo $student['studentNumber']?>">
                                     <button class="view">Detail</button>
                                 </a>
                             </td>
@@ -186,8 +190,12 @@
                         <p>Recent Activity</p>
                     </div>
                     <?php foreach($recent as $recents){
+                        // Date Format
                         $date = new DateTime($recents['recentDate']);
                         $formattedDate = $date->format('M d, Y');
+                        // Time Format
+                        $time = new DateTime($recents['recentTime']);
+                        $formattedTime = $time->format('g:i A');
                         
                         $accountID = $recents['accountID'];
                         $studentID = $recents['studentID'];
@@ -211,7 +219,7 @@
                         </div>
                         <div class="text-activity">
                             <div class="description-activity">
-                                <p class="time-user-activity"><?php echo $recents['recentTime'].' '.$formattedDate?></p>
+                                <p class="time-user-activity"><?php echo $formattedTime.' '.$formattedDate?></p>
                                 <p class="desc-user-activity"><?php echo $description;?></p>
                             </div>
                         </div>
