@@ -695,6 +695,9 @@
   flex-direction: column;
   align-items: center;
 }
+.dashboard-content .overview-section .total-per-category .text-right a {
+  text-decoration: none;
+}
 .dashboard-content .overview-section .total-per-category .text-right .male-student {
   display: flex;
   align-items: center;
@@ -822,7 +825,7 @@
   border: 1px solid #cdcdcd;
   border-radius: 12px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  height: 45vh;
+  height: auto;
   width: 98%;
 }
 .dashboard-content .table-main-dashboard .circle-design {
@@ -841,6 +844,9 @@
   margin-left: 5px;
   margin-right: 5px;
   margin-bottom: 0;
+}
+.dashboard-content .table-main-dashboard .table-sub-dashboard {
+  padding: 20px;
 }
 .dashboard-content .table-main-dashboard .table-dashboard {
   width: 98%;
@@ -985,6 +991,13 @@
 .dashboard-content-right .members-circle .add-user {
   border: 2px dashed aquamarine;
   background-color: #e1efe6;
+  cursor: pointer;
+}
+.dashboard-content-right .members-circle .add-user a {
+  text-decoration: none;
+}
+.dashboard-content-right .members-circle .add-user:hover {
+  background-color: rgb(132, 226, 132);
 }
 .dashboard-content-right .recents-activity {
   display: flex;
@@ -1019,7 +1032,11 @@
   display: flex;
   justify-content: flex-end;
 }
-.dashboard-content-right .view-more:hover {
+.dashboard-content-right .view-more a {
+  text-decoration: none;
+  color: rgb(124, 124, 124);
+}
+.dashboard-content-right .view-more a:hover {
   color: #549c6c;
   cursor: pointer;
 }

@@ -3,6 +3,25 @@
     include '../connection/db_conn.php';
     include '../connection/session.php';
     include '../connection/session_name.php';
+
+    // Totals
+    $total_students = $pdo->query("SELECT COALESCE(COUNT(*), 0) FROM student")->fetchColumn();
+    $total_students_male = $pdo->query("SELECT COALESCE(COUNT(*), 0) FROM student WHERE studentGender='Male'")->fetchColumn();
+    $total_students_female = $pdo->query("SELECT COALESCE(COUNT(*), 0) FROM student WHERE studentGender='Female'")->fetchColumn();
+    $total_prof = $pdo->query("SELECT COALESCE(COUNT(*), 0) FROM account_information WHERE position='teacher'")->fetchColumn();
+    
+    // Fetch attendance table
+    $stmt = $pdo->prepare("SELECT * FROM attendance_record");
+    $stmt->execute();
+    $attendance = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    // Fetch account_info table
+    $stmt = $pdo->prepare("SELECT * FROM account_information WHERE position='teacher'  ORDER BY accountID DESC LIMIT 5");
+    $stmt->execute();
+    $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    // Fetch recents table
+    $stmt = $pdo->prepare("SELECT * FROM recents ORDER BY accountID DESC LIMIT 4");
+    $stmt->execute();
+    $recent = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,13 +44,13 @@
             <p>Overview</p>
             <div class="overview-section">
                 <div class="total-record-section">
-                    <h1>250</h1>
+                    <h1><?php echo $total_students?></h1>
                     <div class="school-name">
                         <p>Governor Ferrer Memorial National Highschool</p>
                         <p><span class="school-label">Total Number of Students</span></p>
                     </div>
                     
-                    <button>View Report</button>
+                    <a href="./report.php?header=Report"><button>View Report</button></a>
                 </div>
                 
                 <div class="total-per-category">
@@ -39,47 +58,42 @@
                         <img src="../img/dashboard-image.png" width="277" alt="">
                     </div>
                     <div class="text-right">
-                        <div class="male-student">
+                    <a href="./student.php?header=Student" class="male-student">
                             <div class="male-img">
                                 <img src="../img/male-icon.png" alt="">
                             </div>
                             <div class="male-caption">
-                                <h1>34 <span>total</span></h1>
+                                <h1><?php echo $total_students_male?> <span>total</span></h1>
                                 <p>Male Student</p>
                             </div>
+                    </a>
+                        
+                    <a href="./student.php?header=Student" class="female-student">
+                        <div class="female-img">
+                            <img src="../img/female-icon.png" alt="">
                         </div>
-                        <div class="female-student">
-                            <div class="female-img">
-                                <img src="../img/female-icon.png" alt="">
-                            </div>
-                            <div class="female-caption">
-                                <h1>34 <span>total</span></h1>
-                                <p>Female Student</p>
-                            </div>
+                        <div class="female-caption">
+                            <h1><?php echo $total_students_female?> <span>total</span></h1>
+                            <p>Female Student</p>
                         </div>
-                        <div class="prof">
-                            <div class="prof-img">
-                                <img src="../img/prof-icon.png" alt="">
-                            </div>
-                            <div class="prof-caption">
-                                <h1>34 <span>total</span></h1>
-                            <p>Professors</p>
-                            </div>
-                            
+                    </a>
+
+                    <a href="./teacher.php?header=Teacher" class="prof">
+                        <div class="prof-img">
+                            <img src="../img/prof-icon.png" alt="">
                         </div>
+                        <div class="prof-caption">
+                            <h1><?php echo $total_prof?> <span>total</span></h1>
+                        <p>Professors</p>
+                        </div>
+                    </a>
                     </div>
                 </div>
             </div>
 
             <!-- Table section -->
             <div class="table-header">
-                <p>Latest Added</p>
-                <div class="sort-latest">
-                    <i class="fa-solid fa-calendar-days"></i>
-                    <select name="" id="">
-                        <option value="">Today</option>
-                    </select>
-                </div>
+                <p>Latest</p>
             </div>
             
             <!-- Table -->
@@ -89,24 +103,56 @@
                     <p class="circle-green"></p>
                     <p class="circle-green"></p>
                 </div>
-                <table class="table-dashboard">
-                    <tr>
-                        <th>Student Name</th>
-                        <th>Time-in</th>
-                        <th>Professor</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                    </tr>
-                    <tr>
-                        <td>Arianne H. Quimpo</td>
-                        <td>11:00 AM</td>
-                        <td>Prof. Elrich Lanuza</td>
-                        <td class="status-dashboard">on-time</td>
-                        <td><a href="#">Details</a></td>
-                    </tr>
+                <br>
+                <div class="table-sub-dashboard">
+                     <!-- table -->
+                    <table id="student" class="display">
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Time-in</th>
+                            <th>Professor</th>
+                            <th>Status</th>
+                            <th>Option</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($attendance as $attendanceRecord){ 
+                            $accountID = $attendanceRecord['accountID'];
+                            $studentNumber = $attendanceRecord['studentNumber'];
+                            // Time Format
+                            $time = new DateTime($attendanceRecord['qrTime']);
+                            $formattedTime = $time->format('g:i A');
+                            
+                            // Teacher Name
+                            $stmt = $pdo->prepare("SELECT * FROM account_information WHERE accountID = :accountID");
+                            $stmt->bindParam(':accountID', $accountID, PDO::PARAM_INT);
+                            $stmt->execute();
+                            $professor = $stmt->fetch(PDO::FETCH_ASSOC);
+                            // Student Name
+                            $stmt = $pdo->prepare("SELECT * FROM student WHERE studentNumber = :studentNumber");
+                            $stmt->bindParam(':studentNumber', $studentNumber, PDO::PARAM_INT);
+                            $stmt->execute();
+                            $student = $stmt->fetch(PDO::FETCH_ASSOC);
+                        ?>
+                        <tr>
+                            <td><?php echo $student['firstname'].' '.$student['lastname']?></td>
+                            <td class="name"><?php echo $formattedTime?></td>
+                            <td><?php echo $professor['firstname']?></td>
+                            <td></td>
+                            <td>
+                                <!-- Detail -->
+                                <a href="./profile/student-view.php?header=<?php echo $student['firstname']?>'s Profile&id=<?php echo $student['studentID']?>&studNum=<?php echo $student['studentNumber']?>">
+                                    <button class="view">Detail</button>
+                                </a>
+                            </td>
+                        </tr>
+                        <?php } ?>
+                    </tbody>
                 </table>
             </div>
-          </section>
+        </div>
+    </section>
 
           <section class="dashboard-content-right">
                 <p>Today</p>
@@ -129,62 +175,57 @@
                 <div class="faculty-member-main">
                     <p>Faculty Members</p>
                     <div class="members-circle">
-                        <p>AQ</p>
-                        <p>EL</p>
-                        <p>RC</p>
-                        <p>KL</p>
-                        <p>KL</p>
-                        <p class="add-user"><span>+</span></p>
+                    <?php foreach ($user as $users) {
+                            $userInitials = substr($users['firstname'], 0, 1) . substr($users['lastname'], 0, 1);
+                            $fullName = $users['firstname'] . ' ' . $users['lastname'];
+                    ?>
+                        <p title="<?php echo $fullName; ?>"><?php echo $userInitials; ?></p>
+                    <?php } ?>
+
+                        <p class="add-user"><a href="./teacher.php?header=Teacher"><span>+</span></a></p>
                     </div>
+
+
                     <div class="header-filter">
                         <p>Recent Activity</p>
-                        <i class="fa-solid fa-arrow-down-wide-short"></i>
                     </div>
+                    <?php foreach($recent as $recents){
+                        // Date Format
+                        $date = new DateTime($recents['recentDate']);
+                        $formattedDate = $date->format('M d, Y');
+                        // Time Format
+                        $time = new DateTime($recents['recentTime']);
+                        $formattedTime = $time->format('g:i A');
+                        
+                        $accountID = $recents['accountID'];
+                        $studentID = $recents['studentID'];
+                        // Teacher Name
+                        $stmt = $pdo->prepare("SELECT * FROM account_information WHERE accountID = :accountID");
+                        $stmt->bindParam(':accountID', $accountID, PDO::PARAM_INT);
+                        $stmt->execute();
+                        $professor = $stmt->fetch(PDO::FETCH_ASSOC);
+                        // Student Name
+                        $stmt = $pdo->prepare("SELECT * FROM student WHERE studentID = :studentID");
+                        $stmt->bindParam(':studentID', $studentID, PDO::PARAM_INT);
+                        $stmt->execute();
+                        $student = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                        $description = $professor['firstname'].' '.$professor['lastname'].' '.$recents['recentLabel'].' '.$student['firstname'].' '.$student['lastname'];
+
+                    ?>
                     <div class="recents-activity">
                         <div class="circle-activity">
                             <p class="circle-user-recent">AQ</p>
                         </div>
                         <div class="text-activity">
                             <div class="description-activity">
-                                <p class="time-user-activity">10:05 AM Feb 27, 2023</p>
-                                <p class="desc-user-activity">Arianne Quimpo added Elrich Lanuza</p>
+                                <p class="time-user-activity"><?php echo $formattedTime.' '.$formattedDate?></p>
+                                <p class="desc-user-activity"><?php echo $description;?></p>
                             </div>
                         </div>
                     </div>
-                    <div class="recents-activity">
-                        <div class="circle-activity">
-                            <p class="circle-user-recent">AQ</p>
-                        </div>
-                        <div class="text-activity">
-                            <div class="description-activity">
-                                <p class="time-user-activity">10:05 AM Feb 27, 2023</p>
-                                <p class="desc-user-activity">Arianne Quimpo added Elrich Lanuza</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="recents-activity">
-                        <div class="circle-activity">
-                            <p class="circle-user-recent">AQ</p>
-                        </div>
-                        <div class="text-activity">
-                            <div class="description-activity">
-                                <p class="time-user-activity">10:05 AM Feb 27, 2023</p>
-                                <p class="desc-user-activity">Arianne Quimpo added Elrich Lanuza</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="recents-activity">
-                        <div class="circle-activity">
-                            <p class="circle-user-recent">AQ</p>
-                        </div>
-                        <div class="text-activity">
-                            <div class="description-activity">
-                                <p class="time-user-activity">10:05 AM Feb 27, 2023</p>
-                                <p class="desc-user-activity">Arianne Quimpo added Elrich Lanuza</p>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="view-more">View More</p>
+                    <?php } ?>
+                    <p class="view-more"><a href="./recent.php?header=Recent">View More</a></p>
                 </div>
           </section>
     </div>
@@ -193,4 +234,7 @@
     <script src="../js/calendar.js"></script>
     <script src="../js/time.js"></script>
     <script src="../js/alert.js"></script>
+    <script>    
+    new DataTable('#student');
+    </script>
 </html>
