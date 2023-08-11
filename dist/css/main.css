@@ -1116,6 +1116,7 @@
   border: 1px solid #cdcdcd;
   border-radius: 12px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
 }
 .reports-pie-chart .registered-number {
   border: 1px solid #cdcdcd;
@@ -1160,26 +1161,21 @@
   margin-right: 10px;
 }
 
-.main-container-recents {
-  margin-left: 17vw;
-  margin-top: 2vh;
-  display: flex;
-  justify-content: space-between;
-}
-.main-container-recents .recent-login {
+.recent-login {
   border: 1px solid #cdcdcd;
   border-radius: 12px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   padding: 20px;
-  width: 48%;
+  width: 70%;
+  max-height: 410px;
   height: 410px;
+  overflow-y: auto;
+  font-family: "Inter", sans-serif;
 }
-.main-container-recents .recent-login .table-recent {
-  display: flex;
-  align-items: center;
+.recent-login .table-recent {
   margin-top: 20px;
 }
-.main-container-recents .recent-login .table-recent .initials-bg {
+.recent-login .table-recent .initials-bg {
   background-color: #9ae2c7;
   width: 40px;
   height: 40px;
@@ -1187,26 +1183,33 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
-.main-container-recents .recent-login .table-recent table {
+.recent-login .table-recent table {
   width: 100%;
   font-family: "Inter", sans-serif;
 }
-.main-container-recents .recent-login .table-recent table tr {
+.recent-login .table-recent table tr {
   height: 60px;
+}
+
+.main-container-recents {
+  margin-left: 17vw;
+  margin-top: 2vh;
+  display: flex;
+  justify-content: space-between;
 }
 .main-container-recents .recent-registered {
   border: 1px solid #cdcdcd;
   border-radius: 12px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   padding: 20px;
-  width: 48%;
-  height: 410px;
+  width: 100%;
+  height: auto;
   margin-right: 2vw;
+  font-family: "Inter", sans-serif;
 }
 .main-container-recents .recent-registered .table-recent {
-  display: flex;
-  align-items: center;
   margin-top: 20px;
 }
 .main-container-recents .recent-registered .table-recent .initials-bg {
@@ -1224,6 +1227,15 @@
 }
 .main-container-recents .recent-registered .table-recent table tr {
   height: 60px;
+}
+
+.formatDate {
+  color: #549c6c;
+}
+
+.centerTD {
+  text-align: center;
+  vertical-align: middle;
 }
 
 /*
