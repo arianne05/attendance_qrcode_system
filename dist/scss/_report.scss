@@ -21,6 +21,17 @@
   overflow: hidden;
   font-family: "Inter", sans-serif;
 
+  a{
+    text-decoration: none;
+    color: $tertiary-text-black;
+    &:hover{
+      box-shadow: 0px 12px 12px 0px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  .Totalnumber{
+    font-size: 25px;
+  }
   .total-user {
     // border: 1px solid red;
     display: flex;
@@ -28,6 +39,7 @@
     width: 30%;
     border-radius: 15px;
     background: #9ae2c7;
+    color: #145a40;
   }
   .total-student {
     // border: 1px solid red;
@@ -36,6 +48,7 @@
     width: 30%;
     border-radius: 15px;
     background: #fc7777;
+    color: #721a1a;
   }
   .total-teacher {
     // border: 1px solid red;
@@ -44,6 +57,7 @@
     width: 30%;
     border-radius: 15px;
     background: #6dabc6;
+    color: #294b5a;
   }
   .circle-user {
     background-color: white;
@@ -237,5 +251,128 @@
   cursor: pointer;
   &:hover{
     background-color: #fd8f8f;
+  }
+}
+
+.sort-menu-report{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 30px;
+
+  .date-container{
+      display: flex;
+      margin-top: 20px;
+      align-items: center;
+      font-family: "Inter", sans-serif;
+
+      label{
+          font-size: 14px;
+      }
+
+      .datefrom{
+          margin-right: 10px;
+      }
+      .dateto{
+          margin-right: 10px;
+      }
+      input[type=date]{
+          border: 1px solid gray;
+          padding-top: 8px;
+          padding-bottom: 8px;
+          padding-right: 16px;
+          padding-left: 16px;
+          border-radius: 5px;
+      }
+      button{
+          height: 38px;
+          width: 72px;
+          border-radius: 8px;
+          border: none;
+          background-color: rgb(174, 214, 174);
+          color: $tertiary-text-black;
+      }
+  }
+}
+
+.main-container-recents-report{
+  margin-left: 17vw;
+  margin-right: 30px;
+  margin-top: 2vh;
+  display: flex;
+  justify-content: space-between;
+
+  .recent-registered{
+    border: 1px solid #cdcdcd;
+    border-radius: 12px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 20px;
+    width: 100%;
+    height: auto;
+    margin-right: 2vw;
+    font-family: "Inter", sans-serif;
+    .table-recent{
+      margin-top: 20px;
+
+      .initials-bg{
+        background-color: #9ae2c7;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+  
+      table{
+        width: 100%;
+        font-family: "Inter", sans-serif;
+        border-collapse: collapse;
+        // border: 1px solid black;
+        th, td {
+          // border: 1px solid black;
+          padding: 8px;
+          text-align: left;
+      }
+        
+      }
+    }
+  }
+}
+
+.header-with-button{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.buttons{
+  button{
+    width: 80px;
+    height: 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 5px;
+  }
+  i{
+    font-size: 15px;
+  }
+}
+.pdfRed{
+  background-color: #fc7777;
+  &:hover{
+    background-color:#e05c5c;
+  }
+}
+.csvGreen{
+  background-color: #66c9a4;
+  &:hover{
+    background-color:#429e7c;
+  }
+}
+.sqlBlue{
+  background-color: #6dabc6;
+  &:hover{
+    background-color:#427b94;
   }
 }

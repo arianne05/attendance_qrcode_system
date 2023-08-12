@@ -41,33 +41,33 @@
     <?php include_once '../navbar/sidebar.php'?>
     
     <section class="reports-total-container">
-      <div class="total-user">
+      <a href="./profile/reports-view.php?header=Reports" class="total-user">
           <div class="circle-user">
             <p></p>
           </div>
           <div class="total-text">
-            <p><?php echo $total_users; ?></p>
+            <p class="Totalnumber"><?php echo $total_users; ?></p>
             <p>Total Users</p>
           </div>
-      </div>
-      <div class="total-student">
+      </a>
+      <a href="#" class="total-student">
         <div class="circle-user">
               <p></p>
           </div>
           <div class="total-text">
-            <p><?php echo $total_students;?></p>
+            <p class="Totalnumber"><?php echo $total_students;?></p>
             <p>Total Student</p>
           </div>
       </div>
-      <div class="total-teacher">
-      <div class="circle-user">
+      <a href="" class="total-teacher">
+        <div class="circle-user">
               <p></p>
           </div>
           <div class="total-text">
-            <p><?php echo $total_prof; ?></p>
+            <p class="Totalnumber"><?php echo $total_prof; ?></p>
             <p>Total Teachers</p>
           </div>
-      </div>
+      </a>
     </section>
 
     <section class="reports-pie-chart">
