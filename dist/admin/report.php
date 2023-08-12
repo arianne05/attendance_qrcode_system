@@ -41,7 +41,7 @@
     <?php include_once '../navbar/sidebar.php'?>
     
     <section class="reports-total-container">
-      <a href="./profile/reports-view.php?header=Reports" class="total-user">
+      <a href="./profile/reports-view-csv.php?header=Reports" class="total-user">
           <div class="circle-user">
             <p></p>
           </div>
