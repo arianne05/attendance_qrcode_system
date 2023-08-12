@@ -17,6 +17,16 @@
     $total_prof_today = $pdo->query("SELECT COALESCE(COUNT(*), 0) FROM account_information WHERE position='teacher' AND dateAdded='$currentDate'")->fetchColumn();
     $total_students_today = $pdo->query("SELECT COALESCE(COUNT(*), 0) FROM recents WHERE recentDate='$currentDate' AND recentLabel='added'")->fetchColumn();
     $total_today = $total_prof_today + $total_students_today;
+
+    // Fetch login_act table
+    $stmt = $pdo->prepare("SELECT * FROM login_activity");
+    $stmt->execute();
+    $login = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    // Fetch account table
+    $stmt = $pdo->prepare("SELECT * FROM account_information WHERE position='teacher' and dateAdded='$currentDate'");
+    $stmt->execute();
+    $recenReg = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -79,15 +89,34 @@
                       <th>Option</th>
                   </tr>
               </thead>
+              <?php foreach($login as $logins){
+                  $accountID = $logins['accountID'];
+                  $time = new DateTime($logins['logTime']);
+                  $formattedTime = $time->format('g:i A');
+                  $logLabel=$logins['logLabel'];
+                  if($logLabel=='logged in'){
+                    $className = 'formatDate';
+                  } else{
+                    $className = 'formatDateRed';
+                  }
+
+                  // Fetch account table
+                  $stmt = $pdo->prepare("SELECT * FROM account_information WHERE position='teacher' and accountID='$accountID'");
+                  $stmt->execute();
+                  $teacher = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                foreach($teacher as $teachers){
+              ?>
               <tbody>
                 <tr class="test">
                     <td class="centerTD"><p class="initials-bg">AQ</p></td>
-                    <td>Arianne H. Quimpo</td>
-                    <td>02:23 PM</td>
-                    <td><span class="formatDate">logged in</span></td>
+                    <td><?php echo $teachers['firstname'].' '.$teachers['lastname']?></td>
+                    <td><?php echo $formattedTime;?></td>
+                    <td><span class="<?php echo $className?>"><?php echo $logins['logLabel']?></span></td>
                     <td><button class="archive">Remove</button></td>
                 </tr>
               </tbody>
+              <?php }} ?>
             </table>
               </div>
           </div>
@@ -112,7 +141,6 @@
           <table id="RecentReg" class="display">
               <thead>
                   <tr>
-                      
                       <th>Employee Number</th>
                       <th>Name</th>
                       <th>Department</th>
@@ -121,16 +149,18 @@
                       <th>Option</th>
                   </tr>
               </thead>
+              <?php foreach($recenReg as $registerToday){?>
               <tbody>
                 <tr>
-                    <td>201912344</td>
-                    <td>Arianne H. Quimpo</td>
-                    <td>English</td>
-                    <td>Aya2t05</td>
+                    <td><?php echo $registerToday['accountID']?></td>
+                    <td><?php echo $registerToday['firstname'].' '.$registerToday['middlename'].' '.$registerToday['lastname']?></td>
+                    <td><?php echo $registerToday['faculty']?></td>
+                    <td><?php echo $registerToday['username']?></td>
                     <td><span class="formatDate">recent</span></td>
                     <td><button class="archive">Remove</button></td>
                 </tr>
               </tbody>
+              <?php }?>
             </table>
           </div>
         </div>

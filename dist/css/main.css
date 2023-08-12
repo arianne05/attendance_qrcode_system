@@ -1233,6 +1233,10 @@
   color: #549c6c;
 }
 
+.formatDateRed {
+  color: #fc7777;
+}
+
 .centerTD {
   text-align: center;
   vertical-align: middle;
