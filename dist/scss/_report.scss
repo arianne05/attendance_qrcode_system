@@ -216,3 +216,26 @@
   text-align: center;
   vertical-align: middle;
 }
+
+.activeGreen {
+  background-color: $primary-buttonBg-green;
+  width: 80px;
+  height: 30px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  &:hover{
+    background-color: $secondary-buttonBg-green;
+  }
+}
+.activeRed {
+  background-color: #fc7777;
+  width: 80px;
+  height: 30px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  &:hover{
+    background-color: #fd8f8f;
+  }
+}

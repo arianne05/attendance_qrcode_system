@@ -1242,6 +1242,30 @@
   vertical-align: middle;
 }
 
+.activeGreen {
+  background-color: #549c6c;
+  width: 80px;
+  height: 30px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.activeGreen:hover {
+  background-color: #e1efe6;
+}
+
+.activeRed {
+  background-color: #fc7777;
+  width: 80px;
+  height: 30px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.activeRed:hover {
+  background-color: #fd8f8f;
+}
+
 /*
     Montserrat -  paragraph
     Raleway - sub heading
@@ -1448,6 +1472,9 @@
   border-radius: 20px;
   cursor: pointer;
 }
+.teacher-table .activeGreen:hover {
+  background-color: #e1efe6;
+}
 .teacher-table .activeRed {
   background-color: #fc7777;
   width: 80px;
@@ -1455,6 +1482,9 @@
   border: none;
   border-radius: 20px;
   cursor: pointer;
+}
+.teacher-table .activeRed:hover {
+  background-color: #fd8f8f;
 }
 .teacher-table .centerHead {
   text-align: center;

@@ -113,7 +113,11 @@
                     <td><?php echo $teachers['firstname'].' '.$teachers['lastname']?></td>
                     <td><?php echo $formattedTime;?></td>
                     <td><span class="<?php echo $className?>"><?php echo $logins['logLabel']?></span></td>
-                    <td><button class="archive">Remove</button></td>
+                    <td>
+                      <a href="./profile/teacher-view.php?header=<?php echo $teachers['firstname']?>'s Profile&id=<?php echo $accountID?>">
+                        <button class="view">Detail</button>
+                      </a>
+                    </td>
                 </tr>
               </tbody>
               <?php }} ?>
@@ -149,7 +153,19 @@
                       <th>Option</th>
                   </tr>
               </thead>
-              <?php foreach($recenReg as $registerToday){?>
+              <?php foreach($recenReg as $registerToday){
+                if ($registerToday['status'] == 'active'){
+                    $colorStatus = 'activeRed';
+                    $colorLabel = 'labelactive';
+                    $changeBtn = 'Deactivate';
+                    $alert = 'deactivateAlert';
+                }else{
+                    $colorStatus = 'activeGreen';
+                    $colorLabel = 'labeldeactive';
+                    $changeBtn = 'Activate';
+                    $alert = 'activateAlert';
+                }
+              ?>
               <tbody>
                 <tr>
                     <td><?php echo $registerToday['accountID']?></td>
@@ -157,7 +173,9 @@
                     <td><?php echo $registerToday['faculty']?></td>
                     <td><?php echo $registerToday['username']?></td>
                     <td><span class="formatDate">recent</span></td>
-                    <td><button class="archive">Remove</button></td>
+                    <td>
+                    <button type="button" class="<?php echo $colorStatus;?>" onclick="<?php echo $alert?>('<?php echo $registerToday['accountID']; ?>')"><?php echo $changeBtn?></button>
+                    </td>
                 </tr>
               </tbody>
               <?php }?>
@@ -217,4 +235,38 @@
           });
       });
   </script>
+
+  <!-- Sweet Alert Deactivate -->
+<script>
+    // Deact Alert
+    function deactivateAlert(accountID) {
+        Swal.fire({
+            icon: "question",
+            title: "Deactivate",
+            text: "Are you sure you want to deactivate this account?",
+            showCancelButton: true,
+        }).then(function (result) {
+            if (result.isConfirmed) {
+                // Redirect to the PHP script with the accountID parameter
+                window.location.href = `./queries/teacher-query.php?deactivate&id=${accountID}`;
+            }
+        });
+    }
+</script>
+<script>
+    // Active Alert
+    function activateAlert(accountID) {
+        Swal.fire({
+            icon: "question",
+            title: "Activate",
+            text: "Are you sure you want to activate this account?",
+            showCancelButton: true,
+        }).then(function (result) {
+            if (result.isConfirmed) {
+                // Redirect to the PHP script with the accountID parameter
+                window.location.href = `./queries/teacher-query.php?activate&id=${accountID}`;
+            }
+        });
+    }
+</script>
 </html>

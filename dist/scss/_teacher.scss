@@ -53,6 +53,9 @@
     border: none;
     border-radius: 20px;
     cursor: pointer;
+    &:hover{
+      background-color: $secondary-buttonBg-green;
+    }
   }
   .activeRed {
     background-color: #fc7777;
@@ -61,6 +64,9 @@
     border: none;
     border-radius: 20px;
     cursor: pointer;
+    &:hover{
+      background-color: #fd8f8f;
+    }
   }
   .centerHead {
     text-align: center;
