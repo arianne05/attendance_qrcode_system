@@ -187,8 +187,8 @@
 
           var data = google.visualization.arrayToDataTable([
               ['Resident Population', 'Total Numbers'],
-              ['Student', <?php echo $total_students?>],
-              ['Teacher', <?php echo $total_prof?>]
+              ['Student', <?php echo $total_students_today?>],
+              ['Teacher', <?php echo $total_prof_today?>]
           ]);
 
           var options = {
@@ -199,7 +199,8 @@
               legend: {
                   position: 'bottom',
                   alignment: 'center'
-              }
+              },
+              colors: ['#fc7777', '#6dabc6']
 
           };
 
