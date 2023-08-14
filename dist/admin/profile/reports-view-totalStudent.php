@@ -3,7 +3,7 @@
     include '../../connection/db_conn.php';
     include '../../connection/session.php';
     include '../../connection/session_name.php';
-    include '../queries/report-sort-date-user.php';
+    include '../queries/report-sort-date-student.php';
     
 
 ?>
@@ -55,10 +55,10 @@
     <section class="main-container-recents-report">
         <div class="recent-registered">
             <div class="header-with-button">
-                <p class="header-activity">Total Users: <?php echo $total_users?></p>
+                <p class="header-activity">Total Student Registered: <?php echo $total_students?></p>
                 <div class="buttons">
-                    <button class="pdfRed" onclick="window.open('../queries/download-pdf-report.php?date_from=<?php echo $date_from2?>&date_to=<?php echo $date_to2?>')"><i class="fa-regular fa-file-pdf"></i></button>
-                    <button class="csvGreen"><a href="../queries/download-csv.php?date_from=<?php echo $date_from2?>&date_to=<?php echo $date_to2?>&sort_date"><i class="fa-solid fa-file-csv"></i></a></button>
+                    <button class="pdfRed" onclick="window.open('../queries/download-pdf-report-student.php?date_from=<?php echo $date_from2?>&date_to=<?php echo $date_to2?>')"><i class="fa-regular fa-file-pdf"></i></button>
+                    <button class="csvGreen"><a href="../queries/download-csv-student.php?date_from=<?php echo $date_from2?>&date_to=<?php echo $date_to2?>&sort_date"><i class="fa-solid fa-file-csv"></i></a></button>
                 </div>
             </div>
           <!-- Table -->
@@ -66,22 +66,24 @@
           <table id="RecentReg" class="display">
               <thead>
                   <tr>
-                      <th>ID Number</th>
+                      <th>Student Number</th>
                       <th>Name</th>
                       <th>Sex</th>
                       <th>Position</th>
                       <th>Date Added</th>
+                      <th>School Year</th>
                   </tr>
               </thead>
-            <?php foreach($users as $user){ 
+            <?php foreach($studentGet as $student){ 
             ?>
               <tbody>
                 <tr>
-                    <td><?php echo $user['accountID']?></td>
-                    <td><?php echo $user['firstname'].' '.$user['middlename'].' '.$user['lastname']?></td>
-                    <td><?php echo $user['sex']?></td>   
-                    <td><?php echo $user['position']?></td>
-                    <td><?php echo $user['dateAdded']?></td>
+                    <td><?php echo $student['studentNumber']?></td>
+                    <td><?php echo $student['firstname'].' '.$student['middlename'].' '.$student['lastname']?></td>
+                    <td><?php echo $student['studentGender']?></td>   
+                    <td><?php echo 'student'?></td>
+                    <td><?php echo $student['dateAdded']?></td>
+                    <td><?php echo $student['studentYear']?></td>
                 </tr>
               </tbody>
             <?php } ?>

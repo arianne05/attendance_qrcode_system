@@ -50,7 +50,7 @@
             <p>Total Users</p>
           </div>
       </a>
-      <a href="#" class="total-student">
+      <a href="./profile/reports-view-totalStudent.php?header=Reports" class="total-student">
         <div class="circle-user">
               <p></p>
           </div>
