@@ -288,8 +288,13 @@
           width: 72px;
           border-radius: 8px;
           border: none;
-          background-color: rgb(174, 214, 174);
-          color: $tertiary-text-black;
+          background-color: #51b38f;
+          color: white;
+          cursor: pointer;
+          &:hover{
+            background-color:#60c09d;
+          }
+          
       }
   }
 }

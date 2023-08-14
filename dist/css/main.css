@@ -1312,8 +1312,12 @@
   width: 72px;
   border-radius: 8px;
   border: none;
-  background-color: rgb(174, 214, 174);
-  color: #3D3D3D;
+  background-color: #51b38f;
+  color: white;
+  cursor: pointer;
+}
+.sort-menu-report .date-container button:hover {
+  background-color: #60c09d;
 }
 
 .main-container-recents-report {
