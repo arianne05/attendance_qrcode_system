@@ -59,7 +59,7 @@
             <p>Total Student</p>
           </div>
       </div>
-      <a href="" class="total-teacher">
+      <a href="./profile/reports-view-totalTeacher.php?header=Reports" class="total-teacher">
         <div class="circle-user">
               <p></p>
           </div>
