@@ -15,7 +15,7 @@
 
     // Total Registered Today
     $total_prof_today = $pdo->query("SELECT COALESCE(COUNT(*), 0) FROM account_information WHERE position='teacher' AND dateAdded='$currentDate'")->fetchColumn();
-    $total_students_today = $pdo->query("SELECT COALESCE(COUNT(*), 0) FROM recents WHERE recentDate='$currentDate' AND recentLabel='added'")->fetchColumn();
+    $total_students_today = $pdo->query("SELECT COALESCE(COUNT(*), 0) FROM student WHERE dateAdded='$currentDate'")->fetchColumn();
     $total_today = $total_prof_today + $total_students_today;
 
     // Fetch login_act table

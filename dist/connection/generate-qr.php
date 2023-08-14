@@ -25,14 +25,15 @@
         $studentYear = $teacherFromSchoolYear.'-'.$teacherToSchoolYear;
 
         $qrValue = $studentNumber;
+        $dateAdded = date('Y-m-d');
 
         $addquery = "INSERT INTO student (accountID, firstname, middlename, lastname, studentNumber, studentBdate, 
-        studentGender, studentSection, studentYear, qrImage, qrValue)
-        VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+        studentGender, studentSection, studentYear, qrImage, qrValue,dateAdded)
+        VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
 
         $stmt = $pdo->prepare($addquery);
         $stmt->execute([$accountID, $firstname, $middlename, $lastname, $studentNumber, $studentBdate, $studentGender, 
-        $studentFinalSection, $studentYear, $qrImage, $qrValue]);
+        $studentFinalSection, $studentYear, $qrImage, $qrValue, $dateAdded]);
     } else{
         echo "error found";
     }
