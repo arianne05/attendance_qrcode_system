@@ -1066,12 +1066,23 @@
   overflow: hidden;
   font-family: "Inter", sans-serif;
 }
+.reports-total-container a {
+  text-decoration: none;
+  color: #3D3D3D;
+}
+.reports-total-container a:hover {
+  box-shadow: 0px 12px 12px 0px rgba(0, 0, 0, 0.25);
+}
+.reports-total-container .Totalnumber {
+  font-size: 25px;
+}
 .reports-total-container .total-user {
   display: flex;
   align-items: center;
   width: 30%;
   border-radius: 15px;
   background: #9ae2c7;
+  color: #145a40;
 }
 .reports-total-container .total-student {
   display: flex;
@@ -1079,6 +1090,7 @@
   width: 30%;
   border-radius: 15px;
   background: #fc7777;
+  color: #721a1a;
 }
 .reports-total-container .total-teacher {
   display: flex;
@@ -1086,6 +1098,7 @@
   width: 30%;
   border-radius: 15px;
   background: #6dabc6;
+  color: #294b5a;
 }
 .reports-total-container .circle-user {
   background-color: white;
@@ -1116,6 +1129,7 @@
   border: 1px solid #cdcdcd;
   border-radius: 12px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
 }
 .reports-pie-chart .registered-number {
   border: 1px solid #cdcdcd;
@@ -1160,26 +1174,21 @@
   margin-right: 10px;
 }
 
-.main-container-recents {
-  margin-left: 17vw;
-  margin-top: 2vh;
-  display: flex;
-  justify-content: space-between;
-}
-.main-container-recents .recent-login {
+.recent-login {
   border: 1px solid #cdcdcd;
   border-radius: 12px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   padding: 20px;
-  width: 48%;
+  width: 70%;
+  max-height: 410px;
   height: 410px;
+  overflow-y: auto;
+  font-family: "Inter", sans-serif;
 }
-.main-container-recents .recent-login .table-recent {
-  display: flex;
-  align-items: center;
+.recent-login .table-recent {
   margin-top: 20px;
 }
-.main-container-recents .recent-login .table-recent .initials-bg {
+.recent-login .table-recent .initials-bg {
   background-color: #9ae2c7;
   width: 40px;
   height: 40px;
@@ -1187,26 +1196,33 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
-.main-container-recents .recent-login .table-recent table {
+.recent-login .table-recent table {
   width: 100%;
   font-family: "Inter", sans-serif;
 }
-.main-container-recents .recent-login .table-recent table tr {
+.recent-login .table-recent table tr {
   height: 60px;
+}
+
+.main-container-recents {
+  margin-left: 17vw;
+  margin-top: 2vh;
+  display: flex;
+  justify-content: space-between;
 }
 .main-container-recents .recent-registered {
   border: 1px solid #cdcdcd;
   border-radius: 12px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   padding: 20px;
-  width: 48%;
-  height: 410px;
+  width: 100%;
+  height: auto;
   margin-right: 2vw;
+  font-family: "Inter", sans-serif;
 }
 .main-container-recents .recent-registered .table-recent {
-  display: flex;
-  align-items: center;
   margin-top: 20px;
 }
 .main-container-recents .recent-registered .table-recent .initials-bg {
@@ -1224,6 +1240,166 @@
 }
 .main-container-recents .recent-registered .table-recent table tr {
   height: 60px;
+}
+
+.formatDate {
+  color: #549c6c;
+}
+
+.formatDateRed {
+  color: #fc7777;
+}
+
+.centerTD {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.activeGreen {
+  background-color: #549c6c;
+  width: 80px;
+  height: 30px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.activeGreen:hover {
+  background-color: #e1efe6;
+}
+
+.activeRed {
+  background-color: #fc7777;
+  width: 80px;
+  height: 30px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.activeRed:hover {
+  background-color: #fd8f8f;
+}
+
+.sort-menu-report {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 30px;
+}
+.sort-menu-report .date-container {
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+}
+.sort-menu-report .date-container label {
+  font-size: 14px;
+}
+.sort-menu-report .date-container .datefrom {
+  margin-right: 10px;
+}
+.sort-menu-report .date-container .dateto {
+  margin-right: 10px;
+}
+.sort-menu-report .date-container input[type=date] {
+  border: 1px solid gray;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 16px;
+  padding-left: 16px;
+  border-radius: 5px;
+}
+.sort-menu-report .date-container button {
+  height: 38px;
+  width: 72px;
+  border-radius: 8px;
+  border: none;
+  background-color: #51b38f;
+  color: white;
+  cursor: pointer;
+}
+.sort-menu-report .date-container button:hover {
+  background-color: #60c09d;
+}
+
+.main-container-recents-report {
+  margin-left: 17vw;
+  margin-right: 30px;
+  margin-top: 2vh;
+  display: flex;
+  justify-content: space-between;
+}
+.main-container-recents-report .recent-registered {
+  border: 1px solid #cdcdcd;
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 20px;
+  width: 100%;
+  height: auto;
+  margin-right: 2vw;
+  font-family: "Inter", sans-serif;
+}
+.main-container-recents-report .recent-registered .table-recent {
+  margin-top: 20px;
+}
+.main-container-recents-report .recent-registered .table-recent .initials-bg {
+  background-color: #9ae2c7;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-container-recents-report .recent-registered .table-recent table {
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  border-collapse: collapse;
+}
+.main-container-recents-report .recent-registered .table-recent table th, .main-container-recents-report .recent-registered .table-recent table td {
+  padding: 8px;
+  text-align: left;
+}
+
+.header-with-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.buttons button {
+  width: 80px;
+  height: 30px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+.buttons i {
+  font-size: 15px;
+}
+.buttons a {
+  text-decoration: none;
+  color: white;
+}
+
+.pdfRed {
+  background-color: #fc7777;
+}
+.pdfRed:hover {
+  background-color: #e05c5c;
+}
+
+.csvGreen {
+  background-color: #66c9a4;
+}
+.csvGreen:hover {
+  background-color: #429e7c;
+}
+
+.sqlBlue {
+  background-color: #6dabc6;
+}
+.sqlBlue:hover {
+  background-color: #427b94;
 }
 
 /*
@@ -1432,6 +1608,9 @@
   border-radius: 20px;
   cursor: pointer;
 }
+.teacher-table .activeGreen:hover {
+  background-color: #e1efe6;
+}
 .teacher-table .activeRed {
   background-color: #fc7777;
   width: 80px;
@@ -1439,6 +1618,12 @@
   border: none;
   border-radius: 20px;
   cursor: pointer;
+}
+.teacher-table .activeRed:hover {
+  background-color: #fd8f8f;
+}
+.teacher-table .activeGreenLabel label {
+  color: #549c6c;
 }
 .teacher-table .centerHead {
   text-align: center;
@@ -1910,8 +2095,6 @@
 .section-container .field-main-container .text-label-edit input[type=number] {
   padding: 20px;
   width: 90%;
-  height: 30px;
-  width: 90%;
   height: 35px;
   background-color: white;
   border: 1px solid #cdcdcd;
@@ -1920,6 +2103,13 @@
 .section-container .field-main-container .text-label-edit label {
   font-size: 12px;
   color: rgb(124, 124, 124);
+}
+.section-container .field-main-container .text-label-edit select {
+  padding: auto;
+  width: 90%;
+  height: 35px;
+  border: 1px solid #cdcdcd;
+  border-radius: 7px;
 }
 .section-container .field-main-container .sectionTag label {
   font-size: 12px;

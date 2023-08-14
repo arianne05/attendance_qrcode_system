@@ -71,16 +71,31 @@ $sectionHandle = $pdo->query("SELECT * FROM account_information
                         <!-- Field 2 -->
                         <div class="field-one">
                             <div class="text-label-edit">
-                                <input type="text" name="username" value="<?php echo $editInfo['username']?>" required>
-                                <label for="editFirstName">Registered Username<span class="asterisk">*</span></label>
+                                <select name="teacherSex" id="" required>
+                                    <option value="Male" <?php echo ($editInfo['sex'] == 'Male') ? 'selected' : ''; ?>>Male</option>
+                                    <option value="Female" <?php echo ($editInfo['sex'] == 'Female') ? 'selected' : ''; ?>>Female</option>
+                                </select>
+
+                                <label for="editFirstName">Sex<span class="asterisk">*</span></label>
                             </div>
+                            <div class="text-label-edit">
+                                <input type="text" name="username" value="<?php echo $editInfo['username']?>" required>
+                                <label for="editFirstName">Username<span class="asterisk">*</span></label>
+                            </div>
+                            <div class="text-label-edit">
+                                <input type="text" name="password" value="<?php echo $editInfo['password']?>" required>
+                                <label for="editFirstName">Password<span class="asterisk">*</span></label>
+                            </div>
+                        </div>
+                        <!-- Field 2 -->
+                        <div class="field-one">
                             <div class="text-label-edit">
                                 <input type="text" name="faculty" value="<?php echo $editInfo['faculty']?>" required>
                                 <label for="editFirstName">Faculty/Department<span class="asterisk">*</span></label>
                             </div>
                             <div class="text-label-edit">
-                                <input type="text" name="password" value="<?php echo $editInfo['password']?>" required>
-                                <label for="editFirstName">Password<span class="asterisk">*</span></label>
+                            </div>
+                            <div class="text-label-edit">
                             </div>
                         </div>
                     </div>

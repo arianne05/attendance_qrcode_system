@@ -24,6 +24,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $firstname = $user['firstname'];
             $_SESSION['accountID']= $accountID;
 
+            $logLabel='logged in';
+            $logDate= date('Y-m-d');
+            $logTime= date('H:i:s');
+
             // Redirect users to their corresponding dashboards based on their position
             switch ($position) {
                 case 'admin':
@@ -33,6 +37,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     header("Location: student_dashboard.php");
                     break;
                 case 'teacher':
+                    $addLogin="INSERT INTO login_activity (accountID, logDate, logTime, logLabel) 
+                                VALUE (?,?,?,?)";
+                    $stmt = $pdo->prepare($addLogin);
+                    $stmt->execute([$accountID, $logDate, $logTime, $logLabel]);
                     header("Location: teacher/dashboard.php?header=Dashboard&loginSuccess");
                     break;
                 default:

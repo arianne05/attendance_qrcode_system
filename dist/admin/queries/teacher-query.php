@@ -9,14 +9,16 @@ if(isset($_POST['addTeacher'])){
     $username = $_POST['teacherUName'];
     $password = $_POST['teacherPass'];
     $faculty = $_POST['teacherFaculty'];
+    $sex = $_POST['teacherSex'];
     $position = 'teacher';
     $status = 'active';
+    $dateAdded = date('Y-m-d');
 
-    $addquery = "INSERT INTO account_information (firstname, middlename, lastname, username, password, faculty, position, status)
-        VALUES (?,?,?,?,?,?,?,?)";
+    $addquery = "INSERT INTO account_information (firstname, middlename, lastname, username, password, faculty, position, status, sex, dateAdded)
+        VALUES (?,?,?,?,?,?,?,?,?,?)";
 
     $stmt = $pdo->prepare($addquery);
-    $stmt->execute([$firstname, $middlename, $lastname, $username, $password, $faculty, $position, $status]);
+    $stmt->execute([$firstname, $middlename, $lastname, $username, $password, $faculty, $position, $status, $sex, $dateAdded]);
 
     //Get the ID of the teacher for section handle
     $selectquery = $pdo->prepare("SELECT accountID FROM account_information WHERE username = :username");
@@ -188,13 +190,14 @@ if(isset($_POST['editTeacher'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
     $faculty = $_POST['faculty'];
+    $sex = $_POST['teacherSex'];
 
     $updatequery = "UPDATE account_information 
-    SET firstname=?, middlename=?, lastname=?, username=?, password=?,faculty=?
+    SET firstname=?, middlename=?, lastname=?, username=?, password=?,faculty=?, sex=?
     WHERE accountID=?";
 
     $stmt = $pdo->prepare($updatequery);
-    $stmt->execute([$firstname, $middlename, $lastname, $username, $password, $faculty, $accountID]);
+    $stmt->execute([$firstname, $middlename, $lastname, $username, $password, $faculty, $sex, $accountID]);
     
     // Update section handles
     $subjects = $_POST['subject'];
