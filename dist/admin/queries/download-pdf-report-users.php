@@ -24,7 +24,7 @@
     // instantiate and use the dompdf class
     $dompdf = new Dompdf();
     ob_start();
-    require('../profile/reports-view-pdf.php');
+    require('../profile/reports-view-pdf-users.php');
     $html = ob_get_contents();
     ob_get_clean();
   
