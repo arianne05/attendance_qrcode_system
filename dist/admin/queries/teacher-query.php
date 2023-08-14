@@ -9,14 +9,16 @@ if(isset($_POST['addTeacher'])){
     $username = $_POST['teacherUName'];
     $password = $_POST['teacherPass'];
     $faculty = $_POST['teacherFaculty'];
+    $sex = $_POST['teacherSex'];
     $position = 'teacher';
     $status = 'active';
+    $dateAdded = date('Y-m-d');
 
-    $addquery = "INSERT INTO account_information (firstname, middlename, lastname, username, password, faculty, position, status)
-        VALUES (?,?,?,?,?,?,?,?)";
+    $addquery = "INSERT INTO account_information (firstname, middlename, lastname, username, password, faculty, position, status, sex, dateAdded)
+        VALUES (?,?,?,?,?,?,?,?,?,?)";
 
     $stmt = $pdo->prepare($addquery);
-    $stmt->execute([$firstname, $middlename, $lastname, $username, $password, $faculty, $position, $status]);
+    $stmt->execute([$firstname, $middlename, $lastname, $username, $password, $faculty, $position, $status, $sex, $dateAdded]);
 
     //Get the ID of the teacher for section handle
     $selectquery = $pdo->prepare("SELECT accountID FROM account_information WHERE username = :username");

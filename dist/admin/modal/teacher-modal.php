@@ -31,8 +31,12 @@
             <br>
             <div class="section-one-addTeacher">
                 <div class="bind-label">
-                    <label for="teacherUName">Username<span class="asterisk">*</span></label>
-                    <input type="text" id="teacherUName" name="teacherUName" required>
+                    <label for="teacherSex">Sex<span class="asterisk">*</span></label>
+                    <select name="teacherSex" id="teacherSex" required>
+                        <option selected disabled>Select Sex</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
                 </div>
                 <div class="bind-label">
                     <label for="teacherPass">Password<span class="asterisk">*</span></label>
@@ -41,6 +45,17 @@
                 <div class="bind-label">
                     <label for="teacherFaculty">Faculty<span class="asterisk">*</span></label>
                     <input type="text" id="teacherFaculty" name="teacherFaculty" required>
+                </div>
+            </div>
+            <br>
+            <div class="section-one-addTeacher">
+                <div class="bind-label">
+                    <label for="teacherUName">Username<span class="asterisk">*</span></label>
+                    <input type="text" id="teacherUName" name="teacherUName" required>
+                </div>
+                <div class="bind-label">
+                </div>
+                <div class="bind-label">
                 </div>
             </div>
             <br>
