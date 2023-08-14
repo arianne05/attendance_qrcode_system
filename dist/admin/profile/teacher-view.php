@@ -37,7 +37,7 @@ $sectionHandle = $pdo->query("SELECT * FROM account_information
                     <div class="image-edit-container">
                         <img src="../../img/user-icon-default/user-male-default.png" alt="">
                         <label for="id">#<?php echo $editInfo['accountID']?></label>
-                        <label for="status" class="activeGreen">active</label>
+                        <label for="status" class="activeGreenLabel"><?php echo $status['status']?></label>
                     </div>
 
                     <!-- Section 1 -->
@@ -61,16 +61,28 @@ $sectionHandle = $pdo->query("SELECT * FROM account_information
                         <!-- Field 2 -->
                         <div class="field-one">
                             <div class="text-label-edit">
+                                <p><?php echo $editInfo['sex']?></p>
+                                <label for="editFirstName">Sex</label>
+                            </div>
+                            <div class="text-label-edit">
                                 <p><?php echo $editInfo['username']?></p>
                                 <label for="editFirstName">Registered Username</label>
                             </div>
+                            <div class="text-label-edit">
+                                <p><?php echo $editInfo['password']?></p>
+                                <label for="editFirstName">Password</label>
+                            </div>
+                        </div>
+                        <br>
+                        <!-- Field 2 -->
+                        <div class="field-one">
                             <div class="text-label-edit">
                                 <p><?php echo $editInfo['faculty']?></p>
                                 <label for="editFirstName">Faculty/Department</label>
                             </div>
                             <div class="text-label-edit">
-                                <p><?php echo $editInfo['password']?></p>
-                                <label for="editFirstName">Password</label>
+                            </div>
+                            <div class="text-label-edit">
                             </div>
                         </div>
                     </div>

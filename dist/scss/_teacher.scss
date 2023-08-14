@@ -68,6 +68,11 @@
       background-color: #fd8f8f;
     }
   }
+  .activeGreenLabel{
+    label{
+      color: $primary-buttonBg-green;
+    }
+  }
   .centerHead {
     text-align: center;
   }
@@ -557,8 +562,6 @@
       input[type="number"] {
         padding: 20px;
         width: 90%;
-        height: 30px;
-        width: 90%;
         height: 35px;
         background-color: white;
         border: 1px solid #cdcdcd;
@@ -569,6 +572,13 @@
         font-size: 12px;
         // margin-bottom: 20px;
         color: $primary-text-gray2;
+      }
+      select{
+        padding: auto;
+        width: 90%;
+        height: 35px;
+        border: 1px solid #cdcdcd;
+        border-radius: 7px;
       }
     }
     .sectionTag {

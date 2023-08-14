@@ -1622,6 +1622,9 @@
 .teacher-table .activeRed:hover {
   background-color: #fd8f8f;
 }
+.teacher-table .activeGreenLabel label {
+  color: #549c6c;
+}
 .teacher-table .centerHead {
   text-align: center;
 }
@@ -2092,8 +2095,6 @@
 .section-container .field-main-container .text-label-edit input[type=number] {
   padding: 20px;
   width: 90%;
-  height: 30px;
-  width: 90%;
   height: 35px;
   background-color: white;
   border: 1px solid #cdcdcd;
@@ -2102,6 +2103,13 @@
 .section-container .field-main-container .text-label-edit label {
   font-size: 12px;
   color: rgb(124, 124, 124);
+}
+.section-container .field-main-container .text-label-edit select {
+  padding: auto;
+  width: 90%;
+  height: 35px;
+  border: 1px solid #cdcdcd;
+  border-radius: 7px;
 }
 .section-container .field-main-container .sectionTag label {
   font-size: 12px;

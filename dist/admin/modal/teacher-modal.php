@@ -195,7 +195,6 @@
         <div class="image-edit-container">
             <img src="../img/user-icon-default/user-male-default.png" alt="">
             <label for="id">#<span id="employeeNumber"></span></label>
-            <label for="status" class="activeGreen">active</label>
             <i class="fa-regular fa-pen-to-square"></i>
         </div>
 

@@ -190,13 +190,14 @@ if(isset($_POST['editTeacher'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
     $faculty = $_POST['faculty'];
+    $sex = $_POST['teacherSex'];
 
     $updatequery = "UPDATE account_information 
-    SET firstname=?, middlename=?, lastname=?, username=?, password=?,faculty=?
+    SET firstname=?, middlename=?, lastname=?, username=?, password=?,faculty=?, sex=?
     WHERE accountID=?";
 
     $stmt = $pdo->prepare($updatequery);
-    $stmt->execute([$firstname, $middlename, $lastname, $username, $password, $faculty, $accountID]);
+    $stmt->execute([$firstname, $middlename, $lastname, $username, $password, $faculty, $sex, $accountID]);
     
     // Update section handles
     $subjects = $_POST['subject'];
