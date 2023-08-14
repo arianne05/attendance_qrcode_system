@@ -57,7 +57,7 @@
             <div class="header-with-button">
                 <p class="header-activity">Total Registered Teachers: <?php echo $total_prof?></p>
                 <div class="buttons">
-                    <button class="pdfRed" onclick="window.open('../queries/download-pdf-report-users.php?date_from=<?php echo $date_from2?>&date_to=<?php echo $date_to2?>')"><i class="fa-regular fa-file-pdf"></i></button>
+                    <button class="pdfRed" onclick="window.open('../queries/download-pdf-report-teacher.php?date_from=<?php echo $date_from2?>&date_to=<?php echo $date_to2?>')"><i class="fa-regular fa-file-pdf"></i></button>
                     <button class="csvGreen"><a href="../queries/download-csv-teacher.php?date_from=<?php echo $date_from2?>&date_to=<?php echo $date_to2?>&sort_date"><i class="fa-solid fa-file-csv"></i></a></button>
                 </div>
             </div>
