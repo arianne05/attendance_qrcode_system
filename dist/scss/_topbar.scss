@@ -68,6 +68,7 @@ background-color: #f9f9f9; /* Change the background color as desired */
             }
 
             .search-section {
+                background-color: white;
                 display: flex;
                 align-items: center;
                 width: 250px; /* adjust the width as needed */
@@ -77,6 +78,11 @@ background-color: #f9f9f9; /* Change the background color as desired */
 
                 &:hover{
                     border: 1px solid $primary-buttonBg-green;
+                }
+                button{
+                    border: none;
+                    background-color: transparent;
+                    margin-right: 5px;
                 }
               }
               
@@ -208,9 +214,18 @@ background-color: #f9f9f9; /* Change the background color as desired */
             
         }
     }
+}
 
-    
-      
-
-    
+.headerSearch{
+    margin-left: 17vw;
+    font-family: 'Inter', sans-serif;
+}
+.search-main-container{
+    font-family: 'Inter', sans-serif;
+    margin-left: 17vw;
+    margin-right: 2vw;
+    border: 1px solid #cdcdcd;
+    border-radius: 12px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 20px;
 }
