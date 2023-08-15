@@ -485,6 +485,7 @@
   color: #549c6c;
 }
 .dashboard-top-bar .top-bar-right .right-section-topbar .search-section {
+  background-color: white;
   display: flex;
   align-items: center;
   width: 250px; /* adjust the width as needed */
@@ -494,6 +495,11 @@
 }
 .dashboard-top-bar .top-bar-right .right-section-topbar .search-section:hover {
   border: 1px solid #549c6c;
+}
+.dashboard-top-bar .top-bar-right .right-section-topbar .search-section button {
+  border: none;
+  background-color: transparent;
+  margin-right: 5px;
 }
 .dashboard-top-bar .top-bar-right .right-section-topbar .search-section input[type=text] {
   flex: 1;
@@ -602,6 +608,21 @@
 }
 .dashboard-top-bar .top-bar-left p {
   margin: 0;
+}
+
+.headerSearch {
+  margin-left: 17vw;
+  font-family: "Inter", sans-serif;
+}
+
+.search-main-container {
+  font-family: "Inter", sans-serif;
+  margin-left: 17vw;
+  margin-right: 2vw;
+  border: 1px solid #cdcdcd;
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 20px;
 }
 
 /*
@@ -1402,6 +1423,24 @@
   background-color: #427b94;
 }
 
+.added {
+  color: white;
+  background-color: #66c9a4;
+  border-radius: 100px;
+  padding: 5px;
+}
+
+.edited {
+  color: white;
+  background-color: #6dabc6;
+  border-radius: 100px;
+  padding: 5px;
+}
+
+.archived {
+  color: #fc7777;
+}
+
 /*
     Montserrat -  paragraph
     Raleway - sub heading
@@ -1443,11 +1482,21 @@
 .recent-faculty-member .list-member {
   padding: 20px;
   height: 60%;
+  max-height: 60%;
   margin-top: 10%;
   background-color: white;
   border: 1px solid #cdcdcd;
   border-radius: 12px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  overflow-y: auto;
+}
+.recent-faculty-member .list-member a {
+  text-decoration: none;
+  color: black;
+}
+.recent-faculty-member .list-member a:hover {
+  background-color: rgb(243, 243, 243);
+  border-radius: 20px;
 }
 .recent-faculty-member .member-container {
   display: flex;
@@ -1539,7 +1588,7 @@
   border: 1px solid #cdcdcd;
   border-radius: 12px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  padding: 20px;
+  padding: 40px;
 }
 .table-container table {
   width: 100%;
