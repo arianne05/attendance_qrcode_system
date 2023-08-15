@@ -66,12 +66,32 @@ $totalResults = count($results);
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($results as $search) { ?>
+                <?php foreach ($results as $search) { 
+                    $accountID = $search['accountID'];
+                    $positionUser = $search['position'];
+
+                    if($positionUser=='teacher'){
+                        $path='teacher-view.php';
+                        $id = $search['accountID'];
+                        $studentNumber='';
+                    }else{
+                        $path='student-view.php';
+                        // Student Name
+                        $stmt = $pdo->prepare("SELECT * FROM student WHERE studentNumber = :studentNumber");
+                        $stmt->bindParam(':studentNumber', $accountID, PDO::PARAM_INT);
+                        $stmt->execute();
+                        $student = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                        $id=$student['studentID'];
+                        $studentNumber='studNum='.$student['studentNumber'];
+                    }    
+                ?>
+               
                 <tr>
                     <td><?php echo $search['accountID'];?></td>
                     <td><?php echo $search['firstname'].' '.$search['middlename'].' '.$search['lastname'] ?></td>
                     <td><?php echo $search['position'];?></td>
-                    <td><button>Visit Profile</button></td>
+                    <td><a href="../admin/profile/<?php echo $path?>?header=<?php echo $search['firstname']?>'s Profile&id=<?php echo $id?>&<?php echo $studentNumber?>"><button>Visit Profile</button></a></td>
                 </tr>
                 <?php } ?>
             </tbody>
