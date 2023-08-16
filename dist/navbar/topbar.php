@@ -12,16 +12,18 @@
         include_once '../connection/alert.php';
         $image = '../img/logo-hermosa 4.png';
         $logout = '../logout.php';
-        $profilePath = './user-profile.php?header=My Profile';
+        $profilePath = '../admin/user-profile.php?header=My Profile';
+        $searchPath='../navbar/search-result.php';
        
     } else {
         include_once '../../connection/alert.php';
         $image = '../../img/logo-hermosa 4.png';
         $logout = '../../logout.php';
         $profilePath = '../user-profile.php?header=My Profile';
+        $searchPath='../../navbar/search-result.php';
     }
 ?>
-
+<!-- <script src="../admin/user-profile.php"></script> -->
 <!-- Topbar -->
 <div class="dashboard-top-bar">
         <div class="top-bar-left">
@@ -37,7 +39,7 @@
                 </svg>
             </div>              
             <div class="right-section-topbar">
-                <form action="../navbar/search-result.php" method="GET">
+                <form action="<?php echo $searchPath?>" method="GET">
                 <div class="search-section">
                     <input type="text" name="inputSearch" placeholder="Search here" value="<?php echo $inputSearch?>">
                     <input type="hidden" name="header" value="Search Result">
