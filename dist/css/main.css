@@ -2412,6 +2412,181 @@
   background-color: green;
 }
 
+/*
+    Montserrat -  paragraph
+    Raleway - sub heading
+    Poppins - main heading
+*/
+.my-container {
+  margin-left: 17vw;
+  margin-right: 2vw;
+  font-family: "Inter", sans-serif;
+}
+
+.main-profile-container {
+  display: flex;
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  height: auto;
+  width: 100%;
+  padding: 30px;
+}
+
+.left-profile-container {
+  border: none;
+  border-right: 1px solid rgb(189, 189, 189);
+  padding-right: 30px;
+  width: 17%;
+}
+.left-profile-container a {
+  color: black;
+  text-decoration: none;
+}
+.left-profile-container ul, .left-profile-container li {
+  list-style: none;
+}
+.left-profile-container li {
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.left-profile-container li:hover {
+  background-color: rgb(146, 224, 178);
+  border-radius: 30px;
+}
+
+.right-profile-container {
+  padding-left: 20px;
+  width: 83%;
+}
+
+.profile-overview {
+  display: flex;
+  align-items: center;
+  border: 1px solid #cdcdcd;
+  border-radius: 12px;
+  padding: 30px;
+}
+
+.img-container {
+  padding-right: 15px;
+}
+.img-container img {
+  width: 70px;
+  height: 70px;
+}
+
+.name-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.name-container p {
+  padding-bottom: 5px;
+}
+.name-container .green-profile {
+  color: rgb(38, 187, 38);
+}
+.name-container .gray-profile {
+  color: rgb(170, 170, 170);
+}
+.name-container button {
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: rgb(216, 216, 216);
+  width: 100px;
+  height: 35px;
+}
+.name-container button:hover {
+  background-color: rgb(172, 233, 172);
+}
+
+.profile-detail {
+  border: 1px solid #cdcdcd;
+  border-radius: 12px;
+  padding: 20px;
+}
+.profile-detail table {
+  width: 100%;
+}
+.profile-detail tr, .profile-detail td {
+  padding-bottom: 30px;
+}
+.profile-detail span {
+  color: #949393;
+  font-size: 13px;
+}
+.profile-detail input {
+  padding: 10px;
+  width: 70%;
+  height: 40px;
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  border-radius: 7px;
+}
+.profile-detail button {
+  border: none;
+  width: 100%;
+  height: 38px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.profile-detail button:hover {
+  background-color: rgb(172, 233, 172);
+}
+
+.activeProfile {
+  background-color: rgb(146, 224, 178);
+  border-radius: 30px;
+}
+
+.text-security {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.text-security input, .text-security select {
+  margin-right: 40px;
+  padding: 10px;
+  width: 50%;
+  height: 40px;
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  border-radius: 7px;
+}
+.text-security label {
+  color: #4e4e4e;
+  padding-bottom: 10px;
+  margin-left: 30px;
+}
+.text-security textarea {
+  margin-right: 40px;
+  width: 50%;
+  height: 300px;
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  border-radius: 7px;
+}
+
+.saveChanges {
+  border: none;
+  width: 100%;
+  height: 38px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.saveChanges:hover {
+  background-color: rgb(172, 233, 172);
+}
+
+.nodisplay {
+  display: none;
+}
+
 .dashboard-teacher-main-container {
   display: flex;
   justify-content: space-between;

@@ -224,5 +224,79 @@ if(isset($_GET['restoreTeacherSuccess'])){
         </script>
     <?php
 }
+// __________________________________________________________________________________
 
+// Change My Profile Information
+if(isset($_GET['emptyPassandCP'])){
+    ?>
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Empty Fields',
+                text: 'Please input password and confirm password!'
+            })
+        </script>
+    <?php
+}
+if(isset($_GET['emptyCP'])){
+    ?>
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Input confirm password',
+                text: 'Please confirm password!'
+            })
+        </script>
+    <?php
+}
+if(isset($_GET['wrongCP'])){
+    ?>
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Password mismatch',
+                text: 'Please enter correct password!'
+            })
+        </script>
+    <?php
+}
+if(isset($_GET['securitySaved'])){
+    ?>
+        <script>
+            Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Security Detail Updated!',
+            showConfirmButton: false,
+            timer: 1500
+            })
+        </script>
+    <?php
+}
+if(isset($_GET['announceSaved'])){
+    ?>
+        <script>
+            Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Annoucement Sent!',
+            showConfirmButton: false,
+            timer: 1500
+            })
+        </script>
+    <?php
+}
+if(isset($_GET['profileUpdated'])){
+    ?>
+        <script>
+            Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Profile Updated!',
+            showConfirmButton: false,
+            timer: 1500
+            })
+        </script>
+    <?php
+}
 ?>

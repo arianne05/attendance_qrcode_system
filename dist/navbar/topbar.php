@@ -12,14 +12,18 @@
         include_once '../connection/alert.php';
         $image = '../img/logo-hermosa 4.png';
         $logout = '../logout.php';
+        $profilePath = '../admin/user-profile.php?header=My Profile';
+        $searchPath='../navbar/search-result.php';
        
     } else {
         include_once '../../connection/alert.php';
         $image = '../../img/logo-hermosa 4.png';
         $logout = '../../logout.php';
+        $profilePath = '../user-profile.php?header=My Profile';
+        $searchPath='../../navbar/search-result.php';
     }
 ?>
-
+<!-- <script src="../admin/user-profile.php"></script> -->
 <!-- Topbar -->
 <div class="dashboard-top-bar">
         <div class="top-bar-left">
@@ -35,7 +39,7 @@
                 </svg>
             </div>              
             <div class="right-section-topbar">
-                <form action="../navbar/search-result.php" method="GET">
+                <form action="<?php echo $searchPath?>" method="GET">
                 <div class="search-section">
                     <input type="text" name="inputSearch" placeholder="Search here" value="<?php echo $inputSearch?>">
                     <input type="hidden" name="header" value="Search Result">
@@ -55,7 +59,7 @@
                     <div class="dropdown">
                         <button class="dropdown-btn"><span class="userName"><?php echo $infoUser['firstname']?><br></span><span class="labelPosition"><?php echo $infoUser['position']?></span><i id="iconDrop" class="fa-solid fa-chevron-down"></i></button>
                         <div class="dropdown-content">
-                          <a href="#">Visit Profile</a>
+                          <a href="<?php echo $profilePath?>&id=<?php echo $infoUser['accountID']?>">Visit Profile</a>
                           <a href="#" onclick="logoutAlert()">Logout</a>
                         </div>
                     </div>
