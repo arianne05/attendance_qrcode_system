@@ -47,7 +47,7 @@
                             <p class="gray-profile">#<?php echo $user['accountID']?></p>
                         </div>
                         <div class="edit-profile">
-                            <button>Edit</button>
+                            <a href="./user-profile.php?header=My Profile&id=<?php echo $user['accountID']?>&editProfile"><button>Edit</button></a>
                         </div>
                     </div>
                 </div>

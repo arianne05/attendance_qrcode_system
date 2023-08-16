@@ -286,4 +286,17 @@ if(isset($_GET['announceSaved'])){
         </script>
     <?php
 }
+if(isset($_GET['profileUpdated'])){
+    ?>
+        <script>
+            Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Profile Updated!',
+            showConfirmButton: false,
+            timer: 1500
+            })
+        </script>
+    <?php
+}
 ?>

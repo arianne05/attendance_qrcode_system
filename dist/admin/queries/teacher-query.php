@@ -285,4 +285,24 @@ if(isset($_POST['addAnnounce'])){
     $stmt->execute([$accountID, $subject, $description, $date, $time]);
     header("Location: ../user-profile-announ.php?header=My Profile&id=$accountID&announceSaved");
 }
+
+// Update My Profile
+if(isset($_POST['updateProfile'])){
+    $accountID = $_POST['accountID'];
+    $firstname = $_POST['firstname'];
+    $middlename = $_POST['middlename'];
+    $lastname = $_POST['lastname'];
+    $username = $_POST['username'];
+    $faculty = $_POST['faculty'];
+    $dateAdded = $_POST['dateAdded'];
+    
+    $updatequery = "UPDATE account_information 
+    SET firstname=?, middlename=?, lastname=?, username=?, faculty=?, dateAdded=?
+    WHERE accountID=?";
+
+    $stmt = $pdo->prepare($updatequery);
+    $stmt->execute([$firstname, $middlename, $lastname, $username, $faculty, $dateAdded, $accountID]);
+
+    header("Location: ../user-profile.php?header=My Profile&id=$accountID&profileUpdated");
+}
 ?>
