@@ -55,7 +55,7 @@
                     <div class="dropdown">
                         <button class="dropdown-btn"><span class="userName"><?php echo $infoUser['firstname']?><br></span><span class="labelPosition"><?php echo $infoUser['position']?></span><i id="iconDrop" class="fa-solid fa-chevron-down"></i></button>
                         <div class="dropdown-content">
-                          <a href="#">Visit Profile</a>
+                          <a href="./user-profile.php?header=My Profile">Visit Profile</a>
                           <a href="#" onclick="logoutAlert()">Logout</a>
                         </div>
                     </div>

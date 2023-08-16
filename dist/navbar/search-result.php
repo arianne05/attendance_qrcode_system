@@ -91,7 +91,7 @@ $totalResults = count($results);
                     <td><?php echo $search['accountID'];?></td>
                     <td><?php echo $search['firstname'].' '.$search['middlename'].' '.$search['lastname'] ?></td>
                     <td><?php echo $search['position'];?></td>
-                    <td><a href="../admin/profile/<?php echo $path?>?header=<?php echo $search['firstname']?>'s Profile&id=<?php echo $id?>&<?php echo $studentNumber?>"><button>Visit Profile</button></a></td>
+                    <td><a href="../admin/profile/<?php echo $path?>?header=<?php echo $search['firstname']?>'s Profile&id=<?php echo $id?>&<?php echo $studentNumber?>"><button class="view">Visit Profile</button></a></td>
                 </tr>
                 <?php } ?>
             </tbody>
