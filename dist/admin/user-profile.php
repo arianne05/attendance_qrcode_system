@@ -4,6 +4,17 @@
     include '../connection/session.php';
     include '../connection/session_name.php';
 
+    $accountID = $_GET['id'];
+    // User Detail
+    $stmt = $pdo->prepare("SELECT * FROM account_information WHERE accountID = :accountID");
+    $stmt->bindParam(':accountID', $accountID, PDO::PARAM_INT);
+    $stmt->execute();
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    // Date Format
+    $date = new DateTime($user['dateAdded']);
+    $formattedDate = $date->format('M d, Y');
+
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,8 +35,8 @@
             <div class="left-profile-container">
                 <ul>
                     <li class="activeProfile"><a href="#">My Profile</a></li>
-                    <li><a href="./user-profile-security.php?header=My Profile">Security</a></li>
-                    <li><a href="./user-profile-announ.php?header=My Profile">Announcement</a></li>
+                    <li><a href="./user-profile-security.php?header=My Profile&id=<?php echo $user['accountID']?>">Security</a></li>
+                    <li><a href="./user-profile-announ.php?header=My Profile&id=<?php echo $user['accountID']?>">Announcement</a></li>
                 </ul>
             </div>
 
@@ -36,9 +47,9 @@
                     </div>
                     <div class="name-container">
                         <div class="header-profile">
-                            <p><b>Arianne Quimpo</b></p>
-                            <p class="green-profile">admin</p>
-                            <p class="gray-profile">#201912344</p>
+                            <p><b><?php echo $user['firstname'].' '.$user['lastname']?></b></p>
+                            <p class="green-profile"><?php echo $user['position']?></p>
+                            <p class="gray-profile">#<?php echo $user['accountID']?></p>
                         </div>
                         <div class="edit-profile">
                             <button>Edit</button>
@@ -52,14 +63,14 @@
                     <br>
                     <table>
                         <tr>
-                            <td><span>Firstname</span> <br>Arianne</td>
-                            <td><span>Middlename</span> <br>Hernandez</td>
-                            <td><span>Lastname</span> <br>Quimpo</td>
+                            <td><span>Firstname</span> <br><?php echo $user['firstname']?></td>
+                            <td><span>Middlename</span> <br><?php echo !empty($user['middlename']) ? $user['middlename'] : 'N/A'; ?></td>
+                            <td><span>Lastname</span> <br><?php echo $user['lastname']?></td>
                         </tr>
                         <tr>
-                            <td><span>Username</span> <br>Aya2t05</td>
-                            <td><span>Department</span> <br>English</td>
-                            <td><span>Date Added</span> <br>Aug 1, 2023</td>
+                            <td><span>Username</span> <br><?php echo $user['username']?></td>
+                            <td><span>Department</span> <br><?php echo !empty($user['faculty']) ? $user['faculty'] : 'N/A'; ?></td>
+                            <td><span>Date Added</span> <br><?php echo $formattedDate?></td>
                         </tr>
                     </table>
                        

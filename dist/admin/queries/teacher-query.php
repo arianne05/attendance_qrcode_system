@@ -240,4 +240,49 @@ if(isset($_GET['activate']) && isset($_GET['id'])){
     $stmt->execute([$status, $accountID]);
     header("Location: ../teacher.php?header=Teacher&actTeacherSuccess");
 }
+
+// Save Security Information
+if(isset($_POST['saveSecurity'])){
+    $accountID = $_POST['accountID'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $cpassword = $_POST['cpassword'];
+    $secQuestion = $_POST['secQuestion'];
+    $secAnswer = $_POST['secAnswer'];
+    
+    if (empty($password) && empty($cpassword)) {
+        header("Location: ../user-profile-security.php?header=My Profile&id=$accountID&emptyPassandCP");
+        exit();
+    } elseif (empty($cpassword)) {
+        header("Location: ../user-profile-security.php?header=My Profile&id=$accountID&emptyCP");
+        exit();
+    } elseif ($password != $cpassword) {
+        header("Location: ../user-profile-security.php?header=My Profile&id=$accountID&wrongCP");
+        exit();
+    } else {
+        $updatequery = "UPDATE account_information 
+                        SET username=?, password=?, secQuestion=?, secAnswer=? WHERE accountID=?";
+    
+        $stmt = $pdo->prepare($updatequery);
+        $stmt->execute([$username, $password, $secQuestion, $secAnswer, $accountID]);
+        header("Location: ../user-profile-security.php?header=My Profile&id=$accountID&securitySaved");
+        exit();
+    }
+}
+
+// Add Announcement
+if(isset($_POST['addAnnounce'])){
+    $accountID = $_POST['accountID'];
+    $subject = $_POST['subject'];
+    $description = $_POST['description'];
+    $date = date("Y-m-d");
+    $time = date("H:i:s");
+
+    $addquery = "INSERT INTO announcement (accountID, subject, description, date, time)
+        VALUES (?,?,?,?,?)";
+
+    $stmt = $pdo->prepare($addquery);
+    $stmt->execute([$accountID, $subject, $description, $date, $time]);
+    header("Location: ../user-profile-announ.php?header=My Profile&id=$accountID&announceSaved");
+}
 ?>

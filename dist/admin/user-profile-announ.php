@@ -4,6 +4,12 @@
     include '../connection/session.php';
     include '../connection/session_name.php';
 
+    $accountID = $_GET['id'];
+    // User Detail
+    $stmt = $pdo->prepare("SELECT * FROM account_information WHERE accountID = :accountID");
+    $stmt->bindParam(':accountID', $accountID, PDO::PARAM_INT);
+    $stmt->execute();
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,8 +29,8 @@
         <div class="main-profile-container">
             <div class="left-profile-container">
                 <ul>
-                    <li><a href="./user-profile.php?header=My Profile">My Profile</a></li>
-                    <li><a href="./user-profile-security.php?header=My Profile">Security</a></li>
+                    <li><a href="./user-profile.php?header=My Profile&id=<?php echo $user['accountID']?>">My Profile</a></li>
+                    <li><a href="./user-profile-security.php?header=My Profile&id=<?php echo $user['accountID']?>">Security</a></li>
                     <li class="activeProfile"><a href="#">Announcement</a></li>
                 </ul>
             </div>
@@ -36,9 +42,9 @@
                     </div>
                     <div class="name-container">
                         <div class="header-profile">
-                            <p><b>Arianne Quimpo</b></p>
-                            <p class="green-profile">admin</p>
-                            <p class="gray-profile">#201912344</p>
+                            <p><b><?php echo $user['firstname'].' '.$user['lastname']?></b></p>
+                            <p class="green-profile"><?php echo $user['position']?></p>
+                            <p class="gray-profile">#<?php echo $user['accountID']?></p>
                         </div>
                         <div class="edit-profile">
                             <button>Edit</button>
@@ -47,21 +53,24 @@
                 </div>
                 <br> 
                 <!-- New Section -->
+                <form action="./queries/teacher-query.php" method="post">
                 <div class="profile-detail">
                     <p><b>Create Announcement</b></p>
                     <br>
                     <div class="text-security">
                         <label for="uname">Subject</label>
-                        <input type="text" value="Aya2t05">
+                        <input type="text" name="subject" placeholder="Indicate Topic">
+                        <input type="hidden" name="accountID" value="<?php echo $accountID?>">
                     </div>
                     <br>
                     <div class="text-security">
                         <label for="uname">Description</label>
-                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                        <textarea name="description" placeholder="Describe your context"></textarea>
                     </div>
                     <br>
-                    <button class="saveChanges">Send Announcement</button>
+                    <button class="saveChanges" name="addAnnounce">Send Announcement</button>
                 </div>
+                </form>
             </div>
         </div>
     </div>
