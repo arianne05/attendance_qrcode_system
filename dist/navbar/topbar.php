@@ -13,6 +13,7 @@
         $image = '../img/logo-hermosa 4.png';
         $logout = '../logout.php';
         $profilePath = '../admin/user-profile.php?header=My Profile';
+        $announcePath = '../admin/announce.php?header=Annoucement';
         $searchPath='../navbar/search-result.php';
        
     } else {
@@ -20,6 +21,7 @@
         $image = '../../img/logo-hermosa 4.png';
         $logout = '../../logout.php';
         $profilePath = '../user-profile.php?header=My Profile';
+        $announcePath = '../announce.php?header=Annoucement';
         $searchPath='../../navbar/search-result.php';
     }
 ?>
@@ -51,7 +53,7 @@
                 </div>
                 </form>
                 
-                <i class="fa-solid fa-bell"></i>
+                <a href="<?php echo $announcePath?>"><i class="fa-solid fa-bell"></i></a>
                 <div class="position">
                     <div class="circle-user">
                         <span class="defaul-user">AQ</span>
