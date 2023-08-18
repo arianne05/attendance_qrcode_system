@@ -43,6 +43,7 @@
     <?php include_once '../../navbar/sidebar.php'?>
 
     <br>
+    <form action="../queries/teacher-query.php" method="post">
     <section class="announce-main-container">
         <div class="announce-content-box">
             <div class="circle-design">
@@ -58,20 +59,22 @@
                         <p><?php echo $formattedDate.' '.$formattedTime?></p>
                         <p>Subject: 
                             <span class="<?php echo $hideView?>"><?php echo $announce['subject']?></span>
-                            <input type="text" class="<?php echo $hideEdit?>" value="<?php echo $announce['subject']?>">
+                            <input type="text" name="subject" class="<?php echo $hideEdit?>" value="<?php echo $announce['subject']?>">
                         </p>
                         <p>admin</p>
                     </div>
                     
                 </div>
-                <button class="<?php echo $hideView?> edit"><a href="./announce-content.php?header=Announcement&id=<?php echo $announce['announceID']?>&edit">Edit</a></button>
+                <button type="button" class="<?php echo $hideView?> edit"><a href="./announce-content.php?header=Announcement&id=<?php echo $announce['announceID']?>&edit">Edit</a></button>
             </div>
             
             <br><hr><br>
-            <textarea name="" id="" <?php echo $disable?> cols="30" rows="10"><?php echo $announce['description']?></textarea>
+            <textarea name="description" id="" <?php echo $disable?> cols="30" rows="10"><?php echo $announce['description']?></textarea>
             <br>
-            <button class="<?php echo $hideEdit?>" id="saveChange">Save Changes</button>
+            <input type="hidden" name="announceID" value="<?php echo $announce['announceID']?>">
+            <button type="submit" name="updateAnnounce" class="<?php echo $hideEdit?>" id="saveChange">Save Changes</button>
         </div>
     </section>
+    </form>
 </body>
 </html>

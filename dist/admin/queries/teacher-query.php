@@ -317,6 +317,24 @@ if(isset($_GET['removeAnnounce'])){
 
     header("Location: ../announce.php?header=Announcement&removedAnnounceSuccess");
 }
+
+// Update Announcement
+if(isset($_POST['updateAnnounce'])){
+    $announceID = $_POST['announceID'];
+    $subject = $_POST['subject'];
+    $description = $_POST['description'];
+    
+    
+    $updatequery = "UPDATE announcement 
+    SET subject=?, description=?
+    WHERE announceID=?";
+
+    $stmt = $pdo->prepare($updatequery);
+    $stmt->execute([$subject, $description, $announceID]);
+
+    header("Location: ../profile/announce-content.php?header=Announcement&id=$announceID&view&profileAnnounceUpdated");
+}
+
 ?>
 
 
