@@ -54,6 +54,7 @@ background-color: #f9f9f9; /* Change the background color as desired */
             align-items: center;
 
             i{
+                cursor: pointer;
                 color: $primary-text-gray;
                 font-size: 20px;
                 margin-right: 10px;

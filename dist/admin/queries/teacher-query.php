@@ -305,4 +305,36 @@ if(isset($_POST['updateProfile'])){
 
     header("Location: ../user-profile.php?header=My Profile&id=$accountID&profileUpdated");
 }
+
+// Remove/Archive Announcement
+if(isset($_GET['removeAnnounce'])){
+    $announceID = $_GET['id'];
+    $status = 'removed';
+    $archiveSched = "UPDATE announcement SET status=? WHERE announceID=?";
+
+    $stmt = $pdo->prepare($archiveSched);
+    $stmt->execute([$status, $announceID]);
+
+    header("Location: ../announce.php?header=Announcement&removedAnnounceSuccess");
+}
+
+// Update Announcement
+if(isset($_POST['updateAnnounce'])){
+    $announceID = $_POST['announceID'];
+    $subject = $_POST['subject'];
+    $description = $_POST['description'];
+    
+    
+    $updatequery = "UPDATE announcement 
+    SET subject=?, description=?
+    WHERE announceID=?";
+
+    $stmt = $pdo->prepare($updatequery);
+    $stmt->execute([$subject, $description, $announceID]);
+
+    header("Location: ../profile/announce-content.php?header=Announcement&id=$announceID&view&profileAnnounceUpdated");
+}
+
 ?>
+
+
