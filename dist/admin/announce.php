@@ -5,7 +5,7 @@
     include '../connection/session_name.php';
 
     // ANNOUNCEMENT PREVIEW
-    $stmt = $pdo->prepare("SELECT * FROM announcement ORDER BY date ASC, time ASC");
+    $stmt = $pdo->prepare("SELECT * FROM announcement WHERE status='' ORDER BY date DESC, time DESC");
     $stmt->execute();
     $fetchAnnouncement = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -43,14 +43,29 @@
                     <p><?php echo $formattedDate.' '.$formattedTime?></p>
                     <h3><?php echo $announce['subject']?></h3>
                 </div>
-                
-                <div class="options">
-                    <button class="activeRed">Remove</button>
-                </div>
             </a>
+            <div class="options">
+                    <button type="button" class="activeRed" onclick="removeAnnounce(<?php echo $announce['announceID']; ?>)">Remove</button>
+            </div>
         </div>
         <br>
         <?php }?>
     </section>
 </body>
+<script>
+    // Deact Alert
+    function removeAnnounce(announceID) {
+        Swal.fire({
+            icon: "question",
+            title: "Remove",
+            text: "Are you sure you want to remove this announcement?",
+            showCancelButton: true,
+        }).then(function (result) {
+            if (result.isConfirmed) {
+                // Redirect to the PHP script with the accountID parameter
+                window.location.href = `./queries/teacher-query.php?removeAnnounce&id=${announceID}`;
+            }
+        });
+    }
+</script>
 </html>
