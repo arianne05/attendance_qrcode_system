@@ -5,7 +5,7 @@
     include '../connection/session_name.php';
 
     // FOR TABLE
-    $stmt = $pdo->prepare("SELECT * FROM student");
+    $stmt = $pdo->prepare("SELECT * FROM student WHERE accountID='$accountID'");
     $stmt->execute();
     $student = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>

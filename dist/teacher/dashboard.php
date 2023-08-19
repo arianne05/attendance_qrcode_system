@@ -5,17 +5,13 @@
     include '../connection/session_name.php';
 
     // Totals
-    $total_students = $pdo->query("SELECT COALESCE(COUNT(*), 0) FROM attendance_record WHERE accountID = '$accountID'")->fetchColumn();
-    $total_students_male = $pdo->query("SELECT COALESCE(COUNT(*), 0) FROM attendance_record
-            INNER JOIN  student WHERE attendance_record.studentNumber=student.studentNumber AND studentGender='Male'")->fetchColumn();
-    $total_students_female = $pdo->query("SELECT COALESCE(COUNT(*), 0) FROM attendance_record
-            INNER JOIN  student WHERE attendance_record.studentNumber=student.studentNumber AND studentGender='Female'")->fetchColumn();
-    $total_section = $pdo->query("SELECT COUNT(DISTINCT studentSection, studentYear) FROM attendance_record
-    INNER JOIN student ON attendance_record.studentNumber = student.studentNumber")->fetchColumn();
+    $total_students = $pdo->query("SELECT COALESCE(COUNT(*), 0) FROM student WHERE accountID = '$accountID'")->fetchColumn();
+    $total_students_male = $pdo->query("SELECT COALESCE(COUNT(*), 0) FROM student WHERE accountID = '$accountID' and studentGender='Male'")->fetchColumn();
+    $total_students_female = $pdo->query("SELECT COALESCE(COUNT(*), 0) FROM student WHERE accountID = '$accountID' and studentGender='Female'")->fetchColumn();
+    $total_section = $pdo->query("SELECT COUNT(DISTINCT studentSection, studentYear) FROM student WHERE accountID = '$accountID'")->fetchColumn();
 
     // Fetch attendance table for section table
-    $stmt = $pdo->prepare("SELECT * FROM attendance_record
-            INNER JOIN student ON attendance_record.studentNumber = student.studentNumber GROUP BY studentSection, studentYear");
+    $stmt = $pdo->prepare("SELECT * FROM student WHERE accountID = '$accountID' GROUP BY studentSection, studentYear");
     $stmt->execute();
     $sectionRec = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -92,8 +88,7 @@
                     <?php foreach($sectionRec as $section){
                          $studentSection= $section['studentSection'];
                          $studentYear= $section['studentYear'];
-                         $totality = $pdo->query("SELECT COALESCE(COUNT(*), 0) FROM attendance_record
-                         INNER JOIN  student WHERE attendance_record.studentNumber=student.studentNumber AND studentSection='$studentSection' 
+                         $totality = $pdo->query("SELECT COALESCE(COUNT(*), 0) FROM student WHERE accountID = '$accountID' AND studentSection='$studentSection' 
                          AND studentYear='$studentYear'")->fetchColumn();
                     ?>
                     <tbody>
