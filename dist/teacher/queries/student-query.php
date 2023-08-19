@@ -88,13 +88,25 @@ if(isset($_POST['editStudent'])){
 
 //Removed
 if(isset($_GET['remove']) && isset($_GET['id'])){
-    $studentID = $_GET['id'];
+    $studentNumber = $_GET['id'];
+    $accountID = $_GET['accountID'];
     $status = 'removed';
-    $deactquery = "UPDATE student SET status=? WHERE studentID=?";
+    $deactquery = "UPDATE student SET status=? WHERE studentNumber=?";
 
     $stmt = $pdo->prepare($deactquery);
-    $stmt->execute([$status, $studentID]);
-    header("Location: ../student.php?header=Student&removedTeacherSuccess");
+    $stmt->execute([$status, $studentNumber]);
+
+     // for admin recents
+     $recentLabel='archived';
+     $recentDate = date("Y-m-d");
+     $recentTime = date("H:i:s");
+ 
+     $addrecent = "INSERT INTO recents (accountID, studentNumber, recentDate, recentTime, recentLabel)
+     VALUES (?,?,?,?,?)";
+     $stmt = $pdo->prepare($addrecent);
+     $stmt->execute([$accountID, $studentNumber, $recentDate, $recentTime, $recentLabel]);
+
+    header("Location: ../registration.php?header=Student&removedTeacherSuccess");
 }
 
 //Restore
@@ -105,6 +117,6 @@ if(isset($_GET['restore']) && isset($_GET['id'])){
 
     $stmt = $pdo->prepare($deactquery);
     $stmt->execute([$status, $studentID]);
-    header("Location: ../student.php?header=Student&restoreTeacherSuccess");
+    header("Location: ../registration.php?header=Student&restoreTeacherSuccess");
 }
 ?>

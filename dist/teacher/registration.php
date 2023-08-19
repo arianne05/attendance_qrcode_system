@@ -5,7 +5,7 @@
     include '../connection/session_name.php';
 
     // FOR TABLE
-    $stmt = $pdo->prepare("SELECT * FROM student WHERE accountID='$accountID'");
+    $stmt = $pdo->prepare("SELECT * FROM student WHERE accountID='$accountID' AND status=''");
     $stmt->execute();
     $student = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -67,7 +67,7 @@
                                 <button class="edit">Edit</button>
                             </a>
                             <!-- Deactivate -->
-                            <button type="button" class="<?php echo $colorStatus;?>" onclick="<?php echo $alert?>('<?php echo $student['studentID']; ?>')"><?php echo $changeBtn?></button>
+                            <button type="button" class="<?php echo $colorStatus;?>" onclick="<?php echo $alert?>('<?php echo $student['studentNumber']; ?>', '<?php echo $accountID; ?>')"><?php echo $changeBtn?></button>
                         </td>
                     </tr>
                     <?php } ?>
@@ -90,7 +90,7 @@
 <!-- Sweet Alert Removed -->
 <script>
     // Removes Alert
-    function removeAlert(studentID) {
+    function removeAlert(studentID, accountID) {
         Swal.fire({
             icon: "question",
             title: "Deactivate",
@@ -99,7 +99,7 @@
         }).then(function (result) {
             if (result.isConfirmed) {
                 // Redirect to the PHP script with the accountID parameter
-                window.location.href = `./queries/student-query.php?remove&id=${studentID}`;
+                window.location.href = `./queries/student-query.php?remove&id=${studentID}&accountID=${accountID}`;
             }
         });
     }
