@@ -7,14 +7,14 @@ if (file_exists('../connection/alert.php')) {
     $reports = '../teacher/report.php?header=Reports';
     $recents = '../teacher/recent.php?header=Recent';
     $teachers = '../teacher/teacher.php?header=Teacher';
-    $students = '../teacher/student.php?header=Student';
+    $students = '../teacher/registration.php?header=Registration';
    
 } else {
     $dashboard = '../../teacher/dashboard.php?header=Dashboard';
     $reports = '../../teacher/report.php?header=Reports';
     $recents = '../../teacher/recent.php?header=Recent';
     $teachers = '../../teacher/teacher.php?header=Teacher';
-    $students = '../../teacher/student.php?header=Student';
+    $students = '../../teacher/registration.php?header=Registration';
 }
 
 
@@ -65,7 +65,7 @@ if (file_exists('../connection/alert.php')) {
                         Attendance
                         </a>
                     </li>
-                    <li><a href="<?php echo $students?>" class="link <?php echo ($current_page === "student.php") ? ' active' : ''; ?>">
+                    <li><a href="<?php echo $students?>" class="link <?php echo ($current_page === "registration.php") ? ' active' : ''; ?>">
                         <svg width="29" height="27" viewBox="0 0 29 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g id="Chalkboard Teacher" clip-path="url(#clip0_30_17)">
                                 <path id="Vector" d="M11.7812 18.5625C13.7833 18.5625 15.4062 17.0515 15.4062 15.1875C15.4062 13.3235 13.7833 11.8125 11.7812 11.8125C9.77922 11.8125 8.15625 13.3235 8.15625 15.1875C8.15625 17.0515 9.77922 18.5625 11.7812 18.5625Z" stroke="#868686" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
