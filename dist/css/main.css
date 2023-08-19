@@ -2711,7 +2711,6 @@
   display: flex;
   justify-content: space-between;
   width: 82vw;
-  height: 90vh;
   margin-left: 17vw;
   font-family: "Inter", sans-serif;
 }
@@ -2721,102 +2720,16 @@
   padding: 20px;
   margin-top: 40px;
   height: 40vh;
-  width: 75%;
-  background-color: white;
-  border: 1px solid #cdcdcd;
-  border-radius: 12px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-}
-
-.right-content {
-  width: 24%;
-}
-.right-content p {
-  font-size: 16px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.right-content .time-calendar {
-  background-color: white;
-  border: 1px solid #cdcdcd;
-  border-radius: 12px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  height: 33vh;
-}
-.right-content .button-calendar {
-  display: flex;
-  justify-content: space-between;
-}
-.right-content .button-calendar button {
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-right: 8px;
-  padding-left: 8px;
-  margin-bottom: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
-  border-radius: 20px;
-  border: 1px solid rgb(185, 185, 185);
-  background-color: transparent;
-}
-.right-content .button-calendar button:hover {
-  background-color: #549c6c;
-}
-.right-content #calendar {
-  max-width: 100%;
   width: 100%;
-  height: 26%;
-  padding-top: 0;
-  padding-left: 10px;
-  padding-bottom: 10px;
-  padding-right: 10px;
-  margin-top: 0;
-  background-color: white;
-  border-radius: 12px;
-}
-.right-content #calendar .header {
-  margin-bottom: 10px;
-  color: #3D3D3D;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin-top: 0;
-}
-.right-content #calendar .weekdays,
-.right-content #calendar .days {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  text-align: center;
-}
-.right-content #calendar .weekdays {
-  font-size: 10px;
-}
-.right-content #calendar .days span {
-  padding: 5px;
-  font-size: 12px;
-}
-.right-content #calendar .days span.current-day {
-  cursor: pointer;
-  background-color: #549c6c;
-  border-radius: 100%;
-}
-.right-content #clock {
-  font-family: Arial, sans-serif;
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-bottom: 0;
-  margin-bottom: 0;
-}
-.right-content #clock .time {
-  font-size: 27px;
-  color: #3D3D3D;
-}
-.right-content #clock .day {
-  font-size: 14px;
-  color: rgb(124, 124, 124);
 }
 
 .total-section-teacher {
+  margin-right: 1vw;
   width: 30%;
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   text-align: center;
   font-family: "Poppins", sans-serif;
   padding: 20px;
@@ -2855,25 +2768,35 @@
   color: #3D3D3D;
 }
 
-.total-category {
+.total-category-teacher {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
-.total-category .per-category {
+.total-category-teacher .per-category {
   padding-bottom: 20px;
   width: 100%;
+  height: 350px;
   display: flex;
   justify-content: space-between;
 }
+.total-category-teacher .category {
+  width: 70%;
+  margin: 10px;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  border-radius: 12px;
+}
 
 .table-category {
-  height: 400px;
+  height: 500px;
   padding: 20px;
   background-color: white;
   border: 1px solid #cdcdcd;
   border-radius: 12px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  overflow-y: auto;
 }
 .table-category table {
   width: 100%;
@@ -2893,6 +2816,36 @@
   border: 1px solid #cdcdcd;
   border-radius: 12px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.latest-attendance-teacher {
+  font-family: "Inter", sans-serif;
+  margin-left: 17vw;
+  width: 81vw;
+}
+.latest-attendance-teacher .container-latest-att {
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 15px;
+}
+.latest-attendance-teacher .circle-design {
+  display: flex;
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 0;
+  margin: 0;
+}
+.latest-attendance-teacher .circle-design .circle-green {
+  background-color: green;
+  border: 1px solid green;
+  border-radius: 100%;
+  width: 10px;
+  height: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 0;
 }
 
 * {
