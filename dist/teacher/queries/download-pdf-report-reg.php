@@ -27,6 +27,9 @@
     if(isset($_GET['totalReg'])){
         require('../profile/reports-view-pdf-reg.php');
     }
+    if(isset($_GET['totalAtt'])){
+        require('../profile/reports-view-pdf-att.php');
+    }
     
     $html = ob_get_contents();
     ob_get_clean();
