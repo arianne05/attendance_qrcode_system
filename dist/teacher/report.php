@@ -42,7 +42,7 @@
     <?php include_once '../navbar/sidebar-teacher.php';?>
     
     <section class="reports-total-container">
-      <a href="./profile/reports-view-totalUser.php?header=Reports" class="total-user">
+      <a href="./profile/reports-view-totalRegister.php?header=Reports" class="total-user">
           <div class="circle-user">
             <p></p>
           </div>
