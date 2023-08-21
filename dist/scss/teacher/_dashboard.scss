@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     width: 82vw;
-    height: 90vh;
+    // height: 90vh;
     margin-left: 17vw;
     // border: 1px solid black;
     font-family: "Inter", sans-serif;
@@ -13,115 +13,16 @@
     padding: 20px;
     margin-top: 40px;
     height: 40vh;
-    width: 75%;
+    width: 100%;
+}
+
+.total-section-teacher{
+    margin-right: 1vw;
+    width: 30%;
     background-color: white;
     border: 1px solid #cdcdcd;
     border-radius: 12px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-}
-
-.right-content{
-    width: 24%;
-    p {
-        font-size: 16px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-      }
-    .time-calendar {
-        background-color: white;
-        border: 1px solid #cdcdcd;
-        border-radius: 12px;
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        height: 33vh;
-      }
-      .button-calendar {
-        display: flex;
-        // justify-content: center;
-        justify-content: space-between;
-    
-        button {
-          padding-top: 4px;
-          padding-bottom: 4px;
-          padding-right: 8px;
-          padding-left: 8px;
-          margin-bottom: 20px;
-          margin-left: 20px;
-          margin-right: 20px;
-          border-radius: 20px;
-          border: 1px solid $primary-text-gray;
-          background-color: transparent;
-    
-          &:hover {
-            background-color: $primary-buttonBg-green;
-          }
-        }
-      }
-
-      // calendar
-  #calendar {
-    max-width: 100%;
-    width: 100%;
-    height: 26%;
-    padding-top: 0;
-    padding-left: 10px;
-    padding-bottom: 10px;
-    padding-right: 10px;
-    margin-top: 0;
-    background-color: white;
-    border-radius: 12px;
-
-    .header {
-      margin-bottom: 10px;
-      color: $tertiary-text-black;
-      padding-top: 5px;
-      padding-bottom: 5px;
-      margin-top: 0;
-    }
-
-    .weekdays,
-    .days {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      text-align: center;
-    }
-
-    .weekdays {
-      font-size: 10px;
-    }
-
-    .days span {
-      padding: 5px;
-      font-size: 12px;
-    }
-
-    .days span.current-day {
-      cursor: pointer;
-      background-color: $primary-buttonBg-green;
-      border-radius: 100%;
-    }
-  }
-  // time
-  #clock {
-    font-family: Arial, sans-serif;
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-bottom: 0;
-    margin-bottom: 0;
-
-    .time {
-      font-size: 27px;
-      color: $tertiary-text-black;
-    }
-
-    .day {
-      font-size: 14px;
-      color: $primary-text-gray2;
-    }
-  }
-}
-
-.total-section-teacher{
-    width: 30%;
     text-align: center;
     font-family: "Poppins", sans-serif;
     padding: 20px;
@@ -163,27 +64,42 @@
       }
 }
 
-.total-category{
+.total-category-teacher{
     width: 100%;
     display: flex;
     flex-direction: column;
+    // border: 1px solid black;
 
     .per-category{
         padding-bottom: 20px;
         width: 100%;
+        height: 350px;
         display: flex;
         justify-content: space-between;
         // border: 1px solid black;
+        a{
+          text-decoration: none;
+          color: $tertiary-text-black;
+        }
+    }
+    .category{
+      width: 70%;
+      margin: 10px;
+      padding: 10px;
+      background-color: white;
+    border: 1px solid #cdcdcd;
+    border-radius: 12px;
     }
 }
 
 .table-category{
-    height: 400px;
+    height: 500px;
     padding: 20px;
     background-color: white;
     border: 1px solid #cdcdcd;
     border-radius: 12px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    overflow-y: auto;
     table{
         width: 100%;
     }
@@ -206,4 +122,36 @@
         border-radius: 12px;
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     }
+}
+
+.latest-attendance-teacher{
+  font-family: "Inter", sans-serif;
+  margin-left: 17vw;
+  width: 81vw;
+
+  .container-latest-att{
+    background-color: white;
+    border: 1px solid #cdcdcd;
+    border-radius: 12px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 15px;
+  }
+  .circle-design {
+    display: flex;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 0;
+    margin: 0;
+
+    .circle-green {
+      background-color: green;
+      border: 1px solid green;
+      border-radius: 100%;
+      width: 10px;
+      height: 10px;
+      margin-left: 5px;
+      margin-right: 5px;
+      margin-bottom: 0;
+    }
+  }
 }

@@ -198,15 +198,15 @@
                         $formattedTime = $time->format('g:i A');
                         
                         $accountID = $recents['accountID'];
-                        $studentID = $recents['studentID'];
+                        $studentID = $recents['studentNumber'];
                         // Teacher Name
                         $stmt = $pdo->prepare("SELECT * FROM account_information WHERE accountID = :accountID");
                         $stmt->bindParam(':accountID', $accountID, PDO::PARAM_INT);
                         $stmt->execute();
                         $professor = $stmt->fetch(PDO::FETCH_ASSOC);
                         // Student Name
-                        $stmt = $pdo->prepare("SELECT * FROM student WHERE studentID = :studentID");
-                        $stmt->bindParam(':studentID', $studentID, PDO::PARAM_INT);
+                        $stmt = $pdo->prepare("SELECT * FROM student WHERE studentNumber = :studentNumber");
+                        $stmt->bindParam(':studentNumber', $studentID, PDO::PARAM_INT);
                         $stmt->execute();
                         $student = $stmt->fetch(PDO::FETCH_ASSOC);
 

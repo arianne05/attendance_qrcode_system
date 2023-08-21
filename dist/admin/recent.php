@@ -49,7 +49,7 @@
                     </thead>
                     <?php foreach($recent as $getRecent){
                         $accountID = $getRecent['accountID'];
-                        $studentID = $getRecent['studentID'];
+                        $studentID = $getRecent['studentNumber'];
                         
                         // Date Format
                         $date = new DateTime($getRecent['recentDate']);
@@ -66,8 +66,8 @@
                         $stmt->execute();
                         $fetchProf = $stmt->fetch(PDO::FETCH_ASSOC);
                         // Fetch student table
-                        $stmt = $pdo->prepare("SELECT * FROM student WHERE studentID = :studentID");
-                        $stmt->bindParam(':studentID', $studentID, PDO::PARAM_INT);
+                        $stmt = $pdo->prepare("SELECT * FROM student WHERE studentNumber = :studentNumber");
+                        $stmt->bindParam(':studentNumber', $studentID, PDO::PARAM_INT);
                         $stmt->execute();
                         $fetchStud = $stmt->fetch(PDO::FETCH_ASSOC);
 
