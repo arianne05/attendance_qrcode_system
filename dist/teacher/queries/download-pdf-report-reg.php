@@ -30,6 +30,9 @@
     if(isset($_GET['totalAtt'])){
         require('../profile/reports-view-pdf-att.php');
     }
+    if(isset($_GET['totalSec'])){
+        require('../profile/reports-view-pdf-sec.php');
+    }
     
     $html = ob_get_contents();
     ob_get_clean();

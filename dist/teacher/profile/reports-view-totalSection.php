@@ -58,7 +58,7 @@
             <div class="header-with-button">
                 <p class="header-activity">General Report</p>
                 <div class="buttons">
-                    <button class="pdfRed" onclick="window.open('../queries/download-pdf-report-reg.php?date_from=<?php echo $date_from2?>&date_to=<?php echo $date_to2?>&accountID=<?php echo $accountID?>&totalAtt')"><i class="fa-regular fa-file-pdf"></i></button>
+                    <button class="pdfRed" onclick="window.open('../queries/download-pdf-report-reg.php?date_from=<?php echo $date_from2?>&date_to=<?php echo $date_to2?>&accountID=<?php echo $accountID?>&totalSec')"><i class="fa-regular fa-file-pdf"></i></button>
                     <button class="csvGreen"><a href="../queries/download-csv-sec.php?date_from=<?php echo $date_from2?>&date_to=<?php echo $date_to2?>&accountID=<?php echo $accountID?>&sort_date"><i class="fa-solid fa-file-csv"></i></a></button>
                 </div>
             </div>
