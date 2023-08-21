@@ -74,6 +74,7 @@
                       <th>Subject</th>
                       <th>Time-in</th>
                       <th>Date</th>
+                      <th>Status</th>
                   </tr>
               </thead>
             <?php foreach($fetchAttendance as $attendance){ 
@@ -93,10 +94,11 @@
                     <td><?php echo $student['studentNumber']?></td>
                     <td><?php echo $student['firstname'].' '.$student['middlename'].' '.$student['lastname']?></td>
                     <td><?php echo $student['studentGender']?></td>   
-                    <td><?php echo $student['studentSection']?></td>
+                    <td><?php echo $attendance['qrSection']?></td>
                     <td><?php echo $attendance['qrSubject']?></td>
                     <td><?php echo $formattedTime?></td>
                     <td><?php echo $attendance['qrDate']?></td>
+                    <td><?php echo $attendance['qrLabel']?></td>
                 </tr>
               </tbody>
             <?php } }?>
