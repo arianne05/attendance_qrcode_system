@@ -60,7 +60,7 @@
             <p>Total Student Attendance</p>
           </div>
       </div>
-      <a href="./profile/reports-view-totalTeacher.php?header=Reports" class="total-teacher">
+      <a href="./profile/reports-view-totalSection.php?header=Reports" class="total-teacher">
         <div class="circle-user">
               <p></p>
           </div>
