@@ -77,6 +77,10 @@
         display: flex;
         justify-content: space-between;
         // border: 1px solid black;
+        a{
+          text-decoration: none;
+          color: $tertiary-text-black;
+        }
     }
     .category{
       width: 70%;

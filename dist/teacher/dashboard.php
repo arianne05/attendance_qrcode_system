@@ -8,10 +8,10 @@
     $total_students = $pdo->query("SELECT COALESCE(COUNT(*), 0) FROM student WHERE accountID = '$accountID'")->fetchColumn();
     $total_students_male = $pdo->query("SELECT COALESCE(COUNT(*), 0) FROM student WHERE accountID = '$accountID' and studentGender='Male'")->fetchColumn();
     $total_students_female = $pdo->query("SELECT COALESCE(COUNT(*), 0) FROM student WHERE accountID = '$accountID' and studentGender='Female'")->fetchColumn();
-    $total_section = $pdo->query("SELECT COUNT(DISTINCT studentSection, studentYear) FROM student WHERE accountID = '$accountID'")->fetchColumn();
+    $total_section = $pdo->query("SELECT COUNT(DISTINCT section, schoolYear, subject) FROM teacher_handle WHERE accountID = '$accountID'")->fetchColumn();
 
     // Fetch attendance table for section table
-    $stmt = $pdo->prepare("SELECT * FROM student WHERE accountID = '$accountID' GROUP BY studentSection, studentYear");
+    $stmt = $pdo->prepare("SELECT * FROM teacher_handle WHERE accountID = '$accountID' GROUP BY section, schoolYear, subject");
     $stmt->execute();
     $sectionRec = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -43,12 +43,12 @@
                     <p>Governor Ferrer Memorial National Highschool</p>
                     <p><span class="school-label">Total Attendance Students</span></p>
                 </div>
-                <button>View Report</button>
+                <a href="./report.php?header=Reports"><button>View Report</button></a>
             </div>
 
             <div class="total-category-teacher">
                 <div class="per-category">
-                    <div class="category">
+                    <a href="./report.php?header=Reports" class="category">
                         <div class="male-img">
                             <img src="../img/male-icon.png" alt="">
                         </div>
@@ -56,8 +56,8 @@
                             <h1><?php echo $total_students_male?> <span>total</span></h1>
                             <p>Male Student</p>
                         </div>
-                    </div>
-                    <div class="category">
+                    </a>
+                    <a href="./report.php?header=Reports" class="category">
                         <div class="female-img">
                             <img src="../img/female-icon.png" alt="">
                         </div>
@@ -65,8 +65,8 @@
                             <h1><?php echo $total_students_female?> <span>total</span></h1>
                             <p>Female Student</p>
                         </div>
-                    </div>
-                    <div class="category">
+                    </a>
+                    <a href="./report.php?header=Reports" class="category">
                         <div class="prof-img">
                             <img src="../img/prof-icon.png" alt="">
                         </div>
@@ -74,7 +74,7 @@
                             <h1><?php echo $total_section?> <span>total</span></h1>
                             <p>Section</p>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="table-category">
                     <table id="section" class="display">
@@ -82,20 +82,17 @@
                         <tr>
                             <th>Section Name</th>
                             <th>School Year</th>
-                            <th>Total Number</th>
+                            <th>Subject</th>
                         </tr>
                     </thead>
                     <?php foreach($sectionRec as $section){
-                         $studentSection= $section['studentSection'];
-                         $studentYear= $section['studentYear'];
-                         $totality = $pdo->query("SELECT COALESCE(COUNT(*), 0) FROM student WHERE accountID = '$accountID' AND studentSection='$studentSection' 
-                         AND studentYear='$studentYear'")->fetchColumn();
+                      
                     ?>
                     <tbody>
                         <tr>
-                            <td><?php echo $studentSection?></td>
-                            <td><?php echo $studentYear?></td>
-                            <td><?php echo $totality?></td>
+                            <td><?php echo $section['section']?></td>
+                            <td><?php echo $section['schoolYear']?></td>
+                            <td><?php echo $section['subject']?></td>
                         </tr>
                     </tbody>
                     <?php } ?>

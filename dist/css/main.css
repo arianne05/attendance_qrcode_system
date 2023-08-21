@@ -2780,6 +2780,10 @@
   display: flex;
   justify-content: space-between;
 }
+.total-category-teacher .per-category a {
+  text-decoration: none;
+  color: #3D3D3D;
+}
 .total-category-teacher .category {
   width: 70%;
   margin: 10px;
