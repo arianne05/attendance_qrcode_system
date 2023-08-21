@@ -51,6 +51,11 @@ if(isset($_POST['addTeacher'])){
         $teacherSection = !empty($_POST['teacherSection' . $i]) ? $_POST['teacherSection' . $i] : "";
         $subject = !empty($_POST['teacherSubject' . $i]) ? $_POST['teacherSubject' . $i] : "";
 
+        $convertFromTime = strtotime($schedFromValue);
+        $schedFrom= date('H:i:s', $convertFromTime);
+        $convertToTime = strtotime($schedToValue);
+        $schedTo= date('H:i:s', $convertToTime);
+
         if (!empty($schedFromValue) && !empty($schedToValue) && !empty($teacherFromSchoolYear) && !empty($teacherToSchoolYear) && !empty($teacherGrade) && !empty($teacherSection) && !empty($subject)) {
             $schoolYear = $teacherFromSchoolYear . '-' . $teacherToSchoolYear;
             $section = $teacherGrade . '-' . $teacherSection;
@@ -62,7 +67,9 @@ if(isset($_POST['addTeacher'])){
                 'schoolYear' => $schoolYear,
                 'section' => $section,
                 'subject' => $subject,
-                'schedule' => $sched
+                'schedule' => $sched,
+                'schedFrom' => $schedFrom,
+                'schedTo' => $schedTo
             ];
         } else {
             break; // Stop the loop if any of the required fields are empty
@@ -70,8 +77,8 @@ if(isset($_POST['addTeacher'])){
     }
     if (!empty($teacherData)) {
         // Prepare the query for multiple inserts
-        $addSectionQuery = "INSERT INTO teacher_handle (accountID, schoolYear, section, subject, schedule)
-                            VALUES (:accountID, :schoolYear, :section, :subject, :schedule)";
+        $addSectionQuery = "INSERT INTO teacher_handle (accountID, schoolYear, section, subject, schedule, schedFrom, schedTo)
+                            VALUES (:accountID, :schoolYear, :section, :subject, :schedule, :schedFrom, :schedTo)";
 
         $stmt = $pdo->prepare($addSectionQuery);
 
