@@ -39,8 +39,10 @@
                 $subject=$sec['subject'];
                 $Getsection=$sec['section'];
                 $total_per_section = $pdo->query("SELECT COALESCE(COUNT(*), 0) FROM attendance_record WHERE qrSubject='$subject' AND qrSection='$Getsection' AND accountID='$accountID'")->fetchColumn();
+            
+                $getPath ='accountID='.$accountID.'&qrSubjec='.$subject.'&qrSection='.$Getsection.'&handleID='.$sec['handleID'];
             ?>
-            <a href="#" class="per-container">
+            <a href="./attendance-qr.php?header=Attendance&<?php echo $getPath?>" class="per-container">
                 <div class="container-one">
                     <img src="../img/male-icon.png" alt="">
                     <div class="header-attendance">

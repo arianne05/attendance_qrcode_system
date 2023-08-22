@@ -23,17 +23,71 @@
     <section class="section-camera">
         <div class="vid-preview">
             <div class="preview-cam">
-                <video id="preview" width="50%"></video>
+                <video id="preview" width="100%"></video>
             </div>
             <div class="preview-scan-info">
-                <label for="">Scan QR Code</label>
-                <input type="text" name="text" id="text" readonly placeholder="Scan QR Here">
+                <div class="img-studentNumber">
+                    <img src="../img/female-icon.png" alt="">
+                    <p>201912344</p>
+                </div>
+                
+                <div class="scan-header">
+                    <div class="by-label">
+                        <label for="">Name</label>
+                        <input type="text" name="text" id="text" readonly placeholder="Scan QR Here">
+                    </div>
+                    <div class="by-label">
+                        <label for="">Section</label>
+                        <input type="text" name="text" id="studentNumber" readonly>
+                    </div>
+                    <div class="by-label">
+                        <label for="">School Year</label>
+                        <input type="text" name="text" id="studentNumber" readonly>
+                    </div>
+                </div>
+                
+                <div class="scan-alert">
+                    Your On-Time!
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="tbl-attendance">
+            <br><h2>Record</h2><br>
+            <div class="container-tbl-att">
+            <div class="circle-design">
+                <p class="circle-green"></p>
+                <p class="circle-green"></p>
+                <p class="circle-green"></p>
+            </div>
+            <br>
+            <table id="student" class="display">
+                <thead>
+                    <th>Student Number</th>
+                    <th>Name</th>
+                    <th>Section</th>
+                    <th>Subject</th>
+                    <th>Status</th>
+                    <th>Option</th>
+                </thead>
+                <tbody>
+                    <td>201912344</td>
+                    <td>Arianne Quimpo</td>
+                    <td>BSIT 4-3</td>
+                    <td>Math</td>
+                    <td>on-time</td>
+                    <td><button class="archive">Remove</button></td>
+                </tbody>
+            </table>
             </div>
         </div>
     </section>
-    
-
-    <script>
+</body>
+<script>    
+    new DataTable('#student');
+</script>
+<script>
         let scanner = new Instascan.Scanner({video: document.getElementById('preview')});
         Instascan.Camera.getCameras().then(function(cameras){
             if(cameras.length > 0){
@@ -48,6 +102,5 @@
         scanner.addListener('scan',function(c){
             document.getElementById('text').value=c;
         });
-    </script>
-</body>
+</script>
 </html>
