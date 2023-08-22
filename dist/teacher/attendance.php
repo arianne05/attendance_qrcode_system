@@ -5,7 +5,7 @@
     include '../connection/session_name.php';
 
     // Fetch attendance table for section table
-    $stmt = $pdo->prepare("SELECT * FROM teacher_handle WHERE accountID = '$accountID' GROUP BY section, schoolYear, subject");
+    $stmt = $pdo->prepare("SELECT * FROM teacher_handle WHERE accountID = '$accountID' AND status='' GROUP BY section, schoolYear, subject");
     $stmt->execute();
     $sectionRec = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -43,11 +43,16 @@
             <a href="#" class="per-container">
                 <div class="container-one">
                     <img src="../img/male-icon.png" alt="">
-                    <div>
-                        <h1><?php echo $total_per_section?> <span class="totalClass">TOTAL</span>
-                        <h3><?php echo $sec['section']?></h3>
-                        <p>Schedule: <?php echo $sec['schedule']?></p>
-                        <p>School Year: <?php echo $sec['schoolYear']?></p>
+                    <div class="header-attendance">
+                        <div class="text">
+                            <h1><?php echo $total_per_section?> <span class="totalClass">TOTAL</span>
+                            <h3><?php echo $sec['section']?></h3>
+                            <p>Schedule: <?php echo $sec['schedule']?></p>
+                            <p>School Year: <?php echo $sec['schoolYear']?></p>
+                        </div>
+                        <div class="iconTrash">
+                            <button type="button" onclick="removeSchedule('<?php echo $sec['handleID']; ?>')"><i class="fa-solid fa-trash"></i></button>
+                        </div>
                     </div>
                 </div>
             </a>
@@ -58,4 +63,21 @@
 </body>
 <script src="../js/modal.js"></script>
 <script src="../js/addInputType.js"></script>
+<script>
+    // Remove Alert
+    function removeSchedule(handleID) {
+        Swal.fire({
+            icon: "question",
+            title: "Remove",
+            text: "Are you sure you want to remove this section?",
+            showCancelButton: true,
+        }).then(function (result) {
+            if (result.isConfirmed) {
+                // Redirect to the PHP script with the accountID parameter
+                window.location.href = `./queries/add-sched-query.php?remove&handleID=${handleID}`;
+            }
+        });
+    }
+</script>
+
 </html>

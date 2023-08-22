@@ -70,4 +70,27 @@ if(isset($_POST['addScheduleTeacher'])){
     
     header("Location: ../attendance.php?header=Attendance&updateSchedSuccess");
 }
+
+// Remove/Archive Schedule
+if(isset($_GET['remove'])){
+    $handleID = $_GET['handleID'];
+    $status = 'archived';
+    $archiveSched = "UPDATE teacher_handle SET status=? WHERE handleID=?";
+
+    $stmt = $pdo->prepare($archiveSched);
+    $stmt->execute([$status, $handleID]);
+
+    // Fetch the teacher's first name and accountID using the handleID
+    $fetchTeacherQuery = "SELECT * FROM account_information 
+        INNER JOIN teacher_handle  ON account_information.accountID = teacher_handle.accountID
+        WHERE teacher_handle.handleID = :handleID";
+    $fetchStmt = $pdo->prepare($fetchTeacherQuery);
+    $fetchStmt->execute(['handleID' => $handleID]);
+
+    // Get the first name and accountID from the result
+    $teacher = $fetchStmt->fetch();
+    $firstname = $teacher['firstname'];
+    $accountID = $teacher['accountID'];
+    header("Location: ../attendance.php?header=Attendance&removedSchedSuccess");
+}
 ?>

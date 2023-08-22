@@ -49,5 +49,28 @@
         p{
             font-size: 13px;
         }
+        .header-attendance{
+            display: flex;
+        }
+        .iconTrash{
+            button{
+                border: none;
+                background: none;
+                padding: 0;
+                outline: none;
+                cursor: pointer;
+                color: #bebebe;
+                display: flex;
+                justify-content: flex-end; /* Align the icon to the right */
+                align-items: flex-start; /* Align the icon to the top */
+                margin-top: -10px; /* Adjust as needed to fine-tune the vertical positioning */
+                &:hover {
+                    color: red;
+                }
+                i{
+                    font-size: 15px;
+                }
+            }
+        }
     }
 }
