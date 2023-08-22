@@ -1,8 +1,13 @@
+<?php
+    session_start();
+    include '../connection/db_conn.php';
+    include '../connection/session.php';
+    include '../connection/session_name.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php include '../connection/link.php'?>
     <!-- Link -->
     <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
@@ -10,15 +15,23 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="vid-preview">
-        <div class="preview-cam">
-            <video id="preview" width="100%"></video>
+    <!-- Topbar -->
+    <?php include_once '../navbar/topbar-teacher.php'?>
+    <!-- Sidebar -->
+    <?php include_once '../navbar/sidebar-teacher.php'?>
+
+    <section class="section-camera">
+        <div class="vid-preview">
+            <div class="preview-cam">
+                <video id="preview" width="50%"></video>
+            </div>
+            <div class="preview-scan-info">
+                <label for="">Scan QR Code</label>
+                <input type="text" name="text" id="text" readonly placeholder="Scan QR Here">
+            </div>
         </div>
-        <div class="preview-scan-info">
-            <label for="">Scan QR Code</label>
-            <input type="text" name="text" id="text" readonly placeholder="Scan QR Here">
-        </div>
-    </div>
+    </section>
+    
 
     <script>
         let scanner = new Instascan.Scanner({video: document.getElementById('preview')});
