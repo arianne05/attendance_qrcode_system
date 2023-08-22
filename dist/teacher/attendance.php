@@ -28,7 +28,7 @@
     <section class="overview-attendance">
         <h2>My Section</h2>
         <div class="section-attendance-container">
-            <a href="#" class="per-container">
+            <a href="#" onclick="openModalDetailTeacher()" class="per-container">
                 <div class="container-one addNew">
                     <div>
                         <h1>+ Add New</span>
@@ -54,5 +54,8 @@
             <?php }?>
         </div>
     </section>
+    <?php include_once './modal/add-schedule.php';?>
 </body>
+<script src="../js/modal.js"></script>
+<script src="../js/addInputType.js"></script>
 </html>
