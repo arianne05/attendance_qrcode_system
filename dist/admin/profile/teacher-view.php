@@ -6,9 +6,11 @@ include '../../connection/session_name.php';
 
 $accountID = $_GET['id'];
 $status =  $pdo->query("SELECT * FROM account_information WHERE accountID = '$accountID' AND position = 'teacher'")->fetch();
+// $editInfo = $pdo->query("SELECT * FROM account_information 
+//         INNER JOIN teacher_handle ON account_information.accountID = teacher_handle.accountID
+//         WHERE account_information.accountID = '$accountID' AND account_information.position = 'teacher'")->fetch();
 $editInfo = $pdo->query("SELECT * FROM account_information 
-        INNER JOIN teacher_handle ON account_information.accountID = teacher_handle.accountID
-        WHERE account_information.accountID = '$accountID' AND account_information.position = 'teacher'")->fetch();
+        WHERE accountID = '$accountID' AND position = 'teacher'")->fetchAll();
 
 $sectionHandle = $pdo->query("SELECT * FROM account_information 
         INNER JOIN teacher_handle ON account_information.accountID = teacher_handle.accountID
@@ -32,11 +34,12 @@ $sectionHandle = $pdo->query("SELECT * FROM account_information
             <div class="edit-main-container">
                 <h3>Personal Information</h3>
                 <br>
+                <?php foreach($editInfo as $view){?>
                 <div class="section-container">
                     <!-- Image -->
                     <div class="image-edit-container">
                         <img src="../../img/user-icon-default/user-male-default.png" alt="">
-                        <label for="id">#<?php echo $editInfo['accountID']?></label>
+                        <label for="id">#<?php echo $view['accountID']?></label>
                         <label for="status" class="activeGreenLabel"><?php echo $status['status']?></label>
                     </div>
 
@@ -45,15 +48,15 @@ $sectionHandle = $pdo->query("SELECT * FROM account_information
                         <!-- Field 1 -->
                         <div class="field-one">
                             <div class="text-label-edit">
-                                <p><?php echo $editInfo['firstname']?></p>
+                                <p><?php echo $view['firstname']?></p>
                                 <label for="editFirstName">First Name</label>
                             </div>
                             <div class="text-label-edit">
-                                <p><?php echo $editInfo['middlename']?></p>
+                                <p><?php echo $view['middlename']?></p>
                                 <label for="editFirstName">Middle Name</label>
                             </div>
                             <div class="text-label-edit">
-                                <p><?php echo $editInfo['lastname']?></p>
+                                <p><?php echo $view['lastname']?></p>
                                 <label for="editFirstName">Last Name</label>
                             </div>
                         </div>
@@ -61,15 +64,15 @@ $sectionHandle = $pdo->query("SELECT * FROM account_information
                         <!-- Field 2 -->
                         <div class="field-one">
                             <div class="text-label-edit">
-                                <p><?php echo $editInfo['sex']?></p>
+                                <p><?php echo $view['sex']?></p>
                                 <label for="editFirstName">Sex</label>
                             </div>
                             <div class="text-label-edit">
-                                <p><?php echo $editInfo['username']?></p>
+                                <p><?php echo $view['username']?></p>
                                 <label for="editFirstName">Registered Username</label>
                             </div>
                             <div class="text-label-edit">
-                                <p><?php echo $editInfo['password']?></p>
+                                <p><?php echo $view['password']?></p>
                                 <label for="editFirstName">Password</label>
                             </div>
                         </div>
@@ -77,7 +80,7 @@ $sectionHandle = $pdo->query("SELECT * FROM account_information
                         <!-- Field 2 -->
                         <div class="field-one">
                             <div class="text-label-edit">
-                                <p><?php echo $editInfo['faculty']?></p>
+                                <p><?php echo $view['faculty']?></p>
                                 <label for="editFirstName">Faculty/Department</label>
                             </div>
                             <div class="text-label-edit">
@@ -87,6 +90,7 @@ $sectionHandle = $pdo->query("SELECT * FROM account_information
                         </div>
                     </div>
                 </div>
+                <?php }?>
                 
                 <br>
                 <h3>Section Handled</h3>
