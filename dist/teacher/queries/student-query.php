@@ -142,4 +142,38 @@ if(isset($_GET['deactivate'])){
 
     header("Location: ../registration.php?header=Student&removedTeacherSuccess");
 }
+
+//Scan on submit
+if(isset($_POST['text'])){
+    $studentNumber=$_POST['text'];
+    $accountID= $_POST['accountID'];
+
+    $qrDate = date("Y-m-d");
+    // Set the timezone to Asia/Manila (Philippine time)
+    date_default_timezone_set('Asia/Manila');
+    $qrTime = date("H:i:s");
+
+    $qrSubject = $_POST['qrSubject'];
+    $qrSection = $_POST['qrSection'];
+    $handleID = $_POST['handleID'];
+
+    $getPath ='accountID='.$accountID.'&qrSubjec='.$qrSubject.'&qrSection='.$qrSection.'&handleID='.$handleID;
+
+    $addquery = "INSERT INTO attendance_record (accountID, studentNumber, qrDate, qrTime, qrSubject, qrSection)
+    VALUES (?, ?, ?, ?, ?, ?)";
+    $stmt = $pdo->prepare($addquery);
+    $stmt->execute([$accountID, $studentNumber, $qrDate, $qrTime, $qrSubject, $qrSection]);
+
+    // Student Name
+    $stmt = $pdo->prepare("SELECT * FROM student WHERE studentNumber = :studentNumber");
+    $stmt->bindParam(':studentNumber', $studentNumber, PDO::PARAM_INT);
+    $stmt->execute();
+    $student = $stmt->fetch(PDO::FETCH_ASSOC);
+    $studFullname= $student['firstname'].' '.$student['middlename'].' '.$student['lastname'];
+    $studSection= $student['studentSection'];
+    $studYear= $student['studentYear'];
+
+    header("Location: ../attendance-qr.php?header=Attendance&$getPath&fullname=$studFullname&studSec=$studSection&studYear=$studYear&successAttendance");
+  
+}
 ?>
