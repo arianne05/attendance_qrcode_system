@@ -41,7 +41,7 @@
                 <h1><?php echo $total_students;?></h1>
                 <div class="school-name">
                     <p>Governor Ferrer Memorial National Highschool</p>
-                    <p><span class="school-label">Total Attendance Students</span></p>
+                    <p><span class="school-label">Total Registered Students</span></p>
                 </div>
                 <a href="./report.php?header=Reports"><button>View Report</button></a>
             </div>

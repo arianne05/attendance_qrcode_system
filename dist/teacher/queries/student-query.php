@@ -76,6 +76,8 @@ if(isset($_POST['editStudent'])){
     // for admin recents
     $recentLabel='edited';
     $recentDate = date("Y-m-d");
+    // Set the timezone to Asia/Manila (Philippine time)
+    date_default_timezone_set('Asia/Manila');
     $recentTime = date("H:i:s");
 
     $addrecent = "INSERT INTO recents (accountID, studentNumber, recentDate, recentTime, recentLabel)
@@ -99,6 +101,8 @@ if(isset($_GET['remove']) && isset($_GET['id'])){
      // for admin recents
      $recentLabel='archived';
      $recentDate = date("Y-m-d");
+     // Set the timezone to Asia/Manila (Philippine time)
+     date_default_timezone_set('Asia/Manila');
      $recentTime = date("H:i:s");
  
      $addrecent = "INSERT INTO recents (accountID, studentNumber, recentDate, recentTime, recentLabel)
@@ -121,26 +125,34 @@ if(isset($_GET['restore']) && isset($_GET['id'])){
 }
 
 //Removed student attendance
-if(isset($_GET['deactivate'])){
-    $studentNumber = $_GET['id'];
+if(isset($_GET['removeAttendance'])){
+    $attendanceID = $_GET['attendanceID'];
+    $studentNumber = $_GET['studentNumber'];
     $accountID = $_GET['accountID'];
     $status = 'removed';
-    $deactquery = "UPDATE student SET status=? WHERE studentNumber=?";
+    $deactquery = "UPDATE attendance_record SET status=? WHERE attendanceID=?";
 
     $stmt = $pdo->prepare($deactquery);
-    $stmt->execute([$status, $studentNumber]);
+    $stmt->execute([$status, $attendanceID]);
 
-     // for admin recents
-     $recentLabel='archived';
-     $recentDate = date("Y-m-d");
-     $recentTime = date("H:i:s");
- 
-     $addrecent = "INSERT INTO recents (accountID, studentNumber, recentDate, recentTime, recentLabel)
-     VALUES (?,?,?,?,?)";
-     $stmt = $pdo->prepare($addrecent);
-     $stmt->execute([$accountID, $studentNumber, $recentDate, $recentTime, $recentLabel]);
+    // for admin recents
+    // Set the timezone to Asia/Manila (Philippine time)
+    date_default_timezone_set('Asia/Manila');
+    $recentLabel='archived';
+    $recentDate = date("Y-m-d");
+    $recentTime = date("H:i:s");
 
-    header("Location: ../registration.php?header=Student&removedTeacherSuccess");
+    $addrecent = "INSERT INTO recents (accountID, studentNumber, recentDate, recentTime, recentLabel)
+    VALUES (?,?,?,?,?)";
+    $stmt = $pdo->prepare($addrecent);
+    $stmt->execute([$accountID, $studentNumber, $recentDate, $recentTime, $recentLabel]);
+
+    $subject = $_GET['qrSubjec'];
+    $Getsection = $_GET['qrSection'];
+    $handleID = $_GET['handleID'];
+
+    $getPath ='accountID='.$accountID.'&qrSubjec='.$subject.'&qrSection='.$Getsection.'&handleID='.$handleID;
+    header("Location: ../attendance-qr.php?header=Attendance&$getPath&removeAttendanceSuccess");
 }
 
 //Scan on submit

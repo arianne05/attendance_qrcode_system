@@ -12,7 +12,7 @@
     $getDate=date("Y-m-d");
 
     // Fetch attendance table
-    $stmt = $pdo->prepare("SELECT * FROM attendance_record WHERE accountID='$accountID' AND qrSubject='$getSubject' AND qrSection='$getSection' AND qrDate='$getDate'");
+    $stmt = $pdo->prepare("SELECT * FROM attendance_record WHERE accountID='$accountID' AND status='' AND qrSubject='$getSubject' AND qrSection='$getSection' AND qrDate='$getDate'");
     $stmt->execute();
     $fetchAttendance = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -143,7 +143,7 @@
                     <td><?php echo $attendane['qrSubject']?></td>
                     <td><?php echo $formattedTime?></td>
                     <td>NA</td>
-                    <td><button class="archive">Remove</button></td>
+                    <td><button class="archive" onclick="removeAttendance('<?php echo $attendane['attendanceID'];?>','<?php echo $attendane['studentNumber'];?>','<?php echo $accountID?>','<?php echo $_GET['qrSubjec'];?>','<?php echo $_GET['qrSection'];?>','<?php echo $_GET['handleID'];?>')" name="removeAttendance">Remove</button></td>
                 </tbody>
                 <?php }?>
             </table>
@@ -187,6 +187,36 @@
         <?php
     }
 ?>
-    
+<?php 
+    if(isset($_GET['removeAttendanceSuccess'])){
+        ?>
+            <script>
+                Swal.fire(
+                'Attendance Removed!',
+                'Click to continue!',
+                'success'
+                )
+            </script>
+        <?php
+    }
+?>
+
+<!-- Sweet Alert Removed -->
+<script>
+    // Removes Alert
+    function removeAttendance(attendanceID, studentNumber, accountID, qrSubjec, qrSection, handleID) {
+        Swal.fire({
+            icon: "question",
+            title: "Remove",
+            text: "Are you sure you want to remove this record?",
+            showCancelButton: true,
+        }).then(function (result) {
+            if (result.isConfirmed) {
+                // Redirect to the PHP script with the accountID parameter
+                window.location.href = `./queries/student-query.php?removeAttendance&attendanceID=${attendanceID}&studentNumber=${studentNumber}&accountID=${accountID}&qrSubjec=${qrSubjec}&qrSection=${qrSection}&handleID=${handleID}`;
+            }
+        });
+    }
+</script>
 
 </html>

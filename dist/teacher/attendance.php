@@ -38,8 +38,14 @@
             <?php foreach($sectionRec as $sec){
                 $subject=$sec['subject'];
                 $Getsection=$sec['section'];
-                $total_per_section = $pdo->query("SELECT COALESCE(COUNT(*), 0) FROM attendance_record WHERE qrSubject='$subject' AND qrSection='$Getsection' AND accountID='$accountID'")->fetchColumn();
-            
+                $total_per_section = $pdo->query("SELECT COALESCE(COUNT(*), 0) FROM attendance_record WHERE status='' AND qrSubject='$subject' AND qrSection='$Getsection' AND accountID='$accountID'")->fetchColumn();
+                
+                // Time Format
+                $timeFrom = new DateTime($sec['schedFrom']);
+                $formattedTimeFrom = $timeFrom->format('g:i A');
+                $timeTo = new DateTime($sec['schedTo']);
+                $formattedTimeTo = $timeTo->format('g:i A');
+                
                 $getPath ='accountID='.$accountID.'&qrSubjec='.$subject.'&qrSection='.$Getsection.'&handleID='.$sec['handleID'];
             ?>
             <a href="./attendance-qr.php?header=Attendance&<?php echo $getPath?>" class="per-container">
@@ -49,7 +55,7 @@
                         <div class="text">
                             <h1><?php echo $total_per_section?> <span class="totalClass">TOTAL</span>
                             <h3><?php echo $sec['section']?></h3>
-                            <p>Schedule: <?php echo $sec['schedule']?></p>
+                            <p>Schedule: <?php echo $formattedTimeFrom.' '.$formattedTimeTo?></p>
                             <p>School Year: <?php echo $sec['schoolYear']?></p>
                         </div>
                         <div class="iconTrash">
