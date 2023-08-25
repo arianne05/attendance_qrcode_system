@@ -44,6 +44,18 @@ if(isset($_GET['warningLogin4'])){
         </script>
     <?php
 }
+if(isset($_GET['inactiveAccount'])){
+    ?>
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Inactive Account',
+                text: 'Please contact your admin to reactivate account'
+            })
+        </script>
+    <?php
+}
+
 
 //Session error alert
 if(isset($_GET['errorSession'])){

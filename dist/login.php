@@ -22,6 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $position = $user['position'];
             $accountID = $user['accountID'];
             $firstname = $user['firstname'];
+            $status = $user['status'];
             $_SESSION['accountID']= $accountID;
 
             $logLabel='logged in';
@@ -39,11 +40,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     header("Location: student_dashboard.php");
                     break;
                 case 'teacher':
-                    $addLogin="INSERT INTO login_activity (accountID, logDate, logTime, logLabel) 
+                    if($status == 'inactive'){
+                        header("Location: index.php?inactiveAccount");
+                    } else{
+                        $addLogin="INSERT INTO login_activity (accountID, logDate, logTime, logLabel) 
                                 VALUE (?,?,?,?)";
-                    $stmt = $pdo->prepare($addLogin);
-                    $stmt->execute([$accountID, $logDate, $logTime, $logLabel]);
-                    header("Location: teacher/dashboard.php?header=Dashboard&loginSuccess");
+                        $stmt = $pdo->prepare($addLogin);
+                        $stmt->execute([$accountID, $logDate, $logTime, $logLabel]);
+                        header("Location: teacher/dashboard.php?header=Dashboard&loginSuccess");
+                    }
                     break;
                 default:
                     // If the position is not recognized, redirect to a generic dashboard
