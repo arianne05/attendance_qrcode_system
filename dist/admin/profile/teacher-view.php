@@ -121,12 +121,18 @@ $sectionHandle = $pdo->query("SELECT * FROM account_information
                                             <th>Option</th>
                                         </tr>
                                     </thead>
-                                    <?php foreach ($sections as $section) { ?>
+                                    <?php foreach ($sections as $section) { 
+                                        // Time Format
+                                        $timeFrom = new DateTime($section['schedFrom']);
+                                        $formattedTimeFrom = $timeFrom->format('g:i A');
+                                        $timeTo = new DateTime($section['schedTo']);
+                                        $formattedTimeTo = $timeTo->format('g:i A');
+                                    ?>
                                     <tbody>
                                         <tr>
                                             <td><?php echo $section['subject']; ?></td>
                                             <td><?php echo $section['section']; ?></td>
-                                            <td><?php echo $section['schedule']; ?></td>
+                                            <td><?php echo $formattedTimeFrom.' '.$formattedTimeTo; ?></td>
                                             <td><button type="button" class="archive" onclick="removeSchedule('<?php echo $section['handleID']; ?>')">Remove</button></td>
                                         </tr>
                                     </tbody>

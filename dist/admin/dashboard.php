@@ -11,9 +11,9 @@
     $total_prof = $pdo->query("SELECT COALESCE(COUNT(*), 0) FROM account_information WHERE position='teacher'")->fetchColumn();
     
     // Fetch attendance table
-    $stmt = $pdo->prepare("SELECT * FROM attendance_record");
+    $stmt = $pdo->prepare("SELECT * FROM account_information WHERE position='teacher' ORDER BY dateAdded DESC");
     $stmt->execute();
-    $attendance = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $fetchReg = $stmt->fetchAll(PDO::FETCH_ASSOC);
     // Fetch account_info table
     $stmt = $pdo->prepare("SELECT * FROM account_information WHERE position='teacher'  ORDER BY accountID DESC LIMIT 5");
     $stmt->execute();
@@ -93,7 +93,7 @@
 
             <!-- Table section -->
             <div class="table-header">
-                <p>Latest</p>
+                <p>Latest Registered</p>
             </div>
             
             <!-- Table -->
@@ -109,40 +109,25 @@
                     <table id="student" class="display">
                     <thead>
                         <tr>
-                            <th>Student Name</th>
-                            <th>Time-in</th>
-                            <th>Professor</th>
-                            <th>Status</th>
+                            <th>User Name</th>
+                            <th>Sex</th>
+                            <th>Faculty</th>
+                            <th>Date Added</th>
                             <th>Option</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach($attendance as $attendanceRecord){ 
-                            $accountID = $attendanceRecord['accountID'];
-                            $studentNumber = $attendanceRecord['studentNumber'];
-                            // Time Format
-                            $time = new DateTime($attendanceRecord['qrTime']);
-                            $formattedTime = $time->format('g:i A');
-                            
-                            // Teacher Name
-                            $stmt = $pdo->prepare("SELECT * FROM account_information WHERE accountID = :accountID");
-                            $stmt->bindParam(':accountID', $accountID, PDO::PARAM_INT);
-                            $stmt->execute();
-                            $professor = $stmt->fetch(PDO::FETCH_ASSOC);
-                            // Student Name
-                            $stmt = $pdo->prepare("SELECT * FROM student WHERE studentNumber = :studentNumber");
-                            $stmt->bindParam(':studentNumber', $studentNumber, PDO::PARAM_INT);
-                            $stmt->execute();
-                            $student = $stmt->fetch(PDO::FETCH_ASSOC);
+                        <?php foreach($fetchReg as $acc){ 
+                           
                         ?>
                         <tr>
-                            <td><?php echo $student['firstname'].' '.$student['lastname']?></td>
-                            <td class="name"><?php echo $formattedTime?></td>
-                            <td><?php echo $professor['firstname']?></td>
-                            <td></td>
+                            <td><?php echo $acc['firstname'].' '.$acc['lastname']?></td>
+                            <td><?php echo $acc['sex']?></td>
+                            <td><?php echo $acc['faculty']?></td>
+                            <td><?php echo $acc['dateAdded']?></td>
                             <td>
                                 <!-- Detail -->
-                                <a href="./profile/student-view.php?header=<?php echo $student['firstname']?>'s Profile&id=<?php echo $student['studentID']?>&studNum=<?php echo $student['studentNumber']?>">
+                                <a href="./profile/teacher-view.php?header=<?php echo $acc['firstname']?>'s Profile&id=<?php echo $acc['accountID']?>">
                                     <button class="view">Detail</button>
                                 </a>
                             </td>

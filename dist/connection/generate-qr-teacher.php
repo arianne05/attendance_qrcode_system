@@ -38,6 +38,8 @@
         // for admin recents
         $recentLabel='added';
         $recentDate = date("Y-m-d");
+        // Set the timezone to Asia/Manila (Philippine time)
+        date_default_timezone_set('Asia/Manila');
         $recentTime = date("H:i:s");
 
         $addrecent = "INSERT INTO recents (accountID, studentNumber, recentDate, recentTime, recentLabel)

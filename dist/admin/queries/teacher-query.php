@@ -216,17 +216,19 @@ if(isset($_POST['editTeacher'])){
     // Update section handles
     $subjects = $_POST['subject'];
     $sections = $_POST['section'];
-    $schedules = $_POST['schedule'];
+    $schedFroms = $_POST['schedFrom'];
+    $schedTos = $_POST['schedTo'];
 
     for ($i = 0; $i < count($handleIDs); $i++) {
         $handleID = $handleIDs[$i];
         $subject = $subjects[$i];
         $section = $sections[$i];
-        $schedule = $schedules[$i];
+        $schedFrom = $schedFroms[$i];
+        $schedTo = $schedTos[$i];
 
-        $updatehandle = "UPDATE teacher_handle SET schedule=?, section=?, subject=? WHERE accountID=? AND handleID=?";
+        $updatehandle = "UPDATE teacher_handle SET schedFrom=?, schedTo=?, section=?, subject=? WHERE accountID=? AND handleID=?";
         $stmt = $pdo->prepare($updatehandle);
-        $stmt->execute([$schedule, $section, $subject, $accountID, $handleID]);
+        $stmt->execute([$schedFrom, $schedTo, $section, $subject, $accountID, $handleID]);
     }
 
     header("Location: ../teacher.php?header=Teacher&updateTeacherSuccess");

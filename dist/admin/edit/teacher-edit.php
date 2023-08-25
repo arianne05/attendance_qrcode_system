@@ -129,7 +129,10 @@ $sectionHandle = $pdo->query("SELECT * FROM account_information
                                     <label for="">Section Name</label>
                                 </div>
                                 <div class="text-label-edit">
-                                    <label for="">Schedule</label>
+                                    <label for="">Schedule From</label>
+                                </div>
+                                <div class="text-label-edit">
+                                    <label for="">Schedule To</label>
                                 </div>
                             </div>
 
@@ -144,7 +147,10 @@ $sectionHandle = $pdo->query("SELECT * FROM account_information
                                         <input type="text" value="<?php echo $section['section']; ?>" name="section[]">
                                     </div>
                                     <div class="text-label-edit">
-                                        <input type="text" value="<?php echo $section['schedule']; ?>" name="schedule[]">
+                                        <input type="text" value="<?php echo $section['schedFrom']; ?>" name="schedFrom[]">
+                                    </div>
+                                    <div class="text-label-edit">
+                                        <input type="text" value="<?php echo $section['schedTo']; ?>" name="schedTo[]">
                                     </div>
                                 </div>
                                 <br>

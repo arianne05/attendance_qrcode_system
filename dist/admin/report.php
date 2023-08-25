@@ -19,7 +19,7 @@
     $total_today = $total_prof_today + $total_students_today;
 
     // Fetch login_act table
-    $stmt = $pdo->prepare("SELECT * FROM login_activity");
+    $stmt = $pdo->prepare("SELECT * FROM login_activity ORDER BY logTime DESC");
     $stmt->execute();
     $login = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
