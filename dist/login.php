@@ -26,6 +26,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $logLabel='logged in';
             $logDate= date('Y-m-d');
+            // Set the timezone to Asia/Manila (Philippine time)
+            date_default_timezone_set('Asia/Manila');
             $logTime= date('H:i:s');
 
             // Redirect users to their corresponding dashboards based on their position
