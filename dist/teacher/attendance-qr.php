@@ -99,6 +99,7 @@
                 </thead>
                 <?php foreach($fetchAttendance as $attendane){ 
                     $studentNumber=$attendane['studentNumber'];
+
                     // Time Format
                     $time = new DateTime($attendane['qrTime']);
                     $formattedTime = $time->format('g:i A');
@@ -108,6 +109,32 @@
                     $stmt->bindParam(':studentNumber', $studentNumber, PDO::PARAM_INT);
                     $stmt->execute();
                     $student = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                    //Teacher Sched Label
+                    $qrSubject=$attendane['qrSubject'];
+                    $qrSection=$attendane['qrSection'];
+                    $qrTime=$attendane['qrTime'];
+
+                    $stmt = $pdo->prepare("SELECT * FROM teacher_handle WHERE subject = :subject AND section = :section");
+                    $stmt->bindParam(':subject', $subject, PDO::PARAM_STR); // Change to PDO::PARAM_STR
+                    $stmt->bindParam(':section', $section, PDO::PARAM_STR); // Change to PDO::PARAM_STR
+                    $stmt->execute();
+                    $section = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                    // $fromTime=$section['schedFrom'];
+                    
+                    // Calculate the time difference in minutes
+                    // $qrTimeObj = new DateTime($qrTime);
+                    // $fromTimeObj = new DateTime($section['schedFrom']);
+                    // $interval = $fromTimeObj->diff($qrTimeObj);
+                    // $minutesLate = $interval->format('%i'); // Get the minutes part of the difference
+
+                    // if ($minutesLate < 15) {
+                    //     $label = 'late';
+                    // } else {
+                    //     $label = 'on time';
+                    // }
+
                 ?>
                 <tbody>
                     <td><?php echo $attendane['studentNumber']?></td>
@@ -115,7 +142,7 @@
                     <td><?php echo $student['studentSection']?></td>
                     <td><?php echo $attendane['qrSubject']?></td>
                     <td><?php echo $formattedTime?></td>
-                    <td>on-time</td>
+                    <td>NA</td>
                     <td><button class="archive">Remove</button></td>
                 </tbody>
                 <?php }?>
